@@ -1,87 +1,163 @@
 <template>
-  <div class="container">
-    <header>
-      <h1>CES 2026 신청 목록</h1>
-      <button @click="handleLogout" class="btn-logout">로그아웃</button>
-    </header>
+  <SidebarProvider>
+    <Sidebar>
+      <SidebarHeader>
+        <div class="flex items-center gap-2 px-4 py-6">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+            <LayoutDashboard :size="20" />
+          </div>
+          <span class="text-lg font-semibold">CES 2026</span>
+        </div>
+      </SidebarHeader>
 
-    <div class="search-bar">
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="회사명 또는 부스번호로 검색..."
-        @input="debounceSearch"
-      />
-    </div>
+      <SidebarContent>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton :active="true">
+              <LayoutDashboard :size="20" />
+              <span>신청 목록</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton :disabled="true">
+              <BarChart3 :size="20" />
+              <span>통계</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton :disabled="true">
+              <Settings :size="20" />
+              <span>설정</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarContent>
 
-    <div v-if="store.loading" class="loading">로딩 중...</div>
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton @click="handleLogout">
+              <LogOut :size="20" />
+              <span>로그아웃</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
+    </Sidebar>
 
-    <div v-else-if="store.applications.length === 0" class="empty">
-      신청 데이터가 없습니다.
-    </div>
+    <main class="flex-1 overflow-auto">
+      <div class="flex h-14 items-center gap-4 border-b px-6">
+        <SidebarTrigger />
+      </div>
 
-    <div v-else class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>부스타입</th>
-            <th>부스번호</th>
-            <th>회사명(한)</th>
-            <th>회사명(영)</th>
-            <th>피칭</th>
-            <th>도슨트</th>
-            <th>통역</th>
-            <th>MOU</th>
-            <th>신청일</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="app in store.applications"
-            :key="app.id"
-            @click="goToDetail(app.id)"
-            class="clickable"
+      <div class="p-6 space-y-4">
+        <div class="flex items-center justify-between">
+          <h1 class="text-3xl font-bold">CES 2026 신청 목록</h1>
+        </div>
+
+        <div class="relative max-w-sm">
+          <Search class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" :size="20" />
+          <Input
+            v-model="searchQuery"
+            type="text"
+            placeholder="회사명 또는 부스번호로 검색..."
+            class="pl-10"
+            @input="debounceSearch"
+          />
+        </div>
+
+        <div v-if="store.loading" class="flex items-center justify-center py-12 text-muted-foreground">
+          로딩 중...
+        </div>
+
+        <div v-else-if="store.applications.length === 0" class="flex items-center justify-center py-12 text-muted-foreground">
+          신청 데이터가 없습니다.
+        </div>
+
+        <div v-else class="rounded-md border">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>ID</TableHead>
+                <TableHead>부스타입</TableHead>
+                <TableHead>부스번호</TableHead>
+                <TableHead>회사명(한)</TableHead>
+                <TableHead>회사명(영)</TableHead>
+                <TableHead>피칭</TableHead>
+                <TableHead>도슨트</TableHead>
+                <TableHead>통역</TableHead>
+                <TableHead>MOU</TableHead>
+                <TableHead>신청일</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow
+                v-for="app in store.applications"
+                :key="app.id"
+                @click="goToDetail(app.id)"
+                class="cursor-pointer hover:bg-muted/50"
+              >
+                <TableCell class="font-medium">{{ app.id }}</TableCell>
+                <TableCell>
+                  <Badge :variant="app.boothType === 'eureka' ? 'default' : 'secondary'">
+                    {{ app.boothType === 'eureka' ? 'Eureka' : 'Global' }}
+                  </Badge>
+                </TableCell>
+                <TableCell>{{ app.boothNumber }}</TableCell>
+                <TableCell>{{ app.companyKr }}</TableCell>
+                <TableCell>{{ app.companyEn }}</TableCell>
+                <TableCell>
+                  <Badge :variant="app.pitching === 'yes' ? 'default' : 'secondary'">
+                    {{ app.pitching === 'yes' ? '참여' : '-' }}
+                  </Badge>
+                </TableCell>
+                <TableCell>
+                  <Badge :variant="app.docent === 'yes' ? 'default' : 'secondary'">
+                    {{ app.docent === 'yes' ? '참여' : '-' }}
+                  </Badge>
+                </TableCell>
+                <TableCell>
+                  <Badge :variant="app.interpreter === 'yes' ? 'default' : 'secondary'">
+                    {{ app.interpreter === 'yes' ? '참여' : '-' }}
+                  </Badge>
+                </TableCell>
+                <TableCell>
+                  <Badge :variant="app.mou === 'yes' ? 'default' : 'secondary'">
+                    {{ app.mou === 'yes' ? '참여' : '-' }}
+                  </Badge>
+                </TableCell>
+                <TableCell>{{ formatDate(app.createdAt) }}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+
+        <div v-if="store.totalPages > 1" class="flex items-center justify-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            @click="changePage(store.page - 1)"
+            :disabled="store.page === 1"
           >
-            <td>{{ app.id }}</td>
-            <td>
-              <span :class="['badge', app.boothType]">
-                {{ app.boothType === 'eureka' ? 'Eureka' : 'Global' }}
-              </span>
-            </td>
-            <td>{{ app.boothNumber }}</td>
-            <td>{{ app.companyKr }}</td>
-            <td>{{ app.companyEn }}</td>
-            <td><span :class="['status', app.pitching]">{{ app.pitching === 'yes' ? '✓' : '-' }}</span></td>
-            <td><span :class="['status', app.docent]">{{ app.docent === 'yes' ? '✓' : '-' }}</span></td>
-            <td><span :class="['status', app.interpreter]">{{ app.interpreter === 'yes' ? '✓' : '-' }}</span></td>
-            <td><span :class="['status', app.mou]">{{ app.mou === 'yes' ? '✓' : '-' }}</span></td>
-            <td>{{ formatDate(app.createdAt) }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div v-if="store.totalPages > 1" class="pagination">
-      <button
-        @click="changePage(store.page - 1)"
-        :disabled="store.page === 1"
-        class="btn-page"
-      >
-        이전
-      </button>
-      <span class="page-info">
-        {{ store.page }} / {{ store.totalPages }} (총 {{ store.total }}개)
-      </span>
-      <button
-        @click="changePage(store.page + 1)"
-        :disabled="store.page === store.totalPages"
-        class="btn-page"
-      >
-        다음
-      </button>
-    </div>
-  </div>
+            <ChevronLeft :size="16" class="mr-1" />
+            이전
+          </Button>
+          <span class="text-sm text-muted-foreground px-4">
+            {{ store.page }} / {{ store.totalPages }} (총 {{ store.total }}개)
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            @click="changePage(store.page + 1)"
+            :disabled="store.page === store.totalPages"
+          >
+            다음
+            <ChevronRight :size="16" class="ml-1" />
+          </Button>
+        </div>
+      </div>
+    </main>
+  </SidebarProvider>
 </template>
 
 <script setup>
@@ -89,6 +165,35 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useApplicationsStore } from '../stores/applications';
 import { useAuthStore } from '../stores/auth';
+
+import SidebarProvider from '../components/ui/SidebarProvider.vue';
+import Sidebar from '../components/ui/Sidebar.vue';
+import SidebarHeader from '../components/ui/SidebarHeader.vue';
+import SidebarContent from '../components/ui/SidebarContent.vue';
+import SidebarFooter from '../components/ui/SidebarFooter.vue';
+import SidebarMenu from '../components/ui/SidebarMenu.vue';
+import SidebarMenuItem from '../components/ui/SidebarMenuItem.vue';
+import SidebarMenuButton from '../components/ui/SidebarMenuButton.vue';
+import SidebarTrigger from '../components/ui/SidebarTrigger.vue';
+import Table from '../components/ui/Table.vue';
+import TableHeader from '../components/ui/TableHeader.vue';
+import TableBody from '../components/ui/TableBody.vue';
+import TableHead from '../components/ui/TableHead.vue';
+import TableRow from '../components/ui/TableRow.vue';
+import TableCell from '../components/ui/TableCell.vue';
+import Badge from '../components/ui/Badge.vue';
+import Button from '../components/ui/Button.vue';
+import Input from '../components/ui/Input.vue';
+
+import {
+  Search,
+  ChevronLeft,
+  ChevronRight,
+  LayoutDashboard,
+  Settings,
+  LogOut,
+  BarChart3
+} from 'lucide-vue-next';
 
 const router = useRouter();
 const store = useApplicationsStore();
@@ -126,160 +231,3 @@ const formatDate = (dateString) => {
   return date.toLocaleDateString('ko-KR') + ' ' + date.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' });
 };
 </script>
-
-<style scoped>
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-size: 2rem;
-  color: #333;
-  margin: 0;
-}
-
-.btn-logout {
-  padding: 0.625rem 1.25rem;
-  background: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.btn-logout:hover {
-  background: #c0392b;
-}
-
-.search-bar {
-  margin-bottom: 1.5rem;
-}
-
-.search-bar input {
-  width: 100%;
-  max-width: 500px;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.loading, .empty {
-  text-align: center;
-  padding: 3rem;
-  color: #777;
-  font-size: 1.1rem;
-}
-
-.table-container {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-thead {
-  background: #f8f9fa;
-}
-
-th {
-  padding: 1rem;
-  text-align: left;
-  font-weight: 600;
-  color: #555;
-  border-bottom: 2px solid #dee2e6;
-}
-
-tbody tr {
-  border-bottom: 1px solid #dee2e6;
-}
-
-tbody tr.clickable {
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-tbody tr.clickable:hover {
-  background: #f8f9fa;
-}
-
-td {
-  padding: 1rem;
-  color: #333;
-}
-
-.badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.badge.eureka {
-  background: #e3f2fd;
-  color: #1976d2;
-}
-
-.badge.global {
-  background: #f3e5f5;
-  color: #7b1fa2;
-}
-
-.status {
-  font-weight: 600;
-}
-
-.status.yes {
-  color: #27ae60;
-}
-
-.status.no {
-  color: #bdc3c7;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.btn-page {
-  padding: 0.5rem 1rem;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.btn-page:hover:not(:disabled) {
-  background: #f8f9fa;
-}
-
-.btn-page:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.page-info {
-  color: #555;
-  font-weight: 500;
-}
-</style>

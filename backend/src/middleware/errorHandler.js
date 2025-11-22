@@ -17,6 +17,14 @@ const errorHandler = (err, req, res, next) => {
     });
   }
 
+  // Sequelize database errors
+  if (err.name === 'SequelizeDatabaseError') {
+    console.error('Database error:', err.message);
+    return res.status(500).json({
+      error: 'Database operation failed'
+    });
+  }
+
   // JWT errors
   if (err.name === 'JsonWebTokenError') {
     return res.status(401).json({ error: 'Invalid token' });
@@ -26,9 +34,10 @@ const errorHandler = (err, req, res, next) => {
     return res.status(401).json({ error: 'Token expired' });
   }
 
-  // Default error
+  // Default error (production vs development)
+  const isDevelopment = process.env.NODE_ENV === 'development';
   res.status(err.status || 500).json({
-    error: err.message || 'Internal server error'
+    error: isDevelopment ? err.message : 'Internal server error'
   });
 };
 

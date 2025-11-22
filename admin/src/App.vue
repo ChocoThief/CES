@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <router-view />
+    <Toaster position="top-right" :rich-colors="true" />
   </div>
 </template>
 
 <script setup>
-// App component
+import { Toaster } from 'vue-sonner';
 </script>
 
 <style>

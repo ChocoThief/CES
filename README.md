@@ -2,7 +2,7 @@
 
 CES 2026 참가 신청 및 관리 시스템
 
-## 🚀 빠른 배포 (EC2 + Route 53 + ACM)
+## 🚀 빠른 배포 (EC2 + CloudFront + ACM)
 
 ```bash
 # 1. 프로젝트 클론
@@ -19,9 +19,9 @@ chmod +x deploy.sh
 ```
 
 **상세 가이드:**
-- AWS 배포: [AWS_DEPLOYMENT.md](./AWS_DEPLOYMENT.md)
-- EC2 단독 배포: [EC2_SETUP.md](./EC2_SETUP.md)
-- 요약: [DEPLOYMENT_SUMMARY.md](./DEPLOYMENT_SUMMARY.md)
+- CloudFront + ACM 배포: [CLOUDFRONT_DEPLOYMENT.md](./CLOUDFRONT_DEPLOYMENT.md)
+- 빠른 시작: [DEPLOYMENT_SUMMARY.md](./DEPLOYMENT_SUMMARY.md)
+- EC2 상세 설정: [EC2_SETUP.md](./EC2_SETUP.md)
 
 ## 프로젝트 구조
 

@@ -1,4 +1,4 @@
-# EC2 서버 배포 가이드
+# EC2 서버 배포 가이드 (CloudFront + ACM)
 
 ## 1. EC2 인스턴스 준비
 
@@ -8,8 +8,7 @@
 - **OS**: Ubuntu 22.04 LTS
 - **Security Group**:
   - SSH (22) - 본인 IP만
-  - HTTP (80) - 0.0.0.0/0
-  - HTTPS (443) - 0.0.0.0/0
+  - HTTP (80) - 0.0.0.0/0 (CloudFront에서 접근)
 
 ## 2. 초기 서버 설정
 
@@ -37,22 +36,21 @@ exit
 ssh -i your-key.pem ubuntu@your-ec2-ip
 ```
 
-## 3. DNS 설정
+## 3. ACM 인증서 발급
 
-**Route 53 또는 도메인 등록기관에서:**
+**중요: us-east-1 리전에서 발급해야 합니다!**
 
-| Type | Name | Value |
-|------|------|-------|
-| A | ceskorea.kr | EC2 Public IP |
-| A | www.ceskorea.kr | EC2 Public IP |
-| A | admin.ceskorea.kr | EC2 Public IP |
-| A | api.ceskorea.kr | EC2 Public IP |
+```
+AWS Console > Certificate Manager
+리전: US East (N. Virginia) us-east-1
 
-**DNS 전파 확인:**
-```bash
-nslookup ceskorea.kr
-nslookup admin.ceskorea.kr
-nslookup api.ceskorea.kr
+Request certificate:
+- ceskorea.kr
+- *.ceskorea.kr
+
+Validation: DNS validation
+> "Create records in Route 53" 클릭
+> 5분 대기 (상태 "Issued" 확인)
 ```
 
 ## 4. 프로젝트 클론 및 설정
@@ -77,15 +75,20 @@ nano .env
 # - CLOUDFRONT_DOMAIN: CloudFront 도메인 (선택)
 ```
 
-## 5. Nginx 설치 및 설정
+## 5. Nginx 설정 (HTTP only)
 
-**중요:** SSL은 Application Load Balancer (ALB)와 AWS Certificate Manager (ACM)에서 처리됩니다.
-EC2의 Nginx는 ALB로부터 HTTP 트래픽만 받아 Docker 컨테이너로 프록시합니다.
+CloudFront가 HTTPS를 처리하므로, EC2는 HTTP만 받습니다.
 
 ```bash
-# Nginx 설정 스크립트 실행
-chmod +x setup-nginx.sh
-sudo ./setup-nginx.sh
+# Nginx 설정 복사
+sudo cp nginx/nginx.conf /etc/nginx/sites-available/ceskorea.kr
+sudo ln -s /etc/nginx/sites-available/ceskorea.kr /etc/nginx/sites-enabled/
+sudo rm /etc/nginx/sites-enabled/default
+
+# 설정 테스트 및 재시작
+sudo nginx -t
+sudo systemctl restart nginx
+sudo systemctl enable nginx
 ```
 
 ## 6. 배포 실행
@@ -102,21 +105,60 @@ docker-compose logs -f
 docker-compose ps
 ```
 
-## 7. 배포 확인
+## 7. CloudFront Distribution 생성
 
-```bash
-# EC2에서 로컬 서비스 테스트
-curl http://localhost:8080  # Frontend
-curl http://localhost:3000  # Admin
-curl http://localhost:5000/health  # Backend
+```
+CloudFront > Create distribution
+
+Origin:
+- Domain: EC2 Public DNS 또는 IP
+- Protocol: HTTP only
+- HTTP port: 80
+
+Default cache behavior:
+- Viewer protocol: Redirect HTTP to HTTPS
+- Allowed methods: All (GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE)
+- Cache policy: CachingDisabled
+- Origin request policy: AllViewer
+
+Settings:
+- Alternate domains (CNAMEs):
+  * ceskorea.kr
+  * www.ceskorea.kr
+  * admin.ceskorea.kr
+  * api.ceskorea.kr
+- Custom SSL certificate: 3단계에서 만든 ACM 인증서
+
+Create distribution
 ```
 
-**ALB를 통한 브라우저 접속 (ACM SSL):**
-- Frontend: https://ceskorea.kr
-- Admin: https://admin.ceskorea.kr (admin / admin123)
+## 8. Route 53 설정
+
+```
+Route 53 > Hosted zones > ceskorea.kr
+
+4개의 A 레코드 생성 (모두 Alias):
+1. Name: (비워둠) → Alias to CloudFront distribution
+2. Name: www → Alias to CloudFront distribution
+3. Name: admin → Alias to CloudFront distribution
+4. Name: api → Alias to CloudFront distribution
+```
+
+## 9. 배포 확인
+
+```bash
+# EC2에서 로컬 테스트
+curl http://localhost:8080
+curl http://localhost:3000
+curl http://localhost:5000/health
+```
+
+**브라우저에서 접속 (CloudFront를 통해):**
+- 프론트엔드: https://ceskorea.kr
+- 관리자: https://admin.ceskorea.kr (admin / admin123)
 - API: https://api.ceskorea.kr/health
 
-**참고:** SSL 인증서는 ALB에 연결된 ACM에서 관리되며, 자동으로 갱신됩니다.
+**참고:** ACM 인증서는 자동으로 영구 갱신됩니다.
 
 ## 8. 업데이트 배포
 
@@ -193,18 +235,24 @@ await admin.save();
 
 ## 11. 트러블슈팅
 
-### ALB Health Check 실패
+### CloudFront 502 Error
 ```bash
-# EC2 보안 그룹 확인: ALB 보안 그룹에서 포트 80 허용되었는지 확인
+# EC2에서 서비스 확인
+curl http://localhost:8080
+curl http://localhost:3000
+curl http://localhost:5000/health
+
 # Nginx 상태 확인
 sudo systemctl status nginx
 sudo nginx -t
 
-# 로컬 서비스 확인
-curl http://localhost:8080
-curl http://localhost:3000
-curl http://localhost:5000/health
+# 보안 그룹 확인 (포트 80 열려있는지)
 ```
+
+### ACM 인증서 오류
+- us-east-1 리전에서 발급했는지 확인
+- 인증서 상태가 "Issued"인지 확인
+- CloudFront에 올바른 인증서가 연결되었는지 확인
 
 ### 502 Bad Gateway 에러
 ```bash
@@ -276,12 +324,12 @@ sudo systemctl restart docker
 
 1. ✅ EC2 인스턴스 준비 (Ubuntu 22.04)
 2. ✅ Docker & Docker Compose 설치
-3. ✅ Route 53 DNS 설정 (Alias 레코드 → ALB)
-4. ✅ ACM 인증서 발급 (*.ceskorea.kr)
-5. ✅ Application Load Balancer 설정 (HTTPS 리스너 + ACM)
-6. ✅ 프로젝트 클론 및 .env 설정
-7. ✅ Nginx 설치 및 설정 (`./setup-nginx.sh`)
-8. ✅ 배포 실행 (`./deploy.sh`)
+3. ✅ ACM 인증서 발급 (us-east-1, *.ceskorea.kr)
+4. ✅ 프로젝트 클론 및 .env 설정
+5. ✅ Nginx 설정 (HTTP only)
+6. ✅ 배포 실행 (`./deploy.sh`)
+7. ✅ CloudFront Distribution 생성
+8. ✅ Route 53 A 레코드 (Alias to CloudFront)
 9. ✅ 서비스 확인 (https://ceskorea.kr)
 
 **기본 관리자 계정:**

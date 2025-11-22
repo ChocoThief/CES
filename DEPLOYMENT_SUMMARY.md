@@ -1,54 +1,48 @@
 # 🚀 CES 2026 배포 요약
 
-## 배포 방식 선택
+## 배포 방식: EC2 + CloudFront + ACM
 
-### 방법 1: AWS ALB + ACM (권장) ⭐
+**아키텍처:**
+```
+사용자 → Route 53 → CloudFront (ACM SSL) → EC2 (Nginx) → Docker
+```
+
+**사양:**
+- EC2 t3.medium (2 vCPU, 4GB RAM)
+- CloudFront CDN
+- ACM 인증서 (무료, 영구, 자동 갱신)
+- Nginx 리버스 프록시 (HTTP only)
+- Docker + Docker Compose
+
+**비용:** ~$30-35/월 (EC2 $30 + CloudFront $0-5)
 
 **장점:**
-- ✅ AWS Certificate Manager 무료 SSL
-- ✅ 자동 인증서 갱신
-- ✅ 고가용성 (Multi-AZ)
-- ✅ Auto Scaling 가능
-- ✅ AWS 통합 모니터링
+- ✅ ACM 무료 SSL 인증서 (영구, 자동 갱신)
+- ✅ CloudFront CDN으로 속도 향상
+- ✅ DDoS 보호 기본 제공
+- ✅ 트래픽 적으면 CloudFront 거의 무료
 
-**비용:** ~$50/월
-
-**설정 가이드:** `AWS_DEPLOYMENT.md` 참고
+**상세 가이드:** `CLOUDFRONT_DEPLOYMENT.md` 참고
 
 ---
 
-### 방법 2: 단일 EC2 (테스트/개발용)
-
-**참고:** Route 53 도메인이 있다면 방법 1 (ALB + ACM)을 권장합니다.
-단일 EC2 방식도 ALB 없이 직접 Let's Encrypt를 사용할 수 있지만,
-프로덕션 환경에서는 ALB + ACM이 더 안정적입니다.
-
-**장점:**
-- ✅ 단일 EC2로 간단
-- ✅ 비용 저렴 (~$15/월)
-
-**단점:**
-- ❌ 수동 SSL 관리 필요
-- ❌ Single point of failure
-- ❌ Auto Scaling 불가
-
----
-
-## 빠른 시작 (Route 53 이미 설정됨)
+## 빠른 시작
 
 ### 1단계: ACM 인증서 발급 (5분)
 
+**중요:** us-east-1 리전에서 발급해야 합니다!
+
 ```
-AWS Console > Certificate Manager (ap-northeast-2 리전)
+AWS Console > Certificate Manager (리전: us-east-1)
 > Request certificate
 
 도메인:
 - ceskorea.kr
 - *.ceskorea.kr
 
-검증 방법: DNS
+검증: DNS validation
 > "Create records in Route 53" 클릭
-> 5분 대기
+> 5분 대기 (상태 "Issued" 확인)
 ```
 
 ### 2단계: EC2 준비 (10분)
@@ -76,34 +70,49 @@ cd CES
 cp .env.example .env
 nano .env  # AWS 키, DB 비밀번호 입력
 
-# Nginx 설정
-chmod +x setup-nginx.sh
-sudo ./setup-nginx.sh
+# Nginx 설정 (HTTP only)
+sudo cp nginx/nginx.conf /etc/nginx/sites-available/ceskorea.kr
+sudo ln -s /etc/nginx/sites-available/ceskorea.kr /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl restart nginx
 
 # 배포
 chmod +x deploy.sh
 ./deploy.sh
 ```
 
-### 4단계: ALB 설정 (10분)
+### 4단계: CloudFront Distribution 생성 (10분)
 
 ```
-1. 타겟 그룹 3개 생성:
-   - ces-backend-tg (5000)
-   - ces-frontend-tg (8080)
-   - ces-admin-tg (3000)
+CloudFront > Create distribution
 
-2. ALB 생성 (ces-alb)
-   - HTTPS:443 리스너에 ACM 인증서 연결
-   - 호스트 기반 라우팅 규칙 설정
+Origin:
+- Domain: EC2 Public IP 또는 도메인
+- Protocol: HTTP only
+- Port: 80
 
-3. Route 53 레코드:
-   - ceskorea.kr → ALB Alias
-   - admin.ceskorea.kr → ALB Alias
-   - api.ceskorea.kr → ALB Alias
+Behavior:
+- Viewer protocol: Redirect HTTP to HTTPS
+- Cache policy: CachingDisabled (동적 사이트)
+- Allowed methods: All
+
+Settings:
+- Alternate domains: ceskorea.kr, www.ceskorea.kr, admin.ceskorea.kr, api.ceskorea.kr
+- SSL certificate: 1단계에서 만든 ACM 인증서 선택
 ```
 
-### 5단계: 접속 확인
+### 5단계: Route 53 설정
+
+```
+Route 53 > ceskorea.kr > Create record
+
+4개의 A 레코드 생성 (모두 Alias):
+- (비워둠) → CloudFront distribution
+- www → CloudFront distribution
+- admin → CloudFront distribution
+- api → CloudFront distribution
+```
+
+### 6단계: 접속 확인
 
 ```
 https://ceskorea.kr
@@ -155,14 +164,25 @@ docker-compose logs backend  # 로그 확인
 docker-compose restart  # 재시작
 ```
 
-### 타겟 그룹 Unhealthy
+### CloudFront 502 Error
 ```bash
-# EC2에서
-curl http://localhost:5000/health
+# EC2에서 서비스 확인
 curl http://localhost:8080
 curl http://localhost:3000
+curl http://localhost:5000/health
 
-# 보안 그룹 확인 (ALB SG → EC2)
+# Nginx 확인
+sudo nginx -t
+sudo systemctl status nginx
+
+# 보안 그룹 확인 (포트 80 열려있는지)
+```
+
+### ACM 인증서 오류
+```
+- us-east-1 리전에서 발급했는지 확인
+- 인증서 상태가 "Issued"인지 확인
+- CloudFront에 올바른 인증서 연결되었는지 확인
 ```
 
 ### DB 연결 실패

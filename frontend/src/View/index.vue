@@ -892,62 +892,99 @@ export default {
         return
       }
 
+      // FormData 객체 생성 (추후 API 전송용)
+      const data = new FormData()
+
+      // 텍스트 필드 추가
+      data.append('boothType', formData.boothType)
+      data.append('boothNumber', formData.boothNumber)
+      data.append('companyKr', formData.companyKr)
+      data.append('companyEn', formData.companyEn)
+      data.append('ceoKr', formData.ceoKr)
+      data.append('ceoEn', formData.ceoEn)
+      data.append('website', formData.website)
+      data.append('phone', formData.phone)
+      data.append('addressKr', formData.addressKr)
+      data.append('addressEn', formData.addressEn)
+      data.append('contactName', formData.contactName)
+      data.append('contactPosition', formData.contactPosition)
+      data.append('department', formData.department)
+      data.append('contactMobile', formData.contactMobile)
+      data.append('companyDisplay', formData.companyDisplay)
+      data.append('qrCode', formData.qrCode)
+      data.append('promoVideo', formData.promoVideo)
+      data.append('pitching', formData.pitching)
+      data.append('docent', formData.docent)
+      data.append('interpreter', formData.interpreter)
+      data.append('mou', formData.mou)
+
+      // 파일 추가
+      if (formData.companyLogo) {
+        data.append('companyLogo', formData.companyLogo)
+      }
+      if (formData.promoGraphic) {
+        data.append('promoGraphic', formData.promoGraphic)
+      }
+      if (formData.tableGraphic) {
+        data.append('tableGraphic', formData.tableGraphic)
+      }
+      if (formData.qrFile) {
+        data.append('qrFile', formData.qrFile)
+      }
+      if (formData.videoFile) {
+        data.append('videoFile', formData.videoFile)
+      }
+
+      // 데이터 확인용 출력
+      console.log('=== 폼 데이터 준비 완료 ===')
+      console.log('텍스트 데이터:', {
+        boothType: formData.boothType,
+        boothNumber: formData.boothNumber,
+        companyKr: formData.companyKr,
+        companyEn: formData.companyEn,
+        ceoKr: formData.ceoKr,
+        ceoEn: formData.ceoEn,
+        website: formData.website,
+        phone: formData.phone,
+        addressKr: formData.addressKr,
+        addressEn: formData.addressEn,
+        contactName: formData.contactName,
+        contactPosition: formData.contactPosition,
+        department: formData.department,
+        contactMobile: formData.contactMobile,
+        companyDisplay: formData.companyDisplay,
+        qrCode: formData.qrCode,
+        promoVideo: formData.promoVideo,
+        pitching: formData.pitching,
+        docent: formData.docent,
+        interpreter: formData.interpreter,
+        mou: formData.mou
+      })
+      
+      console.log('업로드된 파일들:', {
+        companyLogo: formData.companyLogo ? formData.companyLogo.name : '없음',
+        promoGraphic: formData.promoGraphic ? formData.promoGraphic.name : '없음',
+        tableGraphic: formData.tableGraphic ? formData.tableGraphic.name : '없음',
+        qrFile: formData.qrFile ? formData.qrFile.name : '없음',
+        videoFile: formData.videoFile ? formData.videoFile.name : '없음'
+      })
+      
+      console.log('FormData 객체 준비 완료 - API 전송 준비됨')
+      
+      alert('데이터 준비 완료!\n콘솔에서 데이터를 확인하세요.')
+      
+      // TODO: API가 준비되면 아래 코드 사용
+      /*
       try {
-        // FormData 객체 생성
-        const data = new FormData()
-
-        // 텍스트 필드 추가
-        data.append('boothType', formData.boothType)
-        data.append('boothNumber', formData.boothNumber)
-        data.append('companyKr', formData.companyKr)
-        data.append('companyEn', formData.companyEn)
-        data.append('ceoKr', formData.ceoKr)
-        data.append('ceoEn', formData.ceoEn)
-        data.append('website', formData.website)
-        data.append('phone', formData.phone)
-        data.append('addressKr', formData.addressKr)
-        data.append('addressEn', formData.addressEn)
-        data.append('contactName', formData.contactName)
-        data.append('contactPosition', formData.contactPosition)
-        data.append('department', formData.department)
-        data.append('contactMobile', formData.contactMobile)
-        data.append('companyDisplay', formData.companyDisplay)
-        data.append('qrCode', formData.qrCode)
-        data.append('promoVideo', formData.promoVideo)
-        data.append('pitching', formData.pitching)
-        data.append('docent', formData.docent)
-        data.append('interpreter', formData.interpreter)
-        data.append('mou', formData.mou)
-
-        // 파일 추가
-        if (formData.companyLogo) {
-          data.append('companyLogo', formData.companyLogo)
-        }
-        if (formData.promoGraphic) {
-          data.append('promoGraphic', formData.promoGraphic)
-        }
-        if (formData.tableGraphic) {
-          data.append('tableGraphic', formData.tableGraphic)
-        }
-        if (formData.qrFile) {
-          data.append('qrFile', formData.qrFile)
-        }
-        if (formData.videoFile) {
-          data.append('videoFile', formData.videoFile)
-        }
-
-        // API 전송
         const response = await fetch('http://localhost:5001/api/applications', {
           method: 'POST',
           body: data
         })
-
+        
         const result = await response.json()
-
+        
         if (response.ok) {
           alert('신청이 완료되었습니다!\n신청 ID: ' + result.applicationId)
-          // 폼 초기화 (선택사항)
-          // window.location.reload()
         } else {
           alert('신청 중 오류가 발생했습니다: ' + result.error)
         }
@@ -955,6 +992,7 @@ export default {
         console.error('Submit error:', error)
         alert('신청 중 오류가 발생했습니다. 다시 시도해주세요.')
       }
+      */
     }
 
     // 라디오 버튼 값 변경 시 에러 메시지 초기화 (QR코드와 홍보영상은 제외)
@@ -1175,6 +1213,20 @@ export default {
 .file-upload-area.error {
   background-color: #ffebee;
   border: 2px solid #f44336;
+}
+
+/* 브라우저 자동완성 배경색 제거 */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #d9d9d9 inset !important;
+  -webkit-text-fill-color: #333 !important;
+}
+
+/* Firefox 자동완성 스타일 */
+.form-group input:-moz-autofill {
+  background-color: #d9d9d9 !important;
 }
 
 .booth-input-guide {

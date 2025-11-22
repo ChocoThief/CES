@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:11
+    environment:
+      MYSQL_ROOT_PASSWORD: dev_password
+      MYSQL_DATABASE: ces2026_dev
+      MYSQL_USER: ces_user
+      MYSQL_PASSWORD: dev_password
+    ports:
+      - "3308:3306"
+    volumes:
+      - mariadb_dev_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+      DB_HOST: mariadb
+      DB_NAME: ces2026_dev
+      DB_USER: ces_user
+      DB_PASSWORD: dev_password
+      JWT_SECRET: dev_secret_key_12345678901234567890
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION:-ap-northeast-2}
+      S3_BUCKET: ${S3_BUCKET}
+      FRONTEND_URL: http://localhost:8080
+      ADMIN_URL: http://localhost:3001
+    ports:
+      - "5000:5000"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./admin:/app
+      - /app/node_modules
+    ports:
+      - "3001:5173"
+    environment:
+      VITE_API_URL: http://localhost:5000
+    command: npm run dev -- --host
+
+volumes:
+  mariadb_dev_data:

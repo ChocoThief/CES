@@ -1,0 +1,66 @@
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const path = require('path');
+require('dotenv').config();
+
+const { syncDatabase } = require('./models');
+const errorHandler = require('./middleware/errorHandler');
+
+// Routes
+const applicationsRouter = require('./routes/applications');
+const authRouter = require('./routes/auth');
+const adminRouter = require('./routes/admin');
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(helmet());
+app.use(cors({
+  origin: [
+    process.env.FRONTEND_URL || 'http://localhost:8080',
+    process.env.ADMIN_URL || 'http://localhost:3000',
+    'http://localhost:3001'  // 개발용 Admin
+  ],
+  credentials: true
+}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// 정적 파일 서빙 (개발 환경용)
+if (process.env.NODE_ENV === 'development') {
+  app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+}
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// API Routes
+app.use('/api/applications', applicationsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/admin', adminRouter);
+
+// Error handler (must be last)
+app.use(errorHandler);
+
+// Initialize database and start server
+const startServer = async () => {
+  try {
+    await syncDatabase();
+
+    app.listen(PORT, () => {
+      console.log(`✓ Server running on port ${PORT}`);
+      console.log(`✓ Environment: ${process.env.NODE_ENV || 'development'}`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+startServer();
+
+module.exports = app;

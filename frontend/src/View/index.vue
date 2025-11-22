@@ -499,10 +499,70 @@ export default {
       }
     }
 
-    const submitForm = () => {
-      console.log('Form submitted:', formData)
-      // Here you would typically send the data to your API
-      alert('양식이 제출되었습니다!')
+    const submitForm = async () => {
+      try {
+        // FormData 객체 생성
+        const data = new FormData()
+
+        // 텍스트 필드 추가
+        data.append('boothType', formData.boothType)
+        data.append('boothNumber', formData.boothNumber)
+        data.append('companyKr', formData.companyKr)
+        data.append('companyEn', formData.companyEn)
+        data.append('ceoKr', formData.ceoKr)
+        data.append('ceoEn', formData.ceoEn)
+        data.append('website', formData.website)
+        data.append('phone', formData.phone)
+        data.append('addressKr', formData.addressKr)
+        data.append('addressEn', formData.addressEn)
+        data.append('contactName', formData.contactName)
+        data.append('contactPosition', formData.contactPosition)
+        data.append('department', formData.department)
+        data.append('contactMobile', formData.contactMobile)
+        data.append('companyDisplay', formData.companyDisplay)
+        data.append('qrCode', formData.qrCode)
+        data.append('promoVideo', formData.promoVideo)
+        data.append('pitching', formData.pitching)
+        data.append('docent', formData.docent)
+        data.append('interpreter', formData.interpreter)
+        data.append('mou', formData.mou)
+
+        // 파일 추가
+        if (formData.companyLogo) {
+          data.append('companyLogo', formData.companyLogo)
+        }
+        if (formData.promoGraphic) {
+          data.append('promoGraphic', formData.promoGraphic)
+        }
+        if (formData.tableGraphic) {
+          data.append('tableGraphic', formData.tableGraphic)
+        }
+        if (formData.qrFile) {
+          data.append('qrFile', formData.qrFile)
+        }
+        if (formData.videoFile) {
+          data.append('videoFile', formData.videoFile)
+        }
+
+        // API 전송
+        const response = await fetch('http://localhost:5001/api/applications', {
+          method: 'POST',
+          body: data
+        })
+
+        const result = await response.json()
+
+        if (response.ok) {
+          alert('신청이 완료되었습니다!\n신청 ID: ' + result.applicationId)
+          // 폼 초기화 (선택사항)
+          // window.location.reload()
+        } else {
+          alert('신청 중 오류가 발생했습니다: ' + result.error)
+        }
+      } catch (error) {
+        console.error('Submit error:', error)
+        alert('신청 중 오류가 발생했습니다. 다시 시도해주세요.')
+      }
     }
 
     return {

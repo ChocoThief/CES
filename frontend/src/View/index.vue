@@ -545,7 +545,8 @@ export default {
         }
 
         // API 전송
-        const response = await fetch('http://localhost:5001/api/applications', {
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://api.ceskorea.kr/api'
+        const response = await fetch(`${apiUrl}/applications`, {
           method: 'POST',
           body: data
         })

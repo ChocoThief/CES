@@ -1025,9 +1025,9 @@ export default {
 
         // 네트워크 에러 처리
         if (error.name === 'TypeError' && error.message.includes('fetch')) {
-          alert('❌ 서버에 연결할 수 없습니다.\n\n백엔드 서버가 실행 중인지 확인해주세요.\n(http://localhost:5001)')
+          alert('❌ 서버에 연결할 수 없습니다.\n\n잠시 후 다시 시도해주세요.')
         } else {
-          alert('❌ 신청 중 오류가 발생했습니다.\n\n' + error.message)
+          alert('❌ 신청 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해주세요.')
         }
       } finally {
         isSubmitting.value = false

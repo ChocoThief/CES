@@ -1,4 +1,5 @@
 const { Application } = require('../models');
+const { getCloudFrontUrl } = require('../config/s3');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -7,7 +8,9 @@ const getFileUrl = (file) => {
   if (!file) return null;
   // S3 업로드 (프로덕션)
   if (file.location) {
-    return file.location;
+    // S3 URL에서 파일 키 추출
+    const s3Key = file.key || file.location.split('.com/')[1];
+    return getCloudFrontUrl(s3Key);
   }
   // 로컬 디스크 (개발)
   if (file.filename) {

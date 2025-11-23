@@ -715,16 +715,16 @@ export default {
           errors[field] = validateBoothNumber(value)
           break
         case 'companyKr':
-          errors[field] = validateKorean(value, '회사명(한글)')
+          errors[field] = validateKorean(value, '회사명 국문')
           break
         case 'companyEn':
-          errors[field] = validateEnglish(value, 'Company name')
+          errors[field] = validateEnglish(value, '회사명 영문')
           break
         case 'ceoKr':
-          errors[field] = validateKorean(value, '대표자명(한글)')
+          errors[field] = validateKorean(value, '대표자명 국문')
           break
         case 'ceoEn':
-          errors[field] = validateEnglish(value, 'CEO name')
+          errors[field] = validateEnglish(value, '대표자명 영문')
           break
         case 'website':
           errors[field] = validateWebsite(value)
@@ -733,10 +733,10 @@ export default {
           errors[field] = validatePhone(value, '대표연락처')
           break
         case 'addressKr':
-          errors[field] = validateKoreanAddress(value, '회사주소(한글)')
+          errors[field] = validateKoreanAddress(value, '회사주소 국문')
           break
         case 'addressEn':
-          errors[field] = validateEnglishAddress(value, 'Company address')
+          errors[field] = validateEnglishAddress(value, '회사주소 영문')
           break
         case 'contactName':
           errors[field] = validateKoreanOrEnglish(value, '담당자명')
@@ -748,10 +748,10 @@ export default {
           errors[field] = validateKoreanOrEnglish(value, '부서')
           break
         case 'contactMobile':
-          errors[field] = validatePhone(value, '담당자 연락처')
+          errors[field] = validatePhone(value, '담당자 연락처 (핸드폰)')
           break
         case 'companyDisplay':
-          errors[field] = validateEnglish(value, 'Company display name')
+          errors[field] = validateEnglish(value, '기업명 표기 내역')
           break
         default:
           break

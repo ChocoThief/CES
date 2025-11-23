@@ -603,66 +603,155 @@
                                 회사 로고 심볼 및 워드 마크 등 CI 표기내역
                                 첨부*</label
                             >
-                            <div
-                                class="file-upload-area"
-                                v-if="!uploadedFiles.companyLogo.name"
-                                :class="{ error: errors.companyLogo }"
-                            >
-                                <input
-                                    type="file"
-                                    id="companyLogo"
-                                    @change="
-                                        handleFileUpload('companyLogo', $event)
-                                    "
-                                    accept=".ai,.pdf,.eps"
-                                    required
-                                />
-                                <span class="file-upload-text"
-                                    >+ 파일 업로드</span
+
+                            <!-- 컬러 타입 로고 -->
+                            <div class="logo-upload-section">
+                                <label for="companyLogoColor" class="sub-label"
+                                    >컬러 타입 로고*</label
                                 >
-                            </div>
-                            <div v-else class="uploaded-file-info">
-                                <div class="file-info">
-                                    <span class="file-icon">📁</span>
-                                    <span class="file-name">{{
-                                        uploadedFiles.companyLogo.name
-                                    }}</span>
-                                </div>
-                                <div class="file-actions">
+                                <div
+                                    class="file-upload-area"
+                                    v-if="!uploadedFiles.companyLogoColor.name"
+                                    :class="{ error: errors.companyLogoColor }"
+                                >
                                     <input
                                         type="file"
-                                        :id="'companyLogo-new'"
+                                        id="companyLogoColor"
                                         @change="
                                             handleFileUpload(
-                                                'companyLogo',
+                                                'companyLogoColor',
                                                 $event,
                                             )
                                         "
                                         accept=".ai,.pdf,.eps"
-                                        class="hidden-file-input"
+                                        required
                                     />
-                                    <button
-                                        type="button"
-                                        @click="triggerFileInput('companyLogo')"
-                                        class="change-file-btn"
+                                    <span class="file-upload-text"
+                                        >+ 파일 업로드</span
                                     >
-                                        변경
-                                    </button>
-                                    <button
-                                        type="button"
-                                        @click="removeFile('companyLogo')"
-                                        class="remove-file-btn"
-                                    >
-                                        삭제
-                                    </button>
+                                </div>
+                                <div v-else class="uploaded-file-info">
+                                    <div class="file-info">
+                                        <span class="file-icon">📁</span>
+                                        <span class="file-name">{{
+                                            uploadedFiles.companyLogoColor.name
+                                        }}</span>
+                                    </div>
+                                    <div class="file-actions">
+                                        <input
+                                            type="file"
+                                            :id="'companyLogoColor-new'"
+                                            @change="
+                                                handleFileUpload(
+                                                    'companyLogoColor',
+                                                    $event,
+                                                )
+                                            "
+                                            accept=".ai,.pdf,.eps"
+                                            class="hidden-file-input"
+                                        />
+                                        <button
+                                            type="button"
+                                            @click="
+                                                triggerFileInput(
+                                                    'companyLogoColor',
+                                                )
+                                            "
+                                            class="change-file-btn"
+                                        >
+                                            변경
+                                        </button>
+                                        <button
+                                            type="button"
+                                            @click="removeFile('companyLogoColor')"
+                                            class="remove-file-btn"
+                                        >
+                                            삭제
+                                        </button>
+                                    </div>
+                                </div>
+                                <div
+                                    v-if="errors.companyLogoColor"
+                                    class="error-message"
+                                >
+                                    {{ errors.companyLogoColor }}
                                 </div>
                             </div>
-                            <div
-                                v-if="errors.companyLogo"
-                                class="error-message"
-                            >
-                                {{ errors.companyLogo }}
+
+                            <!-- 백색 단도 로고 -->
+                            <div class="logo-upload-section">
+                                <label for="companyLogoWhite" class="sub-label"
+                                    >백색 단도 로고*</label
+                                >
+                                <div
+                                    class="file-upload-area"
+                                    v-if="!uploadedFiles.companyLogoWhite.name"
+                                    :class="{ error: errors.companyLogoWhite }"
+                                >
+                                    <input
+                                        type="file"
+                                        id="companyLogoWhite"
+                                        @change="
+                                            handleFileUpload(
+                                                'companyLogoWhite',
+                                                $event,
+                                            )
+                                        "
+                                        accept=".ai,.pdf,.eps"
+                                        required
+                                    />
+                                    <span class="file-upload-text"
+                                        >+ 파일 업로드</span
+                                    >
+                                </div>
+                                <div v-else class="uploaded-file-info">
+                                    <div class="file-info">
+                                        <span class="file-icon">📁</span>
+                                        <span class="file-name">{{
+                                            uploadedFiles.companyLogoWhite.name
+                                        }}</span>
+                                    </div>
+                                    <div class="file-actions">
+                                        <input
+                                            type="file"
+                                            :id="'companyLogoWhite-new'"
+                                            @change="
+                                                handleFileUpload(
+                                                    'companyLogoWhite',
+                                                    $event,
+                                                )
+                                            "
+                                            accept=".ai,.pdf,.eps"
+                                            class="hidden-file-input"
+                                        />
+                                        <button
+                                            type="button"
+                                            @click="
+                                                triggerFileInput(
+                                                    'companyLogoWhite',
+                                                )
+                                            "
+                                            class="change-file-btn"
+                                        >
+                                            변경
+                                        </button>
+                                        <button
+                                            type="button"
+                                            @click="removeFile('companyLogoWhite')"
+                                            class="remove-file-btn"
+                                        >
+                                            삭제
+                                        </button>
+                                    </div>
+                                </div>
+                                <div
+                                    v-if="errors.companyLogoWhite"
+                                    class="error-message"
+                                >
+                                    {{ errors.companyLogoWhite }}
+                                </div>
                             </div>
+
                             <p class="file-note">
                                 * 첨부 시 Vector 기반의 출력용 파일 제출
                                 (**.ai_Adobe illustrator 방식 제출)<br />
@@ -1351,7 +1440,8 @@ export default {
             department: isTestMode ? "마케팅팀" : "",
             contactMobile: isTestMode ? "010-1234-5678" : "",
             companyDisplay: isTestMode ? "TEST COMPANY INC" : "",
-            companyLogo: null,
+            companyLogoColor: null,
+            companyLogoWhite: null,
             promoGraphic: null,
             tableGraphic: null,
             qrCode: isTestMode ? "have" : "none",
@@ -1382,7 +1472,8 @@ export default {
             department: "",
             contactMobile: "",
             companyDisplay: "",
-            companyLogo: "",
+            companyLogoColor: "",
+            companyLogoWhite: "",
             promoGraphic: "",
             qrFile: "",
             videoFile: "",
@@ -1393,7 +1484,8 @@ export default {
         });
 
         const uploadedFiles = reactive({
-            companyLogo: { name: "", file: null },
+            companyLogoColor: { name: "", file: null },
+            companyLogoWhite: { name: "", file: null },
             promoGraphic: { name: "", file: null },
             tableGraphic: { name: "", file: null },
             qrFile: { name: "", file: null },
@@ -1618,10 +1710,16 @@ export default {
             validateField("companyDisplay", formData.companyDisplay);
 
             // 파일 업로드 필드 검증
-            if (!formData.companyLogo) {
-                errors.companyLogo = "기업 로고(CI)를 업로드해주세요.";
+            if (!formData.companyLogoColor) {
+                errors.companyLogoColor = "컬러 타입 로고를 업로드해주세요.";
             } else {
-                errors.companyLogo = "";
+                errors.companyLogoColor = "";
+            }
+
+            if (!formData.companyLogoWhite) {
+                errors.companyLogoWhite = "백색 단도 로고를 업로드해주세요.";
+            } else {
+                errors.companyLogoWhite = "";
             }
 
             if (!formData.promoGraphic) {
@@ -1746,8 +1844,11 @@ export default {
             data.append("mou", formData.mou);
 
             // 파일 추가
-            if (formData.companyLogo) {
-                data.append("companyLogo", formData.companyLogo);
+            if (formData.companyLogoColor) {
+                data.append("companyLogoColor", formData.companyLogoColor);
+            }
+            if (formData.companyLogoWhite) {
+                data.append("companyLogoWhite", formData.companyLogoWhite);
             }
             if (formData.promoGraphic) {
                 data.append("promoGraphic", formData.promoGraphic);
@@ -2228,6 +2329,18 @@ export default {
 }
 
 /* File Upload Sections */
+.logo-upload-section {
+    margin-bottom: 20px;
+}
+
+.sub-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #495057;
+}
+
 .file-upload-area {
     position: relative;
     display: flex;

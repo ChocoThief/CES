@@ -93,32 +93,32 @@ module.exports = (sequelize) => {
 
     // 파일 URL
     companyLogoColorUrl: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(1000),
       allowNull: false,
       field: 'company_logo_color_url'
     },
     companyLogoWhiteUrl: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(1000),
       allowNull: false,
       field: 'company_logo_white_url'
     },
     promoGraphicUrl: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(1000),
       allowNull: false,
       field: 'promo_graphic_url'
     },
     tableGraphicUrl: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(1000),
       allowNull: true,
       field: 'table_graphic_url'
     },
     qrFileUrl: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(1000),
       allowNull: true,
       field: 'qr_file_url'
     },
     videoFileUrl: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(1000),
       allowNull: true,
       field: 'video_file_url'
     },

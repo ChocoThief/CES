@@ -16,7 +16,7 @@ const getFileUrl = (file) => {
   return null;
 };
 
-const createApplication = async (req, res) => {
+const createApplication = async (req, res, next) => {
   try {
     const {
       boothType, boothNumber,
@@ -81,7 +81,7 @@ const createApplication = async (req, res) => {
     });
   } catch (error) {
     console.error('Application creation error:', error);
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 

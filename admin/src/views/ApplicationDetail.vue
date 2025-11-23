@@ -18,6 +18,7 @@
             <!-- Header -->
             <div class="border-b bg-background">
                 <div class="flex items-center px-6 py-4 gap-4">
+                    <SidebarTrigger class="-ml-1" />
                     <Button variant="ghost" size="icon" @click="$router.back()">
                         <ChevronLeft class="h-5 w-5" />
                     </Button>
@@ -31,7 +32,6 @@
                     <TabsList class="mb-6">
                         <TabsTrigger value="info">기본 정보</TabsTrigger>
                         <TabsTrigger value="files">파일</TabsTrigger>
-                        <TabsTrigger value="admin">관리</TabsTrigger>
                     </TabsList>
 
                     <!-- Tab 1: Basic Info -->
@@ -47,29 +47,17 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            부스 타입
+                                            주관기관
                                         </div>
-                                        <div>
-                                            <Badge
-                                                :variant="
-                                                    app.boothType === 'eureka'
-                                                        ? 'default'
-                                                        : 'secondary'
-                                                "
-                                            >
-                                                {{
-                                                    app.boothType === "eureka"
-                                                        ? "Eureka Park"
-                                                        : "Global Pavilion"
-                                                }}
-                                            </Badge>
+                                        <div class="font-medium">
+                                            {{ app.boothType }}
                                         </div>
                                     </div>
                                     <div class="space-y-2">
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            부스 번호
+                                            부스번호
                                         </div>
                                         <div class="font-medium">
                                             {{ app.boothNumber }}
@@ -79,7 +67,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            간판 표기명(영문)
+                                            기업명 표기 내역
                                         </div>
                                         <div class="font-medium">
                                             {{ app.companyDisplay }}
@@ -100,7 +88,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            회사명(한글)
+                                            회사명 국문
                                         </div>
                                         <div class="font-medium">
                                             {{ app.companyKr }}
@@ -110,7 +98,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            회사명(영문)
+                                            회사명 영문
                                         </div>
                                         <div class="font-medium">
                                             {{ app.companyEn }}
@@ -120,7 +108,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            대표자(한글)
+                                            대표자명 국문
                                         </div>
                                         <div class="font-medium">
                                             {{ app.ceoKr }}
@@ -130,7 +118,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            대표자(영문)
+                                            대표자명 영문
                                         </div>
                                         <div class="font-medium">
                                             {{ app.ceoEn }}
@@ -162,7 +150,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            대표 전화
+                                            대표연락처
                                         </div>
                                         <div class="font-medium">
                                             {{ app.phone }}
@@ -172,7 +160,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            주소(한글)
+                                            회사주소 국문
                                         </div>
                                         <div class="font-medium">
                                             {{ app.addressKr }}
@@ -182,7 +170,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            주소(영문)
+                                            회사주소 영문
                                         </div>
                                         <div class="font-medium">
                                             {{ app.addressEn }}
@@ -213,7 +201,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            직급
+                                            담당자 직위
                                         </div>
                                         <div class="font-medium">
                                             {{ app.contactPosition }}
@@ -233,7 +221,7 @@
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
-                                            휴대폰
+                                            담당자 연락처 (핸드폰)
                                         </div>
                                         <div class="font-medium">
                                             {{ app.contactMobile }}
@@ -328,7 +316,7 @@
                                             신청일
                                         </div>
                                         <div class="font-medium">
-                                            {{ formatDate(app.createdAt) }}
+                                            {{ formatDate(app.created_at) }}
                                         </div>
                                     </div>
                                     <div class="space-y-2">
@@ -338,7 +326,7 @@
                                             수정일
                                         </div>
                                         <div class="font-medium">
-                                            {{ formatDate(app.updatedAt) }}
+                                            {{ formatDate(app.updated_at) }}
                                         </div>
                                     </div>
                                 </div>
@@ -553,22 +541,6 @@
                             </CardContent>
                         </Card>
                     </TabsContent>
-
-                    <!-- Tab 3: Admin -->
-                    <TabsContent value="admin">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>관리</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div
-                                    class="flex items-center justify-center py-12 text-muted-foreground"
-                                >
-                                    관리 기능 준비 중
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
                 </Tabs>
             </div>
         </div>
@@ -583,6 +555,7 @@ import { toast } from "vue-sonner";
 import { ChevronLeft, FileDown, File, Video } from "lucide-vue-next";
 
 import DashboardLayout from "@/layouts/DashboardLayout.vue";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -603,7 +576,16 @@ onMounted(async () => {
 });
 
 const formatDate = (dateString) => {
+    if (!dateString) return '-';
     const date = new Date(dateString);
-    return date.toLocaleString("ko-KR");
+    if (isNaN(date.getTime())) return '-';
+    return date.toLocaleString("ko-KR", {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
 };
 </script>

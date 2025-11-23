@@ -39,14 +39,14 @@
                     <TableHeader>
                         <TableRow>
                             <TableHead>ID</TableHead>
-                            <TableHead>부스타입</TableHead>
+                            <TableHead>주관기관</TableHead>
                             <TableHead>부스번호</TableHead>
-                            <TableHead>회사명(한)</TableHead>
-                            <TableHead>회사명(영)</TableHead>
-                            <TableHead>피칭</TableHead>
-                            <TableHead>도슨트</TableHead>
+                            <TableHead>회사명 국문</TableHead>
+                            <TableHead>회사명 영문</TableHead>
+                            <TableHead>피칭 이벤트</TableHead>
+                            <TableHead>도슨트 투어</TableHead>
                             <TableHead>통역</TableHead>
-                            <TableHead>MOU</TableHead>
+                            <TableHead>MOU 체결식</TableHead>
                             <TableHead>신청일</TableHead>
                         </TableRow>
                     </TableHeader>
@@ -60,21 +60,7 @@
                             <TableCell class="font-medium">{{
                                 app.id
                             }}</TableCell>
-                            <TableCell>
-                                <Badge
-                                    :variant="
-                                        app.boothType === 'eureka'
-                                            ? 'default'
-                                            : 'secondary'
-                                    "
-                                >
-                                    {{
-                                        app.boothType === "eureka"
-                                            ? "Eureka"
-                                            : "Global"
-                                    }}
-                                </Badge>
-                            </TableCell>
+                            <TableCell>{{ app.boothType }}</TableCell>
                             <TableCell>{{ app.boothNumber }}</TableCell>
                             <TableCell>{{ app.companyKr }}</TableCell>
                             <TableCell>{{ app.companyEn }}</TableCell>
@@ -125,7 +111,7 @@
                                 </Badge>
                             </TableCell>
                             <TableCell>{{
-                                formatDate(app.createdAt)
+                                formatDate(app.created_at)
                             }}</TableCell>
                         </TableRow>
                     </TableBody>

@@ -39,7 +39,7 @@ const getApplications = async (req, res) => {
     });
   } catch (error) {
     console.error('Get applications error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: '신청 목록을 불러오는데 실패했습니다.' });
   }
 };
 
@@ -50,13 +50,13 @@ const getApplicationById = async (req, res) => {
     const application = await Application.findByPk(id);
 
     if (!application) {
-      return res.status(404).json({ error: 'Application not found' });
+      return res.status(404).json({ error: '신청 정보를 찾을 수 없습니다.' });
     }
 
     res.json(application);
   } catch (error) {
     console.error('Get application error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: '신청 정보를 불러오는데 실패했습니다.' });
   }
 };
 

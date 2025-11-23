@@ -25,7 +25,8 @@ const s3Client = isDevelopment ? null : new S3Client({
 
 const fileFilter = (req, file, cb) => {
   const allowedExts = {
-    companyLogo: ['.ai', '.pdf', '.eps'],
+    companyLogoColor: ['.ai', '.pdf', '.eps'],
+    companyLogoWhite: ['.ai', '.pdf', '.eps'],
     promoGraphic: ['.ai', '.psd', '.pdf', '.eps'],
     tableGraphic: ['.ai', '.psd', '.pdf', '.eps'],
     qrFile: ['.ai', '.psd', '.pdf', '.eps'],
@@ -38,7 +39,7 @@ const fileFilter = (req, file, cb) => {
   if (allowedExts[fieldName] && allowedExts[fieldName].includes(ext)) {
     cb(null, true);
   } else {
-    cb(new Error(`Invalid file type for ${fieldName}. Allowed: ${allowedExts[fieldName]?.join(', ')}`));
+    cb(new Error(`${fieldName} 파일 형식이 올바르지 않습니다. 허용된 형식: ${allowedExts[fieldName]?.join(', ') || '정의되지 않음'}`));
   }
 };
 

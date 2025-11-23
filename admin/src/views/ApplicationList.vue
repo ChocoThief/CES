@@ -6,18 +6,30 @@
         </header>
 
         <div class="flex flex-1 flex-col gap-4 p-4">
-            <div class="relative max-w-sm">
-                <Search
-                    class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-                    :size="20"
-                />
-                <Input
-                    v-model="searchQuery"
-                    type="text"
-                    placeholder="회사명 또는 부스번호로 검색..."
-                    class="pl-10"
-                    @input="debounceSearch"
-                />
+            <div class="flex gap-2 max-w-md">
+                <div class="relative flex-1">
+                    <Search
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                        :size="20"
+                    />
+                    <Input
+                        v-model="searchQuery"
+                        type="text"
+                        placeholder="회사명 또는 부스번호로 검색..."
+                        class="pl-10"
+                        @keyup.enter="handleSearch"
+                    />
+                </div>
+                <Button @click="handleSearch" :disabled="store.loading">
+                    검색
+                </Button>
+                <Button
+                    variant="outline"
+                    @click="handleReset"
+                    :disabled="store.loading"
+                >
+                    초기화
+                </Button>
             </div>
 
             <div
@@ -72,7 +84,7 @@
                                             : 'secondary'
                                     "
                                 >
-                                    {{ app.pitching === "yes" ? "참여" : "-" }}
+                                    {{ app.pitching === "yes" ? "참여 희망" : "참여 안 함" }}
                                 </Badge>
                             </TableCell>
                             <TableCell>
@@ -83,7 +95,7 @@
                                             : 'secondary'
                                     "
                                 >
-                                    {{ app.docent === "yes" ? "참여" : "-" }}
+                                    {{ app.docent === "yes" ? "참여 희망" : "참여 안 함" }}
                                 </Badge>
                             </TableCell>
                             <TableCell>
@@ -95,7 +107,7 @@
                                     "
                                 >
                                     {{
-                                        app.interpreter === "yes" ? "참여" : "-"
+                                        app.interpreter === "yes" ? "통역 필요" : "통역 불필요"
                                     }}
                                 </Badge>
                             </TableCell>
@@ -107,11 +119,11 @@
                                             : 'secondary'
                                     "
                                 >
-                                    {{ app.mou === "yes" ? "참여" : "-" }}
+                                    {{ app.mou === "yes" ? "MOU체결식 신청" : "미신청" }}
                                 </Badge>
                             </TableCell>
                             <TableCell>{{
-                                formatDate(app.created_at)
+                                formatDate(app.createdAt)
                             }}</TableCell>
                         </TableRow>
                     </TableBody>
@@ -175,7 +187,6 @@ const router = useRouter();
 const store = useApplicationsStore();
 
 const searchQuery = ref("");
-let searchTimeout = null;
 
 onMounted(async () => {
     try {
@@ -185,15 +196,21 @@ onMounted(async () => {
     }
 });
 
-const debounceSearch = () => {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(async () => {
-        try {
-            await store.fetchApplications(1, searchQuery.value);
-        } catch (error) {
-            toast.error("검색 중 오류가 발생했습니다.");
-        }
-    }, 500);
+const handleSearch = async () => {
+    try {
+        await store.fetchApplications(1, searchQuery.value);
+    } catch (error) {
+        toast.error("검색 중 오류가 발생했습니다.");
+    }
+};
+
+const handleReset = async () => {
+    searchQuery.value = "";
+    try {
+        await store.fetchApplications(1, "");
+    } catch (error) {
+        toast.error("목록을 불러오는데 실패했습니다.");
+    }
 };
 
 const changePage = async (page) => {
@@ -209,7 +226,9 @@ const goToDetail = (id) => {
 };
 
 const formatDate = (dateString) => {
+    if (!dateString) return '-';
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return '-';
     return (
         date.toLocaleDateString("ko-KR") +
         " " +

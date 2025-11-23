@@ -29,16 +29,17 @@ const createApplication = async (req, res) => {
 
     // 파일 URL 추출
     const files = req.files;
-    const companyLogoUrl = getFileUrl(files.companyLogo?.[0]);
+    const companyLogoColorUrl = getFileUrl(files.companyLogoColor?.[0]);
+    const companyLogoWhiteUrl = getFileUrl(files.companyLogoWhite?.[0]);
     const promoGraphicUrl = getFileUrl(files.promoGraphic?.[0]);
     const tableGraphicUrl = getFileUrl(files.tableGraphic?.[0]);
     const qrFileUrl = getFileUrl(files.qrFile?.[0]);
     const videoFileUrl = getFileUrl(files.videoFile?.[0]);
 
     // 필수 파일 검증
-    if (!companyLogoUrl || !promoGraphicUrl) {
+    if (!companyLogoColorUrl || !companyLogoWhiteUrl || !promoGraphicUrl) {
       return res.status(400).json({
-        error: 'Company logo and promo graphic are required'
+        error: 'Company logo (color and white) and promo graphic are required'
       });
     }
 
@@ -59,7 +60,8 @@ const createApplication = async (req, res) => {
       department,
       contactMobile,
       companyDisplay,
-      companyLogoUrl,
+      companyLogoColorUrl,
+      companyLogoWhiteUrl,
       promoGraphicUrl,
       tableGraphicUrl,
       qrFileUrl,

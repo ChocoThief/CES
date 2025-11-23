@@ -92,10 +92,15 @@ module.exports = (sequelize) => {
     },
 
     // 파일 URL
-    companyLogoUrl: {
+    companyLogoColorUrl: {
       type: DataTypes.STRING(500),
       allowNull: false,
-      field: 'company_logo_url'
+      field: 'company_logo_color_url'
+    },
+    companyLogoWhiteUrl: {
+      type: DataTypes.STRING(500),
+      allowNull: false,
+      field: 'company_logo_white_url'
     },
     promoGraphicUrl: {
       type: DataTypes.STRING(500),

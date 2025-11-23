@@ -48,6 +48,12 @@ docker-compose exec -T mariadb healthcheck.sh --connect --innodb_initialized || 
     sleep 10
 }
 
+# 데이터베이스 마이그레이션 실행
+echo "데이터베이스 마이그레이션 실행 중..."
+docker-compose exec -T backend npm run migrate || {
+    echo -e "${YELLOW}⚠ 마이그레이션 실패 또는 이미 실행됨${NC}"
+}
+
 # 데이터베이스 시드 실행 (관리자 계정 생성)
 echo "데이터베이스 초기 데이터 생성 중..."
 docker-compose exec -T backend npm run seed || {

@@ -1,7 +1,8 @@
 const { upload } = require('../config/s3');
 
 const uploadMiddleware = upload.fields([
-  { name: 'companyLogo', maxCount: 1 },
+  { name: 'companyLogoColor', maxCount: 1 },
+  { name: 'companyLogoWhite', maxCount: 1 },
   { name: 'promoGraphic', maxCount: 1 },
   { name: 'tableGraphic', maxCount: 1 },
   { name: 'qrFile', maxCount: 1 },

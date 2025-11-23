@@ -249,8 +249,8 @@
                                         피칭 이벤트:
                                         {{
                                             app.pitching === "yes"
-                                                ? "참여"
-                                                : "미참여"
+                                                ? "참여 희망"
+                                                : "참여 안 함"
                                         }}
                                     </Badge>
                                     <Badge
@@ -264,8 +264,8 @@
                                         도슨트 투어:
                                         {{
                                             app.docent === "yes"
-                                                ? "참여"
-                                                : "미참여"
+                                                ? "참여 희망"
+                                                : "참여 안 함"
                                         }}
                                     </Badge>
                                     <Badge
@@ -276,11 +276,11 @@
                                         "
                                         class="px-4 py-2"
                                     >
-                                        현지 통역:
+                                        통역:
                                         {{
                                             app.interpreter === "yes"
-                                                ? "필요"
-                                                : "불필요"
+                                                ? "통역 필요"
+                                                : "통역 불필요"
                                         }}
                                     </Badge>
                                     <Badge
@@ -294,7 +294,7 @@
                                         MOU 체결식:
                                         {{
                                             app.mou === "yes"
-                                                ? "신청"
+                                                ? "MOU체결식 신청"
                                                 : "미신청"
                                         }}
                                     </Badge>
@@ -316,19 +316,19 @@
                                             신청일
                                         </div>
                                         <div class="font-medium">
-                                            {{ formatDate(app.created_at) }}
+                                            {{ formatDate(app.createdAt) }}
                                         </div>
                                     </div>
-                                    <div class="space-y-2">
+                                    <!-- <div class="space-y-2">
                                         <div
                                             class="text-sm text-muted-foreground"
                                         >
                                             수정일
                                         </div>
                                         <div class="font-medium">
-                                            {{ formatDate(app.updated_at) }}
+                                            {{ formatDate(app.updatedAt) }}
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </CardContent>
                         </Card>
@@ -336,17 +336,17 @@
 
                     <!-- Tab 2: Files -->
                     <TabsContent value="files" class="space-y-6">
-                        <!-- Company Logo -->
+                        <!-- Company Logo Color -->
                         <Card>
                             <CardHeader>
                                 <CardTitle class="flex items-center gap-2">
                                     <File class="h-5 w-5" />
-                                    회사 로고 (CI)
+                                    기업 로고 (컬러 타입)
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <div
-                                    v-if="app.companyLogoUrl"
+                                    v-if="app.companyLogoColorUrl"
                                     class="flex items-center justify-between"
                                 >
                                     <span class="text-sm text-muted-foreground"
@@ -358,7 +358,47 @@
                                         as-child
                                     >
                                         <a
-                                            :href="app.companyLogoUrl"
+                                            :href="app.companyLogoColorUrl"
+                                            target="_blank"
+                                            class="flex items-center gap-2"
+                                        >
+                                            <FileDown class="h-4 w-4" />
+                                            다운로드
+                                        </a>
+                                    </Button>
+                                </div>
+                                <div
+                                    v-else
+                                    class="text-sm text-muted-foreground"
+                                >
+                                    파일 없음
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <!-- Company Logo White -->
+                        <Card>
+                            <CardHeader>
+                                <CardTitle class="flex items-center gap-2">
+                                    <File class="h-5 w-5" />
+                                    기업 로고 (백색 단도)
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <div
+                                    v-if="app.companyLogoWhiteUrl"
+                                    class="flex items-center justify-between"
+                                >
+                                    <span class="text-sm text-muted-foreground"
+                                        >파일이 등록되었습니다</span
+                                    >
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        as-child
+                                    >
+                                        <a
+                                            :href="app.companyLogoWhiteUrl"
                                             target="_blank"
                                             class="flex items-center gap-2"
                                         >
@@ -381,7 +421,7 @@
                             <CardHeader>
                                 <CardTitle class="flex items-center gap-2">
                                     <File class="h-5 w-5" />
-                                    홍보 그래픽
+                                    홍보 그래픽 (공통)
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -421,7 +461,7 @@
                             <CardHeader>
                                 <CardTitle class="flex items-center gap-2">
                                     <File class="h-5 w-5" />
-                                    테이블 그래픽
+                                    홍보 그래픽 (EP관 전용)
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -461,7 +501,7 @@
                             <CardHeader>
                                 <CardTitle class="flex items-center gap-2">
                                     <File class="h-5 w-5" />
-                                    QR 코드 파일
+                                    QR CODE
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -503,7 +543,7 @@
                             <CardHeader>
                                 <CardTitle class="flex items-center gap-2">
                                     <Video class="h-5 w-5" />
-                                    프로모 비디오
+                                    홍보 영상
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>

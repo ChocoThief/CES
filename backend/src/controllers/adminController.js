@@ -47,7 +47,14 @@ const getApplicationById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const application = await Application.findByPk(id);
+    const application = await Application.findByPk(id, {
+      attributes: {
+        include: [
+          ['created_at', 'createdAt'],
+          ['updated_at', 'updatedAt']
+        ]
+      }
+    });
 
     if (!application) {
       return res.status(404).json({ error: '신청 정보를 찾을 수 없습니다.' });

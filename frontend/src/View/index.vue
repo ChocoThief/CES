@@ -898,6 +898,7 @@ export default {
       if (validationErrors.length > 0) {
         // 첫 번째 에러가 있는 필드로 스크롤
         scrollToFirstError()
+        alert('필수 항목을 모두 입력해주세요.')
         return
       }
 

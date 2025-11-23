@@ -8,9 +8,18 @@
       "Bash(curl:*)",
       "Bash(cat:*)",
       "Bash(lsof:*)",
-      "Bash(npx tailwindcss:*)"
+      "Bash(npx tailwindcss:*)",
+      "mcp__shadcnVue__get_project_registries",
+      "mcp__shadcnVue__list_items_in_registries",
+      "mcp__shadcnVue__get_add_command_for_items",
+      "Bash(npx shadcn-vue@latest init:*)",
+      "mcp__shadcnVue__get_item_examples_from_registries"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "shadcnVue"
+  ]
 }

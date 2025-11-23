@@ -17,14 +17,22 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(helmet());
-app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || 'http://localhost:8080',
-    process.env.ADMIN_URL || 'http://localhost:3000',
-    'http://localhost:3001'  // 개발용 Admin
-  ],
-  credentials: true
-}));
+
+// CORS 설정 - 로컬 개발 환경에서는 모든 origin 허용
+const corsOptions = process.env.NODE_ENV === 'production'
+  ? {
+      origin: [
+        process.env.FRONTEND_URL,
+        process.env.ADMIN_URL
+      ].filter(Boolean),
+      credentials: true
+    }
+  : {
+      origin: true, // 개발 환경에서는 모든 origin 허용
+      credentials: true
+    };
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

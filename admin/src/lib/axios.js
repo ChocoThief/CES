@@ -1,4 +1,5 @@
 import axios from 'axios';
+import router from '../router';
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
@@ -26,8 +27,13 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      window.location.href = '/login';
+      // 로그인 API 요청은 제외 (로그인 실패는 Login 컴포넌트에서 처리)
+      const isLoginRequest = error.config?.url?.includes('/auth/login');
+
+      if (!isLoginRequest) {
+        localStorage.removeItem('token');
+        router.push('/login');
+      }
     }
     return Promise.reject(error);
   }

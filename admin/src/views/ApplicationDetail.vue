@@ -1,24 +1,38 @@
 <template>
-  <SidebarProvider>
-    <Sidebar>
-      <SidebarHeader class="border-b px-6 py-4">
-        <h2 class="text-xl font-semibold">CES 2026 Admin</h2>
+  <SidebarProvider :default-open="true">
+    <Sidebar collapsible="none">
+      <SidebarHeader>
+        <div class="flex items-center gap-2 px-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+            <LayoutDashboard :size="20" />
+          </div>
+          <div class="flex flex-col flex-1">
+            <span class="text-base font-semibold">CES 2026</span>
+            <span class="text-xs text-muted-foreground">관리자 페이지</span>
+          </div>
+        </div>
       </SidebarHeader>
 
-      <SidebarContent class="px-3 py-4">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton as-child :is-active="true">
-              <router-link to="/" class="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md">
-                신청 목록
-              </router-link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>관리</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton as-child :is-active="true">
+                  <router-link to="/" class="flex items-center gap-2">
+                    <LayoutDashboard :size="18" />
+                    <span>신청 목록</span>
+                  </router-link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
     </Sidebar>
 
-    <main class="flex-1 flex flex-col min-h-screen">
+    <SidebarInset>
       <div v-if="store.loading" class="flex items-center justify-center flex-1 text-muted-foreground">
         로딩 중...
       </div>
@@ -323,7 +337,7 @@
           </Tabs>
         </div>
       </div>
-    </main>
+    </SidebarInset>
   </SidebarProvider>
 </template>
 
@@ -331,34 +345,39 @@
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useApplicationsStore } from '../stores/applications';
-import { ChevronLeft, FileDown, File, Video } from 'lucide-vue-next';
+import { toast } from 'vue-sonner';
+import { ChevronLeft, FileDown, File, Video, LayoutDashboard } from 'lucide-vue-next';
 
-import SidebarProvider from '../components/ui/SidebarProvider.vue';
-import Sidebar from '../components/ui/Sidebar.vue';
-import SidebarHeader from '../components/ui/SidebarHeader.vue';
-import SidebarContent from '../components/ui/SidebarContent.vue';
-import SidebarMenu from '../components/ui/SidebarMenu.vue';
-import SidebarMenuItem from '../components/ui/SidebarMenuItem.vue';
-import SidebarMenuButton from '../components/ui/SidebarMenuButton.vue';
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarInset
+} from '@/components/ui/sidebar';
 
-import Button from '../components/ui/Button.vue';
-import Badge from '../components/ui/Badge.vue';
-import Card from '../components/ui/Card.vue';
-import CardHeader from '../components/ui/CardHeader.vue';
-import CardTitle from '../components/ui/CardTitle.vue';
-import CardContent from '../components/ui/CardContent.vue';
-import Tabs from '../components/ui/Tabs.vue';
-import TabsList from '../components/ui/TabsList.vue';
-import TabsTrigger from '../components/ui/TabsTrigger.vue';
-import TabsContent from '../components/ui/TabsContent.vue';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 const route = useRoute();
 const store = useApplicationsStore();
 
 const app = computed(() => store.currentApplication);
 
-onMounted(() => {
-  store.fetchApplicationById(route.params.id);
+onMounted(async () => {
+  try {
+    await store.fetchApplicationById(route.params.id);
+  } catch (error) {
+    toast.error('신청 정보를 불러오는데 실패했습니다.');
+  }
 });
 
 const formatDate = (dateString) => {

@@ -1,36 +1,32 @@
 <template>
-  <SidebarProvider>
-    <Sidebar>
+  <SidebarProvider :default-open="true">
+    <Sidebar collapsible="none">
       <SidebarHeader>
-        <div class="flex items-center gap-2 px-4 py-6">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+        <div class="flex items-center gap-2 px-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <LayoutDashboard :size="20" />
           </div>
-          <span class="text-lg font-semibold">CES 2026</span>
+          <div class="flex flex-col flex-1">
+            <span class="text-base font-semibold">CES 2026</span>
+            <span class="text-xs text-muted-foreground">관리자 페이지</span>
+          </div>
         </div>
       </SidebarHeader>
 
       <SidebarContent>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton :active="true">
-              <LayoutDashboard :size="20" />
-              <span>신청 목록</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton :disabled="true">
-              <BarChart3 :size="20" />
-              <span>통계</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton :disabled="true">
-              <Settings :size="20" />
-              <span>설정</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <SidebarGroup>
+          <SidebarGroupLabel>관리</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton :active="true">
+                  <LayoutDashboard :size="20" />
+                  <span>신청 목록</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter>
@@ -45,16 +41,12 @@
       </SidebarFooter>
     </Sidebar>
 
-    <main class="flex-1 overflow-auto">
-      <div class="flex h-14 items-center gap-4 border-b px-6">
-        <SidebarTrigger />
-      </div>
+    <SidebarInset>
+      <header class="flex h-16 shrink-0 items-center gap-2 border-b px-6">
+        <h1 class="text-xl font-semibold">신청 목록</h1>
+      </header>
 
-      <div class="p-6 space-y-4">
-        <div class="flex items-center justify-between">
-          <h1 class="text-3xl font-bold">CES 2026 신청 목록</h1>
-        </div>
-
+      <div class="flex flex-1 flex-col gap-4 p-4">
         <div class="relative max-w-sm">
           <Search class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" :size="20" />
           <Input
@@ -156,7 +148,7 @@
           </Button>
         </div>
       </div>
-    </main>
+    </SidebarInset>
   </SidebarProvider>
 </template>
 
@@ -165,34 +157,33 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useApplicationsStore } from '../stores/applications';
 import { useAuthStore } from '../stores/auth';
+import { toast } from 'vue-sonner';
 
-import SidebarProvider from '../components/ui/SidebarProvider.vue';
-import Sidebar from '../components/ui/Sidebar.vue';
-import SidebarHeader from '../components/ui/SidebarHeader.vue';
-import SidebarContent from '../components/ui/SidebarContent.vue';
-import SidebarFooter from '../components/ui/SidebarFooter.vue';
-import SidebarMenu from '../components/ui/SidebarMenu.vue';
-import SidebarMenuItem from '../components/ui/SidebarMenuItem.vue';
-import SidebarMenuButton from '../components/ui/SidebarMenuButton.vue';
-import SidebarTrigger from '../components/ui/SidebarTrigger.vue';
-import Table from '../components/ui/Table.vue';
-import TableHeader from '../components/ui/TableHeader.vue';
-import TableBody from '../components/ui/TableBody.vue';
-import TableHead from '../components/ui/TableHead.vue';
-import TableRow from '../components/ui/TableRow.vue';
-import TableCell from '../components/ui/TableCell.vue';
-import Badge from '../components/ui/Badge.vue';
-import Button from '../components/ui/Button.vue';
-import Input from '../components/ui/Input.vue';
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarInset
+} from '@/components/ui/sidebar';
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 import {
   Search,
   ChevronLeft,
   ChevronRight,
   LayoutDashboard,
-  Settings,
-  LogOut,
-  BarChart3
+  LogOut
 } from 'lucide-vue-next';
 
 const router = useRouter();
@@ -202,19 +193,31 @@ const authStore = useAuthStore();
 const searchQuery = ref('');
 let searchTimeout = null;
 
-onMounted(() => {
-  store.fetchApplications();
+onMounted(async () => {
+  try {
+    await store.fetchApplications();
+  } catch (error) {
+    toast.error('신청 목록을 불러오는데 실패했습니다.');
+  }
 });
 
 const debounceSearch = () => {
   clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(() => {
-    store.fetchApplications(1, searchQuery.value);
+  searchTimeout = setTimeout(async () => {
+    try {
+      await store.fetchApplications(1, searchQuery.value);
+    } catch (error) {
+      toast.error('검색 중 오류가 발생했습니다.');
+    }
   }, 500);
 };
 
-const changePage = (page) => {
-  store.fetchApplications(page, searchQuery.value);
+const changePage = async (page) => {
+  try {
+    await store.fetchApplications(page, searchQuery.value);
+  } catch (error) {
+    toast.error('페이지를 불러오는데 실패했습니다.');
+  }
 };
 
 const goToDetail = (id) => {
@@ -223,6 +226,7 @@ const goToDetail = (id) => {
 
 const handleLogout = () => {
   authStore.logout();
+  toast.success('로그아웃 되었습니다.');
   router.push('/login');
 };
 

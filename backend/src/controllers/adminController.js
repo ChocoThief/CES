@@ -26,7 +26,7 @@ const getApplications = async (req, res) => {
         'id', 'boothType', 'boothNumber',
         'companyKr', 'companyEn',
         'pitching', 'docent', 'interpreter', 'mou',
-        'createdAt'
+        ['created_at', 'createdAt']
       ]
     });
 

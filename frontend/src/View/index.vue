@@ -517,7 +517,15 @@
           </div>
 
           <div class="submit-section">
-            <button type="button" @click="submitForm" class="submit-btn">다음</button>
+            <button
+              type="button"
+              @click="submitForm"
+              class="submit-btn"
+              :disabled="isSubmitting"
+              :style="{ opacity: isSubmitting ? 0.6 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }"
+            >
+              {{ isSubmitting ? '제출 중...' : '다음' }}
+            </button>
           </div>
         </div>
       </div>
@@ -531,6 +539,8 @@ import { ref, reactive, computed, watch } from 'vue'
 export default {
   name: 'CesSurvey',
   setup() {
+    const isSubmitting = ref(false)
+
     const formData = reactive({
       boothType: '',
       boothNumber: '',
@@ -969,31 +979,59 @@ export default {
         videoFile: formData.videoFile ? formData.videoFile.name : '없음'
       })
       
-      console.log('FormData 객체 준비 완료 - API 전송 준비됨')
-      
-      alert('데이터 준비 완료!\n콘솔에서 데이터를 확인하세요.')
-      
-      // TODO: API가 준비되면 아래 코드 사용
-      /*
+      console.log('FormData 객체 준비 완료 - API 전송 시작')
+
+      // API 전송
       try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'https://api.ceskorea.kr/api'
+        isSubmitting.value = true
+
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api'
         const response = await fetch(`${apiUrl}/applications`, {
           method: 'POST',
           body: data
         })
-        
+
         const result = await response.json()
-        
+
         if (response.ok) {
-          alert('신청이 완료되었습니다!\n신청 ID: ' + result.applicationId)
+          alert(`✅ 신청이 완료되었습니다!\n\n신청 ID: ${result.applicationId}`)
+
+          // 폼 초기화
+          Object.keys(formData).forEach(key => {
+            if (key.includes('Code') || key.includes('Video')) {
+              formData[key] = 'none'
+            } else if (key === 'pitching' || key === 'docent' || key === 'interpreter' || key === 'mou') {
+              formData[key] = ''
+            } else if (typeof formData[key] === 'string') {
+              formData[key] = ''
+            } else {
+              formData[key] = null
+            }
+          })
+
+          // 업로드된 파일 정보 초기화
+          Object.keys(uploadedFiles).forEach(key => {
+            uploadedFiles[key] = { name: '', file: null }
+          })
+
+          // 페이지 최상단으로 스크롤
+          window.scrollTo({ top: 0, behavior: 'smooth' })
         } else {
-          alert('신청 중 오류가 발생했습니다: ' + result.error)
+          const errorMsg = result.error || '신청 처리 중 오류가 발생했습니다.'
+          alert(`❌ ${errorMsg}`)
         }
       } catch (error) {
         console.error('Submit error:', error)
-        alert('신청 중 오류가 발생했습니다. 다시 시도해주세요.')
+
+        // 네트워크 에러 처리
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+          alert('❌ 서버에 연결할 수 없습니다.\n\n백엔드 서버가 실행 중인지 확인해주세요.\n(http://localhost:5001)')
+        } else {
+          alert('❌ 신청 중 오류가 발생했습니다.\n\n' + error.message)
+        }
+      } finally {
+        isSubmitting.value = false
       }
-      */
     }
 
     // 라디오 버튼 값 변경 시 에러 메시지 초기화 (QR코드와 홍보영상은 제외)
@@ -1018,6 +1056,7 @@ export default {
       formData,
       errors,
       uploadedFiles,
+      isSubmitting,
       handleFileUpload,
       removeFile,
       triggerFileInput,

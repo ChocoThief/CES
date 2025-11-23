@@ -63,8 +63,10 @@ const storage = isDevelopment
       },
       key: (req, file, cb) => {
         const timestamp = Date.now();
-        const filename = `${timestamp}-${file.originalname}`;
-        cb(null, filename);
+        const ext = path.extname(file.originalname);
+        // URL-safe 파일명 생성 (한글 파일명 인코딩 문제 방지)
+        const safeFilename = `${timestamp}-${Buffer.from(file.originalname).toString('base64').replace(/[/+=]/g, '_')}${ext}`;
+        cb(null, safeFilename);
       },
       contentType: multerS3.AUTO_CONTENT_TYPE
     });

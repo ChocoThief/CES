@@ -881,7 +881,9 @@ export default {
     const scrollToFirstError = () => {
       const firstErrorField = Object.keys(errors).find(field => errors[field])
       if (firstErrorField) {
-        const element = document.getElementById(firstErrorField) || document.querySelector(`[id*="${firstErrorField}"]`)
+        // camelCase를 kebab-case로 변환 (예: boothType -> booth-type)
+        const kebabCaseId = firstErrorField.replace(/([A-Z])/g, '-$1').toLowerCase()
+        const element = document.getElementById(kebabCaseId) || document.getElementById(firstErrorField)
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' })
           element.focus()

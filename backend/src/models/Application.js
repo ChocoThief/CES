@@ -10,12 +10,9 @@ module.exports = (sequelize) => {
 
     // 부스 정보
     boothType: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(100),
       allowNull: false,
-      field: 'booth_type',
-      validate: {
-        isIn: [['eureka', 'global']]
-      }
+      field: 'booth_type'
     },
     boothNumber: {
       type: DataTypes.STRING(50),

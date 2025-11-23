@@ -644,23 +644,23 @@ export default {
 
     const validateEnglishAddress = (value, fieldName) => {
       if (!value) {
-        return `${fieldName} is required.`
+        return `${fieldName}을(를) 입력해주세요.`
       }
       // 영문, 숫자, 주소에 필요한 특수문자들 허용
       const addressRegex = /^[A-Za-z0-9\s\.\,\-\(\)\#\/\&]+$/
       if (!addressRegex.test(value)) {
-        return 'Please enter a valid address format.'
+        return '올바른 주소 형식을 입력해주세요.'
       }
       return ''
     }
 
     const validateEnglish = (value, fieldName) => {
       if (!value) {
-        return `${fieldName} is required.`
+        return `${fieldName}을(를) 입력해주세요.`
       }
       const englishRegex = /^[A-Za-z\s\.\,\-\&\(\)]+$/
       if (!englishRegex.test(value)) {
-        return 'English characters only.'
+        return '영문만 입력 가능합니다.'
       }
       return ''
     }
@@ -898,7 +898,6 @@ export default {
       if (validationErrors.length > 0) {
         // 첫 번째 에러가 있는 필드로 스크롤
         scrollToFirstError()
-        alert('다음 항목을 확인해주세요:\n\n' + validationErrors.join('\n'))
         return
       }
 

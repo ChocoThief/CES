@@ -96,7 +96,7 @@
                                             02-501-8694 / ces2026.ep@gmail.com
                                         </li>
                                         <li>
-                                            - Global Pavillion관 : 이정인 사원 /
+                                            - Global Pavilion관 : 이정인 사원 /
                                             070-8645-0638 / ces2026j@gmail.com
                                         </li>
                                         <li>- 장치사 대표번호 : 02-501-0836</li>
@@ -106,7 +106,7 @@
                         </li>
                         <li>
                             • 운영관련 문의 (제품시연회, 도슨트 투어, 통역 등) :
-                            070-7790-0257
+                            070-7790-0257 / ces2026korea@gmail.com
                         </li>
                     </ul>
                 </div>
@@ -133,7 +133,7 @@
                         </li>
                         <br />
                         <li>
-                            2. Global Pavillion관
+                            2. Global Pavilion관
                             <ul class="notice-sub-list">
                                 <li>1) 그래픽 : 월(wall)그래픽 1ea</li>
                                 <li>
@@ -220,7 +220,7 @@
                                     <br />
                                     <p>
                                         <strong
-                                            >1. Global Pavillion관 부스번호
+                                            >1. Global Pavilion관 부스번호
                                             입력방법</strong
                                         >
                                     </p>
@@ -555,16 +555,16 @@
 
                         <div class="global-booth">
                             <h4>
-                                &lt;Global Pavillion관 부스표기 참고 이미지&gt;
+                                &lt;Global Pavilion관 부스표기 참고 이미지&gt;
                             </h4>
                             <div class="booth-image-placeholder">
                                 <img
                                     src="@/assets/Global-Pavillion1.png"
-                                    alt="Global Pavillion관 부스표기 참고 이미지"
+                                    alt="Global Pavilion관 부스표기 참고 이미지"
                                 />
                                 <img
                                     src="@/assets/Global-Pavillion2.png"
-                                    alt="Global Pavillion관 부스표기 참고 이미지"
+                                    alt="Global Pavilion관 부스표기 참고 이미지"
                                 />
                             </div>
                         </div>
@@ -920,7 +920,7 @@
                                 </li>
                                 <br />
                                 <li>
-                                    • Global Pavillion관 참가기업 부스 후부 벽면
+                                    • Global Pavilion관 참가기업 부스 후부 벽면
                                     부착형 홍보 그래픽 사이즈
                                     <ul class="notice-sub-list">
                                         <li>
@@ -1124,7 +1124,7 @@
                             <p class="file-note no-padding">
                                 <span class="red"
                                     >* 홍보 영상은 Eureka Park관만 해당하며,
-                                    Global Pavillion관 참가기업은 "영상
+                                    Global Pavilion관 참가기업은 "영상
                                     없음"으로 선택해주세요.</span
                                 >
                                 <br />
@@ -1151,20 +1151,16 @@
                         <div class="section-content">
                             <ul>
                                 <li>
-                                    • 메인 피칭 이벤트는 1월 7일(수)과 8일(목)에
-                                    스타트업 정키에서 진행되며, 이와 별도로 1월
-                                    6일(월)과 9일(금)에도 추가 피칭 세션이
-                                    운영됩니다.
+                                    • 메인 피칭 이벤트는 2일차(1월 7일)과 3일차(1월 8일)에 스타트업 정크에서 진행되며, 이와 별도로 1일차(1월 6일)과 4일차(1월9일)에도 추가 피칭 세션이 운영될 예정입니다.
+
                                 </li>
                                 <li>
-                                    • 기업 당 준비시간 포함 총, 30분이
-                                    배정됩니다.
+                                    • 기업 당 준비시간 포함 총, 10분(준비 2분, 발표 8분)배정. 총, 20팀을 선발합니다. (수요 초과 시 신청 접수 순서대로 선착순 마감 예정입니다.)
+
                                 </li>
                                 <li>
-                                    • 시연에 필요한 모든 물품은 참가사가
-                                    준비하며, 운영사는 피칭스테이션의 공간과
-                                    기초지원 (모니터, 빔 프로젝터)만을
-                                    제공합니다.
+                                    • 시연에 필요한 모든 물품은 참가사가 준비하며, 운영사는 피칭스테이션의 공간과 기초지원 (모니터, 빔 프로젝터)만을 제공합니다.
+
                                 </li>
                                 <li>
                                     • 제품 시연의
@@ -1176,6 +1172,9 @@
                                     • 제품 시연 발표는
                                     <span class="red">영어로 진행하오니</span>
                                     참고하여 주세요.
+                                </li>
+                                <li>
+                                    • 피칭 기간 동안 총 1회만 피칭 진행 가능하며, 메인 피칭 진행 시 추가 피칭은 자동적으로 신청 취소 됩니다.
                                 </li>
                             </ul>
 
@@ -1287,7 +1286,7 @@
                                     추후 공지 예정이며 통역비는 참가업체 부담.
                                 </li>
                                 <li>
-                                    • 참고 : 2024 CES 기준 1일 통역비 (USD 380$)
+                                    • 참고 : 2025 CES 기준 1일 통역비 (USD 380$)
                                 </li>
                             </ul>
 
@@ -1344,7 +1343,7 @@
                                     기관과의 MOU체결 지원
                                 </li>
                                 <li>
-                                    - 재공사항 : MOU체결 기업 별 LED 스크린
+                                    - 제공사항 : MOU체결 기업 별 LED 스크린
                                     이미지 제공 (EP관 피팅스테이지), 사인용
                                     볼펜, 상장케이스 대여
                                 </li>

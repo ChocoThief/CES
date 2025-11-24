@@ -1127,6 +1127,8 @@
                                     Global Pavilion관 참가기업은 "영상
                                     없음"으로 선택해주세요.</span
                                 >
+                                <br>
+                                <span class="red">* 업로드 최대 용량은 500mb 입니다.</span>
                                 <br />
                                 * 각사 USB A Type Memory에 영상 파일 저장, 전시
                                 현장에서 설치 후 재생

@@ -14,16 +14,25 @@
     "migrate:undo": "npx sequelize-cli db:migrate:undo",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "create-admin": "node src/scripts/createAdmin.js"
+    "create-admin": "node src/scripts/createAdmin.js",
+    "backup": "node src/scripts/backupDatabase.js"
   },
-  "keywords": ["ces", "backend", "api"],
+  "keywords": [
+    "ces",
+    "backend",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "jest": {
     "testEnvironment": "node",
-    "coveragePathIgnorePatterns": ["/node_modules/"],
-    "testMatch": ["**/tests/**/*.test.js"]
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.937.0",

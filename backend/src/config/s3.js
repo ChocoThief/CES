@@ -36,9 +36,7 @@ const fileFilter = (req, file, cb) => {
   };
 
   const fieldName = file.fieldname;
-  const ext = file.originalname
-    .toLowerCase()
-    .substring(file.originalname.lastIndexOf("."));
+  const ext = path.extname(file.originalname).toLowerCase();
 
   if (allowedExts[fieldName] && allowedExts[fieldName].includes(ext)) {
     cb(null, true);

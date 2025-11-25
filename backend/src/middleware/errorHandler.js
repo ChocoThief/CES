@@ -4,12 +4,23 @@ const errorHandler = (err, req, res, next) => {
   // Multer errors
   if (err.name === "MulterError") {
     if (err.code === "LIMIT_FILE_SIZE") {
-      return res
-        .status(400)
-        .json({
-          error: "파일 크기가 너무 큽니다. 최대 1GB까지 업로드 가능합니다.",
-        });
+      return res.status(400).json({
+        error: "파일 크기가 너무 큽니다. 최대 1GB까지 업로드 가능합니다.",
+      });
     }
+    if (err.code === "LIMIT_FILE_COUNT") {
+      return res.status(400).json({ error: "파일 개수가 너무 많습니다." });
+    }
+    if (err.code === "LIMIT_UNEXPECTED_FILE") {
+      return res.status(400).json({ error: "허용되지 않은 파일 필드입니다." });
+    }
+    return res
+      .status(400)
+      .json({ error: "파일 업로드 중 오류가 발생했습니다." });
+  }
+
+  // File filter errors (from multer fileFilter)
+  if (err.message && err.message.includes("파일 형식이 올바르지 않습니다")) {
     return res.status(400).json({ error: err.message });
   }
 

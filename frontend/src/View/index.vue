@@ -137,7 +137,7 @@
                             <ul class="notice-sub-list">
                                 <li>1) 그래픽 : 월(wall)그래픽 1ea</li>
                                 <li>
-                                    2) 가구 : DP용 테이블 1ea / 스툴 의자 1ea /
+                                    2) 가구 : DP용 테이블 1ea / 스툴 의자 2ea /
                                     휴지통 1ea
                                 </li>
                                 <li>

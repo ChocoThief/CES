@@ -76,6 +76,24 @@ echo ""
 echo "실행 중인 컨테이너:"
 docker-compose ps
 
+# Cron 자동 백업 설정 확인 및 추가
+echo ""
+echo "데이터베이스 자동 백업 설정 확인 중..."
+
+CRON_JOB="0 3 * * * cd $(pwd) && /usr/bin/docker-compose exec -T backend npm run backup >> $(pwd)/backup.log 2>&1"
+CRON_COMMENT="# CES 2026 Database Auto Backup (Daily 3 AM)"
+
+# 현재 crontab에 백업 작업이 있는지 확인
+if crontab -l 2>/dev/null | grep -q "npm run backup"; then
+    echo -e "${GREEN}✓ 자동 백업이 이미 설정되어 있습니다${NC}"
+else
+    echo "자동 백업 설정 추가 중..."
+    # 기존 crontab 가져오기 (없으면 빈 문자열)
+    (crontab -l 2>/dev/null || echo "") | { cat; echo "$CRON_COMMENT"; echo "$CRON_JOB"; } | crontab -
+    echo -e "${GREEN}✓ 매일 새벽 3시 자동 백업이 설정되었습니다${NC}"
+    echo "  백업 로그: $(pwd)/backup.log"
+fi
+
 echo ""
 echo -e "${GREEN}✅ 배포 완료!${NC}"
 echo ""

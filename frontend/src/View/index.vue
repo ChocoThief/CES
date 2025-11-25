@@ -663,7 +663,9 @@
                                         </button>
                                         <button
                                             type="button"
-                                            @click="removeFile('companyLogoColor')"
+                                            @click="
+                                                removeFile('companyLogoColor')
+                                            "
                                             class="remove-file-btn"
                                         >
                                             삭제
@@ -737,7 +739,9 @@
                                         </button>
                                         <button
                                             type="button"
-                                            @click="removeFile('companyLogoWhite')"
+                                            @click="
+                                                removeFile('companyLogoWhite')
+                                            "
                                             class="remove-file-btn"
                                         >
                                             삭제
@@ -1124,11 +1128,13 @@
                             <p class="file-note no-padding">
                                 <span class="red"
                                     >* 홍보 영상은 Eureka Park관만 해당하며,
-                                    Global Pavilion관 참가기업은 "영상
-                                    없음"으로 선택해주세요.</span
+                                    Global Pavilion관 참가기업은 "영상 없음"으로
+                                    선택해주세요.</span
                                 >
-                                <br>
-                                <span class="red">* 업로드 최대 용량은 500mb 입니다.</span>
+                                <br />
+                                <span class="red"
+                                    >* 업로드 최대 용량은 500mb 입니다.</span
+                                >
                                 <br />
                                 * 각사 USB A Type Memory에 영상 파일 저장, 전시
                                 현장에서 설치 후 재생
@@ -1153,16 +1159,23 @@
                         <div class="section-content">
                             <ul>
                                 <li>
-                                    • 메인 피칭 이벤트는 2일차(1월 7일)과 3일차(1월 8일)에 스타트업 정크에서 진행되며, 이와 별도로 1일차(1월 6일)과 4일차(1월9일)에도 추가 피칭 세션이 운영될 예정입니다.
-
+                                    • 메인 피칭 이벤트는 2일차(1월 7일)과
+                                    3일차(1월 8일)에 스타트업 정크에서 진행되며,
+                                    이와 별도로 1일차(1월 6일)과
+                                    4일차(1월9일)에도 추가 피칭 세션이 운영될
+                                    예정입니다.
                                 </li>
                                 <li>
-                                    • 기업 당 준비시간 포함 총, 10분(준비 2분, 발표 8분)배정. 총, 20팀을 선발합니다. (수요 초과 시 신청 접수 순서대로 선착순 마감 예정입니다.)
-
+                                    • 기업 당 준비시간 포함 총, 10분(준비 2분,
+                                    발표 8분)배정. 총, 20팀을 선발합니다. (수요
+                                    초과 시 신청 접수 순서대로 선착순 마감
+                                    예정입니다.)
                                 </li>
                                 <li>
-                                    • 시연에 필요한 모든 물품은 참가사가 준비하며, 운영사는 피칭스테이션의 공간과 기초지원 (모니터, 빔 프로젝터)만을 제공합니다.
-
+                                    • 시연에 필요한 모든 물품은 참가사가
+                                    준비하며, 운영사는 피칭스테이션의 공간과
+                                    기초지원 (모니터, 빔 프로젝터)만을
+                                    제공합니다.
                                 </li>
                                 <li>
                                     • 제품 시연의
@@ -1176,7 +1189,9 @@
                                     참고하여 주세요.
                                 </li>
                                 <li>
-                                    • 피칭 기간 동안 총 1회만 피칭 진행 가능하며, 메인 피칭 진행 시 추가 피칭은 자동적으로 신청 취소 됩니다.
+                                    • 피칭 기간 동안 총 1회만 피칭 진행
+                                    가능하며, 메인 피칭 진행 시 추가 피칭은
+                                    자동적으로 신청 취소 됩니다.
                                 </li>
                             </ul>
 
@@ -1950,9 +1965,11 @@ export default {
                     // 페이지 최상단으로 스크롤
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 } else {
+                    // 서버에서 받은 에러 메시지를 그대로 표시 (이미 한글로 되어있음)
                     const errorMsg =
                         result.error || "신청 처리 중 오류가 발생했습니다.";
                     alert(errorMsg);
+                    console.error("서버 응답 에러:", result);
                 }
             } catch (error) {
                 console.error("Submit error:", error);
@@ -1962,9 +1979,13 @@ export default {
                     error.name === "TypeError" &&
                     error.message.includes("fetch")
                 ) {
-                    alert("서버에 연결할 수 없습니다. 잠시 후 다시 시도해주세요.");
+                    alert(
+                        "서버에 연결할 수 없습니다.\n네트워크 연결을 확인하고 잠시 후 다시 시도해주세요.",
+                    );
                 } else {
-                    alert("신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+                    alert(
+                        "신청 중 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.",
+                    );
                 }
             } finally {
                 isSubmitting.value = false;

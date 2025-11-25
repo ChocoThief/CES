@@ -33,6 +33,7 @@ services:
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_REGION: ${AWS_REGION}
       S3_BUCKET: ${S3_BUCKET}
+      S3_BACKUP_BUCKET: ${S3_BACKUP_BUCKET}
       CLOUDFRONT_DOMAIN: ${CLOUDFRONT_DOMAIN}
       FRONTEND_URL: ${FRONTEND_URL:-https://ceskorea.kr}
       ADMIN_URL: ${ADMIN_URL:-https://admin.ceskorea.kr}

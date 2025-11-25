@@ -2,6 +2,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Install mariadb-client for mysqldump
+RUN apk add --no-cache mariadb-client
+
 COPY package*.json ./
 
 RUN npm ci --only=production

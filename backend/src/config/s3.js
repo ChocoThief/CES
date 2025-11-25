@@ -1,45 +1,53 @@
-const { S3Client } = require('@aws-sdk/client-s3');
-const multer = require('multer');
-const multerS3 = require('multer-s3');
-const path = require('path');
-const fs = require('fs');
-require('dotenv').config();
+const { S3Client } = require("@aws-sdk/client-s3");
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const path = require("path");
+const fs = require("fs");
+require("dotenv").config();
 
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NODE_ENV === "development";
 
 // 개발 환경: 로컬 uploads 디렉토리 생성
 if (isDevelopment) {
-  const uploadsDir = path.join(__dirname, '../../uploads');
+  const uploadsDir = path.join(__dirname, "../../uploads");
   if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
   }
 }
 
-const s3Client = isDevelopment ? null : new S3Client({
-  region: process.env.AWS_REGION || 'ap-northeast-2',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  }
-});
+const s3Client = isDevelopment
+  ? null
+  : new S3Client({
+      region: process.env.AWS_REGION || "ap-northeast-2",
+      credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      },
+    });
 
 const fileFilter = (req, file, cb) => {
   const allowedExts = {
-    companyLogoColor: ['.ai', '.pdf', '.eps'],
-    companyLogoWhite: ['.ai', '.pdf', '.eps'],
-    promoGraphic: ['.ai', '.psd', '.pdf', '.eps'],
-    tableGraphic: ['.ai', '.psd', '.pdf', '.eps'],
-    qrFile: ['.ai', '.psd', '.pdf', '.eps'],
-    videoFile: ['.mp4', '.mov']
+    companyLogoColor: [".ai", ".pdf", ".eps"],
+    companyLogoWhite: [".ai", ".pdf", ".eps"],
+    promoGraphic: [".ai", ".psd", ".pdf", ".eps"],
+    tableGraphic: [".ai", ".psd", ".pdf", ".eps"],
+    qrFile: [".ai", ".psd", ".pdf", ".eps"],
+    videoFile: [".mp4", ".mov"],
   };
 
   const fieldName = file.fieldname;
-  const ext = file.originalname.toLowerCase().substring(file.originalname.lastIndexOf('.'));
+  const ext = file.originalname
+    .toLowerCase()
+    .substring(file.originalname.lastIndexOf("."));
 
   if (allowedExts[fieldName] && allowedExts[fieldName].includes(ext)) {
     cb(null, true);
   } else {
-    cb(new Error(`${fieldName} 파일 형식이 올바르지 않습니다. 허용된 형식: ${allowedExts[fieldName]?.join(', ') || '정의되지 않음'}`));
+    cb(
+      new Error(
+        `${fieldName} 파일 형식이 올바르지 않습니다. 허용된 형식: ${allowedExts[fieldName]?.join(", ") || "정의되지 않음"}`,
+      ),
+    );
   }
 };
 
@@ -47,13 +55,13 @@ const fileFilter = (req, file, cb) => {
 const storage = isDevelopment
   ? multer.diskStorage({
       destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../uploads'));
+        cb(null, path.join(__dirname, "../../uploads"));
       },
       filename: (req, file, cb) => {
         const timestamp = Date.now();
         const filename = `${timestamp}-${file.originalname}`;
         cb(null, filename);
-      }
+      },
     })
   : multerS3({
       s3: s3Client,
@@ -65,18 +73,18 @@ const storage = isDevelopment
         const timestamp = Date.now();
         const ext = path.extname(file.originalname);
         // URL-safe 파일명 생성 (한글 파일명 인코딩 문제 방지)
-        const safeFilename = `${timestamp}-${Buffer.from(file.originalname).toString('base64').replace(/[/+=]/g, '_')}${ext}`;
+        const safeFilename = `${timestamp}-${Buffer.from(file.originalname).toString("base64").replace(/[/+=]/g, "_")}${ext}`;
         cb(null, safeFilename);
       },
-      contentType: multerS3.AUTO_CONTENT_TYPE
+      contentType: multerS3.AUTO_CONTENT_TYPE,
     });
 
 const upload = multer({
   storage,
   fileFilter,
   limits: {
-    fileSize: 50 * 1024 * 1024 // 50MB
-  }
+    fileSize: 1024 * 1024 * 1024, // 1GB
+  },
 });
 
 // CloudFront URL로 변환하는 헬퍼 함수

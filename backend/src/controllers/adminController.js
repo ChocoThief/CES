@@ -67,7 +67,27 @@ const getApplicationById = async (req, res) => {
   }
 };
 
+const exportApplications = async (req, res) => {
+  try {
+    const applications = await Application.findAll({
+      order: [['created_at', 'DESC']],
+      attributes: {
+        include: [
+          ['created_at', 'createdAt'],
+          ['updated_at', 'updatedAt']
+        ]
+      }
+    });
+
+    res.json({ applications });
+  } catch (error) {
+    console.error('Export applications error:', error);
+    res.status(500).json({ error: '데이터를 내보내는데 실패했습니다.' });
+  }
+};
+
 module.exports = {
   getApplications,
-  getApplicationById
+  getApplicationById,
+  exportApplications
 };

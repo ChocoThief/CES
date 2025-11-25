@@ -6,29 +6,40 @@
         </header>
 
         <div class="flex flex-1 flex-col gap-4 p-4">
-            <div class="flex gap-2 max-w-md">
-                <div class="relative flex-1">
-                    <Search
-                        class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-                        :size="20"
-                    />
-                    <Input
-                        v-model="searchQuery"
-                        type="text"
-                        placeholder="회사명 또는 부스번호로 검색..."
-                        class="pl-10"
-                        @keyup.enter="handleSearch"
-                    />
+            <div class="flex gap-2 items-center justify-between">
+                <div class="flex gap-2 max-w-md flex-1">
+                    <div class="relative flex-1">
+                        <Search
+                            class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                            :size="20"
+                        />
+                        <Input
+                            v-model="searchQuery"
+                            type="text"
+                            placeholder="회사명 또는 부스번호로 검색..."
+                            class="pl-10"
+                            @keyup.enter="handleSearch"
+                        />
+                    </div>
+                    <Button @click="handleSearch" :disabled="store.loading">
+                        검색
+                    </Button>
+                    <Button
+                        variant="outline"
+                        @click="handleReset"
+                        :disabled="store.loading"
+                    >
+                        초기화
+                    </Button>
                 </div>
-                <Button @click="handleSearch" :disabled="store.loading">
-                    검색
-                </Button>
                 <Button
-                    variant="outline"
-                    @click="handleReset"
-                    :disabled="store.loading"
+                    variant="default"
+                    @click="handleExport"
+                    :disabled="exporting"
+                    class="ml-4"
                 >
-                    초기화
+                    <FileDown :size="16" class="mr-2" />
+                    {{ exporting ? "내보내는 중..." : "Excel 내보내기" }}
                 </Button>
             </div>
 
@@ -181,12 +192,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-import { Search, ChevronLeft, ChevronRight } from "lucide-vue-next";
+import { Search, ChevronLeft, ChevronRight, FileDown } from "lucide-vue-next";
+import { useExcelExport } from "../composables/useExcelExport";
 
 const router = useRouter();
 const store = useApplicationsStore();
+const { exportToExcel } = useExcelExport();
 
 const searchQuery = ref("");
+const exporting = ref(false);
 
 onMounted(async () => {
     try {
@@ -223,6 +237,18 @@ const changePage = async (page) => {
 
 const goToDetail = (id) => {
     router.push(`/applications/${id}`);
+};
+
+const handleExport = async () => {
+    exporting.value = true;
+    try {
+        const result = await exportToExcel();
+        toast.success(`${result.count}개의 신청 데이터를 Excel 파일로 내보냈습니다.`);
+    } catch (error) {
+        toast.error(error.message || "Excel 파일 생성에 실패했습니다.");
+    } finally {
+        exporting.value = false;
+    }
 };
 
 const formatDate = (dateString) => {

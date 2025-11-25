@@ -1498,9 +1498,9 @@ export default {
             if (!value) {
                 return `${fieldName}을(를) 입력해주세요.`;
             }
-            const koreanRegex = /^[가-힣\s\(\)]+$/;
+            const koreanRegex = /^[가-힣0-9\s\(\)]+$/;
             if (!koreanRegex.test(value)) {
-                return "한글만 입력 가능합니다.";
+                return "한글과 숫자만 입력 가능합니다.";
             }
             return "";
         };
@@ -1509,9 +1509,9 @@ export default {
             if (!value) {
                 return `${fieldName}을(를) 입력해주세요.`;
             }
-            const mixedRegex = /^[가-힣A-Za-z\s\.\,\-\&\(\)]+$/;
+            const mixedRegex = /^[가-힣A-Za-z0-9\s\.\,\-\&\(\)]+$/;
             if (!mixedRegex.test(value)) {
-                return "한글 또는 영문만 입력 가능합니다.";
+                return "한글, 영문, 숫자만 입력 가능합니다.";
             }
             return "";
         };
@@ -1545,9 +1545,9 @@ export default {
             if (!value) {
                 return `${fieldName}을(를) 입력해주세요.`;
             }
-            const englishRegex = /^[A-Za-z\s\.\,\-\&\(\)]+$/;
+            const englishRegex = /^[A-Za-z0-9\s\.\,\-\&\(\)]+$/;
             if (!englishRegex.test(value)) {
-                return "영문만 입력 가능합니다.";
+                return "영문과 숫자만 입력 가능합니다.";
             }
             return "";
         };

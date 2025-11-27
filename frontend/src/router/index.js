@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Index from '@/View/index.vue'
-import Vip from '@/View/vip.vue'
+import Vip from '@/View/Vip.vue'
 import PitchingSchedule from '@/View/PitchingSchedule.vue'
 import DocentBooking from '@/View/DocentBooking.vue'
 

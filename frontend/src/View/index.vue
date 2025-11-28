@@ -92,14 +92,12 @@
                                     • 장치관련 문의 (전시부스, 비품 등)
                                     <ul class="notice-sub-list">
                                         <li>
-                                            - Eureka Park관 : 윤지수 대리 /
-                                            02-501-8694 / ces2026.ep@gmail.com
+                                            - Eureka Park관 : 윤지수 대리 / ces2026.ep@gmail.com
                                         </li>
                                         <li>
-                                            - Global Pavilion관 : 이정인 사원 /
-                                            070-8645-0638 / ces2026j@gmail.com
+                                            - Global Pavilion관 : 이정인 사원 / ces2026j@gmail.com
                                         </li>
-                                        <li>- 장치사 대표번호 : 02-501-0836</li>
+
                                     </ul>
                                 </li>
                             </ul>

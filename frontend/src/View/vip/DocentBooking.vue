@@ -234,7 +234,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { useRouter } from "vue-router";
 import { docentReservationApi } from "@/lib/api";
 
@@ -261,6 +261,10 @@ const formData = ref({
 // Submission state
 const isSubmitting = ref(false);
 
+// 슬롯 데이터 (API에서 로드)
+const slotsData = ref({});
+const isLoadingSlots = ref(true);
+
 // Date mapping for API
 const dateMapping = {
     "1월 6일(화)": "2025-01-06",
@@ -275,26 +279,40 @@ const tourMapping = {
     "도슨트B(국문)": "B",
 };
 
-// Available times based on selected date
-const availableTimes = computed(() => {
-    if (!selectedDate.value) return [];
+// 슬롯 데이터 로드
+const loadAvailableSlots = async () => {
+    try {
+        isLoadingSlots.value = true;
+        const response = await docentReservationApi.getAvailableSlots();
+        slotsData.value = response.slots;
+    } catch (error) {
+        console.error("Failed to load slots:", error);
+    } finally {
+        isLoadingSlots.value = false;
+    }
+};
 
-    // 1월 6일은 3타임 (14, 15, 16)
-    if (selectedDate.value === "1월 6일(화)") {
-        return [
-            { slot: "14:00", available: true },
-            { slot: "15:00", available: true },
-            { slot: "16:00", available: true },
-        ];
+onMounted(() => {
+    loadAvailableSlots();
+});
+
+// 날짜나 도슨트 변경 시 선택된 시간 초기화
+watch([selectedDate, selectedTour], () => {
+    selectedTime.value = "";
+});
+
+// Available times based on selected date and tour
+const availableTimes = computed(() => {
+    if (!selectedDate.value || !selectedTour.value) return [];
+
+    const dateKey = dateMapping[selectedDate.value];
+    const tourKey = tourMapping[selectedTour.value];
+
+    if (!slotsData.value[dateKey] || !slotsData.value[dateKey][tourKey]) {
+        return [];
     }
 
-    // 1월 7, 8, 9일은 4타임 (11, 14, 15, 16)
-    return [
-        { slot: "11:00", available: true },
-        { slot: "14:00", available: true },
-        { slot: "15:00", available: true },
-        { slot: "16:00", available: true },
-    ];
+    return slotsData.value[dateKey][tourKey];
 });
 
 const canProceed = computed(() => {

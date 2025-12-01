@@ -65,18 +65,47 @@ const createReservation = async (req, res, next) => {
   }
 };
 
-// 공개 API: 가용 타임슬롯 조회 (현재는 제한 없음이므로 간단히 반환)
+// 공개 API: 가용 타임슬롯 조회 (승인된 예약이 있으면 마감 처리)
 const getAvailableSlots = async (req, res, next) => {
   try {
     // 타임슬롯 규칙
     // 1월 6일: 14:00, 15:00, 16:00
     // 1월 7-9일: 11:00, 14:00, 15:00, 16:00
-    const slots = {
+    const allSlots = {
       "2025-01-06": ["14:00", "15:00", "16:00"],
       "2025-01-07": ["11:00", "14:00", "15:00", "16:00"],
       "2025-01-08": ["11:00", "14:00", "15:00", "16:00"],
       "2025-01-09": ["11:00", "14:00", "15:00", "16:00"],
     };
+
+    // 승인된 예약 조회
+    const approvedReservations = await DocentReservation.findAll({
+      where: { status: "approved" },
+      attributes: ["reservationDate", "docentType", "timeSlot"],
+      raw: true,
+    });
+
+    // 마감된 슬롯 목록 생성 (날짜-도슨트타입-시간)
+    const bookedSlots = new Set(
+      approvedReservations.map(
+        (r) => `${r.reservationDate}-${r.docentType}-${r.timeSlot}`
+      )
+    );
+
+    // 각 슬롯의 가용 여부 포함하여 반환
+    const slots = {};
+    for (const [date, times] of Object.entries(allSlots)) {
+      slots[date] = {
+        A: times.map((time) => ({
+          slot: time,
+          available: !bookedSlots.has(`${date}-A-${time}`),
+        })),
+        B: times.map((time) => ({
+          slot: time,
+          available: !bookedSlots.has(`${date}-B-${time}`),
+        })),
+      };
+    }
 
     res.json({ slots });
   } catch (error) {

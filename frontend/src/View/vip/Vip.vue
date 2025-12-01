@@ -245,18 +245,18 @@ const goToPitchingSchedule = () => {
 }
 
 .btn-primary {
-    background: #7a9cd1;
+    background: linear-gradient(135deg, #2d3748 0%, #1a242f 100%);
 }
 
 .btn-primary:hover {
-    background: #6b8cce;
+    background: linear-gradient(135deg, #1a242f 0%, #0f161d 100%);
 }
 
 .btn-secondary {
-    background: #7a9cd1;
+    background: linear-gradient(135deg, #2d3748 0%, #1a242f 100%);
 }
 
 .btn-secondary:hover {
-    background: #6b8cce;
+    background: linear-gradient(135deg, #1a242f 0%, #0f161d 100%);
 }
 </style>

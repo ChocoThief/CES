@@ -160,7 +160,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">현장 컨택 실무자명/직함</label>
+                            <label class="form-label required">상세정보 작성</label>
                             <textarea
                                 v-model="formData.notes"
                                 class="form-textarea"
@@ -538,13 +538,13 @@ const submitForm = () => {
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    background: #7a9cd1;
+    background: linear-gradient(135deg, #2d3748 0%, #1a242f 100%);
     color: white;
     border-radius: 8px;
 }
 
 .btn-submit:hover:not(:disabled) {
-    background: #6b8cce;
+    background: linear-gradient(135deg, #1a242f 0%, #0f161d 100%);
 }
 
 .btn-submit:disabled {
@@ -684,9 +684,9 @@ const submitForm = () => {
     padding: 15px 50px;
     font-size: 18px;
     font-weight: 600;
-    border: 2px solid #7a9cd1;
+    border: 2px solid #2d3748;
     background: white;
-    color: #7a9cd1;
+    color: #2d3748;
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: 8px;
@@ -695,6 +695,7 @@ const submitForm = () => {
 
 .btn-back:hover {
     background: #f7fafc;
+    border-color: #1a242f;
 }
 
 .action-buttons {

@@ -74,12 +74,12 @@
                             발표 종료 후에는 각 기업의 부스를 방문하여 더욱 자세한 설명을 듣거나 상담을 진행할 수도 있습니다.
 
                         </p>
-                        <button
+                        <!-- <button
                             @click="goToPitchingSchedule"
                             class="program-btn btn-secondary"
                         >
                             피칭 이벤트 타임테이블 확인하기
-                        </button>
+                        </button> -->
                     </div>
                 </div>
             </div>

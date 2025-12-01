@@ -156,6 +156,7 @@ const getReservations = async (req, res, next) => {
       docent: 'docent_type',
       time: 'time_slot',
       status: 'status',
+      createdAt: 'created_at',
     };
 
     let order = [];

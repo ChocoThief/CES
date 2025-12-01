@@ -102,7 +102,7 @@ const fetchReservations = async (page = 1) => {
             params.sortBy = sortColumn.value;
             params.sortOrder = sortDirection.value;
         } else if (sortOrder.value === "oldest") {
-            params.sortBy = "date";
+            params.sortBy = "createdAt";
             params.sortOrder = "asc";
         }
 

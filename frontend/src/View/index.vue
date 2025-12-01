@@ -92,12 +92,13 @@
                                     • 장치관련 문의 (전시부스, 비품 등)
                                     <ul class="notice-sub-list">
                                         <li>
-                                            - Eureka Park관 : 윤지수 대리 / ces2026.ep@gmail.com
+                                            - Eureka Park관 : 윤지수 대리 /
+                                            ces2026.ep@gmail.com
                                         </li>
                                         <li>
-                                            - Global Pavilion관 : 이정인 사원 / ces2026j@gmail.com
+                                            - Global Pavilion관 : 이정인 사원 /
+                                            ces2026j@gmail.com
                                         </li>
-
                                     </ul>
                                 </li>
                             </ul>
@@ -1428,6 +1429,8 @@
 <script>
 import { ref, reactive, computed, watch } from "vue";
 
+import { applicationApi } from "@/lib/api";
+
 export default {
     name: "CesSurvey",
     setup() {
@@ -1547,7 +1550,8 @@ export default {
                 return `${fieldName}을(를) 입력해주세요.`;
             }
             // 한글, 영문, 숫자, 주소에 필요한 특수문자들 모두 허용
-            const addressRegex = /^[가-힣A-Za-z0-9\s\.\,\-\(\)\#\번\길\로\대로\동\구\시\군\도\층\호\빌딩\/\&]+$/;
+            const addressRegex =
+                /^[가-힣A-Za-z0-9\s\.\,\-\(\)\#\번\길\로\대로\동\구\시\군\도\층\호\빌딩\/\&]+$/;
             if (!addressRegex.test(value)) {
                 return "올바른 주소 형식을 입력해주세요.";
             }
@@ -1925,66 +1929,43 @@ export default {
             try {
                 isSubmitting.value = true;
 
-                const apiUrl =
-                    import.meta.env.VITE_API_URL || "http://localhost:5001/api";
-                const response = await fetch(`${apiUrl}/applications`, {
-                    method: "POST",
-                    body: data,
+                await applicationApi.submit(data);
+
+                alert("신청이 완료되었습니다.");
+
+                // 폼 초기화
+                Object.keys(formData).forEach((key) => {
+                    if (key.includes("Code") || key.includes("Video")) {
+                        formData[key] = "none";
+                    } else if (
+                        key === "pitching" ||
+                        key === "docent" ||
+                        key === "interpreter" ||
+                        key === "mou"
+                    ) {
+                        formData[key] = "";
+                    } else if (typeof formData[key] === "string") {
+                        formData[key] = "";
+                    } else {
+                        formData[key] = null;
+                    }
                 });
 
-                const result = await response.json();
+                // 업로드된 파일 정보 초기화
+                Object.keys(uploadedFiles).forEach((key) => {
+                    uploadedFiles[key] = { name: "", file: null };
+                });
 
-                if (response.ok) {
-                    alert("신청이 완료되었습니다.");
-
-                    // 폼 초기화
-                    Object.keys(formData).forEach((key) => {
-                        if (key.includes("Code") || key.includes("Video")) {
-                            formData[key] = "none";
-                        } else if (
-                            key === "pitching" ||
-                            key === "docent" ||
-                            key === "interpreter" ||
-                            key === "mou"
-                        ) {
-                            formData[key] = "";
-                        } else if (typeof formData[key] === "string") {
-                            formData[key] = "";
-                        } else {
-                            formData[key] = null;
-                        }
-                    });
-
-                    // 업로드된 파일 정보 초기화
-                    Object.keys(uploadedFiles).forEach((key) => {
-                        uploadedFiles[key] = { name: "", file: null };
-                    });
-
-                    // 페이지 최상단으로 스크롤
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                } else {
-                    // 서버에서 받은 에러 메시지를 그대로 표시 (이미 한글로 되어있음)
-                    const errorMsg =
-                        result.error || "신청 처리 중 오류가 발생했습니다.";
-                    alert(errorMsg);
-                    console.error("서버 응답 에러:", result);
-                }
+                // 페이지 최상단으로 스크롤
+                window.scrollTo({ top: 0, behavior: "smooth" });
             } catch (error) {
                 console.error("Submit error:", error);
 
-                // 네트워크 에러 처리
-                if (
-                    error.name === "TypeError" &&
-                    error.message.includes("fetch")
-                ) {
-                    alert(
-                        "서버에 연결할 수 없습니다.\n네트워크 연결을 확인하고 잠시 후 다시 시도해주세요.",
-                    );
-                } else {
-                    alert(
-                        "신청 중 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.",
-                    );
-                }
+                // 서버에서 받은 에러 메시지를 그대로 표시 (이미 한글로 되어있음)
+                const errorMsg =
+                    error.response?.data?.error ||
+                    "신청 처리 중 오류가 발생했습니다.";
+                alert(errorMsg);
             } finally {
                 isSubmitting.value = false;
             }

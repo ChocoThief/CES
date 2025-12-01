@@ -141,33 +141,12 @@
                 </Table>
             </div>
 
-            <div
-                v-if="store.totalPages > 1"
-                class="flex items-center justify-center gap-2"
-            >
-                <Button
-                    variant="outline"
-                    size="sm"
-                    @click="changePage(store.page - 1)"
-                    :disabled="store.page === 1"
-                >
-                    <ChevronLeft :size="16" class="mr-1" />
-                    이전
-                </Button>
-                <span class="text-sm text-muted-foreground px-4">
-                    {{ store.page }} / {{ store.totalPages }} (총
-                    {{ store.total }}개)
-                </span>
-                <Button
-                    variant="outline"
-                    size="sm"
-                    @click="changePage(store.page + 1)"
-                    :disabled="store.page === store.totalPages"
-                >
-                    다음
-                    <ChevronRight :size="16" class="ml-1" />
-                </Button>
-            </div>
+            <Pagination
+                :page="store.page"
+                :total-pages="store.totalPages"
+                :total="store.total"
+                @change="changePage"
+            />
         </div>
     </DashboardLayout>
 </template>
@@ -179,6 +158,7 @@ import { useApplicationsStore } from "../stores/applications";
 import { toast } from "vue-sonner";
 
 import DashboardLayout from "@/layouts/DashboardLayout.vue";
+import Pagination from "@/components/Pagination.vue";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import {
     Table,
@@ -192,7 +172,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-import { Search, ChevronLeft, ChevronRight, FileDown } from "lucide-vue-next";
+import { Search, FileDown } from "lucide-vue-next";
 import { useExcelExport } from "../composables/useExcelExport";
 
 const router = useRouter();

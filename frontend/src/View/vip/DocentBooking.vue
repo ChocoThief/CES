@@ -11,7 +11,13 @@
                     />
                 </div>
                 <div class="title-container">
-                    <h1>{{ currentStep === 1 ? '도슨트 투어 이벤트 신청' : '방문자 정보' }}</h1>
+                    <h1>
+                        {{
+                            currentStep === 1
+                                ? "도슨트 투어 이벤트 신청"
+                                : "방문자 정보"
+                        }}
+                    </h1>
                 </div>
                 <div class="pc-notice">
                     *해당 홈페이지는 PC에 최적화되어있습니다.
@@ -39,15 +45,22 @@
                             <label class="form-label">도슨트 투어</label>
                             <select v-model="selectedTour" class="form-select">
                                 <option value="">도슨트를 선택해주세요</option>
-                                <option value="도슨트A(영문)">도슨트A(영문)</option>
-                                <option value="도슨트B(국문)">도슨트B(국문)</option>
+                                <option value="도슨트A(영문)">
+                                    도슨트A(영문)
+                                </option>
+                                <option value="도슨트B(국문)">
+                                    도슨트B(국문)
+                                </option>
                             </select>
                         </div>
                     </transition>
 
                     <!-- Time Selection -->
                     <transition name="fade-slide">
-                        <div v-if="selectedDate && selectedTour" class="form-group">
+                        <div
+                            v-if="selectedDate && selectedTour"
+                            class="form-group"
+                        >
                             <label class="form-label">타임</label>
                             <div class="time-slots">
                                 <button
@@ -58,13 +71,19 @@
                                         'time-slot',
                                         {
                                             active: selectedTime === time.slot,
-                                            disabled: !time.available
-                                        }
+                                            disabled: !time.available,
+                                        },
                                     ]"
                                     :disabled="!time.available"
                                 >
                                     <div class="time">{{ time.slot }}</div>
-                                    <div class="status">{{ time.available ? '가 능' : '예약마감' }}</div>
+                                    <div class="status">
+                                        {{
+                                            time.available
+                                                ? "가 능"
+                                                : "예약마감"
+                                        }}
+                                    </div>
                                 </button>
                             </div>
                         </div>
@@ -108,7 +127,9 @@
                     <!-- Visitor Info Form -->
                     <div class="form-section fade-in">
                         <div class="form-group">
-                            <label class="form-label required">방문자 대표명/직함</label>
+                            <label class="form-label required"
+                                >방문자 대표명/직함</label
+                            >
                             <input
                                 v-model="formData.representative"
                                 type="text"
@@ -118,7 +139,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">현장 컨택 실무자명/직함</label>
+                            <label class="form-label required"
+                                >현장 컨택 실무자명/직함</label
+                            >
                             <input
                                 v-model="formData.contact"
                                 type="text"
@@ -128,7 +151,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">현장 컨택 실무자 휴대번호</label>
+                            <label class="form-label required"
+                                >현장 컨택 실무자 휴대번호</label
+                            >
                             <input
                                 v-model="formData.phone"
                                 type="tel"
@@ -138,7 +163,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">현장 컨택 실무자 이메일</label>
+                            <label class="form-label required"
+                                >현장 컨택 실무자 이메일</label
+                            >
                             <input
                                 v-model="formData.email"
                                 type="email"
@@ -149,7 +176,9 @@
 
                         <div class="form-group">
                             <label class="form-label required">방문인원</label>
-                            <div class="input-note">* 헤드셋 준비를 위해 가급적 자세히 적어주세요.</div>
+                            <div class="input-note">
+                                * 헤드셋 준비를 위해 가급적 자세히 적어주세요.
+                            </div>
                             <input
                                 v-model.number="formData.visitors"
                                 type="number"
@@ -160,7 +189,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">상세정보 작성</label>
+                            <label class="form-label required"
+                                >상세정보 작성</label
+                            >
                             <textarea
                                 v-model="formData.notes"
                                 class="form-textarea"
@@ -171,8 +202,15 @@
 
                         <!-- Form Notes -->
                         <div class="form-notes">
-                            <p>※ 정확한 안내 및 현장 준비를 위해 모든 항목은 상세히 기재 부탁드립니다.</p>
-                            <p>※ 본 예약은 접수 후 검토 과정을 거쳐 확정됩니다. 운영 사정에 따라 예약이 변경되거나 취소될 수 있습니다.</p>
+                            <p>
+                                ※ 정확한 안내 및 현장 준비를 위해 모든 항목은
+                                상세히 기재 부탁드립니다.
+                            </p>
+                            <p>
+                                ※ 본 예약은 접수 후 검토 과정을 거쳐 확정됩니다.
+                                운영 사정에 따라 예약이 변경되거나 취소될 수
+                                있습니다.
+                            </p>
                         </div>
 
                         <!-- Action Buttons -->
@@ -196,8 +234,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
+import { docentReservationApi } from "@/lib/api";
 
 const router = useRouter();
 
@@ -205,39 +244,56 @@ const router = useRouter();
 const currentStep = ref(1);
 
 // Step 1: Booking data
-const selectedDate = ref('');
-const selectedTour = ref('');
-const selectedTime = ref('');
+const selectedDate = ref("");
+const selectedTour = ref("");
+const selectedTime = ref("");
 
 // Step 2: Visitor data
 const formData = ref({
-    representative: '',
-    contact: '',
-    phone: '',
-    email: '',
-    visitors: '',
-    notes: ''
+    representative: "",
+    contact: "",
+    phone: "",
+    email: "",
+    visitors: "",
+    notes: "",
 });
+
+// Submission state
+const isSubmitting = ref(false);
+
+// Date mapping for API
+const dateMapping = {
+    "1월 6일(화)": "2025-01-06",
+    "1월 7일(수)": "2025-01-07",
+    "1월 8일(목)": "2025-01-08",
+    "1월 9일(금)": "2025-01-09",
+};
+
+// Tour mapping for API
+const tourMapping = {
+    "도슨트A(영문)": "A",
+    "도슨트B(국문)": "B",
+};
 
 // Available times based on selected date
 const availableTimes = computed(() => {
     if (!selectedDate.value) return [];
 
     // 1월 6일은 3타임 (14, 15, 16)
-    if (selectedDate.value === '1월 6일(화)') {
+    if (selectedDate.value === "1월 6일(화)") {
         return [
-            { slot: '14:00', available: true },
-            { slot: '15:00', available: false }, // 예약마감 예시
-            { slot: '16:00', available: true },
+            { slot: "14:00", available: true },
+            { slot: "15:00", available: true },
+            { slot: "16:00", available: true },
         ];
     }
 
     // 1월 7, 8, 9일은 4타임 (11, 14, 15, 16)
     return [
-        { slot: '11:00', available: true },
-        { slot: '14:00', available: false }, // 예약마감 예시
-        { slot: '15:00', available: false }, // 예약마감 예시
-        { slot: '16:00', available: true },
+        { slot: "11:00", available: true },
+        { slot: "14:00", available: true },
+        { slot: "15:00", available: true },
+        { slot: "16:00", available: true },
     ];
 });
 
@@ -247,12 +303,12 @@ const canProceed = computed(() => {
 
 const isFormValid = computed(() => {
     return (
-        formData.value.representative.trim() !== '' &&
-        formData.value.contact.trim() !== '' &&
-        formData.value.phone.trim() !== '' &&
-        formData.value.email.trim() !== '' &&
+        formData.value.representative.trim() !== "" &&
+        formData.value.contact.trim() !== "" &&
+        formData.value.phone.trim() !== "" &&
+        formData.value.email.trim() !== "" &&
         formData.value.visitors >= 1 &&
-        formData.value.notes.trim() !== ''
+        formData.value.notes.trim() !== ""
     );
 });
 
@@ -263,30 +319,45 @@ const selectTime = (time) => {
 const goToStep2 = () => {
     if (!canProceed.value) return;
     currentStep.value = 2;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 const goToStep1 = () => {
     currentStep.value = 1;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-const submitForm = () => {
-    if (!isFormValid.value) return;
+const submitForm = async () => {
+    if (!isFormValid.value || isSubmitting.value) return;
 
-    // TODO: Submit to backend API
-    console.log('Form submitted:', {
-        booking: {
-            date: selectedDate.value,
-            tour: selectedTour.value,
-            time: selectedTime.value
-        },
-        visitor: formData.value
-    });
+    isSubmitting.value = true;
 
-    // Show success message and redirect
-    alert('예약이 완료되었습니다!');
-    router.push('/vip');
+    try {
+        const payload = {
+            reservationDate: dateMapping[selectedDate.value],
+            docentType: tourMapping[selectedTour.value],
+            timeSlot: selectedTime.value,
+            representative: formData.value.representative,
+            contact: formData.value.contact,
+            phone: formData.value.phone,
+            email: formData.value.email,
+            visitorCount: formData.value.visitors,
+            notes: formData.value.notes,
+        };
+
+        await docentReservationApi.create(payload);
+
+        alert("도슨트 투어 예약이 완료되었습니다!");
+        router.push("/vip");
+    } catch (error) {
+        console.error("Reservation error:", error);
+        const errorMessage =
+            error.response?.data?.error ||
+            "예약 중 오류가 발생했습니다. 다시 시도해주세요.";
+        alert(errorMessage);
+    } finally {
+        isSubmitting.value = false;
+    }
 };
 </script>
 
@@ -460,7 +531,7 @@ const submitForm = () => {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('../assets/caret-down.svg');
+    background-image: url("../assets/caret-down.svg");
     background-repeat: no-repeat;
     background-position: right 20px center;
     background-size: 12px;
@@ -602,7 +673,7 @@ const submitForm = () => {
 }
 
 .form-label.required::after {
-    content: ' *';
+    content: " *";
     color: #e53e3e;
 }
 

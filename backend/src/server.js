@@ -29,6 +29,7 @@ console.error = (...args) => {
 const applicationsRouter = require("./routes/applications");
 const authRouter = require("./routes/auth");
 const adminRouter = require("./routes/admin");
+const docentReservationsRouter = require("./routes/docentReservations");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -68,6 +69,7 @@ app.get("/health", (req, res) => {
 app.use("/api/applications", applicationsRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/admin", adminRouter);
+app.use("/api/docent-reservations", docentReservationsRouter);
 
 // Error handler (must be last)
 app.use(errorHandler);

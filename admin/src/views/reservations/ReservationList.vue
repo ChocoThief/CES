@@ -22,7 +22,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowUpDown, Download, Search } from "lucide-vue-next";
+import { ArrowUpDown, ArrowUp, ArrowDown, Download, Search, Save } from "lucide-vue-next";
 import apiClient from "@/lib/axios";
 import * as XLSX from "xlsx";
 
@@ -126,6 +126,7 @@ const fetchReservations = async (page = 1) => {
             phone: r.phone,
             email: r.email,
             notes: r.notes,
+            interests: r.interests || "",
         }));
 
         // 페이지네이션 업데이트
@@ -283,6 +284,7 @@ const cancelAll = async () => {
 };
 
 const approve = async (id: number) => {
+    if (!confirm("예약을 승인하시겠습니까?")) return;
     try {
         await apiClient.patch(`/admin/docent-reservations/${id}/approve`);
         await fetchReservations();
@@ -293,6 +295,7 @@ const approve = async (id: number) => {
 };
 
 const reject = async (id: number) => {
+    if (!confirm("예약을 거절하시겠습니까?")) return;
     try {
         await apiClient.patch(`/admin/docent-reservations/${id}/reject`);
         await fetchReservations();
@@ -315,6 +318,19 @@ const cancel = async (id: number) => {
 
 const handleRowClick = (reservation: any) => {
     console.log("Clicked reservation:", reservation);
+};
+
+// 메모 저장
+const saveMemo = async (id: number, memo: string) => {
+    try {
+        await apiClient.patch(`/admin/docent-reservations/${id}/memo`, {
+            adminMemo: memo,
+        });
+        alert("메모가 저장되었습니다.");
+    } catch (error) {
+        console.error("Failed to save memo:", error);
+        alert("메모 저장 중 오류가 발생했습니다.");
+    }
 };
 
 const goToDashboard = () => {
@@ -340,6 +356,7 @@ const exportToExcel = async () => {
                 연락처: r.phone,
                 이메일: r.email,
                 인원: r.visitorCount,
+                관심분야: r.interests,
                 상세정보: r.notes,
                 상태: r.status,
                 관리자메모: r.adminMemo,
@@ -523,12 +540,17 @@ const sortBy = (column: string) => {
                                     @click="sortBy('name')"
                                 >
                                     <span>이름</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'name' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'name' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'name' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
@@ -538,12 +560,17 @@ const sortBy = (column: string) => {
                                     @click="sortBy('company')"
                                 >
                                     <span>소속/직함</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'company' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'company' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'company' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
@@ -553,12 +580,17 @@ const sortBy = (column: string) => {
                                     @click="sortBy('count')"
                                 >
                                     <span>인원</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'count' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'count' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'count' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
@@ -568,12 +600,17 @@ const sortBy = (column: string) => {
                                     @click="sortBy('date')"
                                 >
                                     <span>날짜</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'date' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'date' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'date' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
@@ -583,12 +620,17 @@ const sortBy = (column: string) => {
                                     @click="sortBy('docent')"
                                 >
                                     <span>도슨트</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'docent' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'docent' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'docent' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
@@ -598,12 +640,17 @@ const sortBy = (column: string) => {
                                     @click="sortBy('time')"
                                 >
                                     <span>시간</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'time' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'time' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'time' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
@@ -613,15 +660,21 @@ const sortBy = (column: string) => {
                                     @click="sortBy('status')"
                                 >
                                     <span>상태</span>
+                                    <ArrowUp
+                                        v-if="sortColumn === 'status' && sortDirection === 'asc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
+                                    <ArrowDown
+                                        v-else-if="sortColumn === 'status' && sortDirection === 'desc'"
+                                        class="h-4 w-4 text-primary"
+                                    />
                                     <ArrowUpDown
+                                        v-else
                                         class="h-4 w-4"
-                                        :class="
-                                            sortColumn === 'status' &&
-                                            'text-primary'
-                                        "
                                     />
                                 </div>
                             </TableHead>
+                            <TableHead>관심분야</TableHead>
                             <TableHead>비고/메모</TableHead>
                             <TableHead class="text-right">승인/취소</TableHead>
                         </TableRow>
@@ -670,8 +723,26 @@ const sortBy = (column: string) => {
                                 </Badge>
                             </TableCell>
                             <TableCell @click="handleRowClick(reservation)">{{
-                                reservation.memo
+                                reservation.interests
                             }}</TableCell>
+                            <TableCell @click.stop>
+                                <div class="flex items-center gap-1">
+                                    <Input
+                                        v-model="reservation.memo"
+                                        type="text"
+                                        class="h-8 text-xs w-[120px] text-foreground bg-white"
+                                        placeholder="메모 입력"
+                                    />
+                                    <Button
+                                        size="sm"
+                                        variant="outline"
+                                        class="h-8 w-8 p-0 text-foreground"
+                                        @click="saveMemo(reservation.id, reservation.memo)"
+                                    >
+                                        <Save class="h-4 w-4 text-foreground" />
+                                    </Button>
+                                </div>
+                            </TableCell>
                             <TableCell class="text-right" @click.stop>
                                 <div
                                     v-if="reservation.status !== 'cancelled'"
@@ -689,7 +760,7 @@ const sortBy = (column: string) => {
                                         v-if="reservation.status === 'pending'"
                                         size="sm"
                                         variant="outline"
-                                        @click="cancel(reservation.id)"
+                                        @click="reject(reservation.id)"
                                     >
                                         취소
                                     </Button>

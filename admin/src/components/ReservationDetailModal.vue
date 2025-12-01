@@ -26,6 +26,9 @@ interface Reservation {
   contact?: string
   participants?: string
   notes?: string
+  interests?: string
+  phone?: string
+  email?: string
 }
 
 interface Props {
@@ -107,7 +110,7 @@ const handleCancel = () => {
               <p class="font-medium">2026.01.{{ reservation.date.split('/')[1].padStart(2, '0') }}</p>
             </div>
             <div>
-              <span class="text-muted-foreground">도슨트</span>
+              <span class="text-muted-foreground">도슨트 투어</span>
               <p class="font-medium">도슨트{{ reservation.docent }}</p>
             </div>
             <div>
@@ -137,15 +140,27 @@ const handleCancel = () => {
             </div>
             <div>
               <span class="text-muted-foreground">현장 컨택 실무자명/직함</span>
-              <p class="font-medium">{{ reservation.contact || `${reservation.company} 담당자` }}</p>
+              <p class="font-medium">{{ reservation.contact || '-' }}</p>
+            </div>
+            <div>
+              <span class="text-muted-foreground">현장 컨택 실무자 휴대번호</span>
+              <p class="font-medium">{{ reservation.phone || '-' }}</p>
+            </div>
+            <div>
+              <span class="text-muted-foreground">현장 컨택 실무자 이메일</span>
+              <p class="font-medium">{{ reservation.email || '-' }}</p>
+            </div>
+            <div v-if="reservation.interests">
+              <span class="text-muted-foreground">관심 분야</span>
+              <p class="font-medium">{{ reservation.interests }}</p>
             </div>
             <div>
               <span class="text-muted-foreground">방문인원</span>
               <p class="font-medium">{{ reservation.count }}명</p>
             </div>
             <div>
-              <span class="text-muted-foreground">현장 컨택 실무자명/직함</span>
-              <p class="font-medium">{{ reservation.participants || '방문자 대표 외 참여자 명단, 기타 참고 사항 등' }}</p>
+              <span class="text-muted-foreground">상세정보</span>
+              <p class="font-medium">{{ reservation.participants || '-' }}</p>
             </div>
           </div>
         </div>

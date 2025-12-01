@@ -14,6 +14,7 @@ const createReservation = async (req, res, next) => {
       email,
       visitorCount,
       notes,
+      interests,
     } = req.body;
 
     // 필수 필드 검증
@@ -51,6 +52,7 @@ const createReservation = async (req, res, next) => {
       email,
       visitorCount,
       notes,
+      interests,
       status: "pending",
     });
 
@@ -414,6 +416,7 @@ const exportReservations = async (req, res, next) => {
         phone: data.phone,
         email: data.email,
         visitorCount: data.visitorCount,
+        interests: data.interests || "",
         notes: data.notes || "",
         status:
           data.status === "approved"

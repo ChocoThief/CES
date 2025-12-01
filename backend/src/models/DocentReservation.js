@@ -72,6 +72,12 @@ module.exports = (sequelize) => {
         field: "notes",
         comment: "참여자 명단, 기타 참고사항",
       },
+      interests: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+        field: "interests",
+        comment: "관심 분야 (영문)",
+      },
 
       // 관리자 메모
       adminMemo: {

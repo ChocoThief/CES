@@ -176,6 +176,7 @@ const fetchReservations = async () => {
                     phone: r.phone,
                     email: r.email,
                     notes: r.notes,
+                    interests: r.interests,
                     adminMemo: r.adminMemo,
                 });
             }
@@ -237,6 +238,7 @@ const handleReservationClick = (
         phone: reservation.phone,
         email: reservation.email,
         participants: reservation.notes || "",
+        interests: reservation.interests || "",
     };
     isModalOpen.value = true;
 };

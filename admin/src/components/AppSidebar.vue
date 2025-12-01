@@ -16,7 +16,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from '@/components/ui/sidebar'
-import { LayoutDashboard, LogOut, FileText } from 'lucide-vue-next'
+import { LayoutDashboard, LogOut, FileText, Calendar } from 'lucide-vue-next'
 
 const route = useRoute()
 const router = useRouter()
@@ -29,11 +29,19 @@ const items = [
     url: '/',
     icon: LayoutDashboard,
   },
+  {
+    title: '예약관리',
+    url: '/reservations/dashboard',
+    icon: Calendar,
+  },
 ]
 
 const isActive = (url: string) => {
   if (url === '/') {
     return route.path === '/' || route.path.startsWith('/applications')
+  }
+  if (url === '/reservations/dashboard') {
+    return route.path.startsWith('/reservations')
   }
   return route.path === url
 }

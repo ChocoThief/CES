@@ -20,6 +20,18 @@ const router = createRouter({
       name: 'applicationDetail',
       component: () => import('../views/ApplicationDetail.vue'),
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/reservations/dashboard',
+      name: 'reservationDashboard',
+      component: () => import('../views/reservations/ReservationDashboard.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/reservations/list',
+      name: 'reservationList',
+      component: () => import('../views/reservations/ReservationList.vue'),
+      meta: { requiresAuth: true }
     }
   ]
 });

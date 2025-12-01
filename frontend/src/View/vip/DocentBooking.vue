@@ -128,6 +128,26 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="form-label required">현장 컨택 실무자 휴대번호</label>
+                            <input
+                                v-model="formData.phone"
+                                type="tel"
+                                class="form-input"
+                                placeholder="ex) 010-0000-0000"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label required">현장 컨택 실무자 이메일</label>
+                            <input
+                                v-model="formData.email"
+                                type="email"
+                                class="form-input"
+                                placeholder="ex) 000@0000.000"
+                            />
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label required">방문인원</label>
                             <div class="input-note">* 헤드셋 준비를 위해 가급적 자세히 적어주세요.</div>
                             <input
@@ -193,6 +213,8 @@ const selectedTime = ref('');
 const formData = ref({
     representative: '',
     contact: '',
+    phone: '',
+    email: '',
     visitors: '',
     notes: ''
 });
@@ -227,6 +249,8 @@ const isFormValid = computed(() => {
     return (
         formData.value.representative.trim() !== '' &&
         formData.value.contact.trim() !== '' &&
+        formData.value.phone.trim() !== '' &&
+        formData.value.email.trim() !== '' &&
         formData.value.visitors >= 1 &&
         formData.value.notes.trim() !== ''
     );

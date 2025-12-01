@@ -265,6 +265,23 @@ const rejectAll = async () => {
     }
 };
 
+const cancelAll = async () => {
+    if (selectedItems.value.length === 0) return;
+    if (!confirm("선택한 예약을 모두 취소하시겠습니까?")) return;
+    try {
+        await Promise.all(
+            selectedItems.value.map((id) =>
+                apiClient.patch(`/admin/docent-reservations/${id}/cancel`),
+            ),
+        );
+        selectedItems.value = [];
+        await fetchReservations();
+    } catch (error) {
+        console.error("Failed to cancel all:", error);
+        alert("취소 처리 중 오류가 발생했습니다.");
+    }
+};
+
 const approve = async (id: number) => {
     try {
         await apiClient.patch(`/admin/docent-reservations/${id}/approve`);
@@ -469,6 +486,13 @@ const sortBy = (column: string) => {
                         variant="destructive"
                     >
                         전체 거절
+                    </Button>
+                    <Button
+                        @click="cancelAll"
+                        :disabled="selectedItems.length === 0"
+                        variant="outline"
+                    >
+                        전체 취소
                     </Button>
                     <Button @click="exportToExcel" variant="outline">
                         <Download class="h-4 w-4 mr-2" />

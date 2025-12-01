@@ -438,6 +438,29 @@ const exportReservations = async (req, res, next) => {
   }
 };
 
+// 관리자 API: 예약 삭제
+const deleteReservation = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const reservation = await DocentReservation.findByPk(id);
+
+    if (!reservation) {
+      return res.status(404).json({ error: "예약 정보를 찾을 수 없습니다." });
+    }
+
+    await reservation.destroy();
+
+    res.json({
+      success: true,
+      message: "예약이 삭제되었습니다.",
+    });
+  } catch (error) {
+    console.error("Delete reservation error:", error);
+    next(error);
+  }
+};
+
 module.exports = {
   createReservation,
   getAvailableSlots,
@@ -449,4 +472,5 @@ module.exports = {
   cancelReservation,
   updateMemo,
   exportReservations,
+  deleteReservation,
 };

@@ -15,6 +15,7 @@ const {
   cancelReservation,
   updateMemo,
   exportReservations,
+  deleteReservation,
 } = require("../controllers/docentReservationController");
 
 // 모든 admin 라우트는 인증 필요
@@ -53,5 +54,8 @@ router.patch("/docent-reservations/:id/memo", updateMemo);
 
 // PATCH /api/admin/docent-reservations/:id/cancel - 예약 취소
 router.patch("/docent-reservations/:id/cancel", cancelReservation);
+
+// DELETE /api/admin/docent-reservations/:id - 예약 삭제
+router.delete("/docent-reservations/:id", deleteReservation);
 
 module.exports = router;

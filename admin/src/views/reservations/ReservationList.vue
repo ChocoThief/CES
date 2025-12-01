@@ -22,7 +22,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowUpDown, ArrowUp, ArrowDown, Download, Search, Save } from "lucide-vue-next";
+import { ArrowUpDown, ArrowUp, ArrowDown, Download, Search, Save, Trash2 } from "lucide-vue-next";
 import apiClient from "@/lib/axios";
 import * as XLSX from "xlsx";
 
@@ -236,6 +236,7 @@ const toggleItem = (id: number) => {
 
 const approveAll = async () => {
     if (selectedItems.value.length === 0) return;
+    if (!confirm("선택한 예약을 모두 승인하시겠습니까?")) return;
     try {
         await Promise.all(
             selectedItems.value.map((id) =>
@@ -252,6 +253,7 @@ const approveAll = async () => {
 
 const rejectAll = async () => {
     if (selectedItems.value.length === 0) return;
+    if (!confirm("선택한 예약을 모두 거절하시겠습니까?")) return;
     try {
         await Promise.all(
             selectedItems.value.map((id) =>
@@ -330,6 +332,19 @@ const saveMemo = async (id: number, memo: string) => {
     } catch (error) {
         console.error("Failed to save memo:", error);
         alert("메모 저장 중 오류가 발생했습니다.");
+    }
+};
+
+// 예약 삭제
+const deleteReservation = async (id: number) => {
+    if (!confirm("예약을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.")) return;
+    try {
+        await apiClient.delete(`/admin/docent-reservations/${id}`);
+        await fetchReservations();
+        alert("예약이 삭제되었습니다.");
+    } catch (error) {
+        console.error("Failed to delete:", error);
+        alert("삭제 처리 중 오류가 발생했습니다.");
     }
 };
 
@@ -676,7 +691,8 @@ const sortBy = (column: string) => {
                             </TableHead>
                             <TableHead>관심분야</TableHead>
                             <TableHead>비고/메모</TableHead>
-                            <TableHead class="text-right">승인/취소</TableHead>
+                            <TableHead class="text-center">승인/취소</TableHead>
+                            <TableHead class="text-center">삭제</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -776,6 +792,16 @@ const sortBy = (column: string) => {
                                         취소
                                     </Button>
                                 </div>
+                            </TableCell>
+                            <TableCell class="text-center" @click.stop>
+                                <Button
+                                    size="sm"
+                                    variant="ghost"
+                                    class="h-8 w-8 p-0 text-destructive hover:text-destructive hover:bg-destructive/10"
+                                    @click="deleteReservation(reservation.id)"
+                                >
+                                    <Trash2 class="h-4 w-4" />
+                                </Button>
                             </TableCell>
                         </TableRow>
                     </TableBody>

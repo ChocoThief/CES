@@ -175,6 +175,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="form-label">관심 분야</label>
+                            <input
+                                v-model="formData.interests"
+                                type="text"
+                                class="form-input"
+                                placeholder="(영문)"
+                            />
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label required">방문인원</label>
                             <div class="input-note">
                                 * 헤드셋 준비를 위해 가급적 자세히 적어주세요.
@@ -254,6 +264,7 @@ const formData = ref({
     contact: "",
     phone: "",
     email: "",
+    interests: "",
     visitors: "",
     notes: "",
 });
@@ -359,6 +370,7 @@ const submitForm = async () => {
             contact: formData.value.contact,
             phone: formData.value.phone,
             email: formData.value.email,
+            interests: formData.value.interests,
             visitorCount: formData.value.visitors,
             notes: formData.value.notes,
         };

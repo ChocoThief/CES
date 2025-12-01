@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import DashboardLayout from "@/layouts/DashboardLayout.vue";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/table";
 import ReservationDetailModal from "@/components/ReservationDetailModal.vue";
 import apiClient from "@/lib/axios";
+import { Search } from "lucide-vue-next";
 
 const router = useRouter();
 
@@ -38,6 +39,56 @@ const selectedDate = ref("all");
 const selectedDocent = ref("all");
 const selectedStatus = ref("all");
 const searchQuery = ref("");
+const activeSearchQuery = ref(""); // 검색 버튼 클릭 시 적용되는 검색어
+
+// 검색 버튼 클릭
+const handleSearch = () => {
+    activeSearchQuery.value = searchQuery.value;
+};
+
+// 검색 초기화
+const handleReset = () => {
+    searchQuery.value = "";
+    activeSearchQuery.value = "";
+    selectedDate.value = "all";
+    selectedDocent.value = "all";
+    selectedStatus.value = "all";
+};
+
+// 표시할 날짜 목록 (필터 적용)
+const visibleDates = computed(() => {
+    const allDates = ["1/6", "1/7", "1/8", "1/9"];
+    if (selectedDate.value === "all") return allDates;
+    return allDates.filter((d) => d === selectedDate.value);
+});
+
+// 표시할 도슨트 목록 (필터 적용)
+const visibleDocents = computed(() => {
+    if (selectedDocent.value === "all") return ["docentA", "docentB"];
+    return [selectedDocent.value];
+});
+
+// 예약 목록 필터링 함수
+const filterReservations = (resList: any[]) => {
+    return resList.filter((res) => {
+        // 상태 필터
+        if (selectedStatus.value !== "all" && res.status !== selectedStatus.value) {
+            return false;
+        }
+        // 검색어 필터 (이름, 연락처, 이메일, 전화번호)
+        if (activeSearchQuery.value) {
+            const query = activeSearchQuery.value.toLowerCase();
+            const nameMatch = res.name?.toLowerCase().includes(query);
+            const contactMatch = res.contact?.toLowerCase().includes(query);
+            const emailMatch = res.email?.toLowerCase().includes(query);
+            const phoneMatch = res.phone?.includes(query);
+            if (!nameMatch && !contactMatch && !emailMatch && !phoneMatch) {
+                return false;
+            }
+        }
+        return true;
+    });
+};
 
 // 통계 데이터
 const stats = ref({
@@ -300,17 +351,32 @@ const goToList = () => {
                 </div>
 
                 <!-- 검색 -->
-                <Input
-                    v-model="searchQuery"
-                    type="search"
-                    placeholder="검색…"
-                    class="w-[200px]"
-                />
+                <div class="flex gap-2">
+                    <div class="relative">
+                        <Search
+                            class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                            :size="16"
+                        />
+                        <Input
+                            v-model="searchQuery"
+                            type="text"
+                            placeholder="이름, 소속, 이메일 검색..."
+                            class="pl-9 w-[200px]"
+                            @keyup.enter="handleSearch"
+                        />
+                    </div>
+                    <Button @click="handleSearch" :disabled="isLoading">
+                        검색
+                    </Button>
+                    <Button variant="outline" @click="handleReset" :disabled="isLoading">
+                        초기화
+                    </Button>
+                </div>
             </div>
 
             <!-- 타임테이블 -->
             <div class="space-y-8">
-                <div v-for="date in ['1/6', '1/7', '1/8', '1/9']" :key="date">
+                <div v-for="date in visibleDates" :key="date">
                     <Card class="overflow-hidden">
                         <CardContent class="p-0">
                             <!-- 날짜 헤더 -->
@@ -353,7 +419,7 @@ const goToList = () => {
                                 </TableHeader>
                                 <TableBody>
                                     <!-- 도슨트 A -->
-                                    <TableRow>
+                                    <TableRow v-if="visibleDocents.includes('docentA')">
                                         <TableCell class="border-r font-medium"
                                             >도슨트A(영문)</TableCell
                                         >
@@ -363,9 +429,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentA[
-                                                        '11:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentA['11:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -375,8 +439,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentA['11:00']"
+                                                    ) in filterReservations(reservations[date].docentA['11:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -413,9 +476,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentA[
-                                                        '14:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentA['14:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -425,8 +486,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentA['14:00']"
+                                                    ) in filterReservations(reservations[date].docentA['14:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -463,9 +523,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentA[
-                                                        '15:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentA['15:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -475,8 +533,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentA['15:00']"
+                                                    ) in filterReservations(reservations[date].docentA['15:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -513,9 +570,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentA[
-                                                        '16:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentA['16:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -525,8 +580,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentA['16:00']"
+                                                    ) in filterReservations(reservations[date].docentA['16:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -561,7 +615,7 @@ const goToList = () => {
                                     </TableRow>
 
                                     <!-- 도슨트 B -->
-                                    <TableRow>
+                                    <TableRow v-if="visibleDocents.includes('docentB')">
                                         <TableCell class="border-r font-medium"
                                             >도슨트B(국문)</TableCell
                                         >
@@ -571,9 +625,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentB[
-                                                        '11:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentB['11:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -583,8 +635,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentB['11:00']"
+                                                    ) in filterReservations(reservations[date].docentB['11:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -621,9 +672,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentB[
-                                                        '14:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentB['14:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -633,8 +682,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentB['14:00']"
+                                                    ) in filterReservations(reservations[date].docentB['14:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -671,9 +719,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentB[
-                                                        '15:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentB['15:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -683,8 +729,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentB['15:00']"
+                                                    ) in filterReservations(reservations[date].docentB['15:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="
@@ -721,9 +766,7 @@ const goToList = () => {
                                         >
                                             <div
                                                 v-if="
-                                                    reservations[date].docentB[
-                                                        '16:00'
-                                                    ].length === 0
+                                                    filterReservations(reservations[date].docentB['16:00']).length === 0
                                                 "
                                                 class="text-muted-foreground"
                                             >
@@ -733,8 +776,7 @@ const goToList = () => {
                                                 <div
                                                     v-for="(
                                                         res, idx
-                                                    ) in reservations[date]
-                                                        .docentB['16:00']"
+                                                    ) in filterReservations(reservations[date].docentB['16:00'])"
                                                     :key="idx"
                                                     class="cursor-pointer hover:bg-muted/50 p-1 rounded"
                                                     @click="

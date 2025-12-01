@@ -41,9 +41,13 @@ app.use(helmet());
 const corsOptions =
   process.env.NODE_ENV === "production"
     ? {
-        origin: [process.env.FRONTEND_URL, process.env.ADMIN_URL].filter(
-          Boolean,
-        ),
+        origin: [
+          process.env.FRONTEND_URL,
+          process.env.ADMIN_URL,
+          "https://www.ceskorea.kr",
+          "https://ceskorea.kr",
+          "https://admin.ceskorea.kr",
+        ].filter(Boolean),
         credentials: true,
       }
     : {

@@ -104,7 +104,7 @@ module.exports = (sequelize) => {
     },
     promoGraphicUrl: {
       type: DataTypes.STRING(1000),
-      allowNull: false,
+      allowNull: true,
       field: 'promo_graphic_url'
     },
     tableGraphicUrl: {

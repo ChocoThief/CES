@@ -766,12 +766,11 @@
                             <label for="promo-graphic"
                                 >3) 홍보 그래픽 (공통) : 부스 후부 벽면 부착형
                                 홍보 그래픽 파일 (오타 검수 및 교정
-                                필수)*</label
+                                필수)</label
                             >
                             <div
                                 class="file-upload-area"
                                 v-if="!uploadedFiles.promoGraphic.name"
-                                :class="{ error: errors.promoGraphic }"
                             >
                                 <input
                                     type="file"
@@ -780,7 +779,6 @@
                                         handleFileUpload('promoGraphic', $event)
                                     "
                                     accept=".ai,.psd,.pdf,.eps"
-                                    required
                                 />
                                 <span class="file-upload-text"
                                     >+ 파일 업로드</span
@@ -1738,12 +1736,6 @@ export default {
                 errors.companyLogoWhite = "백색 단도 로고를 업로드해주세요.";
             } else {
                 errors.companyLogoWhite = "";
-            }
-
-            if (!formData.promoGraphic) {
-                errors.promoGraphic = "홍보 그래픽(공통)을 업로드해주세요.";
-            } else {
-                errors.promoGraphic = "";
             }
 
             // QR 코드 검증

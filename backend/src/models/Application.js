@@ -135,7 +135,7 @@ module.exports = (sequelize) => {
     },
     promoVideo: {
       type: DataTypes.STRING(10),
-      allowNull: false,
+      allowNull: true,
       defaultValue: 'none',
       field: 'promo_video',
       validate: {

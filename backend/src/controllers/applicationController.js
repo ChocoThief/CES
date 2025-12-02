@@ -40,9 +40,9 @@ const createApplication = async (req, res, next) => {
     const videoFileUrl = getFileUrl(files.videoFile?.[0]);
 
     // 필수 파일 검증
-    if (!companyLogoColorUrl || !companyLogoWhiteUrl || !promoGraphicUrl) {
+    if (!companyLogoColorUrl || !companyLogoWhiteUrl) {
       return res.status(400).json({
-        error: 'Company logo (color and white) and promo graphic are required'
+        error: '회사 로고(컬러)와 회사 로고(흰색)를 업로드해주세요'
       });
     }
 

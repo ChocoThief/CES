@@ -67,18 +67,18 @@ const router = createRouter({
         },
       ],
     },
-    // {
-    //   path: '/vip',
-    //   component: Vip,
-    // },
-    // {
-    //   path: '/vip/pitching-schedule',
-    //   component: PitchingSchedule,
-    // },
-    // {
-    //   path: '/vip/docent-booking',
-    //   component: DocentBooking,
-    // },
+    {
+      path: '/vip',
+      component: Vip,
+    },
+    {
+      path: '/vip/pitching-schedule',
+      component: PitchingSchedule,
+    },
+    {
+      path: '/vip/docent-booking',
+      component: DocentBooking,
+    },
   ],
 })
 

@@ -18,6 +18,13 @@
                                 : "방문자 정보"
                         }}
                     </h1>
+                    <p class="title-english">
+                        {{
+                            currentStep === 1
+                                ? "(Docent Tour Event Application)"
+                                : "(Visitor Information)"
+                        }}
+                    </p>
                 </div>
                 <div class="pc-notice">
                     *해당 홈페이지는 PC에 최적화되어있습니다.
@@ -29,61 +36,61 @@
                 <div v-if="currentStep === 1" class="booking-form">
                     <!-- Date Selection -->
                     <div class="form-group fade-in">
-                        <label class="form-label">날짜</label>
+                        <label class="form-label">날짜(Date)</label>
                         <select v-model="selectedDate" class="form-select">
                             <option value="">날짜를 선택해주세요</option>
-                            <option value="1월 6일(화)">1월 6일(화)</option>
-                            <option value="1월 7일(수)">1월 7일(수)</option>
-                            <option value="1월 8일(목)">1월 8일(목)</option>
-                            <option value="1월 9일(금)">1월 9일(금)</option>
+                            <option value="1월 6일(화)">1월 6일(화) / 6 Jan 2025 (Tue)</option>
+                            <option value="1월 7일(수)">1월 7일(수) / 7 Jan 2025 (Wed)</option>
+                            <option value="1월 8일(목)">1월 8일(목) / 8 Jan 2025 (Thu)</option>
+                            <option value="1월 9일(금)">1월 9일(금) / 9 Jan 2025 (Fri)</option>
                         </select>
                     </div>
 
                     <!-- Docent Tour Selection -->
                     <transition name="fade-slide">
                         <div v-if="selectedDate" class="form-group">
-                            <label class="form-label">도슨트 투어</label>
+                            <label class="form-label">도슨트 투어(Docent Tour)</label>
                             <select v-model="selectedTour" class="form-select">
                                 <option value="">도슨트를 선택해주세요</option>
-                                <option value="도슨트A(영문)">
-                                    도슨트A(영문)
+                                <option value="투어A(영문)">
+                                    투어A (영문) / Tour A in English
                                 </option>
-                                <option value="도슨트B(국문)">
-                                    도슨트B(국문)
+                                <option value="투어B(국문)">
+                                    투어B (국문) / Tour B in Korean
                                 </option>
                             </select>
                         </div>
                     </transition>
 
-                    <!-- Time Selection -->
+                    <!-- Time Selection - Button Format -->
                     <transition name="fade-slide">
                         <div
                             v-if="selectedDate && selectedTour"
                             class="form-group"
                         >
-                            <label class="form-label">타임</label>
+                            <div class="form-label-row">
+                                <label class="form-label">타임(Time)</label>
+                                <span class="legend-reserved">
+                                    <span class="legend-box"></span>
+                                    예약마감
+                                </span>
+                            </div>
                             <div class="time-slots">
                                 <button
-                                    v-for="time in availableTimes"
-                                    :key="time.slot"
-                                    @click="selectTime(time.slot)"
+                                    v-for="slot in getVisibleTimeSlots"
+                                    :key="slot"
                                     :class="[
                                         'time-slot',
                                         {
-                                            active: selectedTime === time.slot,
-                                            disabled: !time.available,
-                                        },
+                                            'available': !isSlotReserved(slot),
+                                            'reserved': isSlotReserved(slot),
+                                            'selected': selectedTime === slot
+                                        }
                                     ]"
-                                    :disabled="!time.available"
+                                    :disabled="isSlotReserved(slot)"
+                                    @click="selectTimeSlot(slot)"
                                 >
-                                    <div class="time">{{ time.slot }}</div>
-                                    <div class="status">
-                                        {{
-                                            time.available
-                                                ? "가 능"
-                                                : "예약마감"
-                                        }}
-                                    </div>
+                                    {{ slot }}
                                 </button>
                             </div>
                         </div>
@@ -97,7 +104,7 @@
                                 @click="goToStep2"
                                 class="btn-submit"
                             >
-                                다음
+                                예약하기(Reserve)
                             </button>
                         </transition>
                     </div>
@@ -107,18 +114,18 @@
                 <div v-if="currentStep === 2" class="info-form">
                     <!-- Booking Info (Read-only) -->
                     <div class="booking-info-section fade-in">
-                        <h2 class="section-title">예약 정보</h2>
+                        <h2 class="section-title">예약 정보(Reservation Details)</h2>
                         <div class="booking-info-grid">
                             <div class="info-row">
-                                <div class="info-label">날짜</div>
-                                <div class="info-value">{{ selectedDate }}</div>
+                                <div class="info-label">날짜(Date)</div>
+                                <div class="info-value">{{ getDisplayDate }}</div>
                             </div>
                             <div class="info-row">
-                                <div class="info-label">도슨트</div>
-                                <div class="info-value">{{ selectedTour }}</div>
+                                <div class="info-label">도슨트(Docent)</div>
+                                <div class="info-value">{{ getDisplayTour }}</div>
                             </div>
                             <div class="info-row">
-                                <div class="info-label">타임</div>
+                                <div class="info-label">타임(Time)</div>
                                 <div class="info-value">{{ selectedTime }}</div>
                             </div>
                         </div>
@@ -128,54 +135,54 @@
                     <div class="form-section fade-in">
                         <div class="form-group">
                             <label class="form-label required"
-                                >방문자 대표명/직함</label
+                                >방문자 대표명/직함(Lead Visitor Name / Position)</label
                             >
-                            <input
+                            <textarea
                                 v-model="formData.representative"
-                                type="text"
-                                class="form-input"
-                                placeholder="ex) A사 OOO대표 / B사 OOO 사장"
-                            />
+                                class="form-input form-input-multiline"
+                                rows="2"
+                                placeholder="ex) A사 OOO대표 / B사 OOO 사장&#10;ex) CEO OOO of Company A / Director OOO of Company B"
+                            ></textarea>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label required"
                                 >현장 컨택 실무자명/직함</label
                             >
-                            <input
+                            <textarea
                                 v-model="formData.contact"
-                                type="text"
-                                class="form-input"
-                                placeholder="ex) A사 OOO 부장 / B사 OOO 주무관"
-                            />
+                                class="form-input form-input-multiline"
+                                rows="2"
+                                placeholder="ex) A사 OOO 부장 / B사 OOO 주무관&#10;ex) Deputy Director OOO of Company A / Manager OOO of Company B"
+                            ></textarea>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label required"
-                                >현장 컨택 실무자 휴대번호</label
+                                >현장 컨택 실무자명 휴대번호(Mobile)</label
                             >
                             <input
                                 v-model="formData.phone"
                                 type="tel"
                                 class="form-input"
-                                placeholder="ex) 010-0000-0000"
+                                placeholder="000-0000-0000"
                             />
                         </div>
 
                         <div class="form-group">
                             <label class="form-label required"
-                                >현장 컨택 실무자 이메일</label
+                                >현장 컨택 실무자명 이메일(Email)</label
                             >
                             <input
                                 v-model="formData.email"
                                 type="email"
                                 class="form-input"
-                                placeholder="ex) 000@0000.000"
+                                placeholder="000@0000.000"
                             />
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">관심 분야</label>
+                            <label class="form-label required">관심분야(Participants)</label>
                             <input
                                 v-model="formData.interests"
                                 type="text"
@@ -185,27 +192,28 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label required">방문인원</label>
+                            <label class="form-label required">방문인원(Number of Visitors)</label>
                             <div class="input-note">
-                                * 헤드셋 준비를 위해 가급적 자세히 적어주세요.
+                                * 헤드셋 준비를 위해 가급적 자세히 적어주세요.<br/>
+                                * Please specify details for headset preparation.
                             </div>
                             <input
                                 v-model.number="formData.visitors"
                                 type="number"
                                 class="form-input"
                                 min="1"
-                                placeholder="ex) 10"
+                                placeholder="1"
                             />
                         </div>
 
                         <div class="form-group">
                             <label class="form-label required"
-                                >상세정보 작성</label
+                                >상세정보 작성(Enter Details)</label
                             >
                             <textarea
                                 v-model="formData.notes"
                                 class="form-textarea"
-                                placeholder="방문자 대표 외 참여자 명단, 기타 참고 사항 등"
+                                placeholder="방문자 대표 외 참여자 명단, 기타 참고 사항 등&#10;Names of participants other than the lead visitor, additional notes, etc."
                                 rows="6"
                             ></textarea>
                         </div>
@@ -213,13 +221,16 @@
                         <!-- Form Notes -->
                         <div class="form-notes">
                             <p>
-                                ※ 정확한 안내 및 현장 준비를 위해 모든 항목은
-                                상세히 기재 부탁드립니다.
+                                ※ 정확한 안내 및 현장 준비를 위해 모든 항목은 상세히 기재 부탁드립니다.
                             </p>
                             <p>
-                                ※ 본 예약은 접수 후 검토 과정을 거쳐 확정됩니다.
-                                운영 사정에 따라 예약이 변경되거나 취소될 수
-                                있습니다.
+                                ※ 본 예약은 접수 후 검토 과정을 거쳐 확정됩니다. 운영 사정에 따라 예약이 변경되거나 취소될 수 있습니다.
+                            </p>
+                            <p>
+                                ※ For accurate guidance and on-site preparation, please complete all fields in detail.
+                            </p>
+                            <p>
+                                ※ This reservation will be confirmed after a review process. It may be modified or canceled depending on operational circumstances.
                             </p>
                         </div>
 
@@ -233,7 +244,7 @@
                                 :disabled="!isFormValid"
                                 class="btn-submit"
                             >
-                                완료하기
+                                완료하기(Submit)
                             </button>
                         </div>
                     </div>
@@ -286,8 +297,8 @@ const dateMapping = {
 
 // Tour mapping for API
 const tourMapping = {
-    "도슨트A(영문)": "A",
-    "도슨트B(국문)": "B",
+    "투어A(영문)": "A",
+    "투어B(국문)": "B",
 };
 
 // 슬롯 데이터 로드
@@ -312,7 +323,119 @@ watch([selectedDate, selectedTour], () => {
     selectedTime.value = "";
 });
 
-// Available times based on selected date and tour
+// 모든 시간 슬롯 (12개)
+const allTimeSlots = [
+    "10:00 ~ 10:30",
+    "10:30 ~ 11:00",
+    "11:00 ~ 11:30",
+    "11:30 ~ 12:00",
+    "13:00 ~ 13:30",
+    "13:30 ~ 14:00",
+    "14:00 ~ 14:30",
+    "14:30 ~ 15:00",
+    "15:00 ~ 15:30",
+    "15:30 ~ 16:00",
+    "16:00 ~ 16:30",
+    "16:30 ~ 17:00",
+];
+
+// 6, 7일에는 없는 시간대 (10:00~10:30, 10:30~11:00, 14:00~14:30, 14:30~15:00)
+const limitedDaySlots = [
+    "11:00 ~ 11:30",
+    "11:30 ~ 12:00",
+    "13:00 ~ 13:30",
+    "13:30 ~ 14:00",
+    "15:00 ~ 15:30",
+    "15:30 ~ 16:00",
+    "16:00 ~ 16:30",
+    "16:30 ~ 17:00",
+];
+
+// 선택된 날짜에 따른 시간 슬롯 헤더
+const getTimeSlotHeaders = computed(() => {
+    return allTimeSlots;
+});
+
+// 실제로 보여줄 시간 슬롯 (6,7일은 8개, 8,9일은 12개)
+const getVisibleTimeSlots = computed(() => {
+    if (isLimitedDay.value) {
+        return limitedDaySlots;
+    }
+    return allTimeSlots;
+});
+
+// 선택된 날짜가 6,7일인지 확인
+const isLimitedDay = computed(() => {
+    return selectedDate.value === "1월 6일(화)" || selectedDate.value === "1월 7일(수)";
+});
+
+// 해당 슬롯이 스케줄에 포함되는지 확인 (날짜에 따라)
+const isSlotInSchedule = (slot) => {
+    if (isLimitedDay.value) {
+        return limitedDaySlots.includes(slot);
+    }
+    return true;
+};
+
+// 테이블에 표시할 날짜 형식
+const getSelectedDateForTable = computed(() => {
+    const dateMap = {
+        "1월 6일(화)": "2025.01.06.",
+        "1월 7일(수)": "2025.01.07.",
+        "1월 8일(목)": "2025.01.08.",
+        "1월 9일(금)": "2025.01.09.",
+    };
+    return dateMap[selectedDate.value] || "";
+});
+
+// 예약 정보에 표시할 날짜 형식 (영문 포함)
+const getDisplayDate = computed(() => {
+    const dateMap = {
+        "1월 6일(화)": "1월 6일(화) / 6 Jan 2025 (Tue)",
+        "1월 7일(수)": "1월 7일(수) / 7 Jan 2025 (Wed)",
+        "1월 8일(목)": "1월 8일(목) / 8 Jan 2025 (Thu)",
+        "1월 9일(금)": "1월 9일(금) / 9 Jan 2025 (Fri)",
+    };
+    return dateMap[selectedDate.value] || selectedDate.value;
+});
+
+// 예약 정보에 표시할 도슨트 형식 (영문 포함)
+const getDisplayTour = computed(() => {
+    const tourMap = {
+        "투어A(영문)": "투어A (영문) / Tour A in English",
+        "투어B(국문)": "투어B (국문) / Tour B in Korean",
+    };
+    return tourMap[selectedTour.value] || selectedTour.value;
+});
+
+// 더미 데이터: 예약 완료된 슬롯
+const reservedSlots = {
+    "1월 6일(화)": ["11:00 ~ 11:30", "13:30 ~ 14:00"],
+    "1월 7일(수)": ["15:00 ~ 15:30", "16:00 ~ 16:30"],
+    "1월 8일(목)": ["10:00 ~ 10:30", "11:30 ~ 12:00", "14:00 ~ 14:30"],
+    "1월 9일(금)": ["10:30 ~ 11:00", "13:00 ~ 13:30"],
+};
+
+// 슬롯이 예약 완료되었는지 확인
+const isSlotReserved = (slot) => {
+    if (!selectedDate.value) return false;
+    const reserved = reservedSlots[selectedDate.value] || [];
+    return reserved.includes(slot);
+};
+
+// 슬롯 사용 가능 여부
+const isSlotAvailable = (slot) => {
+    return isSlotInSchedule(slot) && !isSlotReserved(slot);
+};
+
+// 시간 슬롯 선택
+const selectTimeSlot = (slot) => {
+    if (isSlotInSchedule(slot) && isSlotAvailable(slot)) {
+        selectedTime.value = slot;
+    }
+};
+
+// Available times based on selected date and tour (기존 호환용)
 const availableTimes = computed(() => {
     if (!selectedDate.value || !selectedTour.value) return [];
 
@@ -336,14 +459,11 @@ const isFormValid = computed(() => {
         formData.value.contact.trim() !== "" &&
         formData.value.phone.trim() !== "" &&
         formData.value.email.trim() !== "" &&
+        formData.value.interests.trim() !== "" &&
         formData.value.visitors >= 1 &&
         formData.value.notes.trim() !== ""
     );
 });
-
-const selectTime = (time) => {
-    selectedTime.value = time;
-};
 
 const goToStep2 = () => {
     if (!canProceed.value) return;
@@ -440,6 +560,14 @@ const submitForm = async () => {
     font-size: 54px;
     font-weight: 700;
     letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.title-english {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
 }
 
 .pc-notice {
@@ -573,56 +701,67 @@ const submitForm = async () => {
     border-color: #7a9cd1;
 }
 
-/* Time Slots */
+/* Time Slots Button Styles */
 .time-slots {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 12px;
 }
 
 .time-slot {
-    padding: 25px 15px;
-    border: 2px solid #e2e8f0;
+    padding: 14px 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #cbd5e0;
     background: white;
+    color: #2d3748;
     cursor: pointer;
     transition: all 0.2s ease;
-    text-align: center;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
-.time-slot .time {
-    font-size: 22px;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 8px;
+.time-slot.available:not(.selected):hover {
+    background: #edf2f7;
+    border-color: #a0aec0;
 }
 
-.time-slot .status {
-    font-size: 16px;
-    color: #4a5568;
-}
-
-.time-slot:hover:not(.disabled) {
-    border-color: #cbd5e0;
-}
-
-.time-slot.active {
-    border-color: #7a9cd1;
-    background: #7a9cd1;
-}
-
-.time-slot.active .time,
-.time-slot.active .status {
+.time-slot.selected {
+    background: #2d3748;
     color: white;
 }
 
-.time-slot.disabled {
+.time-slot.reserved {
+    background: #cbd5e0;
+    color: #718096;
     cursor: not-allowed;
-    opacity: 0.5;
+    border-color: #e2e8f0;
 }
 
-.time-slot.disabled .status {
-    color: #a0aec0;
+/* Form Label Row */
+.form-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-label-row .form-label {
+    margin-bottom: 0;
+}
+
+.legend-reserved {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.legend-reserved .legend-box {
+    width: 18px;
+    height: 18px;
+    background: #cbd5e0;
+    border-radius: 4px;
 }
 
 /* Action Buttons */
@@ -633,8 +772,8 @@ const submitForm = async () => {
 }
 
 .btn-submit {
-    padding: 15px 80px;
-    font-size: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
     font-weight: 600;
     border: none;
     cursor: pointer;
@@ -734,6 +873,12 @@ const submitForm = async () => {
     color: #cbd5e0;
 }
 
+.form-input-multiline {
+    resize: none;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
 /* Remove number input spinner */
 .form-input[type="number"]::-webkit-inner-spin-button,
 .form-input[type="number"]::-webkit-outer-spin-button {
@@ -775,6 +920,7 @@ const submitForm = async () => {
 }
 
 .form-notes p {
+    text-align: left;
     font-size: 14px;
     color: #4a5568;
     line-height: 1.8;

@@ -13,5 +13,5 @@ COPY . .
 
 EXPOSE 5000
 
-# 마이그레이션 실행 후 서버 시작
-CMD npm run migrate && node src/server.js
+# 서버 시작 (마이그레이션은 deploy 스크립트에서 실행)
+CMD ["node", "src/server.js"]

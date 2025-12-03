@@ -111,7 +111,7 @@ const handleCancel = () => {
             </div>
             <div>
               <span class="text-muted-foreground">도슨트 투어</span>
-              <p class="font-medium">도슨트{{ reservation.docent }}</p>
+              <p class="font-medium">{{ reservation.docent }}</p>
             </div>
             <div>
               <span class="text-muted-foreground">타임</span>

@@ -98,23 +98,68 @@ const stats = ref({
     pending: 0,
 });
 
+// 전체 타임슬롯 (12개, 30분 단위)
+const allTimeSlots = [
+    "10:00 ~ 10:30",
+    "10:30 ~ 11:00",
+    "11:00 ~ 11:30",
+    "11:30 ~ 12:00",
+    "13:00 ~ 13:30",
+    "13:30 ~ 14:00",
+    "14:00 ~ 14:30",
+    "14:30 ~ 15:00",
+    "15:00 ~ 15:30",
+    "15:30 ~ 16:00",
+    "16:00 ~ 16:30",
+    "16:30 ~ 17:00",
+];
+
+// 6, 7일 제한 슬롯 (8개)
+const limitedTimeSlots = [
+    "11:00 ~ 11:30",
+    "11:30 ~ 12:00",
+    "13:00 ~ 13:30",
+    "13:30 ~ 14:00",
+    "15:00 ~ 15:30",
+    "15:30 ~ 16:00",
+    "16:00 ~ 16:30",
+    "16:30 ~ 17:00",
+];
+
+// 날짜별 사용 가능 슬롯 확인
+const isSlotAvailableForDate = (date: string, slot: string) => {
+    if (date === "1/6" || date === "1/7") {
+        return limitedTimeSlots.includes(slot);
+    }
+    return true;
+};
+
+// 빈 타임슬롯 객체 생성 헬퍼
+const createEmptySlots = () => {
+    const slots: Record<string, any[]> = {};
+    allTimeSlots.forEach((slot) => {
+        slots[slot] = [];
+    });
+    return slots;
+};
+
 // 예약 데이터 (타임테이블 형식)
 const reservations = ref({
     "1/6": {
-        docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-        docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+        docentA: createEmptySlots(),
+        docentB: createEmptySlots(),
     },
     "1/7": {
-        docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-        docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+        docentA: createEmptySlots(),
+        docentB: createEmptySlots(),
     },
     "1/8": {
-        docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-        docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+        docentA: createEmptySlots(),
+        docentB: createEmptySlots(),
     },
     "1/9": {
-        docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-        docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+        docentA: createEmptySlots(),
+        docentB: createEmptySlots(),
     },
 });
 
@@ -138,20 +183,20 @@ const fetchReservations = async () => {
         // 타임테이블 초기화
         const newReservations = {
             "1/6": {
-                docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-                docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+                docentA: createEmptySlots(),
+                docentB: createEmptySlots(),
             },
             "1/7": {
-                docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-                docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+                docentA: createEmptySlots(),
+                docentB: createEmptySlots(),
             },
             "1/8": {
-                docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-                docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+                docentA: createEmptySlots(),
+                docentB: createEmptySlots(),
             },
             "1/9": {
-                docentA: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
-                docentB: { "11:00": [], "14:00": [], "15:00": [], "16:00": [] },
+                docentA: createEmptySlots(),
+                docentB: createEmptySlots(),
             },
         };
 
@@ -230,7 +275,7 @@ const handleReservationClick = (
         company: reservation.name,
         count: reservation.count,
         date: date,
-        docent: docent === "docentA" ? "A(영문)" : "B(국문)",
+        docent: docent === "docentA" ? "투어A(영문)" : "투어B(국문)",
         time: time,
         status: reservation.status,
         memo: reservation.adminMemo || "",
@@ -323,10 +368,10 @@ const goToList = () => {
                         <SelectContent>
                             <SelectItem value="all">전체 보기</SelectItem>
                             <SelectItem value="docentA"
-                                >도슨트A(영문)</SelectItem
+                                >투어A(영문)</SelectItem
                             >
                             <SelectItem value="docentB"
-                                >도슨트B(국문)</SelectItem
+                                >투어B(국문)</SelectItem
                             >
                         </SelectContent>
                     </Select>
@@ -400,415 +445,106 @@ const goToList = () => {
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead class="border-r"
+                                        <TableHead class="border-r whitespace-nowrap"
                                             >분류</TableHead
                                         >
                                         <TableHead
-                                            v-if="date !== '1/6'"
-                                            class="border-r text-center"
-                                            >11:00</TableHead
+                                            v-for="(slot, index) in allTimeSlots"
+                                            :key="slot"
+                                            :class="[
+                                                index < allTimeSlots.length - 1 ? 'border-r' : '',
+                                                'text-center whitespace-nowrap text-xs',
+                                                !isSlotAvailableForDate(date, slot) ? 'bg-muted/50 text-muted-foreground' : ''
+                                            ]"
                                         >
-                                        <TableHead class="border-r text-center"
-                                            >14:00</TableHead
-                                        >
-                                        <TableHead class="border-r text-center"
-                                            >15:00</TableHead
-                                        >
-                                        <TableHead class="text-center"
-                                            >16:00</TableHead
-                                        >
+                                            {{ slot }}
+                                        </TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    <!-- 도슨트 A -->
+                                    <!-- 투어 A -->
                                     <TableRow v-if="visibleDocents.includes('docentA')">
-                                        <TableCell class="border-r font-medium"
-                                            >도슨트A(영문)</TableCell
+                                        <TableCell class="border-r font-medium whitespace-nowrap"
+                                            >투어A(영문)</TableCell
                                         >
                                         <TableCell
-                                            v-if="date !== '1/6'"
-                                            class="border-r text-center bg-muted/30"
+                                            v-for="(slot, index) in allTimeSlots"
+                                            :key="slot"
+                                            :class="[
+                                                index < allTimeSlots.length - 1 ? 'border-r' : '',
+                                                'text-center bg-muted/30',
+                                                !isSlotAvailableForDate(date, slot) ? 'bg-muted/70' : ''
+                                            ]"
                                         >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentA['11:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
+                                            <template v-if="!isSlotAvailableForDate(date, slot)">
+                                                <div class="text-muted-foreground text-xs">-</div>
+                                            </template>
+                                            <template v-else>
                                                 <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentA['11:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentA',
-                                                            '11:00',
-                                                        )
-                                                    "
+                                                    v-if="filterReservations(reservations[date].docentA[slot]).length === 0"
+                                                    class="text-muted-foreground text-xs"
                                                 >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
+                                                    예약 없음
+                                                </div>
+                                                <div v-else class="space-y-1">
+                                                    <div
+                                                        v-for="(res, idx) in filterReservations(reservations[date].docentA[slot])"
+                                                        :key="idx"
+                                                        class="cursor-pointer hover:bg-muted/50 p-1 rounded"
+                                                        @click="handleReservationClick(res, date, 'docentA', slot)"
+                                                    >
+                                                        <div class="text-xs">
+                                                            - {{ res.name }} ({{ res.count }}명)
+                                                            <Badge :variant="getStatusVariant(res.status)">
+                                                                {{ getStatusText(res.status) }}
+                                                            </Badge>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell
-                                            class="border-r text-center bg-muted/30"
-                                        >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentA['14:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
-                                                <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentA['14:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentA',
-                                                            '14:00',
-                                                        )
-                                                    "
-                                                >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell
-                                            class="border-r text-center bg-muted/30"
-                                        >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentA['15:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
-                                                <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentA['15:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentA',
-                                                            '15:00',
-                                                        )
-                                                    "
-                                                >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell
-                                            class="text-center bg-muted/30"
-                                        >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentA['16:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
-                                                <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentA['16:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentA',
-                                                            '16:00',
-                                                        )
-                                                    "
-                                                >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </template>
                                         </TableCell>
                                     </TableRow>
 
-                                    <!-- 도슨트 B -->
+                                    <!-- 투어 B -->
                                     <TableRow v-if="visibleDocents.includes('docentB')">
-                                        <TableCell class="border-r font-medium"
-                                            >도슨트B(국문)</TableCell
+                                        <TableCell class="border-r font-medium whitespace-nowrap"
+                                            >투어B(국문)</TableCell
                                         >
                                         <TableCell
-                                            v-if="date !== '1/6'"
-                                            class="border-r text-center bg-muted/30"
+                                            v-for="(slot, index) in allTimeSlots"
+                                            :key="slot"
+                                            :class="[
+                                                index < allTimeSlots.length - 1 ? 'border-r' : '',
+                                                'text-center bg-muted/30',
+                                                !isSlotAvailableForDate(date, slot) ? 'bg-muted/70' : ''
+                                            ]"
                                         >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentB['11:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
+                                            <template v-if="!isSlotAvailableForDate(date, slot)">
+                                                <div class="text-muted-foreground text-xs">-</div>
+                                            </template>
+                                            <template v-else>
                                                 <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentB['11:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentB',
-                                                            '11:00',
-                                                        )
-                                                    "
+                                                    v-if="filterReservations(reservations[date].docentB[slot]).length === 0"
+                                                    class="text-muted-foreground text-xs"
                                                 >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
+                                                    예약 없음
+                                                </div>
+                                                <div v-else class="space-y-1">
+                                                    <div
+                                                        v-for="(res, idx) in filterReservations(reservations[date].docentB[slot])"
+                                                        :key="idx"
+                                                        class="cursor-pointer hover:bg-muted/50 p-1 rounded"
+                                                        @click="handleReservationClick(res, date, 'docentB', slot)"
+                                                    >
+                                                        <div class="text-xs">
+                                                            - {{ res.name }} ({{ res.count }}명)
+                                                            <Badge :variant="getStatusVariant(res.status)">
+                                                                {{ getStatusText(res.status) }}
+                                                            </Badge>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell
-                                            class="border-r text-center bg-muted/30"
-                                        >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentB['14:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
-                                                <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentB['14:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentB',
-                                                            '14:00',
-                                                        )
-                                                    "
-                                                >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell
-                                            class="border-r text-center bg-muted/30"
-                                        >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentB['15:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
-                                                <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentB['15:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentB',
-                                                            '15:00',
-                                                        )
-                                                    "
-                                                >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell
-                                            class="text-center bg-muted/30"
-                                        >
-                                            <div
-                                                v-if="
-                                                    filterReservations(reservations[date].docentB['16:00']).length === 0
-                                                "
-                                                class="text-muted-foreground"
-                                            >
-                                                예약 없음
-                                            </div>
-                                            <div v-else class="space-y-1">
-                                                <div
-                                                    v-for="(
-                                                        res, idx
-                                                    ) in filterReservations(reservations[date].docentB['16:00'])"
-                                                    :key="idx"
-                                                    class="cursor-pointer hover:bg-muted/50 p-1 rounded"
-                                                    @click="
-                                                        handleReservationClick(
-                                                            res,
-                                                            date,
-                                                            'docentB',
-                                                            '16:00',
-                                                        )
-                                                    "
-                                                >
-                                                    <div class="text-sm">
-                                                        - {{ res.name }} ({{
-                                                            res.count
-                                                        }}명)
-                                                        <Badge
-                                                            :variant="
-                                                                getStatusVariant(
-                                                                    res.status,
-                                                                )
-                                                            "
-                                                            >{{
-                                                                getStatusText(
-                                                                    res.status,
-                                                                )
-                                                            }}</Badge
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </template>
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>

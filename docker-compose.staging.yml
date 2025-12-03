@@ -1,0 +1,92 @@
+version: "3.8"
+
+# CES 2026 Development/Staging Environment
+# Usage: docker-compose -f docker-compose.staging.yml --env-file .env.staging up -d --build
+
+services:
+  mariadb-dev:
+    image: mariadb:11
+    container_name: ces-mariadb-dev
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ces2026_dev
+      MYSQL_USER: ces_user_dev
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mariadb_data_dev:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - ces-network-dev
+
+  backend-dev:
+    build: ./backend
+    container_name: ces-backend-dev
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      DB_HOST: mariadb-dev
+      DB_NAME: ces2026_dev
+      DB_USER: ces_user_dev
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: ${AWS_REGION}
+      S3_BUCKET: ${S3_BUCKET}
+      S3_BACKUP_BUCKET: ${S3_BACKUP_BUCKET}
+      CLOUDFRONT_DOMAIN: ${CLOUDFRONT_DOMAIN}
+      FRONTEND_URL: ${FRONTEND_URL:-https://dev.ceskorea.kr}
+      ADMIN_URL: ${ADMIN_URL:-https://dev-admin.ceskorea.kr}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      PORT: 5000
+    ports:
+      - "5001:5000"
+    depends_on:
+      mariadb-dev:
+        condition: service_healthy
+    networks:
+      - ces-network-dev
+
+  admin-dev:
+    build:
+      context: ./admin
+      args:
+        VITE_API_URL: https://dev-api.ceskorea.kr/api
+    container_name: ces-admin-dev
+    restart: unless-stopped
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend-dev
+    networks:
+      - ces-network-dev
+
+  frontend-dev:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: https://dev-api.ceskorea.kr/api
+    container_name: ces-frontend-dev
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend-dev
+    networks:
+      - ces-network-dev
+
+volumes:
+  mariadb_data_dev:
+
+networks:
+  ces-network-dev:
+    driver: bridge

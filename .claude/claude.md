@@ -29,3 +29,17 @@ errors.boothType = '주관기관을 입력해주세요'
 Frontend의 실제 label과 Backend의 필드명이 다를 수 있으므로 주의:
 - Frontend "주관기관" → Backend boothType (단, validation은 한글 사용)
 - Frontend "부스번호" → Backend boothNumber
+
+## Git 커밋 메시지 규칙
+
+- ✅ 커밋 메시지는 한글로 작성
+- ✅ 간결하고 명확하게 변경 내용 설명
+
+### 예시
+```bash
+# ❌ 잘못된 예
+git commit -m "feat: add dev environment setup"
+
+# ✅ 올바른 예
+git commit -m "feat: dev 환경 설정 추가"
+```

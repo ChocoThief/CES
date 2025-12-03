@@ -23,10 +23,10 @@ module.exports = (sequelize) => {
         comment: "A: 영문, B: 국문",
       },
       timeSlot: {
-        type: DataTypes.STRING(5),
+        type: DataTypes.STRING(20),
         allowNull: false,
         field: "time_slot",
-        comment: "11:00, 14:00, 15:00, 16:00",
+        comment: "10:00 ~ 10:30, 10:30 ~ 11:00, etc.",
       },
       status: {
         type: DataTypes.ENUM("pending", "approved", "rejected", "cancelled"),

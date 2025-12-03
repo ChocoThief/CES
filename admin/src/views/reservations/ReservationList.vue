@@ -118,7 +118,7 @@ const fetchReservations = async (page = 1) => {
             company: r.representative,
             count: r.visitorCount,
             date: dateMapping[r.reservationDate] || r.reservationDate,
-            docent: r.docentType === "A" ? "A(영문)" : "B(국문)",
+            docent: r.docentType === "A" ? "투어A(영문)" : "투어B(국문)",
             time: r.timeSlot,
             status: r.status,
             memo: r.adminMemo || "",
@@ -448,10 +448,10 @@ const sortBy = (column: string) => {
                         <SelectContent>
                             <SelectItem value="all">전체 보기</SelectItem>
                             <SelectItem value="docentA"
-                                >도슨트A(영문)</SelectItem
+                                >투어A(영문)</SelectItem
                             >
                             <SelectItem value="docentB"
-                                >도슨트B(국문)</SelectItem
+                                >투어B(국문)</SelectItem
                             >
                         </SelectContent>
                     </Select>

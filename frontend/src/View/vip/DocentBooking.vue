@@ -133,65 +133,70 @@
 
                     <!-- Visitor Info Form -->
                     <div class="form-section fade-in">
-                        <div class="form-group">
+                        <div class="form-group" ref="representativeRef">
                             <label class="form-label required"
                                 >방문자 대표명/직함(Lead Visitor Name / Position)</label
                             >
                             <textarea
                                 v-model="formData.representative"
-                                class="form-input form-input-multiline"
+                                :class="['form-input', 'form-input-multiline', { 'input-error': fieldErrors.representative }]"
                                 rows="2"
                                 placeholder="ex) A사 OOO대표 / B사 OOO 사장&#10;ex) CEO OOO of Company A / Director OOO of Company B"
                             ></textarea>
+                            <p v-if="fieldErrors.representative" class="field-error">{{ fieldErrors.representative }}</p>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ref="contactRef">
                             <label class="form-label required"
                                 >현장 컨택 실무자명/직함</label
                             >
                             <textarea
                                 v-model="formData.contact"
-                                class="form-input form-input-multiline"
+                                :class="['form-input', 'form-input-multiline', { 'input-error': fieldErrors.contact }]"
                                 rows="2"
                                 placeholder="ex) A사 OOO 부장 / B사 OOO 주무관&#10;ex) Deputy Director OOO of Company A / Manager OOO of Company B"
                             ></textarea>
+                            <p v-if="fieldErrors.contact" class="field-error">{{ fieldErrors.contact }}</p>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ref="phoneRef">
                             <label class="form-label required"
                                 >현장 컨택 실무자명 휴대번호(Mobile)</label
                             >
                             <input
                                 v-model="formData.phone"
                                 type="tel"
-                                class="form-input"
+                                :class="['form-input', { 'input-error': fieldErrors.phone }]"
                                 placeholder="000-0000-0000"
                             />
+                            <p v-if="fieldErrors.phone" class="field-error">{{ fieldErrors.phone }}</p>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ref="emailRef">
                             <label class="form-label required"
                                 >현장 컨택 실무자명 이메일(Email)</label
                             >
                             <input
                                 v-model="formData.email"
                                 type="email"
-                                class="form-input"
+                                :class="['form-input', { 'input-error': fieldErrors.email }]"
                                 placeholder="000@0000.000"
                             />
+                            <p v-if="fieldErrors.email" class="field-error">{{ fieldErrors.email }}</p>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ref="interestsRef">
                             <label class="form-label required">관심분야(Participants)</label>
                             <input
                                 v-model="formData.interests"
                                 type="text"
-                                class="form-input"
+                                :class="['form-input', { 'input-error': fieldErrors.interests }]"
                                 placeholder="(영문)"
                             />
+                            <p v-if="fieldErrors.interests" class="field-error">{{ fieldErrors.interests }}</p>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ref="visitorsRef">
                             <label class="form-label required">방문인원(Number of Visitors)</label>
                             <div class="input-note">
                                 * 헤드셋 준비를 위해 가급적 자세히 적어주세요.<br/>
@@ -200,22 +205,24 @@
                             <input
                                 v-model.number="formData.visitors"
                                 type="number"
-                                class="form-input"
+                                :class="['form-input', { 'input-error': fieldErrors.visitors }]"
                                 min="1"
                                 placeholder="1"
                             />
+                            <p v-if="fieldErrors.visitors" class="field-error">{{ fieldErrors.visitors }}</p>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" ref="notesRef">
                             <label class="form-label required"
                                 >상세정보 작성(Enter Details)</label
                             >
                             <textarea
                                 v-model="formData.notes"
-                                class="form-textarea"
+                                :class="['form-textarea', { 'input-error': fieldErrors.notes }]"
                                 placeholder="방문자 대표 외 참여자 명단, 기타 참고 사항 등&#10;Names of participants other than the lead visitor, additional notes, etc."
                                 rows="6"
                             ></textarea>
+                            <p v-if="fieldErrors.notes" class="field-error">{{ fieldErrors.notes }}</p>
                         </div>
 
                         <!-- Form Notes -->
@@ -241,7 +248,6 @@
                             </button>
                             <button
                                 @click="submitForm"
-                                :disabled="!isFormValid"
                                 class="btn-submit"
                             >
                                 완료하기(Submit)
@@ -408,19 +414,20 @@ const getDisplayTour = computed(() => {
     return tourMap[selectedTour.value] || selectedTour.value;
 });
 
-// 더미 데이터: 예약 완료된 슬롯
-const reservedSlots = {
-    "1월 6일(화)": ["11:00 ~ 11:30", "13:30 ~ 14:00"],
-    "1월 7일(수)": ["15:00 ~ 15:30", "16:00 ~ 16:30"],
-    "1월 8일(목)": ["10:00 ~ 10:30", "11:30 ~ 12:00", "14:00 ~ 14:30"],
-    "1월 9일(금)": ["10:30 ~ 11:00", "13:00 ~ 13:30"],
-};
-
-// 슬롯이 예약 완료되었는지 확인
+// 슬롯이 예약 완료되었는지 확인 (API 데이터 사용)
 const isSlotReserved = (slot) => {
-    if (!selectedDate.value) return false;
-    const reserved = reservedSlots[selectedDate.value] || [];
-    return reserved.includes(slot);
+    if (!selectedDate.value || !selectedTour.value) return false;
+
+    const dateKey = dateMapping[selectedDate.value];
+    const tourKey = tourMapping[selectedTour.value];
+
+    if (!slotsData.value[dateKey] || !slotsData.value[dateKey][tourKey]) {
+        return false;
+    }
+
+    // API 응답: { slot: "10:00 ~ 10:30", available: true/false }
+    const slotInfo = slotsData.value[dateKey][tourKey].find(s => s.slot === slot);
+    return slotInfo ? !slotInfo.available : false;
 };
 
 // 슬롯 사용 가능 여부
@@ -453,31 +460,95 @@ const canProceed = computed(() => {
     return selectedDate.value && selectedTour.value && selectedTime.value;
 });
 
-const isFormValid = computed(() => {
-    return (
-        formData.value.representative.trim() !== "" &&
-        formData.value.contact.trim() !== "" &&
-        formData.value.phone.trim() !== "" &&
-        formData.value.email.trim() !== "" &&
-        formData.value.interests.trim() !== "" &&
-        formData.value.visitors >= 1 &&
-        formData.value.notes.trim() !== ""
-    );
+// Field refs for scrolling
+const representativeRef = ref(null);
+const contactRef = ref(null);
+const phoneRef = ref(null);
+const emailRef = ref(null);
+const interestsRef = ref(null);
+const visitorsRef = ref(null);
+const notesRef = ref(null);
+
+// Field errors
+const fieldErrors = ref({
+    representative: "",
+    contact: "",
+    phone: "",
+    email: "",
+    interests: "",
+    visitors: "",
+    notes: "",
 });
+
+const clearFieldErrors = () => {
+    fieldErrors.value = {
+        representative: "",
+        contact: "",
+        phone: "",
+        email: "",
+        interests: "",
+        visitors: "",
+        notes: "",
+    };
+};
+
+const validateForm = () => {
+    clearFieldErrors();
+    let firstErrorRef = null;
+
+    if (!formData.value.representative.trim()) {
+        fieldErrors.value.representative = "방문자 대표명/직함을 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = representativeRef;
+    }
+    if (!formData.value.contact.trim()) {
+        fieldErrors.value.contact = "현장 컨택 실무자명/직함을 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = contactRef;
+    }
+    if (!formData.value.phone.trim()) {
+        fieldErrors.value.phone = "현장 컨택 실무자 휴대번호를 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = phoneRef;
+    }
+    if (!formData.value.email.trim()) {
+        fieldErrors.value.email = "현장 컨택 실무자 이메일을 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = emailRef;
+    }
+    if (!formData.value.interests.trim()) {
+        fieldErrors.value.interests = "관심분야를 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = interestsRef;
+    }
+    if (!formData.value.visitors || formData.value.visitors < 1) {
+        fieldErrors.value.visitors = "방문인원을 1명 이상 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = visitorsRef;
+    }
+    if (!formData.value.notes.trim()) {
+        fieldErrors.value.notes = "상세정보를 입력해주세요.";
+        if (!firstErrorRef) firstErrorRef = notesRef;
+    }
+
+    // Scroll to first error
+    if (firstErrorRef && firstErrorRef.value) {
+        firstErrorRef.value.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    const hasErrors = Object.values(fieldErrors.value).some(e => e !== "");
+    return !hasErrors;
+};
 
 const goToStep2 = () => {
     if (!canProceed.value) return;
     currentStep.value = 2;
+    clearFieldErrors();
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 const goToStep1 = () => {
     currentStep.value = 1;
+    clearFieldErrors();
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 const submitForm = async () => {
-    if (!isFormValid.value || isSubmitting.value) return;
+    if (!validateForm() || isSubmitting.value) return;
 
     isSubmitting.value = true;
 
@@ -947,5 +1018,23 @@ const submitForm = async () => {
 
 .action-buttons {
     gap: 15px;
+}
+
+/* Field Validation Errors */
+.field-error {
+    text-align: left;
+    font-size: 13px;
+    color: #c53030;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.input-error {
+    border-color: #fc8181 !important;
+    background-color: #fff5f5 !important;
+}
+
+.input-error:focus {
+    border-color: #c53030 !important;
 }
 </style>

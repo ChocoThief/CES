@@ -50,6 +50,12 @@ docker-compose -f docker-compose.staging.yml exec -T mariadb-dev healthcheck.sh 
     sleep 10
 }
 
+# 데이터베이스 테이블 생성 (sync)
+echo "데이터베이스 테이블 생성 중..."
+docker-compose -f docker-compose.staging.yml exec -T backend-dev npm run db:sync || {
+    echo -e "${YELLOW}⚠ DB sync 실패${NC}"
+}
+
 # 데이터베이스 마이그레이션 실행
 echo "데이터베이스 마이그레이션 실행 중..."
 docker-compose -f docker-compose.staging.yml exec -T backend-dev npm run migrate || {

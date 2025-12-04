@@ -13,7 +13,7 @@
                 <div class="title-container">
                     <h1>CES 2026 KOREA</h1>
                     <p class="subtitle">
-                        2026.01.06.(THU) ~ 01.09.(FRI)<br />
+                        2026.01.06.(TUE) ~ 01.09.(FRI)<br />
                         Venetian Expo (베네치안 엑스포 센터) / Eureka Park,
                         Global Pavilion
                     </p>

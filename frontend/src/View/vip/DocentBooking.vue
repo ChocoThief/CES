@@ -668,7 +668,7 @@ const submitForm = async () => {
 }
 
 .title-english {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;

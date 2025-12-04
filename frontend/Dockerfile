@@ -11,9 +11,10 @@ COPY . .
 
 # 빌드 시 환경 변수 설정
 ARG VITE_API_URL=https://api.ceskorea.kr/api
+ARG BUILD_MODE=production
 ENV VITE_API_URL=$VITE_API_URL
 
-RUN npm run build
+RUN npm run build -- --mode $BUILD_MODE
 
 # Production stage
 FROM nginx:alpine

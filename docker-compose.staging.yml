@@ -75,6 +75,7 @@ services:
       context: ./frontend
       args:
         VITE_API_URL: https://dev-api.ceskorea.kr/api
+        BUILD_MODE: staging
     container_name: ces-frontend-dev
     restart: unless-stopped
     ports:

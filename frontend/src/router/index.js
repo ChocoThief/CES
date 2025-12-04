@@ -14,8 +14,8 @@ import Vip from '@/View/vip/Vip.vue'
 import PitchingSchedule from '@/View/vip/PitchingSchedule.vue'
 import DocentBooking from '@/View/vip/DocentBooking.vue'
 
-// PR 라우트 (development에서만 활성화)
-const prRoutes = import.meta.env.DEV ? [
+// PR 라우트 (production에서 비활성화)
+const prRoutes = import.meta.env.MODE !== 'production' ? [
   {
     path: '/pr',
     component: Layout,
@@ -60,6 +60,22 @@ const prRoutes = import.meta.env.DEV ? [
   },
 ] : []
 
+// VIP 라우트 (production에서 비활성화)
+const vipRoutes = import.meta.env.MODE !== 'production' ? [
+  {
+    path: '/vip',
+    component: Vip,
+  },
+  {
+    path: '/vip/pitching-schedule',
+    component: PitchingSchedule,
+  },
+  {
+    path: '/vip/docent-booking',
+    component: DocentBooking,
+  },
+] : []
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to, from, savedPosition) {
@@ -72,18 +88,7 @@ const router = createRouter({
       component: Index,
     },
     ...prRoutes,
-    {
-      path: '/vip',
-      component: Vip,
-    },
-    {
-      path: '/vip/pitching-schedule',
-      component: PitchingSchedule,
-    },
-    {
-      path: '/vip/docent-booking',
-      component: DocentBooking,
-    },
+    ...vipRoutes,
   ],
 })
 

@@ -36,6 +36,7 @@
                 <!-- Company Details -->
                 <div class="company-details">
                     <h2 class="company-name">{{ company.name }}</h2>
+                    <h3 class="company-name-en" v-if="company.nameEn">{{ company.nameEn }}</h3>
 
                     <div class="detail-row">
                         <span class="detail-label">부스번호 (Booth number)</span>
@@ -45,6 +46,7 @@
                     <div class="detail-row">
                         <span class="detail-label">제품 (Product)</span>
                         <span class="detail-value">{{ company.product }}</span>
+                        <span class="detail-value-en product-en" v-if="company.productEn">{{ company.productEn }}</span>
                     </div>
 
                     <div class="detail-row">
@@ -59,7 +61,8 @@
 
                     <div class="detail-row">
                         <span class="detail-label">제품설명 (Product Description)</span>
-                        <span class="detail-value description-text">{{ company.description }}</span>
+                        <span class="detail-value description-text" v-html="formatDescription(company.description)"></span>
+                        <span class="detail-value-en description-text" v-if="company.descriptionEn" v-html="formatDescription(company.descriptionEn)"></span>
                     </div>
                 </div>
             </div>
@@ -93,12 +96,21 @@ const route = useRoute();
 const company = ref({
     id: '',
     name: '',
+    nameEn: '',
     boothNumber: '',
     product: '',
+    productEn: '',
     category: '',
     description: '',
+    descriptionEn: '',
     hall: ''
 });
+
+// 줄바꿈을 <br>로 변환하는 함수
+const formatDescription = (text) => {
+    if (!text) return '';
+    return text.replace(/\n/g, '<br>');
+};
 
 onMounted(() => {
     const companyId = route.params.id;
@@ -108,10 +120,13 @@ onMounted(() => {
         company.value = {
             id: foundCompany.id,
             name: foundCompany.name,
+            nameEn: foundCompany.nameEn || '',
             boothNumber: foundCompany.boothNumber,
             product: foundCompany.product || '-',
+            productEn: foundCompany.productEn || '',
             category: foundCompany.category || '-',
             description: foundCompany.description || '-',
+            descriptionEn: foundCompany.descriptionEn || '',
             hall: foundCompany.hall === 'eureka' ? 'Eureka Park' : 'Global Pavilion'
         };
     }
@@ -231,8 +246,16 @@ const goBack = () => {
     font-size: 36px;
     font-weight: 700;
     color: #2d3748;
+    margin-bottom: 5px;
+}
+
+.company-name-en {
+    font-size: 24px;
+    font-weight: 500;
+    color: #718096;
     padding-bottom: 20px;
     border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0;
 }
 
 .detail-row {
@@ -258,6 +281,26 @@ const goBack = () => {
 
 .description-text {
     font-size: 16px;
+}
+
+.detail-value-en {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.detail-value-en.product-en {
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.detail-value-en.description-text {
+    font-size: 15px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
 }
 
 /* Video Section */

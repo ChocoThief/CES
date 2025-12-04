@@ -705,8 +705,9 @@ const submitForm = async () => {
 
 .meeting-point-image-wrapper {
     overflow: hidden;
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
 }
 
 .meeting-point-image {

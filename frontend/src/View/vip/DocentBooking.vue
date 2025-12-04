@@ -34,6 +34,38 @@
             <div class="content-wrapper">
                 <!-- Step 1: Booking Form -->
                 <div v-if="currentStep === 1" class="booking-form">
+                    <!-- Meeting Point Section -->
+                    <div class="meeting-point-section fade-in">
+                        <h2 class="section-title">집결지 (Tour Meeting Point)</h2>
+                        <div class="meeting-point-image-wrapper">
+                            <img
+                                src="@/assets/meeting-point.png"
+                                alt="집결지 안내"
+                                class="meeting-point-image"
+                            />
+                        </div>
+
+                        <div class="reservation-notice">
+                            <h3 class="notice-title">[예약 안내]</h3>
+                            <ol class="notice-list">
+                                <li>예약 기간은 한국시간 기준 12월 17일 오후 6시까지입니다.</li>
+                                <li>신청하신 시간대를 바탕으로 운영팀이 일정 조율 후 최종 투어 시간을 배정합니다.<br/>
+                                    운영 사정에 따라 예약이 변경되거나 취소될 수 있습니다.</li>
+                                <li>예약 확정 여부 및 최종 배정 시간은 개별적으로 안내드립니다.</li>
+                                <li>투어는 예약된 시간에 맞춰 Eureka Park관 내 OFFICE에서 진행됩니다.<br/>
+                                    원활한 진행을 위해 지정된 투어 시간에 맞추어 방문 부탁드립니다.</li>
+                            </ol>
+                            <ol class="notice-list notice-list-en">
+                                <li>The reservation period is open until 6:00 PM on December 17 (KST).</li>
+                                <li>Based on your selected time slot(s), the operations team will coordinate the schedule and assign the final tour time.<br/>
+                                    Please note that your reservation may be adjusted or canceled depending on operational circumstances.</li>
+                                <li>You will be notified individually regarding the confirmation of your reservation and your final assigned tour time.</li>
+                                <li>The tour will take place at the OFFICE located inside the Eureka Park Pavilion at your scheduled time.<br/>
+                                    Please arrive on time to ensure a smooth tour experience.</li>
+                            </ol>
+                        </div>
+                    </div>
+
                     <!-- Date Selection -->
                     <div class="form-group fade-in">
                         <label class="form-label">날짜(Date)</label>
@@ -148,7 +180,8 @@
 
                         <div class="form-group" ref="contactRef">
                             <label class="form-label required"
-                                >현장 컨택 실무자명/직함</label
+                                >현장 컨택 실무자명/직함(On-site Contact Person / Position)
+                                </label
                             >
                             <textarea
                                 v-model="formData.contact"
@@ -161,7 +194,7 @@
 
                         <div class="form-group" ref="phoneRef">
                             <label class="form-label required"
-                                >현장 컨택 실무자명 휴대번호(Mobile)</label
+                                >현장 컨택 실무자 휴대번호(Mobile)</label
                             >
                             <input
                                 v-model="formData.phone"
@@ -174,7 +207,7 @@
 
                         <div class="form-group" ref="emailRef">
                             <label class="form-label required"
-                                >현장 컨택 실무자명 이메일(Email)</label
+                                >현장 컨택 실무자 이메일(Email)</label
                             >
                             <input
                                 v-model="formData.email"
@@ -726,6 +759,70 @@ const submitForm = async () => {
     to {
         opacity: 0;
     }
+}
+
+/* Meeting Point Section */
+.meeting-point-section {
+    margin-bottom: 60px;
+}
+
+.meeting-point-section .section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.meeting-point-image-wrapper {
+    overflow: hidden;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.meeting-point-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.reservation-notice {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.notice-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.notice-list {
+    text-align: left;
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+}
+
+.notice-list li {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.notice-list-en {
+    margin-bottom: 0;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.notice-list-en li {
+    color: #4a5568;
 }
 
 /* Booking Form */

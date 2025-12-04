@@ -12,7 +12,7 @@
                 </div>
                 <div class="title-container">
                     <h1>Global Pavilion (2F)</h1>
-                    <p class="subtitle">68개 참가기업</p>
+                    <p class="subtitle">{{ globalCompanies.length }}개 참가기업</p>
                 </div>
                 <div class="pc-notice">
                     *해당 홈페이지는 PC에 최적화되어있습니다.
@@ -46,11 +46,9 @@
                     class="company-card"
                     @click="goToCompanyDetail(company.id)"
                 >
-                    <img
-                        src="@/assets/company-logo2.png"
-                        :alt="company.name"
-                        class="company-logo"
-                    />
+                    <div class="company-name-overlay">
+                        {{ company.name }}
+                    </div>
                 </div>
             </div>
             <div v-if="filteredCompanies.length === 0" class="no-results">
@@ -63,35 +61,30 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { globalCompanies } from '@/data/companyData';
 
 const router = useRouter();
 
 // 검색 쿼리
 const searchQuery = ref('');
 
-// 더미 회사 데이터 (68개)
-const companies = ref(
-    Array.from({ length: 68 }, (_, i) => ({
-        id: i + 1,
-        name: `참가기업 ${i + 1}`,
-    }))
-);
-
 // 검색 필터링
 const filteredCompanies = computed(() => {
     if (!searchQuery.value) {
-        return companies.value;
+        return globalCompanies;
     }
-    return companies.value.filter(company =>
-        company.name.toLowerCase().includes(searchQuery.value.toLowerCase())
+    const query = searchQuery.value.toLowerCase();
+    return globalCompanies.filter(company =>
+        company.name.toLowerCase().includes(query) ||
+        company.product.toLowerCase().includes(query) ||
+        company.category.toLowerCase().includes(query)
     );
 });
 
 // 회사 상세 페이지로 이동
 const goToCompanyDetail = (companyId) => {
     router.push({
-        path: `/pr/company/${companyId}`,
-        query: { hall: 'global' }
+        path: `/pr/company/${companyId}`
     });
 };
 </script>
@@ -237,6 +230,25 @@ const goToCompanyDetail = (companyId) => {
 .company-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.company-card:hover .company-name-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.company-name-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.2s ease;
 }
 
 .company-logo {

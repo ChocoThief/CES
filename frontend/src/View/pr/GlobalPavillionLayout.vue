@@ -42,9 +42,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="i in 68" :key="i">
-                                    <td>#52523_{{ String(i).padStart(2, '0') }}</td>
-                                    <td>참가기업 {{ i }}</td>
+                                <tr v-for="company in globalCompaniesSorted" :key="company.id">
+                                    <td>{{ company.boothNumber }}</td>
+                                    <td>{{ company.name }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -56,6 +56,7 @@
 </template>
 
 <script setup>
+import { globalCompaniesSorted } from '@/data/companyData';
 </script>
 
 <style scoped>

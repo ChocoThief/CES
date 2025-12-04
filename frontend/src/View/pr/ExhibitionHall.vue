@@ -29,16 +29,14 @@
             <h2 class="section-title">참가기업</h2>
             <div class="companies-grid">
                 <div
-                    v-for="i in 9"
-                    :key="i"
+                    v-for="company in featuredCompanies"
+                    :key="company.id"
                     class="company-logo-box"
-                    @click="goToCompanyDetail(i)"
+                    @click="goToCompanyDetail(company.id)"
                 >
-                    <img
-                        src="@/assets/company-logo2.png"
-                        alt="참가기업 로고"
-                        class="company-logo"
-                    />
+                    <div class="company-name-overlay">
+                        {{ company.name }}
+                    </div>
                 </div>
             </div>
             <router-link to="/pr/companies" class="see-more-link">
@@ -84,13 +82,16 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import { allCompanies } from '@/data/companyData';
 
 const router = useRouter();
 
+// 메인 페이지에 표시할 9개 기업 (Eureka Park와 Global Pavilion 혼합)
+const featuredCompanies = allCompanies.slice(0, 9);
+
 const goToCompanyDetail = (companyId) => {
     router.push({
-        path: `/pr/company/${companyId}`,
-        query: { hall: 'eureka' }
+        path: `/pr/company/${companyId}`
     });
 };
 </script>
@@ -203,6 +204,25 @@ const goToCompanyDetail = (companyId) => {
 .company-logo-box:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.company-logo-box:hover .company-name-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.company-name-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.2s ease;
 }
 
 .company-logo {

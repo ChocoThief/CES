@@ -53,8 +53,13 @@
                     </div>
 
                     <div class="detail-row">
+                        <span class="detail-label">전시관 (Hall)</span>
+                        <span class="detail-value">{{ company.hall }}</span>
+                    </div>
+
+                    <div class="detail-row">
                         <span class="detail-label">제품설명 (Product Description)</span>
-                        <span class="detail-value">{{ company.productDescription }}</span>
+                        <span class="detail-value description-text">{{ company.description }}</span>
                     </div>
                 </div>
             </div>
@@ -79,33 +84,37 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { getCompanyById } from '@/data/companyData';
 
 const router = useRouter();
 const route = useRoute();
 
-// 더미 회사 데이터
+// 회사 데이터
 const company = ref({
     id: '',
     name: '',
     boothNumber: '',
     product: '',
     category: '',
-    productDescription: ''
+    description: '',
+    hall: ''
 });
 
 onMounted(() => {
     const companyId = route.params.id;
-    const hall = route.query.hall;
+    const foundCompany = getCompanyById(companyId);
 
-    // 더미 데이터 설정
-    company.value = {
-        id: companyId,
-        name: `참가기업 ${companyId}`,
-        boothNumber: `${hall === 'eureka' ? '62901-' : '52523-'}${companyId}`,
-        product: 'AI 기반 스마트 솔루션',
-        category: 'Technology / Innovation',
-        productDescription: '혁신적인 기술과 서비스를 제공하는 글로벌 기업입니다. CES 2026에서 최신 제품과 솔루션을 선보입니다.'
-    };
+    if (foundCompany) {
+        company.value = {
+            id: foundCompany.id,
+            name: foundCompany.name,
+            boothNumber: foundCompany.boothNumber,
+            product: foundCompany.product || '-',
+            category: foundCompany.category || '-',
+            description: foundCompany.description || '-',
+            hall: foundCompany.hall === 'eureka' ? 'Eureka Park' : 'Global Pavilion'
+        };
+    }
 });
 
 const goBack = () => {
@@ -245,6 +254,10 @@ const goBack = () => {
     font-weight: 500;
     color: #1a202c;
     line-height: 1.6;
+}
+
+.description-text {
+    font-size: 16px;
 }
 
 /* Video Section */

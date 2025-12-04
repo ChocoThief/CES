@@ -14,6 +14,52 @@ import Vip from '@/View/vip/Vip.vue'
 import PitchingSchedule from '@/View/vip/PitchingSchedule.vue'
 import DocentBooking from '@/View/vip/DocentBooking.vue'
 
+// PR 라우트 (development에서만 활성화)
+const prRoutes = import.meta.env.DEV ? [
+  {
+    path: '/pr',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        component: ExhibitionHall,
+      },
+      {
+        path: 'event-overview',
+        component: EventOverview,
+      },
+      {
+        path: 'companies',
+        component: Companies,
+      },
+      {
+        path: 'eureka-park',
+        component: EurekaPark,
+      },
+      {
+        path: 'global-pavilion',
+        component: GlobalPavilion,
+      },
+      {
+        path: 'company/:id',
+        component: CompanyDetail,
+      },
+      {
+        path: 'booth-layout',
+        component: BoothLayout,
+      },
+      {
+        path: 'booth-layout/eureka-park',
+        component: EurekaParkLayout,
+      },
+      {
+        path: 'booth-layout/global-pavilion',
+        component: GlobalPavillionLayout,
+      },
+    ],
+  },
+] : []
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to, from, savedPosition) {
@@ -25,48 +71,7 @@ const router = createRouter({
       path: '/',
       component: Index,
     },
-    {
-      path: '/pr',
-      component: Layout,
-      children: [
-        {
-          path: '',
-          component: ExhibitionHall,
-        },
-        {
-          path: 'event-overview',
-          component: EventOverview,
-        },
-        {
-          path: 'companies',
-          component: Companies,
-        },
-        {
-          path: 'eureka-park',
-          component: EurekaPark,
-        },
-        {
-          path: 'global-pavilion',
-          component: GlobalPavilion,
-        },
-        {
-          path: 'company/:id',
-          component: CompanyDetail,
-        },
-        {
-          path: 'booth-layout',
-          component: BoothLayout,
-        },
-        {
-          path: 'booth-layout/eureka-park',
-          component: EurekaParkLayout,
-        },
-        {
-          path: 'booth-layout/global-pavilion',
-          component: GlobalPavillionLayout,
-        },
-      ],
-    },
+    ...prRoutes,
     {
       path: '/vip',
       component: Vip,

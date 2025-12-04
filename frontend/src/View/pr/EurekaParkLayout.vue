@@ -42,9 +42,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="i in 75" :key="i">
-                                    <td>#62901_{{ String(i).padStart(2, '0') }}</td>
-                                    <td>참가기업 {{ i }}</td>
+                                <tr v-for="company in eurekaCompaniesSorted" :key="company.id">
+                                    <td>{{ company.boothNumber }}</td>
+                                    <td>{{ company.name }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -56,6 +56,7 @@
 </template>
 
 <script setup>
+import { eurekaCompaniesSorted } from '@/data/companyData';
 </script>
 
 <style scoped>

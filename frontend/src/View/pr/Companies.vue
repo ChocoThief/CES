@@ -32,19 +32,18 @@
             <div class="company-section">
                 <div class="section-header">
                     <h2 class="section-title">Eureka Park (1F)</h2>
+                    <p class="section-count">{{ eurekaCompanies.length }}개 참가기업</p>
                 </div>
                 <div class="companies-grid">
                     <div
-                        v-for="i in 8"
-                        :key="`eureka-${i}`"
+                        v-for="company in eurekaPreview"
+                        :key="company.id"
                         class="company-card"
-                        @click="goToCompanyDetail(i, 'eureka')"
+                        @click="goToCompanyDetail(company.id)"
                     >
-                        <img
-                            src="@/assets/company-logo2.png"
-                            alt="참가기업 로고"
-                            class="company-logo"
-                        />
+                        <div class="company-name-overlay">
+                            {{ company.name }}
+                        </div>
                     </div>
                 </div>
                 <button
@@ -59,19 +58,18 @@
             <div class="company-section">
                 <div class="section-header">
                     <h2 class="section-title">Global Pavilion (2F)</h2>
+                    <p class="section-count">{{ globalCompanies.length }}개 참가기업</p>
                 </div>
                 <div class="companies-grid">
                     <div
-                        v-for="i in 8"
-                        :key="`global-${i}`"
+                        v-for="company in globalPreview"
+                        :key="company.id"
                         class="company-card"
-                        @click="goToCompanyDetail(i, 'global')"
+                        @click="goToCompanyDetail(company.id)"
                     >
-                        <img
-                            src="@/assets/company-logo2.png"
-                            alt="참가기업 로고"
-                            class="company-logo"
-                        />
+                        <div class="company-name-overlay">
+                            {{ company.name }}
+                        </div>
                     </div>
                 </div>
                 <button
@@ -87,8 +85,13 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import { eurekaCompanies, globalCompanies } from '@/data/companyData';
 
 const router = useRouter();
+
+// 각 섹션에 표시할 회사 (8개씩)
+const eurekaPreview = eurekaCompanies.slice(0, 8);
+const globalPreview = globalCompanies.slice(0, 8);
 
 const goToEurekaPark = () => {
     router.push('/pr/eureka-park');
@@ -98,10 +101,9 @@ const goToGlobalPavilion = () => {
     router.push('/pr/global-pavilion');
 };
 
-const goToCompanyDetail = (companyId, hall) => {
+const goToCompanyDetail = (companyId) => {
     router.push({
-        path: `/pr/company/${companyId}`,
-        query: { hall }
+        path: `/pr/company/${companyId}`
     });
 };
 </script>
@@ -248,6 +250,32 @@ const goToCompanyDetail = (companyId, hall) => {
 .company-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.company-card:hover .company-name-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.company-name-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.2s ease;
+}
+
+.section-count {
+    font-size: 14px;
+    color: #718096;
+    margin-top: -20px;
+    margin-bottom: 20px;
 }
 
 .company-logo {

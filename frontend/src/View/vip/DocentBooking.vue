@@ -36,13 +36,13 @@
                 <div v-if="currentStep === 1" class="booking-form">
                     <!-- Meeting Point Section -->
                     <div class="meeting-point-section fade-in">
-                        <h2 class="section-title">집결지 (Tour Meeting Point)</h2>
                         <div class="meeting-point-image-wrapper">
                             <img
                                 src="@/assets/meeting-point.png"
                                 alt="집결지 안내"
                                 class="meeting-point-image"
                             />
+                            <span class="meeting-point-label">집결지(Tour Meeting Point)</span>
                         </div>
 
                         <div class="reservation-notice">
@@ -766,15 +766,8 @@ const submitForm = async () => {
     margin-bottom: 60px;
 }
 
-.meeting-point-section .section-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
 .meeting-point-image-wrapper {
+    position: relative;
     overflow: hidden;
     max-width: 120%;
     margin-left: -10%;
@@ -785,6 +778,15 @@ const submitForm = async () => {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.meeting-point-label {
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    color: #e53e3e;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .reservation-notice {

@@ -768,10 +768,8 @@ const submitForm = async () => {
 
 .meeting-point-image-wrapper {
     position: relative;
-    overflow: hidden;
-    max-width: 120%;
-    margin-left: -10%;
-    margin-right: -10%;
+    overflow: visible;
+    max-width: 100%;
 }
 
 .meeting-point-image {
@@ -783,7 +781,7 @@ const submitForm = async () => {
 .meeting-point-label {
     position: absolute;
     top: 22%;
-    left: 0%;
+    left: -17%;
     color: #e53e3e;
     font-size: 30px;
     font-weight: 700;

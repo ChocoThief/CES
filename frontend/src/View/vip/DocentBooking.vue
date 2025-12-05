@@ -71,7 +71,7 @@
                     <div class="form-group fade-in">
                         <label class="form-label">날짜(Date)</label>
                         <select v-model="selectedDate" class="form-select">
-                            <option value="">날짜를 선택해주세요</option>
+                            <option value="">날짜를 선택해주세요 / Please select</option>
                             <option value="1월 6일(화)">1월 6일(화) / 6 Jan 2025 (Tue)</option>
                             <option value="1월 7일(수)">1월 7일(수) / 7 Jan 2025 (Wed)</option>
                             <option value="1월 8일(목)">1월 8일(목) / 8 Jan 2025 (Thu)</option>
@@ -84,7 +84,7 @@
                         <div v-if="selectedDate" class="form-group">
                             <label class="form-label">도슨트 투어(Docent Tour)</label>
                             <select v-model="selectedTour" class="form-select">
-                                <option value="">도슨트를 선택해주세요</option>
+                                <option value="">도슨트를 선택해주세요 / Please select</option>
                                 <option value="투어A(영문)">
                                     투어A (영문) / Tour A in English
                                 </option>

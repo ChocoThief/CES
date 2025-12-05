@@ -14,8 +14,8 @@ import Vip from '@/View/vip/Vip.vue'
 import PitchingSchedule from '@/View/vip/PitchingSchedule.vue'
 import DocentBooking from '@/View/vip/DocentBooking.vue'
 
-// PR 라우트 (production에서 비활성화)
-const prRoutes = import.meta.env.MODE !== 'production' ? [
+// PR 라우트
+const prRoutes = [
   {
     path: '/pr',
     component: Layout,
@@ -58,7 +58,7 @@ const prRoutes = import.meta.env.MODE !== 'production' ? [
       },
     ],
   },
-] : []
+]
 
 // VIP 라우트
 const vipRoutes = [

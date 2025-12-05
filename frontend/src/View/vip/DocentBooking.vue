@@ -52,16 +52,17 @@
                                 <li>신청하신 시간대를 바탕으로 운영팀이 일정 조율 후 최종 투어 시간을 배정합니다.<br/>
                                     운영 사정에 따라 예약이 변경되거나 취소될 수 있습니다.</li>
                                 <li>예약 확정 여부 및 최종 배정 시간은 개별적으로 안내드립니다.</li>
-                                <li>투어는 예약된 시간에 맞춰 Eureka Park관 내 OFFICE에서 진행됩니다.<br/>
-                                    원활한 진행을 위해 지정된 투어 시간에 맞추어 방문 부탁드립니다.</li>
+                                <li>투어는 사진에 표시된 집결지에서 모여서 진행됩니다.<br/>
+                                    원활한 진행을 위해 지정된 투어 시간에 맞추어 집결지로 방문 부탁드립니다.</li>
                             </ol>
                             <ol class="notice-list notice-list-en">
                                 <li>The reservation period is open until 6:00 PM on December 17 (KST).</li>
                                 <li>Based on your selected time slot(s), the operations team will coordinate the schedule and assign the final tour time.<br/>
                                     Please note that your reservation may be adjusted or canceled depending on operational circumstances.</li>
                                 <li>You will be notified individually regarding the confirmation of your reservation and your final assigned tour time.</li>
-                                <li>The tour will take place at the OFFICE located inside the Eureka Park Pavilion at your scheduled time.<br/>
-                                    Please arrive on time to ensure a smooth tour experience.</li>
+                                <li>The tour will begin at the meeting point indicated in the photo.
+                                    <br/>
+                                    For smooth operations, please arrive at the meeting point at your designated tour time.</li>
                             </ol>
                         </div>
                     </div>

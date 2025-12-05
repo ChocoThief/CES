@@ -60,8 +60,8 @@ const prRoutes = import.meta.env.MODE !== 'production' ? [
   },
 ] : []
 
-// VIP 라우트 (production에서 비활성화)
-const vipRoutes = import.meta.env.MODE !== 'production' ? [
+// VIP 라우트
+const vipRoutes = [
   {
     path: '/vip',
     component: Vip,
@@ -74,7 +74,7 @@ const vipRoutes = import.meta.env.MODE !== 'production' ? [
     path: '/vip/docent-booking',
     component: DocentBooking,
   },
-] : []
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

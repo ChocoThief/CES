@@ -11,10 +11,11 @@
                     />
                 </div>
                 <div class="title-container">
-                    <h1>참가업체 상세보기</h1>
+                    <h1>View Exhibitor Details</h1>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    * This website is optimized for PC use.
                 </div>
             </div>
         </section>
@@ -26,8 +27,8 @@
                 <div class="company-logo-section">
                     <div class="logo-box">
                         <img
-                            src="@/assets/company-logo2.png"
-                            alt="회사 로고"
+                            :src="companyLogo"
+                            :alt="company.name + ' 로고'"
                             class="company-logo-large"
                         />
                     </div>
@@ -68,16 +69,21 @@
             </div>
 
             <!-- Video Section -->
-            <div class="video-section">
-                <div class="video-placeholder">
-                    동영상
-                </div>
+            <div class="video-section" v-if="companyVideo">
+                <video
+                    :src="companyVideo"
+                    controls
+                    class="company-video"
+                    preload="metadata"
+                >
+                    브라우저가 비디오를 지원하지 않습니다.
+                </video>
             </div>
 
             <!-- Back Button -->
             <div class="button-section">
                 <button @click="goBack" class="back-btn">
-                    목록으로 돌아가기
+                    목록으로 돌아가기 (View Exhibitor Details)
                 </button>
             </div>
         </section>
@@ -85,9 +91,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { getCompanyById } from '@/data/companyData';
+import defaultLogo from '@/assets/company-logo2.png';
 
 const router = useRouter();
 const route = useRoute();
@@ -103,7 +110,32 @@ const company = ref({
     category: '',
     description: '',
     descriptionEn: '',
-    hall: ''
+    hall: '',
+    logo: '',
+    video: ''
+});
+
+// 동적 로고 import를 위한 로고 모듈들
+const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
+
+// 회사 로고 computed
+const companyLogo = computed(() => {
+    if (company.value.logo) {
+        const logoPath = `/src/assets/${company.value.logo}`;
+        const module = logoModules[logoPath];
+        if (module) {
+            return module.default;
+        }
+    }
+    return defaultLogo;
+});
+
+// 회사 비디오 computed (public 폴더에서 직접 로드)
+const companyVideo = computed(() => {
+    if (company.value.video) {
+        return `/${company.value.video}`;
+    }
+    return null;
 });
 
 // 줄바꿈을 <br>로 변환하는 함수
@@ -127,7 +159,9 @@ onMounted(() => {
             category: foundCompany.category || '-',
             description: foundCompany.description || '-',
             descriptionEn: foundCompany.descriptionEn || '',
-            hall: foundCompany.hall === 'eureka' ? 'Eureka Park' : 'Global Pavilion'
+            hall: foundCompany.hall === 'eureka' ? 'Eureka Park' : 'Global Pavilion',
+            logo: foundCompany.logo || '',
+            video: foundCompany.video || ''
         };
     }
 });
@@ -320,6 +354,13 @@ const goBack = () => {
     font-size: 24px;
     font-weight: 600;
     color: #4a5568;
+}
+
+.company-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    background-color: #000;
 }
 
 /* Button Section */

@@ -11,17 +11,18 @@
                     />
                 </div>
                 <div class="title-container">
-                    <h1>부스 배치도</h1>
+                    <h1>Booth Map</h1>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    * This website is optimized for PC use.
                 </div>
             </div>
         </section>
 
         <!-- Content Section -->
         <section class="content-section">
-            <h2 class="section-title" :class="{ 'fade-out': selectedOption }">부스 선택</h2>
+            <h2 class="section-title" :class="{ 'fade-out': selectedOption }">부스 선택 (Booth Selection)</h2>
             <div class="layout-selection">
                 <div
                     class="layout-option"

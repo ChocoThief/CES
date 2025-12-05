@@ -11,10 +11,11 @@
                     />
                 </div>
                 <div class="title-container">
-                    <h1>Global Pavilion 부스 배치도</h1>
+                    <h1>Global Pavilion</h1>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    * This website is optimized for PC use.
                 </div>
             </div>
         </section>
@@ -24,7 +25,7 @@
             <div class="layout-container">
                 <!-- Left: Booth Layout Image -->
                 <div class="layout-left">
-                    <h2 class="section-title">배치도</h2>
+                    <h2 class="section-title">배치도 (Booth Map)</h2>
                     <div class="layout-image-wrapper">
                         <img src="@/assets/global-layout.png" alt="Global Pavilion 부스 배치도" class="layout-image">
                     </div>
@@ -32,13 +33,13 @@
 
                 <!-- Right: Company List -->
                 <div class="layout-right">
-                    <h2 class="section-title">참가 업체 리스트</h2>
+                    <h2 class="section-title">참가 업체 리스트 (Exhibitor List)</h2>
                     <div class="company-list-wrapper">
                         <table class="company-table">
                             <thead>
                                 <tr>
-                                    <th>부스번호</th>
-                                    <th>기업명</th>
+                                    <th>Booth Number</th>
+                                    <th>Company Name</th>
                                 </tr>
                             </thead>
                             <tbody>

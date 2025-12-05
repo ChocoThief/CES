@@ -11,10 +11,11 @@
                     />
                 </div>
                 <div class="title-container">
-                    <h1>참가기업 리스트</h1>
+                    <h1>Exhibitor</h1>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    * This website is optimized for PC use.
                 </div>
             </div>
         </section>
@@ -22,7 +23,7 @@
         <!-- Booth Layout Link -->
         <div class="booth-layout-link-container">
             <router-link to="/pr/booth-layout" class="booth-layout-link">
-                부스배치도 보기
+                Booth Map
             </router-link>
         </div>
 
@@ -32,7 +33,6 @@
             <div class="company-section">
                 <div class="section-header">
                     <h2 class="section-title">Eureka Park (1F)</h2>
-                    <p class="section-count">{{ eurekaCompanies.length }}개 참가기업</p>
                 </div>
                 <div class="companies-grid">
                     <div
@@ -41,7 +41,10 @@
                         class="company-card"
                         @click="goToCompanyDetail(company.id)"
                     >
-                        <div class="company-name-overlay">
+                        <div class="company-logo-wrapper">
+                            <img :src="getCompanyLogo(company.logo)" :alt="company.name" class="company-logo" />
+                        </div>
+                        <div class="company-name">
                             {{ company.name }}
                         </div>
                     </div>
@@ -50,7 +53,8 @@
                     @click="goToEurekaPark"
                     class="show-more-btn"
                 >
-                    ▶ Eureka Park 참가기업 더보기
+                    ▶ Eureka Park 참가기업 더보기<br />
+                    View Eureka Park Exhibitors
                 </button>
             </div>
 
@@ -58,7 +62,6 @@
             <div class="company-section">
                 <div class="section-header">
                     <h2 class="section-title">Global Pavilion (2F)</h2>
-                    <p class="section-count">{{ globalCompanies.length }}개 참가기업</p>
                 </div>
                 <div class="companies-grid">
                     <div
@@ -67,7 +70,10 @@
                         class="company-card"
                         @click="goToCompanyDetail(company.id)"
                     >
-                        <div class="company-name-overlay">
+                        <div class="company-logo-wrapper">
+                            <img :src="getCompanyLogo(company.logo)" :alt="company.name" class="company-logo" />
+                        </div>
+                        <div class="company-name">
                             {{ company.name }}
                         </div>
                     </div>
@@ -76,7 +82,8 @@
                     @click="goToGlobalPavilion"
                     class="show-more-btn"
                 >
-                    ▶ Global Pavilion 참가기업 더보기
+                    ▶ Global Pavilion 참가기업 더보기<br />
+                    View Global Pavilion Exhibitors
                 </button>
             </div>
         </section>
@@ -86,6 +93,19 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { eurekaCompanies, globalCompanies } from '@/data/companyData';
+import defaultLogo from '@/assets/company-logo2.png';
+
+// 동적 로고 import
+const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
+
+const getCompanyLogo = (logoPath) => {
+    if (logoPath) {
+        const path = `/src/assets/${logoPath}`;
+        const module = logoModules[path];
+        if (module) return module.default;
+    }
+    return defaultLogo;
+};
 
 const router = useRouter();
 
@@ -237,38 +257,58 @@ const goToCompanyDetail = (companyId) => {
 
 .company-card {
     aspect-ratio: 1;
-    background-color: #2c3e50;
+    background-color: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    position: relative;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
 }
 
 .company-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.company-card:hover .company-name-overlay {
-    background-color: rgba(0, 0, 0, 0.8);
+.company-card {
+    display: flex;
+    flex-direction: column;
 }
 
-.company-name-overlay {
-    width: 100%;
-    height: 100%;
+.company-logo-wrapper {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 14px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.company-name {
+    width: 100%;
+    color: #1a202c;
+    font-size: 13px;
     font-weight: 600;
     text-align: center;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: background-color 0.2s ease;
+    padding: 14px 12px;
+    background: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-card:hover .company-name {
+    background: #1a202c;
+    color: white;
 }
 
 .section-count {
@@ -278,12 +318,6 @@ const goToCompanyDetail = (companyId) => {
     margin-bottom: 20px;
 }
 
-.company-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* Show More Button */
 .show-more-btn {
     margin-top: 30px;
@@ -291,8 +325,8 @@ const goToCompanyDetail = (companyId) => {
     font-size: 16px;
     font-weight: 600;
     color: white;
-    background-color: #7a9cd1;
-    border: 2px solid #7a9cd1;
+    background-color: #2d3748;
+    border: 2px solid #2d3748;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -300,7 +334,7 @@ const goToCompanyDetail = (companyId) => {
 }
 
 .show-more-btn:hover {
-    background-color: #6b8cce;
-    border-color: #6b8cce;
+    background-color: #1a242f;
+    border-color: #1a242f;
 }
 </style>

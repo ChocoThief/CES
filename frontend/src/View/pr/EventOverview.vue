@@ -11,10 +11,11 @@
                     />
                 </div>
                 <div class="title-container">
-                    <h1>행사 개요</h1>
+                    <h1>Event Overview</h1>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    * This website is optimized for PC use.
                 </div>
             </div>
         </section>
@@ -34,43 +35,53 @@
                     참가기업들의 비즈니스 네트워킹, 투자 상담, 글로벌
                     파트너십 확대를 위한 다양한 프로그램을 함께 운영합니다.
                 </p>
+                <br>
+                <p>
+                    KOTRA Pavilion is a joint Korean pavilion established to support the global expansion of promising domestic startups and innovative companies.
+                </p>
+                <p>
+                    At CES 2026, we will showcase the technological competitiveness of Korean companies in the core exhibition zones, Eureka Park and Global Pavilion.
+                </p>
+                <p>
+                    We also operate a variety of programs designed to enhance participating companies' business networking, investment consultations, and global partnership expansion.
+                </p>
             </div>
 
             <div class="overview-table">
                 <table>
                     <tbody>
                         <tr>
-                            <th>행사명</th>
+                            <th>행사명 <br>(Event Name)</th>
                             <td>CES 2026</td>
                         </tr>
                         <tr>
-                            <th>일시</th>
+                            <th>일시 <br>(Date)</th>
                             <td>2026.01.06.(TUE) ~ 01.09.(FRI)</td>
                         </tr>
                         <tr>
-                            <th>장소</th>
+                            <th>장소 <br>(Venue)</th>
                             <td>Venetian Expo (베네치안 엑스포 센터)</td>
                         </tr>
                         <tr>
-                            <th>부스번호</th>
+                            <th>부스번호 <br>(Booth Number)</th>
                             <td>
                                 Eureka Park (1F) 62901, 62510 / Global Pavilion
                                 (2F) 52523
                             </td>
                         </tr>
                         <tr>
-                            <th>참가사</th>
+                            <th>참가사 <br>(Exhibitor)</th>
                             <td>
                                 Eureka Park (1F) 75개사 / Global Pavillion (2F)
                                 68개사
                             </td>
                         </tr>
                         <tr>
-                            <th>프로그램</th>
+                            <th>프로그램 <br>(Program)</th>
                             <td>
                                 <div class="program-list">
-                                    <div>- 도슨트 투어 이벤트</div>
-                                    <div>- 피칭 이벤트</div>
+                                    <div>- Docent Tour Event</div>
+                                    <div>- Pitching Event</div>
                                 </div>
                             </td>
                         </tr>

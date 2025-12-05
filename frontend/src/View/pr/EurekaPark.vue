@@ -15,7 +15,8 @@
                     <p class="subtitle">{{ eurekaCompanies.length }}개 참가기업</p>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    * This website is optimized for PC use.
                 </div>
             </div>
         </section>
@@ -46,7 +47,10 @@
                     class="company-card"
                     @click="goToCompanyDetail(company.id)"
                 >
-                    <div class="company-name-overlay">
+                    <div class="company-logo-wrapper">
+                        <img :src="getCompanyLogo(company.logo)" :alt="company.name" class="company-logo" />
+                    </div>
+                    <div class="company-name">
                         {{ company.name }}
                     </div>
                 </div>
@@ -62,6 +66,19 @@
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { eurekaCompanies } from '@/data/companyData';
+import defaultLogo from '@/assets/company-logo2.png';
+
+// 동적 로고 import
+const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
+
+const getCompanyLogo = (logoPath) => {
+    if (logoPath) {
+        const path = `/src/assets/${logoPath}`;
+        const module = logoModules[path];
+        if (module) return module.default;
+    }
+    return defaultLogo;
+};
 
 const router = useRouter();
 
@@ -217,43 +234,57 @@ const goToCompanyDetail = (companyId) => {
 
 .company-card {
     aspect-ratio: 1;
-    background-color: #2c3e50;
+    background-color: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    position: relative;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
 }
 
 .company-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.company-card:hover .company-name-overlay {
-    background-color: rgba(0, 0, 0, 0.8);
+.company-card {
+    display: flex;
+    flex-direction: column;
 }
 
-.company-name-overlay {
-    width: 100%;
-    height: 100%;
+.company-logo-wrapper {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: background-color 0.2s ease;
+    padding: 20px;
+    overflow: hidden;
 }
 
 .company-logo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+.company-name {
+    width: 100%;
+    color: #1a202c;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    padding: 14px 12px;
+    background: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-card:hover .company-name {
+    background: #1a202c;
+    color: white;
 }
 </style>

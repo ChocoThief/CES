@@ -3,16 +3,16 @@
         <!-- Fixed Navigation -->
         <nav class="fixed-nav">
             <div class="nav-container">
-                <router-link to="/pr" class="nav-title">2026 CES KOTRA 통합관</router-link>
+                <router-link to="/pr" class="nav-title">2026 CES KOTRA</router-link>
                 <div class="nav-menu">
                     <router-link to="/pr/event-overview" class="nav-item">
-                        행사 개요
+                        Event Overview
                     </router-link>
                     <router-link to="/pr/companies" class="nav-item">
-                        참가기업
+                        Exhibitors
                     </router-link>
                     <router-link to="/vip" class="nav-item">
-                        프로그램
+                        Program
                     </router-link>
                 </div>
             </div>

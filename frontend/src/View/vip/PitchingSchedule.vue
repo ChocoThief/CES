@@ -14,7 +14,8 @@
                     <h1>피칭 이벤트</h1>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    *This website is optimized for PC use.
                 </div>
             </div>
 

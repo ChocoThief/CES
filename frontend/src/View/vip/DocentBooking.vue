@@ -27,7 +27,8 @@
                     </p>
                 </div>
                 <div class="pc-notice">
-                    *해당 홈페이지는 PC에 최적화되어있습니다.
+                    *해당 홈페이지는 PC에 최적화되어있습니다.<br />
+                    *This website is optimized for PC use.
                 </div>
             </div>
 
@@ -105,7 +106,7 @@
                                 <label class="form-label">타임(Time)</label>
                                 <span class="legend-reserved">
                                     <span class="legend-box"></span>
-                                    예약마감
+                                    예약마감 (Registration Closed)
                                 </span>
                             </div>
                             <div class="time-slots">
@@ -278,7 +279,7 @@
                         <!-- Action Buttons -->
                         <div class="action-buttons">
                             <button @click="goToStep1" class="btn-back">
-                                이전
+                                이전 (Return)
                             </button>
                             <button
                                 @click="submitForm"

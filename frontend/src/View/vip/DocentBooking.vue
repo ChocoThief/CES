@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="reservation-notice">
-                            <h3 class="notice-title">[예약 안내]</h3>
+                            <h3 class="notice-title">[예약 안내 / Reservation Guide]</h3>
                             <ol class="notice-list">
                                 <li>예약 기간은 한국시간 기준 12월 17일 오후 6시까지입니다.</li>
                                 <li>신청하신 시간대를 바탕으로 운영팀이 일정 조율 후 최종 투어 시간을 배정합니다.<br/>

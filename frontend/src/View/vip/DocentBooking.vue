@@ -781,9 +781,9 @@ const submitForm = async () => {
 .meeting-point-label {
     position: absolute;
     top: 22%;
-    left: -12%;
+    left: -8%;
     color: #e53e3e;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
 }
 

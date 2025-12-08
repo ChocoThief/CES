@@ -38,7 +38,7 @@
                     <!-- Meeting Point Section -->
                     <div class="meeting-point-section fade-in">
                         <div class="meeting-point-image-wrapper">
-                            <h2 class="meeting-point-title">Eureka Park</h2>
+                            <h2 class="meeting-point-title">[Eureka Park]</h2>
                             <img
                                 src="@/assets/meeting-point.png"
                                 alt="집결지 안내"
@@ -779,7 +779,7 @@ const submitForm = async () => {
     font-size: 28px;
     font-weight: 700;
     color: #2d3748;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     text-align: center;
 }
 

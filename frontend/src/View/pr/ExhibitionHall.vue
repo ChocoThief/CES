@@ -57,28 +57,23 @@
                         Docent Tour Event
                     </h3>
                     <p class="program-card-description">
-                        CES 2026 KOTRA 참가기업 부스를 MC와 함께 전문적으로
-                        투어하는 프로그램입니다.
-                        각 날짜별로 진행되며 투어
-                        참가를 원하시는 분들은
-                        <router-link to="/vip" class="inline-link"
-                            >[신청] 페이지</router-link
-                        >에 참가 신청부탁드립니다.
+                        CES 2026 KOTRA 참가기업 부스를 MC와 함께 전문적으로 투어하는 프로그램입니다.<br>
+                        각 날짜별로 진행되며 투어 참가를 원하시는 분들은
+                        <router-link to="/vip" class="inline-link">[신청] 페이지</router-link>에 참가 신청부탁드립니다.
                         <br><br>
-                        The CES 2026 KOTRA Docent Tour is a guided program led by a professional MC, showcasing participating companies' booths.
+                        The CES 2026 KOTRA Docent Tour is a guided program led by a professional MC, showcasing participating companies' booths.<br>
                         The tour is conducted on scheduled dates, and those who wish to participate are asked to apply through the <router-link to="/vip" class="inline-link">[Application]</router-link> page.
                     </p>
                 </div>
                 <div class="program-card">
                     <h3 class="program-card-title">Pitching Event</h3>
                     <p class="program-card-description">
-                        CES 2026 KOTRA 참가기업들의 기술 소개 프로그램입니다.
-                        시간 내 행사 장소에 방문하면 더 자세한 참가기업에 대한
-                        이야기를 들으실 수 있습니다.
+                        CES 2026 KOTRA 참가기업들의 기술 소개 프로그램입니다.<br>
+                        시간 내 행사 장소에 방문하면 더 자세한 참가기업에 대한 이야기를 들으실 수 있습니다.
                         <br><br>
-                        The CES 2026 KOTRA Pitching Event is a program where participating companies introduce their technologies and solutions.
-                        During the short sessions, visitors can quickly understand the companies' core values, technological competitiveness, and market potential.
-                        After the presentations, you may visit each company's booth to receive further explanations or business consultations.
+                        The CES 2026 KOTRA Pitching Event is a program where participating companies introduce their technologies and solutions.<br>
+                        During the short sessions, visitors can quickly understand the companies' core values, technological competitiveness, <br>and market potential.
+                        After the presentations, you may visit each company's booth <br>to receive further explanations or business consultations.
                     </p>
                 </div>
             </div>

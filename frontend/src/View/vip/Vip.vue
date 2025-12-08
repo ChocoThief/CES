@@ -30,16 +30,20 @@
                     </div>
                     <div class="program-content">
                         <p class="program-description">
-                            CES 2026 KOTRA 참가기업 부스를 전문 MC와 함께 둘러보며
-                            핵심 기술과 제품을 깊이 있게 소개받는
-                            투어 프로그램입니다.
-                            일자별로 정해진 시간에 진행되며, 안내된 동선을 따라 주요 기업 부스를 방문하게 됩니다.
+                            CES 2026 KOTRA 참가기업 부스를 전문 MC와 함께 둘러보며<br>
+                            핵심 기술과 제품을 깊이 있게 소개받는 투어 프로그램입니다.
+                            <br><br>
+                            일자별로 정해진 시간에 진행되며, 안내된 동선을 따라 주요 기업 부스를 방문하게 됩니다.<br>
                             각 기업의 담당자가 직접 설명을 제공하여 더욱 생생한 정보를 얻을 수 있습니다.
                             <br><br>
-                            The CES 2026 KOTRA Docent Tour guides visitors through participating company booths together with a professional MC.
+                            The CES 2026 KOTRA Docent Tour guides visitors through participating company booths<br>
+                            together with a professional MC.<br>
                             This program offers an in-depth introduction to core technologies and products.
-                            The tour follows a scheduled itinerary for each day, and participants visit major company booths while following the designated route.
-                            Company representatives provide direct explanations at each booth, allowing participants to gain more vivid and detailed insights.
+                            <br><br>
+                            The tour follows a scheduled itinerary for each day,<br>
+                            and participants visit major company booths while following the designated route.<br>
+                            Company representatives provide direct explanations at each booth,<br>
+                            allowing participants to gain more vivid and detailed insights.
                         </p>
                         <div class="program-note">
                             ※ 도슨트 투어 이벤트는 사전신청으로 진행됩니다.
@@ -69,17 +73,21 @@
                     </div>
                     <div class="program-content">
                         <p class="program-description">
-                            CES 2026 KOTRA 참가기업들이 자사의 기술과 솔루션을 직접 소개하는 발표(피칭) 프로그램입니다.
-                            참관객 여러분은 짧은 시간 동안 기업들의 핵심 가치, 기술 경쟁력, 시장성 등을
-                            한자리에서 빠르게 파악하실 수 있습니다.
-                            행사장은 특별 구역으로 구성되어 있어 누구나 자유롭게 관람할 수 있으며
-                            가까운 거리에서 생동감 있게 발표를 들을 수 있습니다.
+                            CES 2026 KOTRA 참가기업들이 자사의 기술과 솔루션을 직접 소개하는 발표(피칭) 프로그램입니다.<br>
+                            참관객 여러분은 짧은 시간 동안 기업들의 핵심 가치, 기술 경쟁력, 시장성 등을 한자리에서 빠르게 파악하실 수 있습니다.
+                            <br><br>
+                            행사장은 특별 구역으로 구성되어 있어 누구나 자유롭게 관람할 수 있으며, 가까운 거리에서 생동감 있게 발표를 들을 수 있습니다.<br>
                             발표 종료 후에는 각 기업의 부스를 방문하여 더욱 자세한 설명을 듣거나 상담을 진행할 수도 있습니다.
                             <br><br>
-                            The CES 2026 KOTRA Pitching Event allows participating companies to directly showcase their technologies and solutions through presentations.
-                            During the event, attendees can quickly understand each company's core value, technological capabilities, competitiveness, and market potential.
-                            The venue is organized as an open area, allowing anyone to freely stop by and listen to the presentations up close.
-                            After the presentations, visitors may proceed to each company's booth to receive more detailed explanations or engage in business consultations.
+                            The CES 2026 KOTRA Pitching Event allows participating companies<br>
+                            to directly showcase their technologies and solutions through presentations.<br>
+                            During the event, attendees can quickly understand each company's core value,<br>
+                            technological capabilities, competitiveness, and market potential.
+                            <br><br>
+                            The venue is organized as an open area,<br>
+                            allowing anyone to freely stop by and listen to the presentations up close.<br>
+                            After the presentations, visitors may proceed to each company's booth<br>
+                            to receive more detailed explanations or engage in business consultations.
                         </p>
                         <!-- <button
                             @click="goToPitchingSchedule"

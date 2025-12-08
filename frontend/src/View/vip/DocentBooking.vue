@@ -38,6 +38,7 @@
                     <!-- Meeting Point Section -->
                     <div class="meeting-point-section fade-in">
                         <div class="meeting-point-image-wrapper">
+                            <h2 class="meeting-point-title">Eureka Park</h2>
                             <img
                                 src="@/assets/meeting-point.png"
                                 alt="집결지 안내"
@@ -221,7 +222,7 @@
                         </div>
 
                         <div class="form-group" ref="interestsRef">
-                            <label class="form-label required">관심분야(Participants)</label>
+                            <label class="form-label required">관심분야(Interests)</label>
                             <input
                                 v-model="formData.interests"
                                 type="text"
@@ -774,6 +775,14 @@ const submitForm = async () => {
     max-width: 100%;
 }
 
+.meeting-point-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .meeting-point-image {
     width: 100%;
     height: auto;
@@ -782,7 +791,7 @@ const submitForm = async () => {
 
 .meeting-point-label {
     position: absolute;
-    top: 22%;
+    top: 29%;
     left: -8%;
     color: #e53e3e;
     font-size: 20px;

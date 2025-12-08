@@ -22,8 +22,9 @@
 
         <!-- Company Info Section -->
         <section class="content-section">
-            <div class="company-info">
-                <!-- Company Logo -->
+            <!-- 상단 그리드: 로고 + 기본 정보 -->
+            <div class="company-info-top">
+                <!-- 왼쪽: 로고 -->
                 <div class="company-logo-section">
                     <div class="logo-box">
                         <img
@@ -34,10 +35,10 @@
                     </div>
                 </div>
 
-                <!-- Company Details -->
+                <!-- 오른쪽: 기본 정보 -->
                 <div class="company-details">
                     <h2 class="company-name">{{ company.name }}</h2>
-                    <h3 class="company-name-en" v-if="company.nameEn">{{ company.nameEn }}</h3>
+                    <h3 class="company-name-en" v-if="company.nameEn">({{ company.nameEn }})</h3>
 
                     <div class="detail-row">
                         <span class="detail-label">부스번호 (Booth number)</span>
@@ -47,7 +48,7 @@
                     <div class="detail-row">
                         <span class="detail-label">제품 (Product)</span>
                         <span class="detail-value">{{ company.product }}</span>
-                        <span class="detail-value-en product-en" v-if="company.productEn">{{ company.productEn }}</span>
+                        <span class="detail-value-en product-en" v-if="company.productEn">({{ company.productEn }})</span>
                     </div>
 
                     <div class="detail-row">
@@ -59,12 +60,15 @@
                         <span class="detail-label">전시관 (Hall)</span>
                         <span class="detail-value">{{ company.hall }}</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="detail-row">
-                        <span class="detail-label">제품설명 (Product Description)</span>
-                        <span class="detail-value description-text" v-html="formatDescription(company.description)"></span>
-                        <span class="detail-value-en description-text" v-if="company.descriptionEn" v-html="formatDescription(company.descriptionEn)"></span>
-                    </div>
+            <!-- 하단: 제품 설명 -->
+            <div class="company-description-section">
+                <div class="detail-row">
+                    <span class="detail-label">제품설명 (Product Description)</span>
+                    <span class="detail-value description-text" v-html="formatDescription(company.description)"></span>
+                    <span class="detail-value-en description-text" v-if="company.descriptionEn" v-html="formatDescription(company.descriptionEn)"></span>
                 </div>
             </div>
 
@@ -94,7 +98,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { getCompanyById } from '@/data/companyData';
-import defaultLogo from '@/assets/company-logo2.png';
+import defaultLogo from '@/assets/company-logo-default.png';
 
 const router = useRouter();
 const route = useRoute();
@@ -238,11 +242,16 @@ const goBack = () => {
     padding: 0 0px;
 }
 
-/* Company Info */
-.company-info {
+/* Company Info - 상단 그리드 */
+.company-info-top {
     display: grid;
-    grid-template-columns: 450px 1fr;
+    grid-template-columns: 350px 1fr;
     gap: 60px;
+    margin-bottom: 40px;
+}
+
+/* Company Description - 하단 */
+.company-description-section {
     margin-bottom: 60px;
     padding-bottom: 60px;
     border-bottom: 2px solid #e2e8f0;

@@ -39,7 +39,7 @@
                         <img :src="getCompanyLogo(company.logo)" :alt="company.name" class="company-logo" />
                     </div>
                     <div class="company-name">
-                        {{ company.name }}
+                        {{ company.name }}<br v-if="company.nameEn" /><span v-if="company.nameEn" class="company-name-en">({{ company.nameEn }})</span>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { allCompanies } from '@/data/companyData';
-import defaultLogo from '@/assets/company-logo2.png';
+import defaultLogo from '@/assets/company-logo-default.png';
 
 // 동적 로고 import
 const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
@@ -108,8 +108,18 @@ const getCompanyLogo = (logoPath) => {
 
 const router = useRouter();
 
-// 메인 페이지에 표시할 9개 기업 (Eureka Park와 Global Pavilion 혼합)
-const featuredCompanies = allCompanies.slice(0, 9);
+// 배열을 랜덤으로 섞는 함수
+const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+};
+
+// 메인 페이지에 표시할 9개 기업 (랜덤 선택)
+const featuredCompanies = shuffleArray(allCompanies).slice(0, 9);
 
 const goToCompanyDetail = (companyId) => {
     router.push({

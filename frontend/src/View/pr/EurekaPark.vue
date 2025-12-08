@@ -51,7 +51,7 @@
                         <img :src="getCompanyLogo(company.logo)" :alt="company.name" class="company-logo" />
                     </div>
                     <div class="company-name">
-                        {{ company.name }}
+                        {{ company.name }}<br v-if="company.nameEn" /><span v-if="company.nameEn" class="company-name-en">({{ company.nameEn }})</span>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { eurekaCompanies } from '@/data/companyData';
-import defaultLogo from '@/assets/company-logo2.png';
+import defaultLogo from '@/assets/company-logo-default.png';
 
 // 동적 로고 import
 const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });

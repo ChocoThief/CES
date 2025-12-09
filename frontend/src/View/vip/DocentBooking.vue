@@ -59,7 +59,7 @@
                             </ol>
                             <ol class="notice-list notice-list-en">
                                 <li>The reservation period is open until 6:00 PM on December 17 (KST).</li>
-                                <li>Based on your selected time slot(s), the operations team will coordinate the schedule and assign the final tour time.<br/>
+                                <li>Based on your selected time slot(s), the operations team will coordinate the schedule <br>and assign the final tour time.<br/>
                                     Please note that your reservation may be adjusted or canceled depending on operational circumstances.</li>
                                 <li>You will be notified individually regarding the confirmation of your reservation and your final assigned tour time.</li>
                                 <li>The tour will begin at the meeting point indicated in the photo.

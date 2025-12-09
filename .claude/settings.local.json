@@ -15,7 +15,8 @@
       "Bash(npx shadcn-vue@latest init:*)",
       "mcp__shadcnVue__get_item_examples_from_registries",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:freefrontend.com)"
     ],
     "deny": [],
     "ask": []

@@ -53,7 +53,7 @@
                             ※ 투어 인원은 날짜별로 제한될 수 있습니다.
                             <br><br>
                             ※ The docent tour requires advance registration.
-                            Visitors who wish to participate must apply through the registration page. (On-site registration is not available.)
+                            Visitors who wish to participate must apply through the registration page.<br> (On-site registration is not available.)
                             <br>
                             ※ The number of participants may be limited depending on the day.
                         </div>

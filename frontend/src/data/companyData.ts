@@ -36,7 +36,6 @@ UroRinse™ Light는 이러한 문제를 대체하여, 버튼 하나로 작동�
 UroRinse™ Light는 방광 관리 패러다임을 기존의 사후 치료에서 예방 중심의 선제적 관리로 전환시켜, 필요할 때 어디서나 병원 수준의 치료를 제공합니다.`,
     website: `https://en.umedglobal.com/`,
     logo: `참가업체 로고 파일/EP_png/유메드 로고.png`,
-    website: ``,
     descriptionEn: `UroRinse™ Light is a medical device that automates bladder irrigation for patients with long-term urinary catheters, directly addressing the most common and challenging hospital-acquired infections linked to catheter use. Catheter-related urinary tract infections are increasingly difficult to treat due to contamination and antibiotic resistance, and current manual irrigation methods are inconsistent and limited to clinical environments. UroRinse™ Light replaces this with a fully automated, button-activated system that delivers consistent, safe, and standardized irrigation cycles.  It also manages complications such as blockages, blood clots, and hematuria, making care more predictable and preventive. Designed for hospitals, care facilities, and homes, it is simple enough for caregivers or patients to operate without clinical training. Integrated mobile app and secure cloud connectivity allow remote monitoring and expert support, enabling clinicians to guide care beyond the clinic. UroRinse™ Light shifts bladder care from reactive treatment to proactive infection prevention, providing hospital-grade therapy wherever it’s needed.`,
     video: `EP-mp4/유메드/유메드 홍보영상.mp4`
   },
@@ -73,7 +72,6 @@ UroRinse™ Light는 방광 관리 패러다임을 기존의 사후 치료에서
     description: `휴대용 냉/온 2in1 마사지기로 휴대용 동일 성능 제품 중 세계 최초 영하10도 까지 도달`,
     website: `http://www.icelinker.com`,
     logo: `참가업체 로고 파일/EP_png/아이스링커 로고.png`,
-    website: ``,
     descriptionEn: `Portable cold/hot 2-in-1 massager reaches minus 10 degrees Celsius for the first time among portable performance products`,
     video: ``
   },
@@ -89,7 +87,6 @@ UroRinse™ Light는 방광 관리 패러다임을 기존의 사후 치료에서
     description: `Immers3 Shooter는 제품을 인식해 최적의 촬영 각도를 자동으로 계획하고, 실사 수준의 3D 모델을 복원하는 자율 3D 촬영 로봇입니다. 제품을 올려두기만 하면 촬영부터 3D 콘텐츠 생성까지 모두 자동으로 완료됩니다.`,
     website: `https://www.evova.ai`,
     logo: `참가업체 로고 파일/EP_png/(주)미타운 로고_컬러.png`,
-    website: ``,
     descriptionEn: `Immers3 Shooter is an autonomous 3D capture robot that automatically analyzes product geometry, plans optimal camera angles, and reconstructs photorealistic 3D models from all-around shots—just place the item and it captures, processes, and delivers immersive 3D content instantly. 
 
 Our key competitive advantage lies in full automation — Immers3 Shooter autonomously plans, captures, and reconstructs 3D models using AI-driven view planning and Gaussian Splatting technology. Unlike traditional photogrammetry systems requiring manual setup or post-processing, our robot identifies the best angles, captures HDR imagery, and generates photorealistic 3D assets instantly. Competitors include Artec, RealityCapture, and PolyCam. We differentiate by integrating robotics, real-time AI reconstruction, and e-commerce-ready output in one seamless system.`,
@@ -107,7 +104,6 @@ Our key competitive advantage lies in full automation — Immers3 Shooter autono
     description: `접촉 1분내 모든 형태의 바이러스, 세균, 곰팡이를 초고속으로 99.9% 사멸 시키는 동시에 사람과 동물에게 알레르기를 유발하는 물질을 제거해 주면서 생활유해가스 탈취까지 가능하며 저차압 성능을 통해 필터 수명연장 및 소비전략 절감 달성까지 가능한 고성능 HVAC 방역 공조 필터 입니다.`,
     website: `https://www.jahachemical.com/`,
     logo: `참가업체 로고 파일/EP_png/자하케미칼 로고.png`,
-    website: ``,
     descriptionEn: `This is a high-performance HVAC disinfection air conditioning filter that kills 99.9% of all types of viruses, bacteria, and fungi within 1 minute of contact, removes substances that cause allergies in humans and animals, and deodorizes harmful gases. It also extends the life of the filter and reduces consumption through low pressure differential performance.`,
     video: ``
   },
@@ -123,7 +119,6 @@ Our key competitive advantage lies in full automation — Immers3 Shooter autono
     description: `적색 및 근적외선 빛을 이용한 통증완화용 광생물조절 의료기기, FDA 2등급 의료기기, AI를 이용한 App을 이용한 개인 맞춤형 건강기기`,
     website: `http://benilight.com`,
     logo: `참가업체 로고 파일/EP_png/베니라이트 주식회사 로고_컬러_brown logo(letter size).png`,
-    website: ``,
     descriptionEn: `Photobiomodulation medical device for pain relief using red and near-infrared light, FDA Class II medical device, personalized health device using AI-powered app`,
     video: `EP-mp4/베니라이트 주식회사/베니라이트 주식회사 홍보 영상.mp4`
   },
@@ -139,7 +134,6 @@ Our key competitive advantage lies in full automation — Immers3 Shooter autono
     description: `EG TS(TotalScan) 전류 센서는 단일 장치로 0.1A에서 5,000A 이상의 광범위한 전류를 측정하도록 설계된 소형 PCB 기반 전자기 센서입니다. 기존 CT 또는 로고스키 센서와 달리 포화 없이 작동하며 케이블 연결 없이 설치가 가능하여 비침투형 설치가 가능합니다. 이 센서는 저전류 및 고전류 환경 모두에서 정확한 실시간 전류 데이터를 제공하여 전기 자동차, 재생 에너지, 데이터 센터 및 전력망 등의 애플리케이션을 지원합니다. 디지털 출력은 AI 시스템과 통합되어 예측 유지 보수 및 안전 모니터링을 지원합니다. 한국과 일본에서 특허를 취득했으며 국제 특허 출원 중인 이 장치는 이미 철도 및 산업 시범 프로젝트에서 검증되었습니다. EG TS 센서는 구리 및 플라스틱 사용량을 90% 이상 줄여 지속 가능한 제조 및 복원력 있는 에너지 인프라를 촉진합니다.`,
     website: `http://www.egkorea.co.kr`,
     logo: `참가업체 로고 파일/EP_png/이지코리아 로고.png`,
-    website: ``,
     descriptionEn: `The EG TS (TotalScan) Current Sensor is a compact, PCB-based electromagnetic sensor designed to measure a wide range of currents from 0.1A to over 5,000A with a single device. Unlike conventional CT or Rogowski sensors, it operates without saturation and requires no cable pass-through, enabling non-intrusive installation. The sensor provides accurate, real-time current data in both low- and high-current environments, supporting applications in electric vehicles, renewable energy, data centers, and power grids. Its digital output can be integrated with AI systems for predictive maintenance and safety monitoring. Patented in Korea and Japan with PCT pending internationally, the device is already proven in railway and industrial pilot projects. By reducing copper and plastic usage by over 90%, the EG TS sensor also promotes sustainable manufacturing and resilient energy infrastructure.`,
     video: `EP-mp4/이지코리아/이지코리아 홍보영상.mp4`
   },
@@ -173,7 +167,6 @@ Pharmpick은 AI 기반 개인 맞춤형 디지털 헬스케어 플랫폼으로, 
 단순히 건강기능식품 선택을 돕는 것을 넘어, 예방 중심 디지털 헬스케어 플랫폼으로 진화하여 글로벌 시장(특히 의료비가 높은 미국)에서 건강관리 토탈 앱 서비스로 자리 잡는 것.`,
     website: `https://gorocketcompany.super.site`,
     logo: `참가업체 로고 파일/EP_png/고로켓컴퍼니 로고(백색).png`,
-    website: ``,
     descriptionEn: `1. Definition
 Pharmpick is an AI-powered personalized digital healthcare platform that helps users easily and safely choose and manage dietary supplements.
 
@@ -213,7 +206,6 @@ Beyond simply helping users choose dietary supplements, Pharmpick is evolving in
 언제 어디서든 즉각적인 대응이 가능하도록 24시간 모바일 지원을 통해 스마트폰으로 사고 상황을 실시간으로 보고받을 수 있습니다.`,
     website: `https://www.intellivix.ai/`,
     logo: `참가업체 로고 파일/EP_png/인텔리빅스 경남지사 로고.png`,
-    website: ``,
     descriptionEn: `Gen AMS is an AI-powered smart monitoring system that goes beyond simple surveillance. Our AI analyzes situations and predicts risks in real time, delivering the results in automated reports.
 
 This system transforms traditional human-dependent visual inspections into AI-driven monitoring, maximizing operational efficiency. It also supports multi-purpose simultaneous monitoring, allowing for customized surveillance based on specific detection goals.
@@ -240,7 +232,6 @@ With 24/7 mobile support, you can receive real-time alerts on your smartphone, e
 기술적 완성도, 세련된 사용성, 글로벌 확장성을 결합한 Optimizer는 지속 가능한 3D 미래를 형성하는 차세대 혁신 기술로 자리매김하고 있습니다.`,
     website: `https://www.greneta.ai`,
     logo: `참가업체 로고 파일/EP_png/그리네타 로고.png`,
-    website: ``,
     descriptionEn: `Greneta Optimizer AI-Quantization Compressor transforms the future of 3D content with an AI-driven algorithm that shrinks massive 3D models by up to 99.6% in seconds while preserving full visual fidelity. This breakthrough eliminates one of the biggest bottlenecks in AR/VR, digital twins, and medical imaging: the heavy weight of high-precision data. With a clean, intuitive interface and one-click presets, complex compression becomes effortless and professional-grade. Its modular design enables seamless API integration or standalone use, ensuring consistent results across platforms. The impact is profound: gigabyte-scale models become lightweight enough for real-time streaming on mobile XR devices, remote medical diagnostics, or instant digital twins in the field. By dramatically reducing storage, latency, and energy costs, Optimizer not only accelerates workflows but also supports sustainability by cutting data-related carbon emissions. Combining technical excellence, refined usability, and global scalability, Optimizer stands as a next-generation innovation shaping the sustainable future of 3D.`,
     video: `EP-mp4/그리네타/그리네타 홍보영상.mp4`
   },
@@ -256,7 +247,6 @@ With 24/7 mobile support, you can receive real-time alerts on your smartphone, e
     description: `지게차와 작업자의 움직임을 Top-View 관제 시스템으로 관측하여, 영상 속 객체(지게차 및 작업자)를 라벨링하고 이동 동선을 예측합니다. 또한 인공지능 기반 위험 상황 예측 기술을 적용하여, 작업 환경에서 발생할 수 있는 충돌 위험을 사전에 감지하고 예방할 수 있는 AI 안전 관제 솔루션을 제공합니다.`,
     website: `https://www.rbtbox.kr/`,
     logo: `참가업체 로고 파일/EP_png/로보틱박스 로고.png`,
-    website: ``,
     descriptionEn: `An AI-powered Top-View monitoring solution that tracks forklifts and workers, labels objects in real time, predicts movement paths, and prevents potential collisions through advanced risk prediction technology`,
     video: `EP-mp4/로보틱박스/로보틱박스 홍보영상.mp4`
   },
@@ -272,7 +262,6 @@ With 24/7 mobile support, you can receive real-time alerts on your smartphone, e
     description: `씨피식스는 레벨2 이상의 자율주행 자동차 사고 발생 시 미국 연방법인 MMUCC에서 정한 데이터를 실시간으로 수집하여 사고 발생 시 자율주행 관련 센서 상태를 Crash Report 상에 정확한 상태를 입력할 수 있으므로 자율주행 자동차 사고 발생 시 정확한 사고 원인 규명을 할 수 있으며, 자율주행 기능이 제공되는 전기 자동차의 배터리 관리 시스템(BMS, Battery Management System) 분석 기능을 고도화한 '모빌리티 통합 데이터 분석 플랫폼 "Autonomous driving accident investigation analysis tool(ACAT)'을 제공합니다. 이 플랫폼은 차량 주행 데이터, 센서 데이터, 배터리 상태 데이터를 단일 애플리케이션 환경에서 통합 분석하여 안전성 강화, 운영 효율성 향상, 사고 예방을 동시에 실현할 수 있습니다.`,
     website: `https://www.thecp6.com/en`,
     logo: `참가업체 로고 파일/EP_png/씨피식스 로고_컬러.png`,
-    website: ``,
     descriptionEn: `CP6 collects real-time data, as required by U.S. federal law (MMUCC), when accidents occur in Level 2 or higher autonomous vehicles. This enables the precise recording of autonomous driving–related sensor statuses in the Crash Report, allowing for accurate determination of accident causes in autonomous vehicle incidents.
 In addition, CP6 offers the Autonomous Driving Accident Investigation Analysis Tool (ACAT), an advanced Mobility Integrated Data Analysis Platform that enhances the analytical capabilities of the Battery Management System (BMS) in electric vehicles equipped with autonomous driving functions.
 The ACAT platform integrates the analysis of vehicle driving data, sensor data, and battery status data within a unified application environment, enabling enhanced safety, improved operational efficiency, and proactive accident prevention.`,
@@ -290,7 +279,6 @@ The ACAT platform integrates the analysis of vehicle driving data, sensor data, 
     description: `자동차 제조사 기반의 당사 독자적 기술인 '차량종합데이터'를 활용하여 기존 데이터 기반 환경 부재로 확인이 어려웠던 부품을 정확히 식별, 관리할 수 있도록 합니다. 또한 아날로그 방식에 머물러 있던 자동차 부품의 식별, 선별, 등록, 재고, 유통 전 과정을 디지털화 및 자동화하여 산업 전반의 효율성을 크게 높입니다. 이를 통해 자동차 부품 재활용률을 확대하고 신품 생산을 줄여 탄소 배출을 절감함으로써 글로벌 ESG 규제에 부합하고 지속 가능한 산업 방향성을 선도합니다.`,
     website: `https://www.amass.co.kr`,
     logo: `참가업체 로고 파일/EP_png/에머스 로고.png`,
-    website: ``,
     descriptionEn: `By leveraging our proprietary technology, Comprehensive Vehicle Data, developed on the basis of automotive manufacturers’ information, we enable the accurate identification and management of parts that were previously difficult to verify due to the lack of a data-driven environment. Furthermore, we digitalize and automate the entire process of parts identification, selection, registration, inventory management, and distribution, which has long remained in analog form, thereby significantly enhancing overall industry efficiency. This not only increases the utilization of recycled automotive parts and reduces the production of new parts, but also lowers carbon emissions, ensuring compliance with global ESG regulations and leading the way toward a sustainable industrial future.`,
     video: ``
   },
@@ -325,7 +313,6 @@ The ACAT platform integrates the analysis of vehicle driving data, sensor data, 
     description: `AI가  적용되어 이동중에도 정보획득이 가능한 차세대 AR GLASS`,
     website: `http://www.claroptic.co.kr/e_main.php`,
     logo: `참가업체 로고 파일/EP_png/클레어옵틱 로고.png`,
-    website: ``,
     descriptionEn: `AI intergrated ever day usage Next-gen AR Glasses`,
     video: ``
   },
@@ -376,7 +363,6 @@ Ratel enables verified, fraud-proof participation through DIDs, facilitates stru
 분유 조제뿐만 아니라 야외 활동, 전문 음료 서비스 등 다양한 환경에서도 최적의 음료 상태를 유지할 수 있어, 정밀 제어·위생·휴대성을 모두 갖춘 생활 혁신 솔루션입니다.`,
     website: `https://all-comfort.com/`,
     logo: `참가업체 로고 파일/EP_png/올컴 로고.png`,
-    website: ``,
     descriptionEn: `What happens when baby formula is too hot or too cold? Babies can burn their mouth or suffer from digestion problems. Yet it is often a hassle for parents—especially when traveling—to prepare formula at the right temperature.
 The Allcom Smart Tumbler solves this with precise dual-mode cooling and heating in the 13°C to 45°C range using Peltier semiconductor technology. An internal sensor and Bluetooth connectivity enable real-time control via a mobile app, while a detachable SUS-316 (Surgical Stainless Steel 316) vessel ensures hygienic cleaning and durability, widely used in medical and food-grade equipment. The BPA-Free (Bisphenol-A Free) exterior ensures safety, while vacuum insulation enhances thermal performance. Its modular design allows easy maintenance and extends product lifespan.
 Beyond baby care, the tumbler adapts to outdoor activities and professional beverage service, maintaining optimal drink conditions anywhere. This blend of precision control, hygiene, and portability makes it a true lifestyle innovation.`,
@@ -404,7 +390,6 @@ Beyond baby care, the tumbler adapts to outdoor activities and professional beve
 플라스틱 오염은 특히 개발도상국에서 더욱 심각하게 나타나며, 이들 지역에서는 플라스틱보다 저렴하면서도 대체 가능한 자재가 거의 없습니다. 또한 선진국에서 버려진 폐플라스틱이 유입되며, 환경과 사회에 부정적인 영향을 미치고 있습니다. 에코C큐브(Eco‑C CUBE)는 이러한 폐플라스틱을 가치 있는 건설 자재로 전환함으로써, 현지 일자리를 창출하고 플라스틱으로 인한 문제를 해결하며 생활 수준을 향상시킬 수 있습니다. 생산 공정이 단순하고 비용이 낮아 저소득 국가에서도 실현 가능성이 높으며, 전 세계적으로 가장 널리 퍼진 자원인 플라스틱을 활용하기에 ‘제5의 건설 자재’로서의 잠재력을 갖추고 있습니다. 현재 국내에서 다수의 특허를 출원·등록했으며, 주요 요소 기술에 대해서는 해외 특허도 출원 중입니다. 이 기술은 실제로 삶을 변화시킬 수 있는 역량을 지니고 있습니다.`,
     website: `https://westec-g.com`,
     logo: `참가업체 로고 파일/EP_png/윈스텍글로벌 로고.png`,
-    website: ``,
     descriptionEn: `Eco‑C CUBE is a high-strength structural block produced by directly extruding and molding hard-to-recycle plastic waste—such as fishing nets, buoys, agricultural films, and multilayer packaging—without washing or separation. These plastics, sourced from land and marine environments, are typically non-recyclable through conventional means. Using a proprietary “New-Cycling” process, the blocks are manufactured at low temperatures to preserve the polymer structure, resulting in superior tensile and compressive strength compared to concrete. Each kilogram of product reduces approximately 2.99 kg of CO₂ emissions, as officially verified by the SDX Foundation through LCA (Life Cycle Assessment). The technology was co-developed by WES‑Tec Global and the Korea Low Impact Development Association, a nonprofit under the Ministry of Environment of the Republic of Korea. It was awarded the Silver Prize in the Advanced Engineering Infrastructure Solutions category at the 2025 Edison Awards for its innovation in sustainable construction materials.
 
 Eco‑C CUBE is a high-strength modular block used in climate-resilient infrastructure such as retaining walls, embankments, and coastal barriers. It is manufactured through a New-Cycling extrusion process that transforms unwashed, unsorted plastic waste—such as agricultural film and fishing nets—into structural material. Unlike pyrolysis or traditional recycling, this method preserves polymer integrity, achieving compressive strength of 26.4 MPa and tensile strength of 16.7 MPa. Its S-shaped interlocking joint and central through-hole ensure high fastening power and effective load distribution. An AI-based analysis system maintains mechanical consistency. The block meets both environmental and structural demands for disaster-resilient applications. Additionally, it reduces 2.99 kg of CO₂ per 1 kg of product (LCA-certified). With a 20-ton daily capacity, it achieves 21,830 tons of annual carbon reduction—equivalent to the CO₂ absorbed by 3.6 million 30-year-old pine trees.
@@ -436,7 +421,6 @@ Plastic pollution is especially severe in developing countries, where affordable
 또한 QDLED 시스템과의 연동을 통해, 조명은 단순한 빛을 넘어 지능적이고 데이터 중심의 AI 플랫폼으로 업그레이드 됩니다. 이를 통해 대규모 스마트 웰니스 기기 네트워크에서도 실시간 반응성과 손쉬운 확장성을 구현할 수 있습니다.`,
     website: `https://www.rfminnovation.com/`,
     logo: `참가업체 로고 파일/EP_png/알에프모아컴 로고.png`,
-    website: ``,
     descriptionEn: `1. QDLED (Quantum Dot LED) Smart Bio Stand Light
 The QDLED Smart Bio Stand Light is a premium wellness-focused lighting system that recreates the natural spectrum of sunlight through advanced quantum dot conversion technology. By delivering ultra-high color rendering (CRI ≥95) and bio-responsive spectral tuning across visible, near-infrared, and optional UVB ranges, it goes beyond illumination—becoming a tool for health, comfort, and productivity.
 Its refined design integrates AI-ready controls, IoT compatibility, and low-heat efficiency, positioning it as the benchmark for modern lighting in homes, clinics, wellness centers, and creative spaces.
@@ -457,7 +441,6 @@ When paired with QDLED systems, it empowers lighting to become intelligent, data
     description: `AI 기반 구매비용절감 및 운영업무 자동화 SaaS`,
     website: `https://plynai.com`,
     logo: `참가업체 로고 파일/EP_png/에이아이지먼트 로고.png`,
-    website: ``,
     descriptionEn: `Built on Agentic AI, PLYN empowers enterprises to lower procurement costs and stay resilient against supply chain risks.`,
     video: ``
   },
@@ -479,7 +462,6 @@ When paired with QDLED systems, it empowers lighting to become intelligent, data
 뛰어난 성능, 확장성, 안전한 자율주행 성능을 모두 갖춘 RAXIAN은 차세대 자율주행 셔틀 시장을 선도할 것입니다.`,
     website: `https://sonnet.ai/en/`,
     logo: `참가업체 로고 파일/EP_png/주식회사 소네트 로고_컬러.png`,
-    website: ``,
     descriptionEn: `RAXIAN is a fully autonomous, electric 15-seat shuttle designed for diverse mobility environments. Powered by SONNET.AI’s proprietary AutoDrive™ Level 4 software—certified by Korea’s MOLIT—it enables safe, driverless operation on public roads, reducing labor needs and improving accessibility. Dual 100kW in-wheel motors and a high-capacity battery deliver a top speed of 200 km/h and a range of 200 km, though its launch model will be limited to 40 km/h in compliance with Korean autonomous vehicle regulations. Its modular architecture supports flexible reconfiguration of size, powertrain, and cabin design for use in urban, rural, and industrial settings. The lightweight FRP monocoque body with steel reinforcement reduces manufacturing costs while maintaining strength. Co-developed with INNODESIGN, RAXIAN combines a distinctive exterior with a user-centric interior that emphasizes comfort and accessibility. By eliminating the driver’s seat, it maximizes passenger space. Balancing performance, adaptability, and certified autonomy, RAXIAN provides a scalable platform for next-generation shuttle services.`,
     video: ``
   },
@@ -521,7 +503,6 @@ UNG 워터 인핸서는 물의 질을 한층 업그레이드하여, 건강하고
     description: `트리즈에이아이(TRIZ-AI)는 전기차 배터리의 실시간 안전진단과 수명 예측을 제공하는 AI 플랫폼입니다. 배터리를 탈거하지 않고 실주행 전기차 빅데이터를 활용해 상태를 정밀 분석하여 화재 및 이상징후 예방, SOH(건전성 지수, 잔존용량)와 RUL(잔존수명) 관리, 폐배터리 재활용 등급 신속 판정을 가능하게 하며 — 이를 통해 보다 안전하고, 지능적이며, 지속가능한 전기차 배터리 전주기 관리 SaaS 솔루션을 제공합니다.`,
     website: `https://en.quantum-hitech.co.kr/`,
     logo: `참가업체 로고 파일/EP_png/(주)퀀텀하이텍 로고_컬러_백색단도.png`,
-    website: ``,
     descriptionEn: `TRIZ-AI is an AI-powered platform that provides real-time safety diagnostics and lifecycle prediction for EV batteries. Without disassembly, it precisely analyzes battery conditions using real-world driving data, enabling fire and anomaly prevention, SOH(State of Health) and RUL(remaining useful life) management, and rapid grading for second-life recycling — delivering a complete SaaS solution for safer, smarter, and more sustainable EV battery lifecycle management.`,
     video: ``
   },
@@ -645,7 +626,6 @@ The Skiving process is an advanced technology that significantly increases surfa
     description: `IDCITI의 uGPS는 GPS가 닿지 않는 환경에서의 정밀 측위라는 스마트시티의 가장 지속적인 난제를 해결하는 혁신적인 실내 GNSS 신호 생성 솔루션입니다. 지금까지는 지하 인프라, 터널, 실내 복합시설 전반의 위치 블라인드 스팟 문제를 근본적으로 해결한 솔루션이 없었습니다. uGPS는 표준 디바이스에 추가 하드웨어나 소프트웨어 설치 없이 GNSS 신호를 이러한 구역까지 매끄럽게 확장함으로써 이 장벽을 뛰어넘습니다. 독자적·특허 기술을 활용하여 자율주행차부터 개인 스마트 기기까지 모든 대상에 대해 정확하고 실시간의 타이밍 및 위치 정보를 제공합니다. 이 혁신은 안전과 운영 효율성을 높일 뿐 아니라 연결 인프라 전반에서 새로운 가치를 창출합니다. 실제 현장 적용으로 입증된 uGPS는 차세대 도시 모빌리티, 물류, 공공안전 시스템의 핵심 기반을 형성하며, 스마트시티 발전을 위한 투명하고 확장 가능한 솔루션을 제공합니다. 도시가 점점 복잡해지는 가운데, IDCITI의 uGPS는 위치 정보가 언제나 매끄럽고, 신뢰할 수 있으며, 누구나 접근 가능하도록 보장합니다.`,
     website: `http://www.idciti.com`,
     logo: `참가업체 로고 파일/EP_png/아이디씨티 로고.png`,
-    website: ``,
     descriptionEn: `IDCITI’s uGPS is a groundbreaking indoor GNSS signal generation solution that addresses one of Smart Cities’ most persistent challenges: precise positioning in GPS-denied environments. Until now, no solution has fundamentally resolved location blind spots across underground infrastructure, tunnels, or indoor complexes. uGPS overcomes this barrier by seamlessly extending GNSS signals into these zones—without requiring extra hardware or software on standard devices. Leveraging proprietary and patented technology, it enables accurate, real-time timing and positioning for everything from autonomous vehicles to personal smart devices. This innovation not only enhances safety and operational efficiency but also unlocks new value across connected infrastructure. Proven in real-world deployments, uGPS forms a critical foundation for next-generation urban mobility, logistics, and public safety systems—offering a transparent, scalable solution for Smart City evolution. As cities grow increasingly complex, IDCITI’s uGPS ensures that location intelligence remains seamless, reliable, and universally accessible.`,
     video: `EP-mp4/아이디씨티/아이디씨티 홍보영상.mp4`
   },
@@ -661,7 +641,6 @@ The Skiving process is an advanced technology that significantly increases surfa
     description: `플로우스코어는 정형화된 신용 기록이 없어 금융에서 소외된 유망 중소기업(SMB)을 위한 지능형 신용평가 및 금리 예측 시스템입니다.`,
     website: `https://www.276holdings.com/`,
     logo: `참가업체 로고 파일/EP_png/276홀딩스 로고.png`,
-    website: ``,
     descriptionEn: `FlowScore is an intelligent credit assessment and interest rate forecasting system designed for promising small and medium-sized businesses (SMBs)`,
     video: `EP-mp4/276홀딩스/276홀딩스 홍보영상.mp4`
   },
@@ -681,7 +660,6 @@ The Skiving process is an advanced technology that significantly increases surfa
 AI가 이미 소프트웨어 개발 분야를 혁신했지만, 매니패스트는 이제 기획 분야에 바로 그 생산성의 혁명을 가져오고 있습니다.`,
     website: `https://manyfast.io/en`,
     logo: `참가업체 로고 파일/EP_png/리오랩 로고.png`,
-    website: ``,
     descriptionEn: `Manyfast is an AI agent solution built to accelerate IT project planning. It transforms user requirements into initial product plans in seconds and provides a dedicated workspace for seamless team collaboration. By working alongside the AI agent, teams can significantly speed up their planning process. Once finalized, Manyfast automatically generates key deliverables like storyboards and functional specifications, eliminating tedious manual work.
 
 While AI has already transformed the world of software development, Manyfast is bringing that same productivity revolution to planning.`,
@@ -714,7 +692,6 @@ While AI has already transformed the world of software development, Manyfast is 
     description: `EXIOND는 색상 안내 디스플레이 트레이가 탑재된 AI 기반 알약 카운터입니다. 조제 과정에서 모니터와 트레이에 동기화된 색상 신호가 표시되어 알약 카운팅, 분류, 이물질 감지를 직관적으로 안내합니다. 이 과정을 통해 조제 오류를 최소화하고, 환자와 약사 모두에게 더 안전하고 신뢰할 수 있는 의료 환경을 제공합니다.`,
     website: `https://www.exionlabs.ai`,
     logo: `참가업체 로고 파일/EP_png/엑시온랩스 로고.png`,
-    website: ``,
     descriptionEn: `EXIOND is an AI-driven pill counter with an assistive tray display. During dispensing, synchronized color cues appear on both the monitor and tray, guiding pill counting, classification, and foreign substance detection. This intuitive process reduces medication errors and helps ensure a safer, more reliable healthcare environment for everyone.`,
     video: ``
   },
@@ -730,7 +707,6 @@ While AI has already transformed the world of software development, Manyfast is 
     description: `사용자의 보행 및 체형을 비전 AI로 검사하는 제품. 체형의 잘못된 점과 보행에서 뇌 기능 저하를 인식함.`,
     website: `https://www.aicu.life`,
     logo: `참가업체 로고 파일/EP_png/주식회사 에이아이씨유 로고_컬러.png`,
-    website: ``,
     descriptionEn: `A vision AI-powered product that examines a user's walking patterns and body shape. It recognizes postural imbalances and identifies indicators of cognitive decline through gait analysis.`,
     video: ``
   },
@@ -766,7 +742,6 @@ While AI has already transformed the world of software development, Manyfast is 
  - 음반사·유통사 기능 내장: 중간과정없이 아티스트 계약·음악발매·정산`,
     website: `https://keiser.kr`,
     logo: `참가업체 로고 파일/EP_png/케이저 로고.png`,
-    website: ``,
     descriptionEn: `⦾ 『JIGPU』, a copyright-integrated content platform equipped with an AI music composition system
 - A content platform specialized for music users (video, games, metaverse, broadcasting) and music producers (musicians, entertainment companies)
 - AI music composition search and recommendation system: Searches for music content creators based on objective musical characteristics
@@ -788,7 +763,6 @@ While AI has already transformed the world of software development, Manyfast is 
 - AI기반 의료영상 분석 플랫폼 : 클라우드 기반 AI와 LLM 기술을 바탕으로 의료영상 분석, 스포츠 MRI, 병원 PACS 연동 등 다양한 디지털 헬스 솔루션을 제공`,
     website: `https://mtechlab.co.kr/`,
     logo: `참가업체 로고 파일/EP_png/엠테크랩 로고.png`,
-    website: ``,
     descriptionEn: `- High-Dielectric Wearable Pad for MRI : Provides a diagnostic solution that significantly improves SNR, uniformity, and contrast by correcting image distortion caused by high-field MRI using a proprietary dielectric pad.
 
 - AI-Based Medical Imaging Analysis Platform : Offers a range of digital health solutions including cloud-based AI and LLM-powered imaging analysis, sports MRI, and hospital PACS integration.`,
@@ -852,7 +826,6 @@ While AI has already transformed the world of software development, Manyfast is 
     description: `EnerH POI는 건물 내 무선 시스템을 위한 차세대 POI(Point of Interface)로, 외부 기지국으로부터 모바일 신호를 전달할 뿐만 아니라 기존에는 낭비되던 에너지를 포착해 재사용할 수 있는 기능을 갖추고 있습니다. 기존 시스템에서는 들어오는 신호 전력의 99.9% 이상이 열로 손실되지만, EnerH POI는 독자적인 GaN(질화갈륨) 반도체 회로를 사용해 그 중 50% 이상을 회수하여 전기로 변환하고, 이를 시스템 구동에 활용합니다. 에너지 수확 기능이 내장된 최초의 POI인 EnerH POI는 외부 전력 의존도를 줄이고, 열 발생을 낮추며, 보다 효율적이고 컴팩트하며 지속 가능한 실내 통신 시스템을 가능하게 합니다.`,
     website: `https://rfnissi.com/en/`,
     logo: `참가업체 로고 파일/EP_png/주식회사 엘에프닛시 로고_컬러.png`,
-    website: ``,
     descriptionEn: `EnerH POI is a next-generation Point of Interface (POI) for in-building wireless systems that not only delivers mobile signals from external base stations but also captures and reuses energy that is normally wasted. In conventional systems, over 99.9% of incoming signal power is lost as heat. Using a proprietary GaN semiconductor circuit, EnerH POI recovers more than 50% of that energy and converts it into electricity to power the system itself. As the first POI with built-in energy harvesting, EnerH POI reduces the need for external power, lowers heat, and enables more efficient, compact, and sustainable indoor communication systems.`,
     video: `EP-mp4/주식회사 엘에프닛시/주식회사 엘에프닛시 홍보 영상.mp4`
   },
@@ -868,7 +841,6 @@ While AI has already transformed the world of software development, Manyfast is 
     description: `실내용 청소 및 순찰로봇, 실내외 순찰로봇`,
     website: `http://www.lkrobotics.co.kr`,
     logo: `참가업체 로고 파일/EP_png/엘케이로보틱스 로고_흑백,컬러.png`,
-    website: ``,
     descriptionEn: `Indoor cleaning and patrol robots, indoor and outdoor patrol robots`,
     video: ``
   },
@@ -891,7 +863,6 @@ While AI has already transformed the world of software development, Manyfast is 
 
 현재 임상시험이 진행 중이며, 2025년에는 식품의약품안전처(MFDS) 승인을 목표로 하고 있습니다. 이어서 미국 FDA와 유럽 CE 인증도 준비 중입니다.`,
     logo: `참가업체 로고 파일/EP_png/닥터스바이오틱 로고.png`,
-    website: ``,
     descriptionEn: `Aimost is the world’s first smartphone-only AI software solution designed to detect abnormal respiratory and cardiac sounds with high clinical accuracy. 
 
 The system is trained on over 250,000 clinically recorded auscultation samples from pediatric and adult patients in real-world hospital settings. This represents the largest and most diverse dataset of its kind, enabling validated reliability in detecting critical respiratory and cardiac anomalies.
@@ -914,7 +885,6 @@ A confirmatory clinical trial is presently in progress, with regulatory approval
     productEn: `Promptly`,
     description: `Promptly는 자연어로 입력한 문장을 AI가 이해하기 쉬운 구조로 자동 변환해, 텍스트·이미지·영상 생성에 최적화된 결과를 제공하는 프롬프트 번역 및 최적화 플랫폼입니다. 누구나 복잡한 명령어 없이 전문가 수준의 AI 활용이 가능합니다.`,
     logo: `참가업체 로고 파일/EP_png/프롬랩스 로고.png`,
-    website: ``,
     descriptionEn: `Promptly is an AI prompt translation and optimization platform that converts natural-language inputs into structured, model-ready prompts for text, image, and video generation — enabling anyone to achieve expert-level AI results effortlessly.`,
     video: ``
   },
@@ -929,7 +899,6 @@ A confirmatory clinical trial is presently in progress, with regulatory approval
     productEn: `Dabonda Ultra5.0 Ai 11way Dash Cam`,
     description: `차량용차량용 운행기록 장치 블랙박스 AI 특허, 360도 5채널 올어라운드뷰`,
     logo: `참가업체 로고 파일/EP_png/다본다 로고.png`,
-    website: ``,
     descriptionEn: `Dash Cam AI patent for vehicle driving recorder, 360 degree 5 channel all-around view`,
     video: `EP-mp4/다본다/다본다 홍보영상.mp4`
   },
@@ -992,7 +961,6 @@ PredBox는 국내 파트너사와의 실제 운영에서 성과를 입증했습�
 - 결품률 56% 감소
 이러한 결과는 AI 기반 자동화가 실제 비즈니스 성과에 직접적으로 기여함을 보여줍니다. 모플의 PredBox는 예측 결과를 실제 수익 및 운영 효율화로 연결하는 역량을 가진 솔루션 입니다.`,
     logo: `참가업체 로고 파일/EP_png/모플 로고.png`,
-    website: ``,
     descriptionEn: `<Product Overview>
 PredBox is a subscription-based B2B SaaS service that optimizes inventory management through AI-driven demand forecasting and automated workflow execution. It enables retailers and consumer-goods(CPG/FMCG) companies to prevent both out-of-stock and overstock, cutting inefficiencies across their entire supply chain and delivering measurable business impact.
 
@@ -1025,7 +993,6 @@ These outcomes demonstrate a direct correlation between AI-driven automation and
     productEn: `In-sensor computing eye tracking chip`,
     description: `EyeChip은 이미지 캡처와 처리를 하나의 소형 CMOS 다이에 통합한 최초의 단일칩 아이 트래킹 센서입니다. 인-센서 컴퓨팅을 통해 칩이 픽셀 어레이 내부에서 핵심 비전 알고리즘을 직접 수행하여, 원시 영상 대신 시선(gaze), 동공 크기, 눈깜빡임과 같은 특징 데이터를 출력합니다. 이 접근 방식은 부피 큰 보조 프로세서의 필요를 없애 전력 소모와 부품 수를 획기적으로 줄입니다.`,
     logo: `참가업체 로고 파일/EP_png/아이칩주식회사 로고_컬러.png`,
-    website: ``,
     descriptionEn: `EyeChip is the first single-chip eye-tracking sensor to integrate image capture and processing within one compact CMOS die. Using in-sensor computing, the chip performs essential vision algorithms directly inside the pixel array, so it outputs features like gaze, pupil size, and blink instead of raw video. This approach removes the need for bulky companion processors, dramatically reducing power use and component count.
 
 Spatial Computing: enables natural, gaze-based control in lightweight AR/VR glasses.
@@ -1053,7 +1020,6 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
 -노동력 30% 절감
 -수신 만족도 70% UP`,
     logo: `참가업체 로고 파일/EP_png/이그니마(주) 로고_컬러.png`,
-    website: ``,
     descriptionEn: `1. Cloud-based SaaS messaging
 2. OnClick intelligent delivery processing
 3. OnClick automatic template generation
@@ -1074,7 +1040,6 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     productEn: `KFT Tracking Solution`,
     description: `저비용 IoT 센서로 콜드체인 온도 및 위치를 실시간 추적하고, 공급망 전체의 탄소발자국을 측정합니다. 글로벌 규제 대응과 비용 절감을 통해 수출 경쟁력을 높이고, ESG 경영 및 소비자 신뢰를 확보하는 데 활용됩니다.`,
     logo: `참가업체 로고 파일/EP_png/(주)와이와이소프트 로고_컬러.png`,
-    website: ``,
     descriptionEn: `Our solution uses low-cost IoT sensors to track cold chain temperatures and locations in real-time, while also measuring the carbon footprint across the entire supply chain. It's used to enhance export competitiveness by complying with global regulations, reduce costs, and secure ESG management and consumer trust.`,
     video: `EP-mp4/(주)와이와이소프트/(주)와이와이소프트 홍보 영상.mp4`
   },
@@ -1134,7 +1099,6 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     productEn: `REO`,
     description: `REO: 미세플라스틱을 방출하지 않는 고내구성 바이오플라스틱`,
     logo: `참가업체 로고 파일/EP_png/다시물결 로고.png`,
-    website: ``,
     descriptionEn: `REO: The High-Durability Bioplastic that Eliminates Microplastics`,
     video: ``
   },
@@ -1186,7 +1150,6 @@ MYME AI's core competitive advantage lies in its ability to accelerate game deve
 본 시스템은 CE·PED·ISO 등 국제 인증 기준을 충족하며,
 탄소중립 실현과 지속가능한 에너지 전환을 위한 차세대 그린수소 기술로 주목받고 있습니다.`,
     logo: `참가업체 로고 파일/EP_png/라이트브릿지 로고.png`,
-    website: ``,
     descriptionEn: `Lightbridge’s PEM Electrolyzer System (LBEX Series) is a high-efficiency hydrogen production system that generates ultra-pure (99.999%) green hydrogen using renewable electricity.
 Designed for rapid start-up and high current density operation, it is optimized for integration with solar and wind power sources.
 Its modular design allows scalable configurations from 5 kW to multi-megawatt capacity.
@@ -1209,7 +1172,6 @@ The system complies with CE, PED, and ISO international standards and represents
 
 설계 시간을 단축하고 SoC 개발의 장벽을 낮춤으로써 SOC Canvas는 더 많은 팀이 AI, 자동차, 엣지 디바이스용 맞춤형 칩을 만들 수 있도록 돕습니다. 아이디어에서 실리콘까지의 여정을 가속화함으로써, 전 세계적으로 증가하는 더욱 스마트하고 효율적인 기술 수요를 충족시키는 데 기여합니다.`,
     logo: `참가업체 로고 파일/EP_png/잇다 로고.png`,
-    website: ``,
     descriptionEn: `SOC Canvas is a no-code SoC design solution that removes the complexity of system-on-chip development. Instead of writing low-level RTL code, designers create system diagrams using an intuitive visual interface. From this abstraction, the solution auto-generates complete design outputs such as RTL, UPF, SDC, and DFT within minutes.
 
 As modern SoCs now exceed 20 billion transistors, traditional manual design is becoming unsustainable. SOC Canvas addresses this by lifting the design process to the system level, abstracting control logic into reusable and configurable blocks. This dramatically reduces engineering effort, shortens development time, and minimizes human error.
@@ -1239,7 +1201,6 @@ By reducing time and lowering barriers of SoC design, SOC Canvas empowers more t
  - 맞춤형 관리 가이드, 트렌드 추적, 구강 건강 챌린지 제공
  - RAG 기반 챗봇으로 개인 맞춤형 상담 및 행동 유도`,
     logo: `참가업체 로고 파일/EP_png/에코놀로지 로고.png`,
-    website: ``,
     descriptionEn: `1. Smart water flosser(Hardware)
  - Pipeline connection, instant use with one button, no refills required
  - Solenoid-valve precision control with optimized pressure and three pulse modes
@@ -1265,7 +1226,6 @@ By reducing time and lowering barriers of SoC design, SOC Canvas empowers more t
     productEn: `exterior wall/window cleaning drone`,
     description: `사고의 위험이 있는 곤돌라/로프를 이용한 기존 외벽 청소방식보다 안전하고 빠르고 경제적으로 외벽/창문 청소가 가능합니다.`,
     logo: `참가업체 로고 파일/EP_png/주식회사디알티 로고_컬러_백색단도.png`,
-    website: ``,
     descriptionEn: `Compared to traditional façade/window cleaning methods using gondolas or ropes, our solution enables safer, faster, and more cost-effective cleaning`,
     video: ``
   },
@@ -1280,7 +1240,6 @@ By reducing time and lowering barriers of SoC design, SOC Canvas empowers more t
     productEn: `RealTeeth: AI Prosthetic Design Platform`,
     description: `많은 환자들은 임시 보철을 낀 채로 수주간 불편함과 불확실성을 견디며 최종 보철물을 기다려야 합니다. 숙련된 기공사가 부족한 지역에서는 이러한 지연이 더 심각해져, 전 세계적인 치과 치료의 불균형을 악화시킵니다. 리얼티쓰의 AI 기반 보철 설계 플랫폼은 환자의 3D 구강 스캔을 기반으로 마스터급 기공사의 전문성을 즉시 모사하여, 수 주 걸리던 과정을 단 하루로 단축합니다. 이로써 환자들은 더욱 빠르게 일상으로 복귀할 수 있고, 편안함과 자신감을 되찾을 수 있습니다. 설계 과정을 디지털화하고 당일 보철 제작을 가능케 함으로써, 전문 인력이 없는 클리닉에서도 최고 수준의 결과물을 제공할 수 있습니다. AI 기반의 정밀도는 오류를 최소화하고, 재제작을 줄이며, 자재 낭비를 절감해 보다 효율적이고, 비용 효과적이며, 지속 가능한 워크플로우를 만듭니다. 리얼티쓰는 프리미엄 시장과 저개발 지역 간의 격차를 해소하며, 속도, 정확성, 접근성을 결합해 보철 치료의 글로벌 표준을 새롭게 정의합니다.`,
     logo: `참가업체 로고 파일/EP_png/리얼티쓰 로고.png`,
-    website: ``,
     descriptionEn: `Many patients endure weeks with temporary teeth, facing discomfort and uncertainty while waiting for final prosthetics. In areas lacking skilled technicians, delays are even longer, worsening global disparities in dental care. Realteeth’s AI-Powered Dental Design Platform uses a patient’s 3D oral scan to instantly replicate the expertise of a master technician, compressing a week-long process into just one day. This allows patients to resume daily life faster, with greater comfort and confidence. By digitizing the design process and enabling same-day prosthetics, even clinics without in-house experts can deliver top-tier results. AI-driven precision minimizes errors, reduces remakes, and cuts material waste—making the workflow more efficient, cost-effective, and sustainable. Realteeth closes the gap between premium and underserved markets, combining speed, accuracy, and accessibility to redefine the global standard in restorative dentistry.`,
     video: ``
   },
@@ -1295,7 +1254,6 @@ By reducing time and lowering barriers of SoC design, SOC Canvas empowers more t
     productEn: `MARU: 3D Camera Platform & AI Vision Solution`,
     description: `MARU는 로봇이 인간과 같은 공간 이해 및 의사결정 능력으로 주변 환경을 인식하고 상호작용할 수 있도록 하는 차세대 로보틱스 비전 플랫폼입니다. 독자적인 3D 카메라 플랫폼과 첨단 AI 비전 알고리즘을 결합하여 구축된 MARU는, 물류, 제조, 스마트 팩토리와 같은 복잡한 산업 환경에서 정밀한 객체 인식, 분류, 위치 파악 기능을 제공합니다. 맞춤형 3D 카메라는 초고속으로 고해상도 깊이 데이터를 캡처하며, AI 기반 소프트웨어는 가변 조명, 겹쳐진 객체, 또는 반사 표면과 같은 까다로운 조건에서도 정확성과 적응성을 보장하며 이 정보를 실시간으로 처리합니다. 모듈형 아키텍처로 설계된 MARU는 다양한 로봇 플랫폼과 원활하게 통합되어, 배포 시간을 단축하고 시스템 확장을 위한 최대의 유연성을 제공합니다. 로봇에 MARU를 장착함으로써, 기업들은 처리량을 늘리고, 운영 효율성을 높이며, 수작업 의존도를 줄일 수 있습니다. MARU는 자동화를 반복적인 작업 수행에서 지능적이고 자율적인 운영으로 변환시키며, 로봇 인식에 대한 새로운 글로벌 표준을 설정합니다.`,
     logo: `참가업체 로고 파일/EP_png/모디전스비전 로고_컬러.png`,
-    website: ``,
     descriptionEn: `MARU is a next-generation robotics vision platform that enables robots to perceive and interact with their environment with human-like spatial understanding and decision-making. Built on a proprietary 3D camera platform combined with advanced AI vision algorithms, MARU delivers precise object recognition, classification, and localization in complex industrial environments such as logistics, manufacturing, and smart factories. The customizable 3D camera captures high-resolution depth data at ultra-fast speeds, while AI-driven software processes this information in real time, ensuring accuracy and adaptability even under challenging conditions like variable lighting, overlapping objects, or reflective surfaces. Designed with a modular architecture, MARU integrates seamlessly with diverse robotic platforms, reducing deployment time and offering maximum flexibility for system expansion. By equipping robots with MARU, companies can increase throughput, enhance operational efficiency, and reduce reliance on manual labor. MARU transforms automation from repetitive task execution into intelligent, autonomous operation, setting a new global standard for robotic perception.`,
     video: `EP-mp4/(주)모디전스비전/모디전스비전 홍보 영상.mp4`
   },
@@ -1311,7 +1269,6 @@ By reducing time and lowering barriers of SoC design, SOC Canvas empowers more t
     description: `드론 센서데이터를 실시간 가상환경에 반영해 AI 탐지·경로 최적화·관제를 지원하는 플랫폼입니다.
 국방, 재난, 산업 현장에서 실시간 시뮬레이션과 효율적 드론 운용을 가능하게 합니다.`,
     logo: `참가업체 로고 파일/EP_png/심투리얼 로고.png`,
-    website: ``,
     descriptionEn: `SIM2DRONE is a platform that integrates drone sensor data into a real-time virtual environment to enable AI detection, path optimization, and control.
 It empowers defense, disaster response, and industrial operations with real-time simulation and efficient drone management.`,
     video: `EP-mp4/심투리얼/심투리얼 홍보영상.mp4`
@@ -1342,7 +1299,6 @@ It empowers defense, disaster response, and industrial operations with real-time
     productEn: `SnowTherm™ – Vanadium Dioxide Energy Harvesting System for Road Heating`,
     description: `(주)제로에너지솔루션은 에너지 비용과 환경 영향을 줄이는 동시에 안전한 겨울철 도로를 필요로 하는 지자체, 인프라 운영자, 그리고 스마트 시티 개발업체를 대상으로 합니다. 기존의 융설 시스템은 지속적인 전기 가열에 의존하여 과도한 에너지 소비와 유지보수 비용 증가를 초래합니다. 당사는 첨단 원스텝 건식 공정 기술을 사용하여 개발한 독자적인 VO₂ 기반 기능성 복합 충진재를 통해 이러한 문제를 해결합니다. 기존 소재와 달리 VO₂는 상변화 및 금속-절연체 전이(MIT) 특성을 결합하여 열 저장 및 지능형 열 조절을 가능하게 합니다. 도로 난방 시스템에 통합되면, 복합 충진재가 주변 열에너지를 수집 및 저장하고 온도가 전이 임계값 아래로 떨어지면 자동으로 방출합니다. 이러한 자가 활성화 조절 기능은 전력 수요를 최소화하는 동시에 안정적이고 효과적인 융설 성능을 보장합니다. 결과적으로 고객은 공공 안전 향상, 운영 비용 50% 이상 절감, 탄소 발자국 대폭 감소라는 이점을 누리며 경제적 효율성과 장기적인 지속 가능성을 모두 달성할 수 있습니다.`,
     logo: `참가업체 로고 파일/EP_png/제로에너지솔루션 로고.png`,
-    website: ``,
     descriptionEn: `ZeroEnergySolution Co., Ltd. targets municipalities, infrastructure operators, and smart city developers who require safe winter roads while reducing energy costs and environmental impact. Conventional snow-melting systems rely on continuous electric heating, resulting in excessive energy consumption and escalating maintenance costs. Our company addresses this challenge with a proprietary VO₂-based functional filler, developed using an advanced one-step dry-process technology. Unlike conventional materials, VO₂ uniquely combines phase-change and metal–insulator transition (MIT) properties, enabling both thermal storage and intelligent heat regulation. When integrated into road heating systems, the composite filler harvests and stores ambient thermal energy, automatically releasing it when temperatures drop below the transition threshold. This self-activating regulation minimizes electricity demand while ensuring stable, effective snow-melting performance. As a result, clients gain improved public safety, more than 50% reduction in operating costs, and significant carbon footprint reduction, achieving both economic efficiency and long-term sustainability.`,
     video: `EP-mp4/제로에너지솔루션/제로에너지솔루션 홍보영상.mp4`
   },
@@ -1358,7 +1314,6 @@ It empowers defense, disaster response, and industrial operations with real-time
     description: `TM-MX AEMS 케이블은 액체 증발 상변화 냉각 방식을 활용하여 메가와트급 고속 충전 시 발생하는 과열 및 안전 문제를 해결하는 세계 최초의 경량, 고효율 충전 솔루션입니다. 대형 전기차, 선박, 도심 항공 모빌리티(UAM) 플랫폼 등에서 초고속 충전에 대한 수요가 증가함에 따라, 케이블의 무게와 열 관리는 매우 중요해졌습니다.
 AI 기반의 자율 에너지 관리 시스템(AEMS)은 온도, 전력 흐름, 냉각 매개변수를 실시간으로 지속해서 모니터링하고 최적화하여, 기존 CCS(Combined Charging System) 인프라에서도 안전하고 효율적인 충전을 가능하게 합니다. 메가와트급으로 5분 이내에 완전 충전이 가능하여, 운영 중단 시간을 줄이고 시스템 신뢰도를 향상합니다. 상변화 냉각 기술은 전도체 성능을 높이는 동시에 케이블 무게를 17.6파운드(약 8kg) 미만으로 크게 줄여, 신속한 설치, 유지보수, 현장 배치를 지원합니다. 이러한 혁신은 첨단 안전 및 호환성 기능과 결합하여 상업, 해양, 산업 부문에서 전기 모빌리티의 광범위한 채택을 가속합니다.`,
     logo: `참가업체 로고 파일/EP_png/티엠이브이넷 로고_컬러.png`,
-    website: ``,
     descriptionEn: `The TM-MX AEMS Cable is the world's first lightweight, high-efficiency charging solution that uses liquid evaporation phase-change cooling to overcome the safety and overheating challenges associated with megawatt-level fast charging. Growing demand for ultra-fast charging in electric mobility—spanning large electric vehicles, ships, and Urban Air Mobility (UAM) platforms—makes cable weight and heat management crucial. 
 The AI-powered Autonomous Energy Management System (AEMS) continuously monitors and optimizes temperature, power flow, and cooling parameters in real time, enabling secure and efficient charging even with legacy CCS infrastructure. With the ability to deliver sub-5-minute full charges at megawatt scale, TM-MX AEMS Cable reduces operational downtime and improves system reliability. Its phase-change cooling enhances conductor performance while dramatically reducing cable mass to under 17.6lb, supporting rapid installation, maintenance, and field deployment. Combined with advanced safety and compatibility features, this innovation accelerates widespread adoption of electric mobility in commercial, marine, and industrial sectors.`,
     video: `EP-mp4/티엠이브이넷_코트라/티엠이브이넷 홍보 영상.mp4`
@@ -1444,7 +1399,6 @@ It enables precise tracking and learning of human hand motions across robotics, 
 사용자는 Windowing Tool을 통해 관심 있는 HU(Hounsfield Unit) 범위를 설정하여 특정 조직을 강조하거나, Cropping Tool을 이용해 원하는 영역만 선택적으로 관찰할 수 있습니다. CT 영상은 PACS 또는 사용자가 직접 불러온 데이터를 활용하며, 소프트웨어 내에서 자동으로 저장·처리됩니다.
 HEXA는 의료 전문가가 흉부 CT 영상을 효율적으로 탐색하고 분석을 보조할 수 있도록 설계된 의료영상 전송 소프트웨어입니다.`,
     logo: `참가업체 로고 파일/EP_png/(주)엑스큐브 로고_컬러.png`,
-    website: ``,
     descriptionEn: `HEXA is a DICOM-compliant medical imaging software that enables intuitive and efficient visualization of chest CT scans. It provides both two-dimensional views (axial, coronal, sagittal) and three-dimensional volume rendering based on CT pixel data. Users can adjust HU (Hounsfield Unit) ranges with the Windowing Tool to highlight tissues of interest, or use the Cropping Tool to focus on specific regions. CT images can be imported from a PACS (Picture Archiving and Communication System) or manually loaded by the user, and are automatically stored and processed within the software. HEXA is designed to support the visualization and review of chest CT images, helping users navigate and interpret scans more efficiently.`,
     video: `EP-mp4/(주)액스큐브/(주)엑스큐브 홍보 영상.mp4`
   },
@@ -1463,7 +1417,6 @@ export const globalCompanies: Company[] = [
     description: `SIRIUS Editor는 드론과 로봇 등 다양한 소스의 데이터를 활용해 시설물 점검 보고서를 자동으로 작성합니다. 단순한 손상 감지에 한정된 기존 시스템과 달리, 서로 다른 입력 데이터를 정밀하게 정렬해 정확한 3D 모델로 변환하며, 이를 통해 균열이나 구조적 결함의 치수를 정밀하게 측정할 수 있습니다. AI가 손상 정도를 평가하고 안전 등급을 매긴 뒤, 인적 개입 없이 완전한 점검 보고서를 생성합니다. 이러한 데이터 기반 분석은 수작업 평가를 대체하여 일관성을 높이고, 노동력을 줄이며, 전문성 있는 점검을 다양한 인프라 자산에 대규모 적용할 수 있도록 합니다. SIRIUS Editor는 원시 영상 데이터를 신뢰할 수 있는 엔지니어링 품질의 분석 결과로 전환해, 구조물 점검에서 가장 시간 소모가 많은 부분까지 완전 자동화합니다.`,
     website: `https://www.sierrabase.co.kr/eng/`,
     logo: `참가업체 로고 파일/GP_png/시에라베이스 로고.png`,
-    website: ``,
     descriptionEn: `SIRIUS Editor automates facility inspection reporting using multi-source data from drones and robots. Unlike systems limited to simple damage detection, it aligns heterogeneous inputs into accurate 3D models, enabling precise measurement of cracks and structural defects. The AI evaluates damage severity, assigns safety grades, and generates full inspection reports without human input. By replacing manual assessment with data-driven analysis, SIRIUS Editor improves consistency, reduces labor, and scales expert-level evaluations across infrastructure assets. It turns raw visual data into reliable, engineering-grade insights—fully automating one of the most time-intensive aspects of structural inspection.`,
     video: ``
   },
@@ -1518,7 +1471,6 @@ The created 3D model can be converted to a CAD or 3D printing-specific file for 
     description: `페트병에 뚜껑처럼 끼워 병 안의 식수를 살균하는 마개형 UV 식수 살균기입니다. 제품 속 램프가 2분 이내에 세균, 바이러스 및 기타 미생물을 99.9% 파괴할 수 있는 UV-C 파장을 비춰 수인성 질병을 예방할 수 잇는 안전한 식수를 제공합니다.`,
     website: `https://en.ladis.co.kr`,
     logo: `참가업체 로고 파일/GP_png/주식회사 티에이비 로고_컬러_백색단도.png`,
-    website: ``,
     descriptionEn: `A cap-type UV sterilizer that screws onto plastic bottles, using UV-C to eliminate 99.9% of bacteria, viruses, and other microorganisms in under two minutes, delivering safe drinking water and reducing the risk of waterborne diseases.`,
     video: ``
   },
@@ -1538,7 +1490,6 @@ The created 3D model can be converted to a CAD or 3D printing-specific file for 
  그 결과 실시간 데이터에 기반한 지속 가능한 창고 디지털트윈을 구축하여 운영 효율성과 생산성을 한 단계 끌어올립니다.`,
     website: `https://wata-ai.com/en/`,
     logo: `참가업체 로고 파일/GP_png/와따에이아이 로고.png`,
-    website: ``,
     descriptionEn: `The WATA AI logistics stocktaking robot automates the traditionally manual inventory checks in various warehouse types, such as high-rack and floor storage, minimizing unnecessary labor and reducing errors.
 
  It can read labels and barcodes, verify storage locations, and recognize multiple items simultaneously, enabling faster and more accurate inventory management.
@@ -1558,7 +1509,6 @@ The created 3D model can be converted to a CAD or 3D printing-specific file for 
     description: `SITh.XR애도는 (주)벡스랩에서 개발한 몰입형 XR 추모 테라피 플랫폼입니다. SITh.XR애도는 세상을 떠난 사랑하는 이의 사진을 활용하여 가상인간을 만들고, 가상인간은 HMD와 PC 기반 인터페이스를 통해 실시간으로 XR테라피스트에 의해 컨트롤됩니다. 안전한 공간에서 가상인간(아바타)은 음성, 끄덕임, 미소, 표정, 동작을 통해 의사소통하며 슬픔에 잠긴 유가족들이 풀지 못한 감정을 표현함으로써 아름다운 이별을 가능하게 돕습니다. 2025년 6월 25일 보도된 뉴스에서 선을씨는 SITh.XR애도를 통해 비극적인 제주항공 무안공항 참사 희생자인 동생 휘수씨를 만났습니다. 그들의 특별한 공간에서 선을씨는 마침내 안녕을 말할 수 있게 되었습니다. 지금까지 SITh.XR애도는 뜻하지 않게 사랑하는 가족을 잃은 12가족들의 슬픔을 이겨내는 과정을 도왔습니다. SITh.XR애도는 가상 현존감과 셀프 인사이트 테라피(Self-Insight Therapy, SITh)를 결합함으로써 전통적인 추모 의식으로부터 새로운 대안으로서 치유적이고, 인간 중심적인 추모의 방식을 제안합니다. 본 혁신은 디지털 헬스, 정신 건강, 그리고 공감하는 AI 분야의 새로운 지평을 열고 있습니다.`,
     website: `http://www.vhexlab.com`,
     logo: `참가업체 로고 파일/EP_png/백스랩 로고.png`,
-    website: ``,
     descriptionEn: `SITh.XRaedo is an immersive XR grief therapy platform developed by VHEX Lab. It creates a virtual avatar of a deceased loved one from a photo,which is controlled live by an XR therapist through an HMD and PC-based interface. In a safe space, the avatar communicates through speech,nods, smiles, and emotional gestures, helping grieving families express unsolved emotion and find closure. On June 25, 2025, in a broadcast news report, Seoneul met her younger sister Hwisu, who died in a tragic airplane crash at Jeju Air Muan Airport, through SITh. XRaedo. In their special space, Seoneul finally said goodbye. So far, SITh.XRaedo has helped twelve families cope with unexpected loss. It offers a therapeutic, human-centered alternative to traditional mourning rituals, combining virtual presence with self-insight therapy. This innovation opens a new frontier in digital health, mental wellness, and compassionate AI.`,
     video: ``
   },
@@ -1574,7 +1524,6 @@ The created 3D model can be converted to a CAD or 3D printing-specific file for 
     description: `반도체칩-온디바이스 AI, 초음파센서, 다중센서 등`,
     website: `http://www.gwanakanalog.com`,
     logo: `참가업체 로고 파일/GP_png/로관악아날로그(주) 로고_컬러.png`,
-    website: ``,
     descriptionEn: `Gwanak Analog, on-behalf of full product lineup of digital, analog, power, sensor, ROIC products, would like to mainly showcase Gwanak Analog’s on-device AI system-on-chip product and its expanded platform kit.
 Gwanak Sensor On-Device AI Platform Kit is a go-to sensor platform specifically for on-device AI product development. It enables the creation of new prototype artificial intelligence ideas based on analog and/or digital sensors. It is a ready-to-use development kit for on-device AI ecosystem space to rapidly design, develop and manufacture products based on each desired development environment. It supports testing sensor-driven on-device AI products and use cases as well as prototyping. The kit enables customers to significantly reduce the time spent on proof-of-concept to a fully developed on-device AI solution. It will get rid of redundant conversion process from large AI models into smaller on-device AI models. Embrace your creativity with the kit to build powerful on-device AI products and get involved to build future-driven on-device AI ecosystem.`,
     video: ``
@@ -1593,7 +1542,6 @@ Gwanak Sensor On-Device AI Platform Kit is a go-to sensor platform specifically 
 . AI 건강 코칭음성 대화 기반`,
     website: `http://heliostar.co.kr:4000/main`,
     logo: `참가업체 로고 파일/GP_png/헬리오스 로고.png`,
-    website: ``,
     descriptionEn: `. Integrated AI Health Robot
 . Next-Generation Home Healthcare Robot Combining High-Power Near-Infrared Technology and Generative AI
 . AI Health Coaching Based on Voice Interaction`,
@@ -1713,7 +1661,6 @@ Product Overview
     description: `연신 PCB 기술을적용한 웨어러블 넥케어 밴드 이며, 근적외선 LED 및 마이크로니들 진동마사지 기능을 접목시킨 신개념의 넥케어밴드입니다. 목 주름을 개선하는 효과가 있으며, 사용법이 간단합니다.`,
     website: `https://tnlhealthcare.co.kr`,
     logo: `참가업체 로고 파일/GP_png/티앤엘헬스케어 로고_컬러.png`,
-    website: ``,
     descriptionEn: `By utilizing specialized SPCB (Stretchable PCB) Technology, our COMLAX Neck-Care Band is developed for removing neck wrinkles mainly. However, it can be also used for massage on the neck by using our micro-needle patch and Near IR function.`,
     video: ``
   },
@@ -1745,7 +1692,6 @@ Product Overview
     description: `HEYMIRROR는 매일의 스타일링을 새롭게 정의하는 AI 기반 스마트 드레싱 미러입니다. 사용자의 옷장을 저장하고 음성 또는 터치를 통해 개인화된 스타일을 추천합니다. 기존 스마트 미러가 3D 아바타에 의존하는 것과 달리, HEYMIRROR는 날씨, 일정, TPO, 스타일 선호도 등 실시간 데이터를 통합하고 고해상도 이미지와 AI 생성 콘텐츠로 현실적이고 직관적인 스타일 체험을 제공합니다. 고급 음성 인식 기능을 통해 로그인 없이 다중 사용자를 식별할 수 있어 가족 모두가 맞춤 서비스를 받을 수 있습니다. 반복 사용을 통해 AI는 선호를 학습해 자동화와 영감을 제공합니다. 또한 레이더 센서로 사용자가 없을 때 LED405 살균 조명과 플라즈마 팬을 자동 작동시키며, 제습기 연동으로 의류와 공간을 최적 상태로 유지합니다. HEYMIRROR는 지능, 디자인, 라이프스타일을 결합해 패션 테크놀로지의 새로운 기준을 제시합니다.`,
     website: `http://eoneoms.com/eng`,
     logo: `참가업체 로고 파일/EP_png/(주)이원오엠어스 로고_컬러.png`,
-    website: ``,
     descriptionEn: `HEYMIRROR is an AI-powered smart dressing mirror designed to redefine daily styling. It stores the user’s wardrobe and delivers personalized outfit recommendations through voice or touch. Unlike conventional smart mirrors that depend on 3D avatars, HEYMIRROR integrates real-time data such as weather, calendar, TPO (time, place, occasion), and style preferences, visualizing results with high-resolution images and AI-generated content for a more realistic and intuitive experience. Advanced voice recognition allows login-free identification of multiple users, so every family member can enjoy tailored styling. Over time, its AI learns preferences and reactions, enabling effortless automation and inspiration. Beyond styling, HEYMIRROR also supports smart care: a radar sensor automatically activates LED405 sterilization lighting and a plasma fan when the space is unoccupied, while seamless dehumidifier integration keeps clothing and the environment in optimal condition. HEYMIRROR merges intelligence, design, and lifestyle, setting a new standard in fashion technology.`,
     video: ``
   },
@@ -1763,7 +1709,6 @@ Product Overview
 스마트시티, 연구소, 기업 및 프로슈머 환경에서 무선 연결 성능을 확장하는 핵심 솔루션입니다.`,
     website: `http://www.inspower.co.kr`,
     logo: `참가업체 로고 파일/GP_png/인스파워 로고.png`,
-    website: ``,
     descriptionEn: `INSPOWER’s Smart Broadband Connectivity Amplifier is a fully integrated system that delivers reliable and wide wireless coverage for next-generation 5G, IoT, and XR environments.
 Combining high-power RF amplification with Ethernet-based smart control and a user-friendly touch LCD interface, the system is easy to install and operate.
 It provides an essential solution for extending wireless connectivity in smart city infrastructure, enterprise networks, research facilities, and prosumer applications.`,
@@ -1785,7 +1730,6 @@ It provides an essential solution for extending wireless connectivity in smart c
 4. 랜섬웨어 방어를 위한 CFS(Cryptography File System) 폴더 (for Linux, Win, MacOS)`,
     website: `https://www.ksmartech.com/en/index.html`,
     logo: `참가업체 로고 파일/EP_png/(주)케이스마텍 로고_컬러.png`,
-    website: ``,
     descriptionEn: `Key4C provides HSM (Hardware Security Module) and KMS (Key Management System) as SaaS in cloud environments.
 In addition, based on these, it also offers the following functions as SaaS:
 1. Enhanced security OTP (One-Time Password)
@@ -1810,7 +1754,6 @@ In addition, based on these, it also offers the following functions as SaaS:
 이 제품은 정수 처리 품질을 향상시키고 정수장 공정의 이상 및 수질 문제를 조기에 발견할 수 있게 합니다. 아울러, 역세척 과정의 최적화를 통한 에너지 절감, 에너지 효율을 향상시키고, 이에 따른 탄소 저감, 자동화 시스템을 통한 운영 효율성 강화를 지원합니다. 궁극적으로 안전한 식수 공급에 기여하며, 지속가능한 생활 환경 조성 및 정수장의 첨단화에도 기여합니다.`,
     website: `http://www.piquant.asia`,
     logo: `참가업체 로고 파일/GP_png/주식회사 파이퀀트 로고_컬러.png`,
-    website: ``,
     descriptionEn: `The Turbidity Scanner is a device that measures water turbidity in real time from 0 to 1000 NTU at purification facilities. By providing stable monitoring, it enables operators to quickly detect changes in water quality and serves as a key tool in ensuring the safe and clean supply of drinking water.
 
 The device is designed to support turbidity monitoring during the trough backwash process—a task that has been challenging with conventional equipment—thereby enhancing operational efficiency. Utilizing the 90-degree light scattering method, it delivers precise results that comply with international standards. In addition, its network connectivity allows for remote monitoring and digital data management, enabling operators to check water conditions and take necessary actions without being physically on site.
@@ -1834,7 +1777,6 @@ ERP, MES, WMS 및 기타 기업 시스템의 데이터를 활용하여, 전체 �
 구조화된 데이터베이스, 시각적 데이터, 실시간 센서 스트림 등 다양한 형식의 멀티모달 데이터를 활용하여, N-Intellifex는 복잡함을 명확함으로, 데이터를 가치로 전환하는 진정한 제조 인텔리전스를 실현합니다.`,
     website: `https://www.nsoft.co.kr/`,
     logo: `참가업체 로고 파일/EP_png/(주)엔소프트 로고_컬러.png`,
-    website: ``,
     descriptionEn: `N-Intellifex is NSOFT’s next-generation AI platform that transforms manufacturing data into actionable intelligence.
 Leveraging data from ERP, MES, WMS, and other enterprise systems, it delivers real-time insights and automation across the entire production pipeline.
 Powered by a dynamic AutoML engine, N-Intellifex continuously optimizes AI models for each industry—from logistics and electronics to automotive and machinery.
@@ -1877,7 +1819,6 @@ AI 기반의 다중센서(Lidar, Camera, AIS 등) 비전 기술을 통해 해양
 친환경 수상 드론은 혁신성과 지속가능성을 결합한 해양 기술의 중요한 도약을 의미합니다.`,
     website: `http://www.sehomarine.com/`,
     logo: `참가업체 로고 파일/GP_png/세호마린솔루션즈(주) 로고_컬러.png`,
-    website: ``,
     descriptionEn: `AI-based eco-friendly water drones are designed and developed to carry out various maritime missions, including marine waste collection, seaweed removal, water quality monitoring, radiation detection, and search and rescue operations.
 Utilizing AI-based multi-sensor vision technology (LiDAR, cameras, AIS, etc.), these drones can detect and identify maritime objects and implement precise propulsion control through autonomous navigation and collision-avoidance algorithms.
 Through cutting-edge technology and intelligent design, they contribute to maritime safety, environmental protection, and a sustainable future. Their primary missions include.
@@ -1945,7 +1886,6 @@ Features: Buzzer Alarm and High-Illumination LED at Fire Scene
     description: `Shapy AI 기반 B2B SaaS 플랫폼으로, 모든 영상 피드백을 자동화·시각화하고 멀티채널 콘텐츠 운영까지 지원하는 차세대 협업 도구`,
     website: `https://en.elbacorp.com/`,
     logo: `참가업체 로고 파일/GP_png/엘바 로고_컬러.png`,
-    website: ``,
     descriptionEn: `A B2B SaaS platform powered by Shapy AI that automates and visualizes all video feedback, while supporting multi-channel content management as a next-generation collaboration tool.`,
     video: ``
   },
@@ -1978,7 +1918,6 @@ Features: Buzzer Alarm and High-Illumination LED at Fire Scene
 1미터, 3미터 홍채인식솔루션은 전세계에 없는 기술입니다.  이 기술이 가능하게된 것은 AI기술과 우리의 광학기술의 앙상불적인 접목 때문입니다.`,
     website: `https://jtwoc.com/theme/basic/soda-html/`,
     logo: `참가업체 로고 파일/GP_png/에이제이투 로고.png`,
-    website: ``,
     descriptionEn: `Since we develop and use a camera module suitable for iris recognition and IR-LED ourselves, the recognition rate is high and inexpensive. Our iris recognition solution goes beyond the limit of existing technology used only for short-range and indoor use and enables iris recognition from a long distance, even for wearers of glasses, indoors, and in the shade.
 At this CES, we will introduce products that allow eyeglasses wearers to recognize the iris + face at an amazing 1 meter. In addition, we will introduce products that allow eyeglasses wearers to recognize the iris + face at an impossible 3 meters. 
 One-meter, three-meter iris recognition solution is a technology that is not available in the world. This technology is made possible because of the sheer combination of AI technology and our optical technology.`,
@@ -2020,7 +1959,6 @@ Accessible via any smartphone browser, the app includes large buttons, voice nav
     description: `심장에서 발생하는 초미세 자기 신호를 차세대 양자센서인 초전도양자간섭소자(SQUID)로 측정하여 심장의 전기생리학적 영상을 통해 심장질환 진단정보를 제공하는 의료기기`,
     website: `http://www.amcg.kr`,
     logo: `참가업체 로고 파일/GP_png/에이엠씨지 로고.png`,
-    website: ``,
     descriptionEn: `MCG Scan is a medical system that measures bio-magnetic signals generated by the heart using a next-generation quantum sensor called a superconducting quantum interference device (SQUID) and provides diagnostic information on heart diseases through electrophysiological imaging of the heart`,
     video: ``
   },
@@ -2070,7 +2008,6 @@ AI 기반 수질 예측 알고리즘을 통해 이상 수질 징후를 조기에
 PaDO는 지자체, 공공기관, 민간시설을 위한 스마트시티 수질 관리와 ESG 친화적 수변 관리 솔루션으로 자리매김하고 있습니다.`,
     website: `https://growith.net`,
     logo: `참가업체 로고 파일/GP_png/그로윗 로고.png`,
-    website: ``,
     descriptionEn: `PaDO is an eco-friendly autonomous floating fountain system that monitors and improves water quality while preventing and removing harmful algal blooms.
 Powered by real-time water quality sensors and AI-based prediction algorithms, PaDO enables early detection of anomalies and proactive responses without the use of chemicals, ensuring sustainability and ecosystem safety.
 Its integrated fountain and LED lighting features not only enhance water circulation and purification but also provide aesthetic value to waterfront areas such as parks, lakes, resorts, and urban spaces.
@@ -2089,7 +2026,6 @@ PaDO is positioned as a smart city solution for water management and an ESG-driv
     description: `AI 기반 뇌종양 분할과 3D 시각화로 진단과 수술을 보조하는 소프트웨어`,
     website: `https://newbrain4u.ai`,
     logo: `참가업체 로고 파일/GP_png/이안하이텍 로고.png`,
-    website: ``,
     descriptionEn: `AI-based brain tumor segmentation and 3D visualization software for supporting diagnosis and surgery`,
     video: ``
   },
@@ -2189,7 +2125,6 @@ Harvenergy™는 이 문제의 근원을 제거하는 혁신적인 자가발전 
 최근 획득한 국제 방폭 인증(IECEx)은 Harvenergy™가 정유, 화학 플랜트 등 최고 위험 등급의 환경에서도 절대적으로 안전함을 증명하며, 안전을 위한 모니터링 영역을  극대화시켰습니다. Harvenergy™는 단순한 부품을 넘어, '제로-메인터넌스', '인스톨-애니웨어', '심리스-인테그레이션'을 통해 가장 진보된 IoT 인프라를 완성하는 궁극의 솔루션입니다.`,
     website: `http://mpiatek.com/en/`,
     logo: `참가업체 로고 파일/GP_png/엠피아 로고.png`,
-    website: ``,
     descriptionEn: `The full potential of the IoT and Smart Factory era has long been constrained by a single, fundamental obstacle: power. Complex wiring demands significant capital and time, while battery-powered sensors create constant operational overhead and serious safety risks during periodic replacements.
 
 Harvenergy™ is a revolutionary self-powered wireless sensor system designed to eliminate this core problem. Based on Faraday's Law, it uniquely converts event-based energy—like the thermal energy from a fire or the kinetic energy from equipment—into its own electrical power and instantly transmits sensor data wirelessly.
@@ -2269,7 +2204,6 @@ By integrating worker monitoring, communication, and emergency support, SACR-Gua
 2.  특히 운전대에 내장된 생체신호 센서를 통해 심박수와 스트레스 지수를 수집하고, AI가 이를 분석해 졸음, 저혈당, 미주신경성 실신 등의 징후를 조기에 감지함으로써 사고를 사전에 예방합니다.`,
     website: `https://www.innobase1.com/`,
     logo: `참가업체 로고 파일/EP_png/이노베이스로고.png`,
-    website: ``,
     descriptionEn: `1. Safe-T3 is an AI-powered fleet platform that promotes driver safety and eco-friendly driving. It features real-time tracking, route playback, and monitoring of idling and impact.
 2. Biometric sensors embedded in the steering wheel collect heart rate and stress levels. The AI analyzes this data to detect early signs of drowsiness, hypoglycemia, or vasovagal syncope, helping prevent accidents.`,
     video: ``
@@ -2307,7 +2241,6 @@ Sends notification to guardian if shoes are not worn for a certain period of tim
     description: `만드로 마크7X는 상지 절단장애인을 위한 로봇 의수로, 사람의 손 길이 (20 cm) 이내에 전동식 2자유도 손목 코킹 및 스냅 기능 및 손바닥 내 압력 센서를 내장한 제품임. 이를 통해 절단장애인의 일상 생활에서의 불편함을 완화하고 보다 자연스러운 의수의 활용이 가능하게 함.`,
     website: `https://mand.ro`,
     logo: `참가업체 로고 파일/GP_png/만드로 로고.png`,
-    website: ``,
     descriptionEn: `Conventional prosthetic hands often lack wrist articulation or exceed human anatomical proportions, limiting both usability and comfort.
 Mand.ro Mark 7X addresses this by integrating two degrees of wrist motion—cocking and snap—within a total length of 20 cm, corresponding to the average human hand. The device also features a soft pressure sensor embedded in the palm, enabling intuitive object interaction. Designed for users with below-elbow amputations, Mark 7X provides more natural and accessible upper-limb functionality in daily life.`,
     video: ``
@@ -2324,7 +2257,6 @@ Mand.ro Mark 7X addresses this by integrating two degrees of wrist motion—cock
     description: `산업용 도어 스위치로, SIL3, PLe, Cat4 등의 기준을 충족하는 안전 제품`,
     website: `http://www.safect.co.kr/eng`,
     logo: `참가업체 로고 파일/EP_png/세펙트 로고.png`,
-    website: ``,
     descriptionEn: `Industrial Safety Door Switch with Interlock certified as SIL3, PLe, Cat4`,
     video: ``
   },
@@ -2340,7 +2272,6 @@ Mand.ro Mark 7X addresses this by integrating two degrees of wrist motion—cock
     description: `특허받은 기술로 손쉽게 문을 열고 안전하고 스마트하게 문을 단속합니다`,
     website: `https://miraesmt.com/`,
     logo: `참가업체 로고 파일/GP_png/미래SMT 로고.png`,
-    website: ``,
     descriptionEn: `Patented technology makes it easy to open doors and crack down on doors safely and smartly`,
     video: ``
   },
@@ -2373,7 +2304,6 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     description: `TMC ARGOS는 열화상 및 가시광선 영상을 융합하여 블랙 아이스나 화재 위험과 같은 위험 요소를 감지하는 AI 기반 비전 시스템입니다. 실시간 분석, ±2°C 정확도, 그리고 모든 기상 조건에서의 신뢰성을 바탕으로 차량의 안전성과 인지 능력을 향상시킵니다.`,
     website: `http://www.thermoeye.co.kr/`,
     logo: `참가업체 로고 파일/GP_png/써모아이 로고.png`,
-    website: ``,
     descriptionEn: `TMC ARGOS is an AI-powered vision system that fuses thermal and visible imaging to detect hazards like black ice and fire risks. With real-time analysis, ±2°C accuracy, and all-weather reliability, it boosts safety and perception for vehicles.`,
     video: ``
   },
@@ -2389,7 +2319,6 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     description: `AI를 통해 사람 목소리만 증폭되고 소음은 증폭되지 않는 보청기`,
     website: `https://deephearing.com`,
     logo: `참가업체 로고 파일/GP_png/주식회사 딥히어링 로고_컬러.png`,
-    website: ``,
     descriptionEn: `A hearing aid that amplifies only human voices through AI, without boosting background noise`,
     video: ``
   },
@@ -2405,7 +2334,6 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     description: `로봇 자동화 시스템 구축`,
     website: `https://gr-fa.kr/`,
     logo: `참가업체 로고 파일/GP_png/지로보틱스 로고.png`,
-    website: ``,
     descriptionEn: `Building a Robot Automation System`,
     video: ``
   },
@@ -2436,7 +2364,6 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     description: `써모세이퍼 XST600은 열유속 기반의 센서 기술과 BLE 5.2 무선 통신을 활용하여 ±0.2°C의 정밀도로 심부체온(Core Body Temperature)을 비침습적으로 측정하는 웨어러블 모니터링 심부 체온계입니다. 초경량(8g)설계로 본체와 일회용 프로브 구조로 병원과 가정에서 모두 위생적이고 편리하게 사용 가능하며, 전용 게이트웨이 또는 모바일 앱과 실시간 연동됩니다. 감염병 대응, 수술 중/후 환자 모니터링, 고위험군의 재택 관리 등 다양한 환경에서 연속적인 체온 데이터를 제공합니다.`,
     website: `http://www.thermosafer.com`,
     logo: `참가업체 로고 파일/EP_png/(주)초이테크놀로지 로고_컬러.png`,
-    website: ``,
     descriptionEn: `ThermoSafer XST600 is a wearable digital thermometer that non-invasively measures core body temperature (CBT) with ±0.2°C accuracy using proprietary heat-flux sensor technology and BLE 5.2 wireless communication. Its ultra-light (8g)design, main body and disposable probe ensure hygienic and convenient use in both clinical and home settings. It seamlessly integrates with mobile apps or hospital monitors via a dedicated gateway, enabling continuous temperature monitoring for infection control, perioperative care, and home-based management of high-risk individuals.`,
     video: ``
   },
@@ -2467,7 +2394,6 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     description: `AI·빅데이터 기반 성장 및 질환 예측 소프트웨어`,
     website: `http://www.gpcohort.com`,
     logo: `참가업체 로고 파일/GP_png/주식회사 지피 로고.png`,
-    website: ``,
     descriptionEn: `AI and big data-based growth and disease prediction software`,
     video: ``
   },
@@ -2484,7 +2410,6 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
 RCWM은 생콘크리트 단위수량을 실시간으로 측정하고 관리할 수 있는 IoT 기반 품질관리 시스템입니다. 콘크리트의 품질을 결정하는 핵심 요소인 W/C(물-시멘트 비율)를 정확히 모니터링하여, 구조물의 안전성과 내구성을 확보하는 동시에 시공 효율성을 높여줍니다. RCWM은 현장의 콘크리트 품질을 향상시켜 구조물의 강도와 내구성을 강화합니다. 불량 콘크리트 발생과 재작업을 최소화하여 비용 절감을 가능하게 하고, 현장 관리자가 신속하게 의사결정을 내릴 수 있도록 지원해 공정 효율성을 높입니다. 또한 불필요한 자원 낭비와 콘크리트 폐기물을 줄여 ESG 경영을 실현할 수 있습니다.`,
     website: `http://www.formis.kr`,
     logo: `참가업체 로고 파일/GP_png/폼이즈로고.png`,
-    website: ``,
     descriptionEn: `RCWM : Real-time Concrete unit Water Monitoring System
 A New Standard for Smart Concrete Quality Management
 RCWM is an IoT-based quality management system that enables real-time measurement and control of unit water content in fresh concrete. By accurately monitoring the critical W/C (Water-to-Cement ratio), RCWM ensures structural safety, durability, and improved construction efficiency.`,
@@ -2502,7 +2427,6 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     description: `RMF(Robotics Foundation Model)과 AI Agent 기술을 결합한 차세대 모바일 매니퓰레이터입니다. 제조 현장에서 공정 간 이동·작업·정밀제어를 스스로 수행하며, 초개인화 시대의 다품종 소량생산(HMLV) 환경에서 유연성·정밀성·자율성을 동시에 구현하는 지능형 로봇 오퍼레이션 시스템을 제공합니다.`,
     website: `https://dmillions.com/`,
     logo: `참가업체 로고 파일/GP_png/디밀리언 로고.png`,
-    website: ``,
     descriptionEn: `It is a next-generation mobile manipulator that combines RMF (Robotics Foundation Model) with AI Agent technology. In manufacturing sites, it autonomously performs inter-process transportation, operations, and precision control, providing an intelligent robotic operation system that simultaneously achieves flexibility, precision, and autonomy in the era of hyper-personalized high-mix, low-volume (HMLV) production.`,
     video: ``
   },
@@ -2519,7 +2443,6 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
 ■전력부족에 대한 대안: 에너지 산업필수요소는, ESS`,
     website: `http://www.evoasis.co.kr`,
     logo: `참가업체 로고 파일/EP_png/모빌리티에너시 로고.png`,
-    website: ``,
     descriptionEn: `Energy Storage System (ESS) stores generated power and supplies it when needed. It consists of a power storage device, a power conversion device, and various operating systems.
 
  Alternative to Power Shortages: ESS, an Essential Element of the Energy Industry`,
@@ -2537,7 +2460,6 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     description: `3D 종이 기반 진단키트는 LFA의 간편함과 저비용을 유지하면서 PCR 수준의 정확도를 제공합니다. 3차원 미세유체 채널과 균일한 금 나노입자를 활용해 더 빠르고 신뢰할 수 있는 결과를 제공하며, 감염 초기 누락과 오진을 줄여줍니다.`,
     website: `https://enanot.imweb.me/`,
     logo: `참가업체 로고 파일/EP_png/나노오트 로고.png`,
-    website: ``,
     descriptionEn: `3D paper-based diagnostic kit combines the simplicity and low cost of LFA with PCR-like accuracy. Using 3D microfluidic channels and uniform gold nanoparticles, it delivers faster, more reliable results, reducing missed early infections and false outcomes`,
     video: ``
   },
@@ -2568,7 +2490,6 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     description: `하나의 소형 모듈만으로 차량 측면 전체를 인식하며 근거리 탐지를 통해 주행 중의 빠르게 움직이는 객체, 좁은 주차 공간에서의 장애물, 정차 시 발생할 수 있는 경미한 충돌까지 감지합니다. 또한 기존 시스템이 취약한 상황에서도 지속적인 모니터링을 보장합니다. 보호되지 않았던 영역까지 인식 범위를 확장함으로써, 이 기술은 종합적인 측면 안전의 새로운 시대를 열어갑니다. 이는 자율 모빌리티의 운행 안전성을 근본적으로 향상시킬 가능성을 보여주며, 사용자에게 안심과 실제적인 신뢰성을 동시에 제공합니다.`,
     website: `http://www.au-sensor.com`,
     logo: `참가업체 로고 파일/EP_png/에이유 로고.png`,
-    website: ``,
     descriptionEn: `A single compact module provides full-side awareness with close-range detection, capturing fast-moving objects during driving, obstacles in tight parking spaces, and minor collisions while stationary. This sensor ensures continuous monitoring even where conventional systems fall short. By extending awareness to previously unprotected areas, this technology previews a new era of comprehensive side safety. It demonstrates the potential to fundamentally enhance the operational safety of autonomous mobility, delivering both peace of mind and real-world reliability.`,
     video: ``
   },
@@ -2585,7 +2506,6 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
 고진공(1mTorr), 급격한 열 사이클, 강한 전자기 간섭 등 극한 환경에서도 안정적으로 작동하며, 탁월한 표면 평탄도를 통해 포토리소그래피 및 식각 정밀도에 영향을 주지 않습니다.`,
     website: `http://www.libest.co`,
     logo: `참가업체 로고 파일/GP_png/(주)리베스트 로고_컬러.png`,
-    website: ``,
     descriptionEn: `Artenix AI is an ultra-thin next-generation battery designed for wafer-level sensors in AI semiconductor manufacturing.
 It operates reliably under extreme conditions—including high vacuum (1mTorr), rapid thermal cycling, and strong electromagnetic interference—while maintaining exceptional surface flatness to avoid impacting photolithography or etching accuracy.`,
     video: ``
@@ -2602,7 +2522,6 @@ It operates reliably under extreme conditions—including high vacuum (1mTorr), 
     description: `VS-300은 국내 최초 형식증명 시제기로, 순수 전기 추진 기반의 eVTOL입니다. 3인승 유인 항공기로 설계되었으며, Lift & Cruise 방식의 고정익 기반 고효율 항공역학 구조를 갖추고 있습니다. 미래 모빌리티 플랫폼으로, 대형 화물 운송, 긴급 물류 지원, 재난 지역 보급 및 구조, 산업 시설 점검 등 광범위한 임무 수행을 위해 설계된 범용 도심 모빌리티 솔루션 입니다.`,
     website: `http://www.vspacecompany.com`,
     logo: `참가업체 로고 파일/GP_png/브이스페이스_로고.png`,
-    website: ``,
     descriptionEn: `VS-300 is South Korea's first prototype to receive type certification (TC) and is a pure electric propulsion-based eVTOL. It is designed as a three-seat manned aircraft with a Lift & Cruise type high-efficiency fixed-wing aerodynamic structure. Additionally, it serves as a future mobility platform. The aircraft is designed as a versatile urban mobility solution capable of performing a wide range of missions, including large cargo transport, urgent logistics support, disaster area supply and rescue, and industrial facility inspection.`,
     video: ``
   },
@@ -2635,7 +2554,6 @@ It operates reliably under extreme conditions—including high vacuum (1mTorr), 
 특허받은 반도체 방열 기술로 안정적인 파장과 안전성을 확보했으며, 일상적인 조명과 뇌 테라피를 하나로 결합해 집에서 간편하게 예방적 두뇌 관리가 가능합니다.`,
     website: `https://KOREALighting.kr`,
     logo: `참가업체 로고 파일/EP_png/한국조명 주식회사 로고.png`,
-    website: ``,
     descriptionEn: `Neurélux is a smart therapeutic lighting device for brain wellness.
 It utilizes dual near-infrared wavelengths (810nm & 1064nm) to enhance cerebral blood flow and support mitochondrial activity in brain cells, helping maintain memory, focus, and cognitive function.
 With patented semiconductor heat-dissipation technology, it ensures stable wavelength delivery and safety. By integrating everyday desk lighting with brain therapy, Neurélux makes preventive brain care convenient at home.`,
@@ -2653,7 +2571,6 @@ With patented semiconductor heat-dissipation technology, it ensures stable wavel
     description: `정수기+전기포트+인덕션렌지가 하나로 구성한 융복합 멀티제품으로 '1인 가구 증가'와 '셀프무인화'트랜드에 부합하고 정수된 깨끗한 물을 이용해서 빠른 조리가 가능, 해외 여러 국가에서 호평을 받고 있으며 세계 최초의 융복합 조리기`,
     website: `https://en.hauscook.com`,
     logo: `참가업체 로고 파일/GP_png/범일산업 로고.png`,
-    website: ``,
     descriptionEn: `It is a convergence multi-product composed of water purifier, electric port, and induction range, which meets the trend of "increasing single-person households" and "self-unmanned" and allows quick cooking using purified clean water, and is well received in many countries abroad, and is the world's first convergence cooker`,
     video: ``
   },
@@ -2714,7 +2631,6 @@ This eco-friendly and business-friendly solution eliminates the risks and uncert
     description: `높은 효율의 작고 안전한 로봇 무선충전 시스템`,
     website: `https://www.wipowerone.com`,
     logo: `참가업체 로고 파일/GP_png/와이파워원 로고_컬러.png`,
-    website: ``,
     descriptionEn: `High-efficiency, safe, reliable, and compact wireless charging for autonomous robots`,
     video: ``
   },
@@ -2737,7 +2653,6 @@ This eco-friendly and business-friendly solution eliminates the risks and uncert
 이에 적합한 향기 배합을 자동으로 설정해 공간 경험의 질을 향상시킵니다.`,
     website: `https://www.deepscent.io/en`,
     logo: `참가업체 로고 파일/EP_png/딥센트 로고.png`,
-    website: ``,
     descriptionEn: `Deepscent Lounge AI-Multisensory (working title) is an IoT-based personalized digital fragrance solution.
 
 - It consists of fragrance capsules, diffusion hardware, control software, and a user interface (mobile app).

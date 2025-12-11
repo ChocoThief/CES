@@ -37,8 +37,10 @@
 
                 <!-- 오른쪽: 기본 정보 -->
                 <div class="company-details">
-                    <h2 class="company-name">{{ company.name }}</h2>
-                    <h3 class="company-name-en" v-if="company.nameEn">({{ company.nameEn }})</h3>
+                    <div class="company-name-container">
+                        <h2 class="company-name">{{ company.name }}</h2>
+                        <h3 class="company-name-en" v-if="company.nameEn">({{ company.nameEn }})</h3>
+                    </div>
 
                     <div class="detail-row">
                         <span class="detail-label">부스번호 (Booth number)</span>
@@ -304,7 +306,6 @@ const goBack = () => {
     font-weight: 500;
     color: #718096;
     padding-bottom: 20px;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
     margin-top: 0;
 }
 
@@ -348,11 +349,7 @@ const goBack = () => {
     font-weight: 500;
     color: #4a5568;
     line-height: 1.6;
-    margin-top: 8px;
-}
-
-.detail-value-en.product-en {
-    padding-top: 10px;
+    padding-top: 8px;
     border-top: 1px solid #e2e8f0;
 }
 

@@ -296,10 +296,9 @@ The ACAT platform integrates the analysis of vehicle driving data, sensor data, 
 무선화할 수 있음. 기존 유선 연결 방식의 단점을 극복하면서도, 최대 6.25Gbps에 달하는 
 전송 속도를 제공하여 산업 및 소비자용 애플리케이션에서 유선 수준의 신호품질 구현함.`,
     website: `http://www.uniqconn.com`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/EP_png/62501-44.png`,
     descriptionEn: `UC60 is a 60GHz-based semiconductor chip designed for ultra-short-range (within 5cm), ultra-high-speed, and low-power wireless data transmission. It can wirelessly support various wired interfaces such as USB, UART, SPI, I2C, GPIO, MIPI, and Gigabit Ethernet. By overcoming the limitations of conventional wired connections, UC60 delivers transmission speeds of up to 6.25Gbps, enabling wired-level signal quality in both industrial and consumer applications.`,
-    video: ``
+    video: `EP-mp4/62501-44.mp4`
   },
   {
     id: 'EP015',
@@ -573,8 +572,7 @@ We have a patent that can solve the problem of finger size common to ring device
 ﻿회전형 베드는 정교한 스카이빙 작업이 가능하여 다양하고 복잡한 형태의 특수 형상 핀을 제작 할 수 있습니다.
 ﻿4면의 진공베드를 모두 활용하기 때문에, 빠른 교체가 가능하고 다양한 형상의 제품을 동시에 가공할 수 있습니다.`,
     website: `http://www.heat-sol.com/heatsol`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/EP_png/62501-58.png`,
     descriptionEn: `(Skiving Heatsink)
 The Skiving process is an advanced technology that significantly increases surface area for optimal heat dissipation by precisely slicing materials with superior thermal conductivity. It delivers 15–20% higher thermal efficiency compared to conventional heatsinks while maintaining excellent processability and productivity.
 
@@ -582,7 +580,7 @@ The Skiving process is an advanced technology that significantly increases surfa
 ﻿The new model developed by Heat-Sol is ﻿half the size of previous models, yet delivers faster and more precise performance and higher productivity than existing skiving machines.
 ﻿The rotating bed enables more precise skiving, making it possible to produce a wide range of complex, specially-shaped fins.
 ﻿The vacuum beds installed on all four sides enable quick replacement and allows for products of various shapes to be processed simultaneously.`,
-    video: ``
+    video: `EP-mp4/62501-58.mp4`
   },
   {
     id: 'EP029',
@@ -721,10 +719,9 @@ While AI has already transformed the world of software development, Manyfast is 
     productEn: `MaiT The A DDH`,
     description: `AI 기반 영유아 고관절 이형성증 초음파 영상 자동 진단 보조 의료 소프트웨어`,
     website: `https://maithealth.com/`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/EP_png/62501-67.png`,
     descriptionEn: `AI-powered medical software for automated ultrasound image analysis and diagnostic assistance for developmental dysplasia of the hip (DDH) in infants`,
-    video: ``
+    video: `EP-mp4/62501-67.mp4`
   },
   {
     id: 'EP038',
@@ -809,10 +806,9 @@ While AI has already transformed the world of software development, Manyfast is 
     productEn: `Nucleus`,
     description: `혼합정밀도 추론 가속을 위한 LLM NPU Core IP: 단일 NPU Core부터 Multi-Core 클러스터 까지 유연하게 확장 가능하며 다양한 플랫폼에 맞게 통합할 수 있는 NPU 클러스터 IP로 핵심 기술인 하드웨어 연산 유닛을 실시간으로 재구성하여 서로 다른 정밀도의 행렬을 바로 연산할 수 있는 재구성 가능한 행렬 연산 장치를 기반으로 다양한 정밀도로 양자화된 AI 모델에 적용가능하다.`,
     website: `https://www.aips-ai.com/`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/EP_png/62501-72.png`,
     descriptionEn: `LLM NPU Core IP for Mixed-Precision Inference Acceleration: a scalable NPU cluster IP that expands from a single NPU core to multi-core clusters and integrates across diverse platforms. Built on a reconfigurable matrix compute engine whose hardware units can be reconfigured in real time to directly perform matrix operations at different precisions, it supports AI models quantized to a wide range of bit widths.`,
-    video: ``
+    video: `EP-mp4/62501-72.mp4`
   },
   {
     id: 'EP043',
@@ -1068,10 +1064,9 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     product: `셀토 V2.0(브이엘에이전트)`,
     productEn: `Selto V2.0(VLAgent)`,
     description: `셀토(브이엘에이전트)는 Vision Language Model(VLM)을 통해 환경을 학습하고 모든 프로세스를 자동으로 수행합니다. 전문가 개입이 필요한 기존 RPA 솔루션을 뛰어넘는 성능을 제공합니다.`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/EP_png/62901-11.png`,
     descriptionEn: `Selto(VLAgent) learns environments through the Vision Language Model (VLM) and autonomously handles all processes. It outperforms traditional RPA solutions that rely on expert intervention.`,
-    video: ``
+    video: `EP-mp4/62901-11.mp4`
   },
   {
     id: 'EP056',
@@ -1128,11 +1123,10 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     productEn: `MYME AI`,
     description: `MYME AI는 AI 기술을 통합한 게임 개발 및 퍼블리싱 플랫폼으로, 생산 속도를 30~50%까지 가속화합니다. 이 플랫폼은 인디 개발자에게 절차적 생성, AI 아트, 음악, 코딩 도구, 낮은 수수료의 글로벌 퍼블리싱 서비스를 제공하며, MYME Global Center를 통해 교육 프로그램도 제공합니다.
 MYME AI의 핵심 경쟁 우위는 게임 제작을 위해 특별히 설계된 통합 AI 플랫폼을 통해 게임 개발을 30~50% 가속화할 수 있다는 점입니다. 이 플랫폼은 절차적 콘텐츠 생성, 아트 에셋 제작, 음악 작곡, 내러티브 작성, 코딩 지원, 그리고 RAG 기반 검색 시스템을 위한 5가지 AI API를 결합하여 개발자가 품질을 유지하면서 반복적인 작업을 자동화할 수 있도록 지원합니다. MYME AI는 인디 개발자 개발한 게임을 글로벌 런칭을 위한 필수 도구에만 집중합니다. 또한 MYME 글로벌 센터를 운영하여 교육, 인재 개발, 퍼블리싱까지 엔드 투 엔드 지원을 제공하여 지속 가능한 인디 게임 생태계를 조성합니다. Unity Muse나 Leonardo AI와 같은 경쟁 업체는 별도의 AI 도구를 제공하지만, MYME AI는 기술, 퍼블리싱, 커뮤니티 구축을 하나의 효율적인 서비스로 통합하여 진입 장벽을 낮추고 개발자의 수익성을 극대화합니다`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/EP_png/62901-15.png`,
     descriptionEn: `MYME AI is an integrated AI-powered game development and publishing platform that accelerates production by 30–50%. It offers indie developers procedural generation, AI art, music, coding tools, and low-commission global publishing, plus education via MYME Global Center
 MYME AI's core competitive advantage lies in its ability to accelerate game development by 30–50% through an integrated AI platform specifically designed for game creation. This platform combines five AI APIs—procedural content generation, art asset creation, music composition, narrative writing, and coding support—with a RAG-based search system, enabling developers to automate repetitive tasks while maintaining quality. MYME AI focuses exclusively on providing essential tools for indie developers to launch their games globally. Additionally, it operates the MYME Global Center to offer end-to-end support, including education, talent development, and publishing, fostering a sustainable indie game ecosystem. While competitors like Unity Muse and Leonardo AI offer separate AI tools, MYME AI integrates technology, publishing, and community building into a single efficient service, lowering entry barriers and maximizing developers' profitability`,
-    video: ``
+    video: `EP-mp4/62901-15.mp4`
   },
   {
     id: 'EP060',
@@ -1615,8 +1609,7 @@ It covers the Wired & Wireless coverage for the seamless & fluent IP Extension i
  2) 스마트 에너지 관리 앱– 실시간 배터리 상태 및 진단 기능 제공
  3) 친환경 설계– 재활용 소재 적용으로 ESG 목표 달성 기여`,
     website: `http://www.anypower.co.kr`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/GP_png/50523-11.png`,
     descriptionEn: `AnyPower – The Next-Generation Industrial & Outdoor Power Bank
 Product Overview
  AnyPower is a premium multi-purpose power solutionthat redefines the way professionals, outdoor   enthusiasts, and emergency responders access portable energy. Unlike conventional power banks, AnyPower is 40% lighter, highly compatible with power tools,     
@@ -1675,8 +1668,7 @@ Product Overview
     productEn: `Aerivus ResQ Station(Mobile Drone Hub for Emergency Power & Rescue)`,
     description: `Aerivus ResQ Station(에리버스 레스큐 스테이션)은 단순한 드론 운반 장비가 아니라, 재난 대응과 분쟁 지역 작전을 근본적으로 혁신하는 플랫폼입니다. 붕괴 건물, 불안정 지형, 폭발 위험 구역, 교전 지역 등 인명 피해가 임박한 고위험 환경에서 AI 기반 위험 인지와 경로 최적화 기술을 통해 인명을 위험에 빠뜨리지 않고 안전하게 접근할 수 있습니다. 스테이션은 사전 프로그램된 경로로 위험 지역에 자율 주행 후 즉시 드론을 출격시켜 공중 정찰을 수행합니다. 실시간 영상과 센서 데이터는 관제센터로 전송되어 구조 계획 수립을 지원하고, 원격 제어로 정밀 조사가 가능합니다. 드론과 스테이션에서 수집된 종합 데이터를 분석함으로써 구조팀은 안전한 인력 투입을 위한 최적의 진입 경로와 타이밍을 도출합니다. 이 올인원 솔루션은 자동 드론 충전, 실시간 데이터 전송, 다중 드론 운용을 통합해 신속한 정보 수집과 구조팀의 안전 보장을 동시에 달성합니다.`,
     website: `http://drivetech.kr/`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/GP_png/50523-13.png`,
     descriptionEn: `The Aerivus ResQ Station is not merely a drone transport device—it's a revolutionary platform that transforms disaster response and conflict-zone operations. In high-risk environments like collapsed buildings, unstable terrain, explosion zones, or active combat areas where human casualties are imminent, AI-powered hazard recognition and route optimization technology enables safe approach without risking human lives. The station autonomously navigates to danger zones via pre-programmed routes, then immediately launches drones for aerial reconnaissance. Real-time video and sensor data stream to command centers, supporting rescue planning while enabling remote control for detailed investigations. By analyzing comprehensive drone and station data, rescue teams determine optimal entry routes and timing for safe human intervention. This all-in-one solution integrates automatic drone charging, real-time data transmission, and multi-drone operations, simultaneously achieving rapid information gathering and guaranteed rescue team safety.`,
     video: ``
   },
@@ -1973,8 +1965,7 @@ Accessible via any smartphone browser, the app includes large buttons, voice nav
     productEn: `TELLI-CHAMBER`,
     description: `작물의 최적의 생육 환경을 도출하는 시험 챔버로 로봇 수직농장 연동`,
     website: `https://www.rowain.com`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/GP_png/50523-29.png`,
     descriptionEn: `An AI-driven test chamber that identifies optimal crop conditions and integrates with robotic vertical farms.`,
     video: ``
   },
@@ -2158,8 +2149,7 @@ With its recent IECEx international explosion-proof certification, Harvenergy™
     productEn: `영    문 Unicorn Wind Turbine`,
     description: `자사의 풍력 블레이드는 4방향 대칭 나선형 일체형 구조와 EPP 소재를 적용해 회전 저항을 줄이고 에너지 효율을 극대화 하였습니다. 풍속 0.5m/s 이하에서도 작동을 시작하며 회전시 소음을 40dB 이하로 감소시켜 저풍속 뿐만 아니라 높은 풍속 환경에서도 뛰어난 성능을 제공합니다. 발전기를 블레이드 하부 내측에 배치하는 설계로 외기로부터의 보호를 통한 내구성을 강화하여 다양한 사이트에 적용 가능 하도록 설계 하였습니다.`,
     website: `https://www.neosol-nrg.com/`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/GP_png/50523-39.png`,
     descriptionEn: `Our wind turbine blades incorporate a four-directional symmetrical helical integrated structure and EPP material, reducing rotational resistance and maximizing energy efficiency. They start operating in wind speeds as low as 0.5 m/s and minimize noise to under 40dB during rotation, ensuring excellent performance in both low and high wind-speed environments. The generator is positioned inside the lower part of the blade to enhance durability through external air protection, making it suitable for various installation sites.`,
     video: ``
   },
@@ -2178,8 +2168,7 @@ With its recent IECEx international explosion-proof certification, Harvenergy™
   내장된 통신 허브는 음영 지역에서도 안정적 연결을 보장하며, 필요 시 중계 기지국 역할을 수행합니다. 
   SACR-GuardMate는 작업자 모니터링, 통신 및 긴급 지원을 통합하여 현장 안전 시스템을 반응형 프레임워크에서 사전 예방 프레임워크로 전환합니다.`,
     website: `http://www.j-innotech.com/en/ahv`,
-    logo: ``,
-    website: ``,
+    logo: `참가업체 로고 파일/GP_png/50523-40.png`,
     descriptionEn: `SACR-GuardMate is an intelligent safety-assist carrier robot designed to dramatically enhance safety on construction sites.
 
 Using integrated sensors and cameras, it continuously analyzes workers’ vital signs and behavior in real time, classifying their status into Normal, Warning, or Danger levels. This allows for proactive intervention in warning and danger situations.

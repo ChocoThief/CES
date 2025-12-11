@@ -45,7 +45,10 @@
                             <tbody>
                                 <tr v-for="company in globalCompaniesSorted" :key="company.id">
                                     <td>{{ company.boothNumber }}</td>
-                                    <td>{{ company.name }}</td>
+                                    <td>
+                                        {{ company.name }}<br>
+                                        ({{ company.nameEn }})
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

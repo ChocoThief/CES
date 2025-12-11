@@ -45,6 +45,11 @@
                         <span class="detail-value">{{ company.boothNumber }}</span>
                     </div>
 
+                    <div class="detail-row" v-if="company.website">
+                        <span class="detail-label">홈페이지 (Website)</span>
+                        <a :href="company.website" target="_blank" rel="noopener noreferrer" class="detail-value website-link">{{ company.website }}</a>
+                    </div>
+
                     <div class="detail-row">
                         <span class="detail-label">제품 (Product)</span>
                         <span class="detail-value">{{ company.product }}</span>
@@ -116,7 +121,8 @@ const company = ref({
     descriptionEn: '',
     hall: '',
     logo: '',
-    video: ''
+    video: '',
+    website: ''
 });
 
 // 동적 로고 import를 위한 로고 모듈들
@@ -165,7 +171,8 @@ onMounted(() => {
             descriptionEn: foundCompany.descriptionEn || '',
             hall: foundCompany.hall === 'eureka' ? 'Eureka Park' : 'Global Pavilion',
             logo: foundCompany.logo || '',
-            video: foundCompany.video || ''
+            video: foundCompany.video || '',
+            website: foundCompany.website || ''
         };
     }
 });
@@ -320,6 +327,16 @@ const goBack = () => {
     font-weight: 500;
     color: #1a202c;
     line-height: 1.6;
+}
+
+.website-link {
+    color: #3182ce;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.website-link:hover {
+    text-decoration: underline;
 }
 
 .description-text {

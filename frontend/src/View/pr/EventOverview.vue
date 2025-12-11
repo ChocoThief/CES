@@ -24,7 +24,7 @@
         <section class="content-section">
             <div class="overview-description">
                 <p>
-                    KOTRA관은 국내 유망 스타트업과 혁신 기업들의 글로벌 진출을
+                    KOREA관은 국내 유망 스타트업과 혁신 기업들의 글로벌 진출을
                     지원하기 위해 구성된 한국 공동관입니다.
                 </p>
                 <p>
@@ -37,7 +37,7 @@
                 </p>
                 <br>
                 <p>
-                    KOTRA Pavilion is a joint Korean pavilion established to support the global expansion of promising domestic startups and innovative companies.
+                    KOREA Pavilion is a joint Korean pavilion established to support the global expansion of promising domestic startups and innovative companies.
                 </p>
                 <p>
                     At CES 2026, we will showcase the technological competitiveness of Korean companies in the core exhibition zones, Eureka Park and Global Pavilion.

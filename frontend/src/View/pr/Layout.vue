@@ -3,7 +3,7 @@
         <!-- Fixed Navigation -->
         <nav class="fixed-nav">
             <div class="nav-container">
-                <router-link to="/pr" class="nav-title">2026 CES KOTRA</router-link>
+                <router-link to="/pr" class="nav-title">2026 CES KOREA</router-link>
                 <div class="nav-menu">
                     <router-link to="/pr/event-overview" class="nav-item">
                         Event Overview

@@ -88,7 +88,6 @@ const router = createRouter({
       component: Index,
     },
     ...prRoutes,
-    ...vipRoutes,
   ],
 })
 

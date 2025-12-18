@@ -12,7 +12,7 @@
                 </div>
                 <div class="title-container">
                     <h1>Eureka Park (1F)</h1>
-                    <p class="subtitle">{{ eurekaCompanies.length }}개 참가기업</p>
+                    <p class="subtitle">{{ eurekaCompanies.length }} Exhibitors</p>
                 </div>
                 <div class="pc-notice">
                     *해당 홈페이지는 PC에 최적화되어있습니다.<br />

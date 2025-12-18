@@ -36,8 +36,7 @@
                             일자별로 정해진 시간에 진행되며, 안내된 동선을 따라 주요 기업 부스를 방문하게 됩니다.<br>
                             각 기업의 담당자가 직접 설명을 제공하여 더욱 생생한 정보를 얻을 수 있습니다.
                             <br><br>
-                            The CES 2026 KOREA Docent Tour guides visitors through participating company booths<br>
-                            together with a professional MC.<br>
+                            The CES 2026 KOREA Docent Tour is led by a professional MC <br> and guides visitors through participating company booths.<br>
                             This program offers an in-depth introduction to core technologies and products.
                             <br><br>
                             The tour follows a scheduled itinerary for each day,<br>

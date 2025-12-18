@@ -37,7 +37,7 @@
                 </p>
                 <br>
                 <p>
-                    KOREA Pavilion is a joint Korean pavilion established to support the global expansion of promising domestic startups and innovative companies.
+                    The KOREA Pavilion is a national pavilion designed to support the global expansion of innovative Korean startups and companies.
                 </p>
                 <p>
                     At CES 2026, we will showcase the technological competitiveness of Korean companies in the core exhibition zones, Eureka Park and Global Pavilion.

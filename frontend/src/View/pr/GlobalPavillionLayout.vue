@@ -43,7 +43,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="company in globalCompaniesSorted" :key="company.id">
+                                <tr v-for="company in globalCompaniesSorted" :key="company.id" @click="goToCompanyDetail(company.id)" class="clickable-row">
                                     <td>{{ company.boothNumber }}</td>
                                     <td>
                                         {{ company.name }}<br>
@@ -60,7 +60,14 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import { globalCompaniesSorted } from '@/data/companyData';
+
+const router = useRouter();
+
+const goToCompanyDetail = (companyId) => {
+    router.push(`/pr/company/${companyId}`);
+};
 </script>
 
 <style scoped>
@@ -222,6 +229,10 @@ import { globalCompaniesSorted } from '@/data/companyData';
 .company-table tbody tr {
     border-bottom: 1px solid #e2e8f0;
     transition: background-color 0.2s ease;
+}
+
+.company-table tbody tr.clickable-row {
+    cursor: pointer;
 }
 
 .company-table tbody tr:hover {

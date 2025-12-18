@@ -55,10 +55,10 @@ UroRinse™ Light는 방광 관리 패러다임을 기존의 사후 치료에서
 중앙 서버를 제거함으로써 엣지 컴퓨팅 성능을 최적화하고, 내결함성(Fault Tolerance)과 확장성을 향상시켰습니다. 특히 자율주행차, 스마트 제조, 국방, 로보틱스 분야에서 혹독한 환경에서도 무손실·고신뢰 데이터 교환을 보장합니다.
 
 국내외 특허는 DDS 기반 통신 및 전송 통합 기술을 보호하고 있으며, 상용 버전과 연구용 버전은 엣지 노드 단위의 유연한 라이선스 정책을 제공해 기업 시스템에서 폭넓게 활용될 수 있습니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 인텔렉투스.png`,
     website: ``,
     descriptionEn: `int2ConneX is a real-time data communication middleware based on the Data Distribution Service (DDS) standard, independently developed inKorea for high‑reliability, mission‑critical applications. It uses a serverless peer-to-peer mesh architecture combined with a topic-basedpublish/subscribe model to enable low-latency, deterministic communication in distributed systems. The modular runtime supports industrialprotocols such as EtherCAT and CAN-FD, and deploys efficiently on real-time Linux, RTOS, and container-based platforms. Fully compatible withAdaptive AUTOSAR, int2ConneX can replace Some/IP communication modules or next‑generation automotive platforms. By removing centralservers, it optimizes edge computing operations, improves fault tolerance, and enhances scalability. Designed for autonomous vehicles, smartmanufacturing, defense, and robotics, it ensures lossless, reliable data exchange under harsh conditions. Domestic and international patentsprotect its DDS communication and transport integration technology. Its commercial and research editions, with flexible licensing per edge node,facilitate wide adoption in enterprise systems.`,
-    video: ``
+    video: `EP-mp4/주식회사 인텔렉투스.mp4`
   },
   {
     id: 'EP003',
@@ -325,10 +325,10 @@ The ACAT platform integrates the analysis of vehicle driving data, sensor data, 
     product: `캄스텐드`,
     productEn: `Calm Stand`,
     description: `CalmStand는 AIoT 기반 테라피형 모니터 받침대로, 표정·음성·입력 데이터를 분석해 사운드·아로마 테라피를 자동 제공한다. 사무환경 변경 없이 설치 가능하며 집중력과 정서 회복을 돕는 비침습형 웰니스 솔루션으로, ESG 기반 스마트 오피스 시장을 목표로 한다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 케이엘에스.png`,
     website: ``,
     descriptionEn: `CalmStand is an AIoT-based monitor stand that analyzes facial, voice, and input data to deliver automatic sound and aroma therapy. It’s a non-invasive wellness solution enhancing focus and well-being for ESG smart office markets.`,
-    video: ``
+    video: `EP-mp4/주식회사 케이엘에스.mp4`
   },
   {
     id: 'EP017',
@@ -342,11 +342,11 @@ The ACAT platform integrates the analysis of vehicle driving data, sensor data, 
     description: `디지털 공론장은 제 역할을 잃어가고 있습니다. 여론 조사는 조작에 취약하고, 중요한 논의는 끝없는 디지털 소음 속에 사라집니다. 신뢰할 수 있는 집단적 의사결정 플랫폼이 부재한 상황입니다.
 Ratel은 이 문제를 해결합니다. Ratel은 자주적 신원(SSI), DAO 거버넌스, AI 기반 도구를 통합해 신뢰할 수 있는 사회적 플랫폼을 구축합니다.
 DID를 통한 검증된 참여, DAO 기반의 구조화된 의사결정, 그리고 MCP와 같은 AI 도구를 통해 혼란스러운 온라인 공간을 생산적이고 합의 가능한 장으로 바꿉니다. 그 결과, 정책 제안부터 지역사회 문제 해결까지, Ratel은 수동적인 대중을 능동적인 이해관계자로 전환시킵니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 바이야드.png`,
     website: ``,
     descriptionEn: `The digital public square is failing. Public surveys are vulnerable to manipulation, and vital deliberations are lost in digital noise, leaving a critical void for a trusted platform for collective decision-making. Ratel fills this void. It is a purpose-driven social platform that rebuilds trust by integrating Self-Sovereign Identity (SSI), DAO governance, and AI-powered tools.
 Ratel enables verified, fraud-proof participation through DIDs, facilitates structured engagement in DAO-based decision-making spaces, and provides AI tools like MCP to facilitate productive dialogue, transforming chaotic online spaces into environments where common opinions can be effectively coordinated and distilled. From shaping policy proposals to solving community issues, Ratel transforms passive audiences into active stakeholders.`,
-    video: ``
+    video: `EP-mp4/주식회사 바이야드.mp4`
   },
   {
     id: 'EP018',
@@ -485,10 +485,10 @@ When paired with QDLED systems, it empowers lighting to become intelligent, data
 
 이 제품은 피부의 보습력을 높이고, 두피 자극을 줄이며, 피부 건강 전반을 개선하는 데 도움을 줍니다.
 UNG 워터 인핸서는 물의 질을 한층 업그레이드하여, 건강하고 지속 가능한 샤워 환경을 제공합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/(주)유엔지테크놀러지.png`,
     website: ``,
     descriptionEn: `The UNG Water Enhancer is the world’s first self-powered, non-filtered water purifier designed for home showers. Powered solely by water pressure, its patented electrostatic field module weakens hydrogen bonding between water molecules, increasing solubility and reducing surface tension. This process delivers a 25% reduction in water hardness and a 66.6% reduction in bacteria, improving cleansing power while safeguarding health. The field ionizes water to inhibit rust and scale formation in pipes, supporting long-term plumbing integrity. A precision-engineered electrode structure maximizes the Bernoulli effect, increasing flow rate while conserving water. No electrical installation, batteries, or filters are required, ensuring maintenance-free, eco-friendly operation. The LED light illuminates to indicate its operating status. The system enhances moisturizing for skin, reduces scalp irritation, and supports overall dermatological health. Built from durable, corrosion-resistant materials, the Enhancer offers semi-permanent use, seamlessly integrating into standard shower lines for a sustainable upgrade to water quality and home wellness.`,
-    video: ``
+    video: `EP-mp4/유엔지테크놀러지.mp4`
   },
   {
     id: 'EP024',
@@ -517,13 +517,13 @@ UNG 워터 인핸서는 물의 질을 한층 업그레이드하여, 건강하고
     description: `VR/AR 컨트롤러, 에어 마우스, 리모컨을 손가락에 반지 모양의 장치를 착용한 상태에서 작동하는 제품
 블루투스를 통해 PC에 연결되며 2시간 동안 완충 후 약 5일간 사용
 가격은 약 $100이며 9축 자이로 센서, 1000dpi 광학 센서, 5.0 블루투스, 리튬 이온 50mAh 배터리 등의 부품이 사용`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/(주)씽크링크.png`,
     website: ``,
     descriptionEn: `A product that performs VR/AR controller, air mouse and remote control functions while wearing a ring-shaped device on the finger.
 It connects to your PC through Bluetooth and can be used for about 5 days if fully charged for 2 hours.
 The price is around $100 USD and components such as 9-axis gyro sensor, 1000dpi optical sensor, 5.0 Bluetooth, lithium-ion 50mAh battery, etc. are used
 We have a patent that can solve the problem of finger size common to ring device companies, and based on this, we will also enter the healthcare ring market where blood sugar can be checked.`,
-    video: ``
+    video: `EP-mp4/씽크링크.mp4`
   },
   {
     id: 'EP026',
@@ -535,10 +535,10 @@ We have a patent that can solve the problem of finger size common to ring device
     product: ``,
     productEn: ``,
     description: ``,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/에어렛.png`,
     website: ``,
     descriptionEn: ``,
-    video: ``
+    video: `EP-mp4/에어렛.mp4`
   },
   {
     id: 'EP027',
@@ -550,7 +550,7 @@ We have a patent that can solve the problem of finger size common to ring device
     product: `크라이오링크`,
     productEn: `Cryolink`,
     description: `AI 인프라, 고성능 컴퓨터, 전기차 등에 적용가능한 획기적인 방열솔루션 제공하는 나노카본 냉각수`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 나노브리지.png`,
     website: ``,
     descriptionEn: `Nano-carbon coolant delivering breakthrough thermal management solutions for AI infrastructure, high-performance computing, and electric vehicles`,
     video: ``
@@ -592,10 +592,10 @@ The Skiving process is an advanced technology that significantly increases surfa
     product: `AX-P80M`,
     productEn: `AX-P80M`,
     description: `AX-P80M은 AX-P80의 업그레이드 버전으로, 실제 구조 및 물류 임무 수행이 가능하도록 설계되었습니다. 상단에는 독립적인 슬라이딩 모듈 베이가 있어 인명 구조용 들것 캡슐이나 화물 모듈을 장착할 수 있으며, 하단에는 1톤급 윈치를 통해 소방용 소화장치, 배송 포드, 구조 장비 등을 장착할 수 있습니다. 모든 모듈은 도구 없이 60초 이내에 교체 가능하여 임무 전환이 신속하게 이루어집니다. 향상된 탑재 능력, 강화된 모듈성, 인명 구조 기능을 통해 AX-P80M은 접근이 불가능하거나 긴급한 고위험 환경에서 더 높은 유연성, 안전성, 그리고 효과성을 보장합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/(주)아스트로엑스.png`,
     website: ``,
     descriptionEn: `The AX-P80M is an upgraded version of the AX-P80, now equipped for real-life rescue and logistics operations. It features a dual independent modular system—with a sliding top bay that supports either stretcher capsules for human extraction or cargo modules for delivery, and a bottom bay with a 1-ton winch for firefighting tanks, delivery pods, or rescue tools. Modules can be changed in under 60 seconds without tools, enabling rapid mission adaptation. With expanded payload capacity, enhanced modularity, and life-saving capabilities, the AX-P80M ensures greater flexibility, safety, and effectiveness in high-risk, no-access, or time-critical environments.`,
-    video: ``
+    video: `EP-mp4/아스트로엑스.mp4`
   },
   {
     id: 'EP030',
@@ -607,10 +607,10 @@ The Skiving process is an advanced technology that significantly increases surfa
     product: `가장 안전한 화장실 AI솔루션`,
     productEn: `RestroomGuard Savvy`,
     description: `가장 안전한 화장실 새비는 모든 화장실의 문제를 해결합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/유니유니.png`,
     website: ``,
     descriptionEn: `RestroomGuard Savvy is a camera-free safety system for the Accessibility & Longevity pillar. It preserves independence, dignity, and equitable access in sensitive spaces—restrooms, clinics, schools, and transit hubs—without recording images or voices. Using non-visual sensing, it fuses Time-of-Flight depth, acoustic emergency detection, and air quality to detect falls, screams, assault patterns, illicit-filming behaviors, suspected methamphetamine-use behaviors, smoke, fire indicators, and prolonged occupancy. All inference runs 24/7 on device; only anonymized events are sent via mTLS for rapid response. A proof of concept across twenty-three restrooms with one hundred twenty-seven units achieved Precision 0.9324, Recall 0.9510, and F1 0.9487. Designed for universal use, it provides accessible alerts—visual, auditory, haptic—and clear signage. Estimated wait times, occupancy trends, air-quality status, and risk summaries appear on a space-level platform to reduce caregiver burden and support independent use.`,
-    video: ``
+    video: `EP-mp4/유니유니.mp4`
   },
   {
     id: 'EP031',
@@ -673,10 +673,10 @@ While AI has already transformed the world of software development, Manyfast is 
     product: `친환경 수계 기반 한국형 LFP (리튬인산철) 배터리`,
     productEn: `Water-based Ultimately Sustainable LFP (US-LFP) Batteries`,
     description: `유해물질을 사용하지 않는 물 기반 친환경 LFP 배터리를 자체 생산하여, 지속가능한 고객맞춤형 고안정성 LFP 배터리를 제공 (완제품)`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 럼플리어.png`,
     website: ``,
     descriptionEn: `By in-house manufacturing capability of water-based, eco-friendly LFP batteries free from hazardous substances, Remplir provides sustainable, customized, and high-safety LFP battery solutions as complete finished products.`,
-    video: ``
+    video: `EP-mp4/주식회사 럼플리어.mp4`
   },
   {
     id: 'EP035',
@@ -775,10 +775,10 @@ While AI has already transformed the world of software development, Manyfast is 
     product: `내 손안의 디지털 배지, 써티`,
     productEn: `Certi: Your Verifiable Career Passport`,
     description: `써티는 이력서 위조 문제를 해결하는 '검증 가능한 커리어 여권'입니다. 흩어진 자격 증명을 통합하고, 블록체인 및 영지식 증명을 사용하여 검증하며, AI를 통해 사용자가 자신의 진정한 강점을 발견하도록 돕습니다. 이는 전문가 세계의 새로운 신뢰 표준입니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 엔에프타임.png`,
     website: ``,
     descriptionEn: `Certi is a 'Verifiable Career Passport' that solves resume fraud. It unifies scattered credentials, verifies them using blockchain & ZKP, and uses AI to help users discover their true strengths. It's the new standard for trust in the professional world.`,
-    video: ``
+    video: `EP-mp4/주식회사 엔에프타임.mp4`
   },
   {
     id: 'EP041',
@@ -790,7 +790,7 @@ While AI has already transformed the world of software development, Manyfast is 
     product: `리텐스 2`,
     productEn: `Retens 2`,
     description: `AI 기반 스마트케어 제품으로 여성의 요실금,질이완증,성기능개선,질건조증 등에 맞춤형 치료를 제공하는 개인용 제품으로 EMS 저주파 자극과 진동 치료 및 바이오피드백 치료를 제공합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/엠비랩.png`,
     website: ``,
     descriptionEn: `RETENS II is an AI-powered smart care device designed for personal use, providing customized therapy for women experiencing urinary incontinence, vaginal laxity, sexual dysfunction, and vaginal dryness. It combines EMS low-frequency stimulation, vibration therapy, and biofeedback-based treatment to deliver personalized and effective pelvic health care.`,
     video: ``
@@ -923,10 +923,10 @@ A confirmatory clinical trial is presently in progress, with regulatory approval
     product: `리필드 AI두피스캐너 & 통합플랫폼`,
     productEn: `Refilled AI Scalp Scanner & Integrated Platform`,
     description: `AI 딥러닝 알고리즘 기반의 두피 진단 IoT 디바이스와 통합 디지털 플랫폼입니다. 5분 만에 탈모 위험도, 모낭 밀도, 두피 상태를 정밀하게 분석하며, 완전한 디지털 헬스 솔루션을 통해 개인 맞춤형 케어 플랜을 제공합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 콘스탄트.png`,
     website: ``,
     descriptionEn: `AI deep learning algorithm-based scalp diagnostic IoT device + integrated digital platform. Precisely analyzes hair loss risk, follicle density, and scalp condition in 5 minutes, providing personalized care plans through complete digital health solution.`,
-    video: ``
+    video: `EP-mp4/주식회사 콘스탄트.mp4`
   },
   {
     id: 'EP050',
@@ -1078,7 +1078,7 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     product: `굴껍질 자원화 및 탄산광물화 기술로 구현한 저탄소 친환경 칼슘 제품`,
     productEn: `Calcium materials for food grade and industrial grade`,
     description: `Low-Carbon and Eco-Friendly Calcium Products Enabled by Oyster Shell Recycling and Carbon Mineralization Technology`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/(주)피엠아이바이오텍.png`,
     website: ``,
     descriptionEn: `Sustainable Low-Carbon Natural Calcium Products through Eco-Friendly Innovation and Carbon Neutral  process`,
     video: ``
@@ -1107,7 +1107,7 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     product: `리옵스 야드트윈™`,
     productEn: `LiOps YardTwin™`,
     description: `리옵스 야드트윈™은 현장 실적 보고와 다중 로봇 제어를 하나의 엣지 플랫폼에서 통합한 ‘공간지능 트윈’입니다. LiDAR/RGB 스캔을 실시간 현장 모델로 만들고, 올바른 설계 블록을 자동 식별한 뒤, 진척률·허용오차·증빙 스냅샷을 MES/ERP에 즉시 올려 지연·불일치를 없앱니다. 시각화에서 멈추지 않고, ROS 2/REST로 보정된 6DoF 포즈·작업 경로를 내보내 용접 셀·모바일 매니퓰레이터·자율 지게차가 동일 작업지시를 온라인 보정으로 수행합니다. 그 결과, 티칭은 줄고 운영자는 더 많은 셀을 감독하며, 관리자는 분 단위 신뢰 지표로 재작업·일정 리스크를 낮춥니다. 보급형 센서·Jetson 엣지에서 동작하고 서버로 확장되며, 기존 스택에 쉽게 통합됩니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/리옵스.png`,
     website: ``,
     descriptionEn: `LiOps YardTwin™ is the first spatial-intelligence twin that unifies evidence-backed progress reporting and multi-robot execution on one edge platform for heavy industry. It turns LiDAR/RGB scans into a live site model, auto-identifies the correct design block, and posts objective progress %, tolerances, and photo evidence directly to MES/ERP—ending late, inconsistent hand entry. Where current “digital twins” or scan-to-BIM tools focus on visualization and as-built checks, YardTwin closes the loop: it also publishes corrected 6-DoF poses and task waypoints over ROS 2/REST so weld cells, mobile manipulators, and autonomous forklifts follow the same work orders with online correction. The result is trusted, minute-by-minute status for managers and adaptive automation for robots—less rework and schedule risk, faster ramp-ups, and clear accountability across contractors and shifts.`,
     video: ``
@@ -1277,7 +1277,7 @@ It empowers defense, disaster response, and industrial operations with real-time
     product: `투과도 가변 필름셀`,
     productEn: `Dimming Film Cell`,
     description: `전압 구동 투과도 가변 액정 기술을 바탕으로, 배경의 밝기를 조정하여 XR 기기등에서 (AR, VR) 제공되는 3차원 가상이미지의 디스플레이 시인성을 향상시키는 기술 및 제품. XR 기기외에도 Smart Eyewear에도 적용 증가 추이 (스마트 썬글라스,스포츠고글,헬멧 등). Automotive 디스플레이에도 기술 적용중임`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 옵티플.png`,
     website: ``,
     descriptionEn: `Based on voltage-driven, variable-transmittance liquid crystal technology, this technology and product improves the display visibility of 3D virtual images provided by XR devices (AR, VR) by adjusting the background brightness. Beyond XR devices, its application is also increasing in smart eyewear (smart sunglasses, sports goggles, helmets, etc.). The technology is also being applied to automotive display.`,
     video: ``
@@ -1324,7 +1324,7 @@ The AI-powered Autonomous Energy Management System (AEMS) continuously monitors 
     description: `지상망 의존으로 끊기던 긴급 통신을 위성 레이어로 보강하고, 생성형·경량 sLLM과 음성→텍스트 코드 전송, 이벤트 기반 웨이크-업 등 자체 기술로 불안정한 통신 환경에서도 구조 확률을 높입니다.
 1. Vehicle AECS/e-Call 모듈 & 서비스(B2B): 차량 사고 전·중·후 상황 및 탑승자 상태를 AI가 판단해 긴급구조센터와 자동 커뮤니케이션. 위성 기반 백업으로 지상망 불능 시에도 연결 유지. 재난·산불·홍수 등 전방 위험 지역 위성 분석을 통한 우회 경로 제시. 충돌로 차량 위성 안테나가 손상된 경우에도 영상위성 분석으로 이상 징후 감지 및 센터 알림.
 2. Personal SOS 디바이스(B2G/B2C): 2026년 하반기 출시 목표. 동적 메시지 압축(핵심 단어·코드 우선 전송, 대역폭 약 40% 절감), sLLM 기반 자동 응답·상황 요약, 시니어 친화 음성 인식(STT-TTS)과 이벤트 기반 동기화(SOS 버튼/낙상 등) 탑재. Skylo와 협업 진행.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/퓨잇.png`,
     website: ``,
     descriptionEn: `By adding a satellite layer to unreliable terrestrial networks and deploying on-device lightweight generative sLLM, FuIT keeps emergency communications alive—even under high latency and poor signal—using speech-to-text keyword coding, dynamic message compression, and event-based wake-ups to raise rescue success rates.
 1. Vehicle AECS/e-Call Module & Service (B2B): AI monitors pre-/in-/post-crash vehicle and occupant states and autonomously communicates with emergency centers. A satellite fallback ensures continuity when terrestrial links fail. Satellite analytics propose detours around wildfires/floods; even if the vehicle’s sat-antenna is damaged, imaging satellites help detect anomalies and alert responders.
@@ -1343,12 +1343,12 @@ The AI-powered Autonomous Energy Management System (AEMS) continuously monitors 
     description: `로봇 손의 원격 조작 및 학습을 위한 고정밀 핸드 트래킹 글러브입니다.
 작년 CES 2025에서 혁신상을 수상한 Motiglove 1의 기술을 기반으로, 새로운 센서를 추가해 트래킹 정확도와 안정성을 한층 더 향상시켰습니다.
 Motiglove 2는 로보틱스, 휴머노이드, 텔레오퍼레이션 등 다양한 분야에서 인간의 손 움직임을 정밀하게 트래킹하고 학습할 수 있도록 지원합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/주식회사 퀘스터.png`,
     website: ``,
     descriptionEn: `A high-precision hand-tracking glove designed for robotic teleoperation and learning.
 Based on the award-winning technology of Motiglove 1, which received the CES 2025 Innovation Award, the new Motiglove 2 integrates additional sensors to further enhance tracking accuracy and robustness.
 It enables precise tracking and learning of human hand motions across robotics, humanoid, and teleoperation applications.`,
-    video: ``
+    video: `EP-mp4/주식회사 퀘스터.mp4`
   },
   {
     id: 'EP072',
@@ -1360,10 +1360,10 @@ It enables precise tracking and learning of human hand motions across robotics, 
     product: `마인`,
     productEn: `MAiN`,
     description: `개인맞춤형 3D홈 생성 쇼핑플랫폼`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/마인스페이스(주).png`,
     website: ``,
     descriptionEn: `A personalized 3D creation shopping platform`,
-    video: ``
+    video: `EP-mp4/마인스페이스.mp4`
   },
   {
     id: 'EP073',
@@ -1375,10 +1375,10 @@ It enables precise tracking and learning of human hand motions across robotics, 
     product: `새솔테크 S2X™ VRU 클라이언트`,
     productEn: `SAESOL Tech S2X™ VRU Client`,
     description: `‘S2X™ VRU Client’는 보행자 등 사고에 취약한 도로 이용자(VRU)를 위한 네트워크 기반 하이브리드 V2X 보안 플랫폼입니다. 차량, 스마트폰, 웨어러블 등 다양한 임베디드 기기에 탑재 가능하며, 익명 인증서를 안전하게 발급·관리하여 개인정보와 생명을 동시에 보호합니다. 업계 최고 수준의 서명·검증 속도로 실시간 보안성과 통신 효율을 모두 확보한 차세대 V2X 솔루션입니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/새솔테크 주식회사.png`,
     website: ``,
     descriptionEn: `S2X™ VRU Client is a network-based hybrid V2X security platform designed to protect vulnerable road users(VRU) such as pedestrians. It can be embedded into various mobility devices—including vehicles, smartphones, and wearables—and securely issues and manages pseudonym certificates to safeguard both personal data and human life. With industry-leading signing and verification speeds, it delivers real-time security and communication efficiency, making it a next-generation V2X.`,
-    video: ``
+    video: `EP-mp4/새솔테크 주식회사.mp4`
   },
   {
     id: 'EP074',
@@ -1424,7 +1424,7 @@ export const globalCompanies: Company[] = [
     product: `눈꽃빙수기계`,
     productEn: `SNOW COOK`,
     description: `눈꽃빙수기 제조업체 입니다.상고대 Snowcook은 누구나 쉽게 달콤하고 부드러운 눈을 만들 수 있는 눈꽃빙수 기계 입니다.다년간 축적된 Snowcook만의 특허기술로 최고의 눈 를 만드실 수 있습니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주) 상고대.png`,
     website: ``,
     descriptionEn: `We are a snow ice machine manufacturer. 
 Snowcook is a snow flake machine bread that anyone can easily make sweet and soft snow. 
@@ -1442,7 +1442,7 @@ with Snowcook's unique patented technology , which has been accumulated for many
     productEn: `Genpresso`,
     description: `아이디어를 이미지, 텍스트, 영상 등으로 입력하고 3D 모델을 생성하는 워크플로우를 AI 에이전트와 함께 하여 효율적으로 제작할 수 있는 플랫폼
 다양한 사용자와 함께 협업하여 작업할 수 있고, 여러 AI 모델들을 사용하여 효과적으로 디자인 작업을 할 수 있음`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/주식회사 리콘랩스.png`,
     website: ``,
     descriptionEn: `Multimodal data (text, images, videos, etc.) is used to create the 3D model that the user wants
 
@@ -1551,7 +1551,7 @@ Gwanak Sensor On-Device AI Platform Kit is a go-to sensor platform specifically 
     product: `수중드론 가르다`,
     productEn: `CILAB GARDA M2`,
     description: `해양 작업, 산업 현장, 인명 구조 등에서 수중 통신을 지원하며, 기존 ROV들이 갖는 통신 거리의 제한, 조종의 불편함, 잠수사 안전 문제를 해결합니다. 또한, 스마트 전력 제어 기술을 적용해 효율적인 운용이 가능합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/주식회사 씨랩.png`,
     website: ``,
     descriptionEn: `Real-time water ↔ Wire/wireless autonomous underwater drone that provides underwater communications for maritime, industrial and rescue operations, addressing the range, maneuverability and diver safety limits of ROVs through smart power control.`,
     video: ``
@@ -1566,7 +1566,7 @@ Gwanak Sensor On-Device AI Platform Kit is a go-to sensor platform specifically 
     product: `기가바이트2 Wire 익스텐더 (Wi-Fi/블루투스 액세스 포인트)`,
     productEn: `Gigabit 2Wire Extender over Wi-Fi/Bluetooth Access Point product.`,
     description: `C4L2000G-WB6E-2E는 구리선 기반 IP 이더넷을 Wi-Fi와 블루투스로 손쉽게 확장할 수 있는 혁신적인 솔루션으로, 건물 내 IP 설치 현장에서 유·무선을 아우르는 안정적이고 원활한 네트워크 확장을 보장합니다`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/씨포라인 주식회사.png`,
     website: ``,
     descriptionEn: `C4L2000G-WB6E-2E is the IP Ethernet over Copper to Wi-Fi / Bluetooth extender products.
 It is the unique solution for the Wired & Wireless IP connectivity system. 
@@ -1786,7 +1786,7 @@ Structured databases, visual data, and live sensor streams—N-Intellifex harnes
     product: `레이판 드론`,
     productEn: `Raypann Drone`,
     description: `레이판 드론은 기반 재난인지 Edge-AI 시스템으로 EO/IR·음향 센서 융합, 초고속 경량화 AI 추론, 클라우드 연동 관제를 통해 재난·산업안전 현장의 실시간 위험 탐지 및 예측을 지원함.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/스피랩.png`,
     website: ``,
     descriptionEn: `The Raypann Drone is an edge-AI system for disaster recognition that supports real-time hazard detection and prediction at disaster and industrial safety sites through EO/IR and acoustic sensor fusion, ultra-high-speed lightweight AI inference, and cloud-linked control.`,
     video: ``
@@ -1835,7 +1835,7 @@ Eco-friendly water drones represent a significant leap forward in maritime techn
 이를 통해 다양한 정보를 통합 관리함으로써 운전 안전성과 시설 진단의 효율성을 높이고, 국제 규격 및 국내 규정(IECEx, KCs 등) 에 부합하는 폭발안전 관리가 가능합니다.
 특히, FOEx Suite는 SaaS(Software-as-a-Service) 기반의 지능형 플랫폼으로서, 국제 방폭 표준인 IECEx 및 국내 KCs 방폭 인증의 검사 기준을 충족하며, 사용자의 플랜트 데이터베이스와 자산 관리 시스템을 함께 제공합니다.
 FOEx Suite는 시설의 데이터를 분석하여 이력을 평가하고, 이를 통해 위험도를 분석하고 안전한 시설운영이 될 수 있도록 지원합니다. 특히, 포엑스의 IoT 시스템과 연계하여 중요한 장비의 실시간 모니터링과 진단을 수행하며, AI 기반의 고장분석을 통해 보다 빠르고 정확한 진단 결과를 제공합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/포엑스(주).png`,
     website: ``,
     descriptionEn: `The FOEx Suite platform provides web-based safety diagnosis, management and real-time status diagnosis solutions for a number of information to manage operational safety, facility diagnosis and compliance with domestic and international standards and regulations in explosion-prone areas such as LNG, hydrogen and ammonia ships.
 Particularly, it is a SaaS(software-as-a-service) based smart platform that meets the inspection standards required by IECEx, an international explosion-proof standard, and KCs explosion-proof certification, and has a user's plant database and asset management system.
@@ -1857,7 +1857,7 @@ The FOEx Suite analyzes facility data to evaluate historical performance and ass
 * 특징 - 화재현장 부저알림음, 고휘도 LED 
    : 현장의 소음을 마이크로 수음하여, 현장의 소음 데시벨 및 주파수를  회피한 부저음 을 방사하고. 
      고휘도의 밝은 LED 를 송출하여.장애인.노령층 등의 안전확보 시스템 제공.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)이에스피.png`,
     website: ``,
     descriptionEn: `This system detects dangerous situations by using data from temperature sensors, gas sensors, and existing building fire management systems to send alerts on hazardous areas and fire conditions to a user's mobile phone.
 The installed devices use this data to designate dangerous and safe zones that are mapped as blocks in the fire area. This allows evacuees to actively receive guidance to a safe escape route through high-illumination LED and a buzzer sound that avoids frequency of surrounding noise at the fire scene.
@@ -1979,7 +1979,7 @@ Accessible via any smartphone browser, the app includes large buttons, voice nav
     product: `헬스케어 양변기`,
     productEn: `Healthcare(Diagnosis) toilet`,
     description: `100% 국내기술력을 바탕으로 개발되는 제품으로서, 변좌에서 맥박 측정 및 스마트폰 웹 연동으로, 사용자의 건강상태를 실시간으로 진단하는 제품임. (2025년 12월 개발완료 예정)`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)에이스라이프.png`,
     website: ``,
     descriptionEn: `Based 100% Korean-driven technology, one toilet which can check humane impulse after seated, operating via smart phone applications, can diagnose the  user health condition on real time basis.`,
     video: ``
@@ -2030,7 +2030,7 @@ PaDO is positioned as a smart city solution for water management and an ESG-driv
     product: `AIoT기반 안전관리 시스템`,
     productEn: `AIoT safety management system`,
     description: `당사의 AIoT 안전 시스템은 다중센서 복합신호 처리를 통해 산업 현장 근로자에게 끊김 없는 통합 보호를 제공합니다. 초경량 웨어러블은 뇌파(EEG), 심박수, 피부 온도, 낙상 감지를 위한 움직임 등 핵심 생체 신호를 수집하며, 내장 엣지 AI가 이를 실시간으로 융합·분석합니다. 비정상적인 생리 패턴이나 사고 위험이 감지되면 시스템은 즉시 안전관리자에게 알림을 보내고 근로자 스마트폰에 푸시 메시지를 전송합니다. 선택형 클립온 모듈은 주변 온도, 습도, 산소 농도, 유해 가스 농도를 감지해 주변 환경을 모니터링합니다. 모든 데이터는 암호화되어 저전력 무선으로 클라우드 대시보드에 전송되며, 대시보드는 이벤트를 우선순위화하고 위치를 정확히 표시하며 대응 조치를 권고해 신속한 개입과 부상 감소, 규정 준수를 돕습니다. 오픈 API를 통해 외부 시스템과 손쉽게 연동할 수 있어 보호 범위를 손쉽게 확장할 수 있습니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/주식회사 에이치에이치에스.png`,
     website: ``,
     descriptionEn: `Our AIoT safety system delivers seamless, integrated protection for industrial workers through multi-sensor composite signal processing. A lightweight wearable collects key biosignals—EEG, heart rate, skin temperature, and motion for fall detection—while embedded edge AI fuses them in real time. When abnormal physiological patterns or accident risks are detected, the system instantly alerts safety managers and sends a push notification to the worker’s smartphone. Optional clip-on modules sense ambient temperature, humidity, oxygen concentration, and hazardous-gas levels to monitor the surrounding environment. All readings are encrypted and transmitted via low-power wireless to a cloud dashboard that prioritizes events, pinpoints locations, and recommends actions, enabling rapid intervention, fewer injuries, and stronger compliance. An open API makes integration with external systems effortless, allowing protection to scale across sites.`,
     video: ``
@@ -2055,7 +2055,7 @@ PaDO is positioned as a smart city solution for water management and an ESG-driv
 4. 맞춤형 난청 보조: 경도~중고도 난청을 지원하는 7가지 보청 모드 탑재
 
 현재 지니소리 시리즈는 전국 500여 개 공공기관·병원에서 상담과 소통 지원에 활용되고 있으며, 지니소리3는 이를 업그레이드한 프리미엄 청력 지원 솔루션입니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/유위컴 주식회사.png`,
     website: ``,
     descriptionEn: `GENIESORI3 is a next-generation hearing assistive device developed by UWICOM CO., LTD., a startup specializing in smart hearing-assistive solutions. It applies the company’s patented technology that combines a wireless transmitter with hearing aid functionality.
 
@@ -2080,7 +2080,7 @@ The GENIESORI series is already being used in over 500 public institutions and h
     product: `테드림`,
     productEn: `Tedream`,
     description: `Tedream은 EEG, ECG, EMG, SpO₂, 심박수, 호흡률, 코골이, 자세 추적까지 포함해 실제 수면다원검사를 그대로 구현하는 무선 소프트 패치 시스템입니다. 젤이나 전극이 필요 없는 부드러운 웨어러블 구조로 설계되어 밤새 착용해도 편안하며, 이마나 가슴에 간단히 부착해 기존 수면무호흡증 검사실 테스트를 대체할 수 있습니다. 손목 기반 트래커와 달리 직접적인 생체 신호를 의료 등급의 정확도로 수집하며, 데이터를 스마트폰으로 무선 전송해 실시간 시각화 및 클라우드 기반 분석이 가능합니다. 또한 Qi 무선 충전과 재사용 기능을 지원해 여러 밤에 걸친 검사에도 비용 효율적으로 사용할 수 있습니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주) 위스메디컬.png`,
     website: ``,
     descriptionEn: `Tedream is a wireless, soft patch system that replicates a full sleep lab study including EEG, ECG, EMG, SpO₂, heart rate, respiration rate, snoring, and posture tracking in a gel-free soft wearable system. Designed for overnight comfort, Tedream replaces in-lab sleep apnea testing with an adhesive-free solution that adheres to the forehead or chest. Unlike wrist-based trackers, it collects direct biosignals with medical-grade fidelity. The system wirelessly transmits data to a smartphone for real-time visualization and cloud-based analysis. Qi wireless charging and reusability make it cost-effective for multi-night use.`,
     video: ``
@@ -2095,7 +2095,7 @@ The GENIESORI series is already being used in over 500 public institutions and h
     product: `앵글러 알파`,
     productEn: `Angler Alpha`,
     description: `통화등이 가능한 스마트 헮세`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/아날로그플러스.png`,
     website: ``,
     descriptionEn: `Smart Helmet for riding with communications`,
     video: ``
@@ -2133,7 +2133,7 @@ With its recent IECEx international explosion-proof certification, Harvenergy™
     product: `블랙캔3`,
     productEn: `BLACKCAN3`,
     description: `아웃도어용 자체발전 온수버너 및 온수매트, 화이트 가솔린을 연료로 자체발전을 함. 자체발전 전기로 온수순환펌프, 연료탱크 압력 유지, USB-A port를 활용한 핸드폰 충전이나 조명 사용 가능`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)유로.png`,
     website: ``,
     descriptionEn: `Outdoor smart boiler & water warming pad. It using white gasoline fuel. With its self-power generation can operate hot water circulation pump, maintain tank pressure, and even use a USB-A port.`,
     video: ``
@@ -2192,7 +2192,7 @@ By integrating worker monitoring, communication, and emergency support, SACR-Gua
     description: `1. Safe-T3는 운전자 안전과 친환경 운행을 동시에 실현하는 AI 기반 차량관제 플랫폼입니다. 실시간 위치 추적, 경로 재생, 공회전 및 충격 감지 등의 기본 기능을 제공합니다.
 2.  특히 운전대에 내장된 생체신호 센서를 통해 심박수와 스트레스 지수를 수집하고, AI가 이를 분석해 졸음, 저혈당, 미주신경성 실신 등의 징후를 조기에 감지함으로써 사고를 사전에 예방합니다.`,
     website: `https://www.innobase1.com/`,
-    logo: `참가업체 로고 파일/EP_png/이노베이스로고.png`,
+    logo: `참가업체 로고 파일/GP_png/(주)이노베이스.png`,
     descriptionEn: `1. Safe-T3 is an AI-powered fleet platform that promotes driver safety and eco-friendly driving. It features real-time tracking, route playback, and monitoring of idling and impact.
 2. Biometric sensors embedded in the steering wheel collect heart rate and stress levels. The AI analyzes this data to detect early signs of drowsiness, hypoglycemia, or vasovagal syncope, helping prevent accidents.`,
     video: ``
@@ -2210,7 +2210,7 @@ By integrating worker monitoring, communication, and emergency support, SACR-Gua
 넘어지거나 무너져 신발 각도가 일정 수준 이상 기울어지면 사용자의 위치와 APP가 보호자에게 전송됩니다.
 치매 환자 배회, 납치 및 유괴, 아동 실종 등의 사고 예방에 매우 유용합니다.
 일정 시간(24시간) 동안 신발을 착용하지 않으면 보호자에게 알림을 전송합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/주식회사 슈올즈.png`,
     website: ``,
     descriptionEn: `Power is generated by utilizing the pressure created when the user walks wearing the shoes installed with a self-generating midsole, and the restoring force from that pressure.
 If the shoe angle tilts to a certain extent due to falling over or collapsing, the user’s location is sent to the guardian along with a APP
@@ -2275,7 +2275,7 @@ Mand.ro Mark 7X addresses this by integrating two degrees of wrist motion—cock
     productEn: `Surface Pro Solution`,
     description: `표면 처리 전문 솔루션, 'Surface Pro 솔루션'은 로봇 팔 끝에 장착되어 디버링, 샌딩, 폴리싱 등 표면 마감 공정을 자동화하는 EOAT 솔루션입니다.
 능동형 컴플라이언스 구조와 6축 힘/토크 센서를 기반으로 정밀 제어 기능을 통합하여, 작업자의 경험과 숙련도에 의존하던 반복 작업을 정량적이고 일관된 높은 품질로 자동화할 수 있습니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/이노베이스로고.png`,
     website: ``,
     descriptionEn: `The Surface Pro Solution is an EOAT (End-of-Arm Tooling) system mounted on a robot arm to automate surface finishing processes such as deburring, sanding, and polishing.
 By integrating an active compliance mechanism with a six-axis force/torque sensor, it provides precise control functions that transform repetitive tasks—once dependent on operator experience and skill—into quantifiable, consistent, and high-quality automated processes.`,
@@ -2366,7 +2366,7 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     product: `영상감시장치(AI VMS)`,
     productEn: `CCTV VIDEO SURVEILLANCE SYSTEM(AI VM0S)`,
     description: `기존 VMS(Video Management System)에 AI기능을 추가된 AI VMS`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)다누시스.png`,
     website: ``,
     descriptionEn: `AI VMS with AI added to existing VMS`,
     video: ``
@@ -2462,7 +2462,7 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     product: `플루오캣`,
     productEn: `Fluo-Cat`,
     description: `Fluo-Cat은 반도체 및 태양광 제조 공정에서 많이 배출되는 고온난화지수(GWP)가 높은 불소계 온실가스(F-gases) — CF₄, NF₃, SF₆, N₂O — 를 분해하기 위해 설계된 차세대 촉매입니다. 650–750 °C의 온도에서 작동하며, NOₓ 부산물을 생성하지 않으면서 98% 이상의 분해 및 제거 효율(DRE)을 달성합니다. 기존의 플라즈마 시스템과 달리, Fluo-Cat은 에너지 소비를 최대 70%까지 줄여 지속 가능하고 비용 효율적인 대안을 제공합니다. 내구성이 뛰어난 구조로 설계되어, 혹독한 산업 환경에서도 6개월 이상 안정적인 성능을 유지합니다. 국소 배기(point-of-use) 시스템과 중앙 집약식 처리 시스템 모두에 적용 가능하여, 첨단 전자, 반도체 칩, 디스플레이 제조업체들이 엄격한 탄소 배출 규제를 준수하면서도 운영 비용을 절감할 수 있도록 지원합니다. 소비자 전자 산업이 친환경 생산으로 나아가는 흐름 속에서, Fluo-Cat은 차세대 제조 생태계 전반에 걸친 환경 친화적 혁신을 가능하게 하는 핵심 솔루션입니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)퀀텀캣.png`,
     website: ``,
     descriptionEn: `Fluo-Cat is a next-generation catalyst designed to decompose high-GWP fluorinated greenhouse gases (F-gases) such as CF₄, NF₃, SF₆, and N₂O, widely emitted during semiconductor and photovoltaic manufacturing. Operating at 650–750 °C, it achieves over 98% destruction and removal efficiency (DRE) without generating NOₓ byproducts. Unlike conventional plasma systems, Fluo-Cat reduces energy consumption by up to 70%, offering a sustainable and cost-effective alternative. Its durable structure ensures stable performance for over six months under demanding industrial conditions. Compatible with both point-of-use and centralized abatement systems, Fluo-Cat helps manufacturers of advanced electronics, chips, and display technologies meet stringent carbon emission regulations while lowering operational costs. As the consumer electronics industry moves toward greener production, Fluo-Cat plays a vital role in enabling environmentally responsible innovation across next-generation manufacturing ecosystems.`,
     video: ``
@@ -2524,7 +2524,7 @@ It operates reliably under extreme conditions—including high vacuum (1mTorr), 
     product: `AI Mycosis Prime`,
     productEn: `AI Mycosis Prime`,
     description: `AI 기반 손톱,발톱 레이저 조사기 : 405nm, 635nm 레이저를 활용한 의료기기`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)메디셀헬스케어.png`,
     website: ``,
     descriptionEn: `AI Based Nail Fungus Treatment Laser Medical device : 405nm, 635nm lasers are available`,
     video: ``
@@ -2579,7 +2579,7 @@ With patented semiconductor heat-dissipation technology, it ensures stable wavel
 또한 시선 추적을 통해 실제 광고 주목도를 측정함으로써 신뢰성 높은 성과 데이터를 제공합니다. 이를 바탕으로 광고주는 캠페인을 최적화하고, 콘텐츠를 재설계하며, 광고 전략을 실제 데이터 기반으로 개선할 수 있습니다.
 
 정적인 옥외광고를 적응형·데이터 기반 플랫폼으로 전환함으로써, 오프라인 미디어를 디지털 광고의 정밀성과 연결합니다. 실시간 분석과 동적 송출을 통해 광고 효과를 극대화하고, 관람객과의 적합성을 높이며, 전 세계적으로 새로운 수익 기회를 창출합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/주식회사 애드.png`,
     website: ``,
     descriptionEn: `Outdoor advertising is entering a new era of precision and measurability. Traditionally, campaigns relied on random exposure with limited targeting capabilities. Our solution 'addd-i' transforms this paradigm by leveraging advanced camera and video analytics to evaluate audiences directly in front of digital signage.
 
@@ -2600,7 +2600,7 @@ By converting static signage into adaptive, data-driven platforms, our solution 
     product: `그루밍 로봇`,
     productEn: `CHIRO-GR Underwater Hull Grooming robot system`,
     description: `도막 손상 없이 선체를 청소하는 그루밍 로봇`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/(주)에스엘엠.png`,
     website: ``,
     descriptionEn: `CHIRO Grooming is a underwater hull cleaning robot to perform ‘Proactive hull cleaning’. Designed for operating at berthing or anchoring, it targets cleaning of early-stage biofouling (under FR30) without damaging the valuable protective and anti-fouling coatings.
 Adhering to and running on the underwater part of hull by three magnetized wheels, the robot ensures precise movement and cleaning which is user-friendly and efficient. The robot can clean frequently without divers among whom we lose more than 10 lives each year during hull cleanings.
@@ -2641,7 +2641,7 @@ This eco-friendly and business-friendly solution eliminates the risks and uncert
 - AI를 활용하여, 연출하고 싶은 분위기를 이미지, 사운드, 보이스로 입력했을 때
 이에 적합한 향기 배합을 자동으로 설정해 공간 경험의 질을 향상시킵니다.`,
     website: `https://www.deepscent.io/en`,
-    logo: `참가업체 로고 파일/EP_png/딥센트 로고.png`,
+    logo: `참가업체 로고 파일/GP_png/딥센트 로고.png`,
     descriptionEn: `Deepscent Lounge AI-Multisensory (working title) is an IoT-based personalized digital fragrance solution.
 
 - It consists of fragrance capsules, diffusion hardware, control software, and a user interface (mobile app).

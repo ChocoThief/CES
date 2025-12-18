@@ -61,20 +61,20 @@ const prRoutes = [
 ]
 
 // VIP 라우트
-// const vipRoutes = [
-//   {
-//     path: '/vip',
-//     component: Vip,
-//   },
-//   {
-//     path: '/vip/pitching-schedule',
-//     component: PitchingSchedule,
-//   },
-//   {
-//     path: '/vip/docent-booking',
-//     component: DocentBooking,
-//   },
-// ]
+const vipRoutes = [
+  {
+    path: '/vip',
+    component: Vip,
+  },
+  {
+    path: '/vip/pitching-schedule',
+    component: PitchingSchedule,
+  },
+  {
+    path: '/vip/docent-booking',
+    component: DocentBooking,
+  },
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -88,6 +88,7 @@ const router = createRouter({
       component: Index,
     },
     ...prRoutes,
+    ...vipRoutes,
   ],
 })
 

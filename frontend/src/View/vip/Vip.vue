@@ -58,10 +58,10 @@
                             ※ The number of participants may be limited depending on the day.
                         </div>
                         <button
-                            disabled
-                            class="program-btn btn-primary btn-disabled"
+                            @click="goToDocentBooking"
+                            class="program-btn btn-primary"
                         >
-                            신청 마감 (Registration Closed)
+                            도슨트 투어 신청하기 (Apply for the Tour)
                         </button>
                     </div>
                 </div>
@@ -273,15 +273,5 @@ const goToPitchingSchedule = () => {
 
 .btn-secondary:hover {
     background: linear-gradient(135deg, #1a242f 0%, #0f161d 100%);
-}
-
-.btn-disabled {
-    background: #9ca3af !important;
-    cursor: not-allowed !important;
-    opacity: 0.6;
-}
-
-.btn-disabled:hover {
-    background: #9ca3af !important;
 }
 </style>

@@ -101,7 +101,20 @@ const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.p
 const getCompanyLogo = (logoPath) => {
     if (logoPath) {
         const path = `/src/assets/${logoPath}`;
-        const module = logoModules[path];
+
+        // 먼저 정확한 경로로 시도
+        let module = logoModules[path];
+
+        // 못 찾으면 유사한 키 찾기
+        if (!module) {
+            const matchingKey = Object.keys(logoModules).find(key =>
+                key.includes(logoPath.split('/').pop().replace('.png', ''))
+            );
+            if (matchingKey) {
+                module = logoModules[matchingKey];
+            }
+        }
+
         if (module) return module.default;
     }
     return defaultLogo;

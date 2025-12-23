@@ -166,7 +166,7 @@ Pharmpick은 AI 기반 개인 맞춤형 디지털 헬스케어 플랫폼으로, 
 4. 비전
 단순히 건강기능식품 선택을 돕는 것을 넘어, 예방 중심 디지털 헬스케어 플랫폼으로 진화하여 글로벌 시장(특히 의료비가 높은 미국)에서 건강관리 토탈 앱 서비스로 자리 잡는 것.`,
     website: `https://gorocketcompany.super.site`,
-    logo: `참가업체 로고 파일/EP_png/고로켓컴퍼니 로고(백색).png`,
+    logo: `참가업체 로고 파일/EP_png/고로켓컴퍼니 로고.png`,
     descriptionEn: `1. Definition
 Pharmpick is an AI-powered personalized digital healthcare platform that helps users easily and safely choose and manage dietary supplements.
 
@@ -325,7 +325,7 @@ The ACAT platform integrates the analysis of vehicle driving data, sensor data, 
     product: `캄스텐드`,
     productEn: `Calm Stand`,
     description: `CalmStand는 AIoT 기반 테라피형 모니터 받침대로, 표정·음성·입력 데이터를 분석해 사운드·아로마 테라피를 자동 제공한다. 사무환경 변경 없이 설치 가능하며 집중력과 정서 회복을 돕는 비침습형 웰니스 솔루션으로, ESG 기반 스마트 오피스 시장을 목표로 한다.`,
-    logo: `참가업체 로고 파일/EP_png/주식회사 케이엘에스.png`,
+    logo: `참가업체 로고 파일/EP_png/케이엘에스 로고.png`,
     website: ``,
     descriptionEn: `CalmStand is an AIoT-based monitor stand that analyzes facial, voice, and input data to deliver automatic sound and aroma therapy. It’s a non-invasive wellness solution enhancing focus and well-being for ESG smart office markets.`,
     video: `EP-mp4/주식회사 케이엘에스.mp4`
@@ -534,10 +534,10 @@ We have a patent that can solve the problem of finger size common to ring device
     category: `Smart Cities/Smart Home`,
     product: ``,
     productEn: ``,
-    description: ``,
+    description: `비전 AI가 신발의 상태를 분석해 최적의 살균, 건조, 탈취 수행하는 슈케어`,
     logo: `참가업체 로고 파일/EP_png/에어렛.png`,
     website: ``,
-    descriptionEn: ``,
+    descriptionEn: `AI vision analyzes shoe condition to deliver optimal sterilization, drying, and deodorization.`,
     video: `EP-mp4/에어렛.mp4`
   },
   {
@@ -719,7 +719,7 @@ While AI has already transformed the world of software development, Manyfast is 
     productEn: `MaiT The A DDH`,
     description: `AI 기반 영유아 고관절 이형성증 초음파 영상 자동 진단 보조 의료 소프트웨어`,
     website: `https://maithealth.com/`,
-    logo: `참가업체 로고 파일/EP_png/62501-67.png`,
+    logo: `참가업체 로고 파일/EP_png/엠아이아이티 로고.png`,
     descriptionEn: `AI-powered medical software for automated ultrasound image analysis and diagnostic assistance for developmental dysplasia of the hip (DDH) in infants`,
     video: `EP-mp4/62501-67.mp4`
   },
@@ -775,7 +775,7 @@ While AI has already transformed the world of software development, Manyfast is 
     product: `내 손안의 디지털 배지, 써티`,
     productEn: `Certi: Your Verifiable Career Passport`,
     description: `써티는 이력서 위조 문제를 해결하는 '검증 가능한 커리어 여권'입니다. 흩어진 자격 증명을 통합하고, 블록체인 및 영지식 증명을 사용하여 검증하며, AI를 통해 사용자가 자신의 진정한 강점을 발견하도록 돕습니다. 이는 전문가 세계의 새로운 신뢰 표준입니다.`,
-    logo: `참가업체 로고 파일/EP_png/주식회사 엔에프타임.png`,
+    logo: `참가업체 로고 파일/EP_png/엔에프타임 로고.png`,
     website: ``,
     descriptionEn: `Certi is a 'Verifiable Career Passport' that solves resume fraud. It unifies scattered credentials, verifies them using blockchain & ZKP, and uses AI to help users discover their true strengths. It's the new standard for trust in the professional world.`,
     video: `EP-mp4/주식회사 엔에프타임.mp4`
@@ -883,20 +883,6 @@ A confirmatory clinical trial is presently in progress, with regulatory approval
     logo: `참가업체 로고 파일/EP_png/프롬랩스 로고.png`,
     descriptionEn: `Promptly is an AI prompt translation and optimization platform that converts natural-language inputs into structured, model-ready prompts for text, image, and video generation — enabling anyone to achieve expert-level AI results effortlessly.`,
     video: ``
-  },
-  {
-    id: 'EP047',
-    hall: 'eureka',
-    boothNumber: '62901-03',
-    name: `다본다 주식회사`,
-    nameEn: `DABONDA. CO. LTD`,
-    category: `Vehicle Tech & Advanced Mobility`,
-    product: `다본다 울트라 Ultra5.0  AI 11WAY 블랙박스`,
-    productEn: `Dabonda Ultra5.0 Ai 11way Dash Cam`,
-    description: `차량용차량용 운행기록 장치 블랙박스 AI 특허, 360도 5채널 올어라운드뷰`,
-    logo: `참가업체 로고 파일/EP_png/다본다 로고.png`,
-    descriptionEn: `Dash Cam AI patent for vehicle driving recorder, 360 degree 5 channel all-around view`,
-    video: `EP-mp4/다본다/다본다 홍보영상.mp4`
   },
   {
     id: 'EP048',
@@ -1106,8 +1092,8 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     category: `AI`,
     product: `리옵스 야드트윈™`,
     productEn: `LiOps YardTwin™`,
-    description: `리옵스 야드트윈™은 현장 실적 보고와 다중 로봇 제어를 하나의 엣지 플랫폼에서 통합한 ‘공간지능 트윈’입니다. LiDAR/RGB 스캔을 실시간 현장 모델로 만들고, 올바른 설계 블록을 자동 식별한 뒤, 진척률·허용오차·증빙 스냅샷을 MES/ERP에 즉시 올려 지연·불일치를 없앱니다. 시각화에서 멈추지 않고, ROS 2/REST로 보정된 6DoF 포즈·작업 경로를 내보내 용접 셀·모바일 매니퓰레이터·자율 지게차가 동일 작업지시를 온라인 보정으로 수행합니다. 그 결과, 티칭은 줄고 운영자는 더 많은 셀을 감독하며, 관리자는 분 단위 신뢰 지표로 재작업·일정 리스크를 낮춥니다. 보급형 센서·Jetson 엣지에서 동작하고 서버로 확장되며, 기존 스택에 쉽게 통합됩니다.`,
-    logo: `참가업체 로고 파일/EP_png/리옵스.png`,
+    description: `리옵스 야드트윈™은 현장 실적 보고와 다중 로봇 제어를 하나의 엣지 플랫폼에서 통합한 '공간지능 트윈'입니다. LiDAR/RGB 스캔을 실시간 현장 모델로 만들고, 올바른 설계 블록을 자동 식별한 뒤, 진척률·허용오차·증빙 스냅샷을 MES/ERP에 즉시 올려 지연·불일치를 없앱니다. 시각화에서 멈추지 않고, ROS 2/REST로 보정된 6DoF 포즈·작업 경로를 내보내 용접 셀·모바일 매니퓰레이터·자율 지게차가 동일 작업지시를 온라인 보정으로 수행합니다. 그 결과, 티칭은 줄고 운영자는 더 많은 셀을 감독하며, 관리자는 분 단위 신뢰 지표로 재작업·일정 리스크를 낮춥니다. 보급형 센서·Jetson 엣지에서 동작하고 서버로 확장되며, 기존 스택에 쉽게 통합됩니다.`,
+    logo: `참가업체 로고 파일/EP_png/리옵스 로고.png`,
     website: ``,
     descriptionEn: `LiOps YardTwin™ is the first spatial-intelligence twin that unifies evidence-backed progress reporting and multi-robot execution on one edge platform for heavy industry. It turns LiDAR/RGB scans into a live site model, auto-identifies the correct design block, and posts objective progress %, tolerances, and photo evidence directly to MES/ERP—ending late, inconsistent hand entry. Where current “digital twins” or scan-to-BIM tools focus on visualization and as-built checks, YardTwin closes the loop: it also publishes corrected 6-DoF poses and task waypoints over ROS 2/REST so weld cells, mobile manipulators, and autonomous forklifts follow the same work orders with online correction. The result is trusted, minute-by-minute status for managers and adaptive automation for robots—less rework and schedule risk, faster ramp-ups, and clear accountability across contractors and shifts.`,
     video: ``
@@ -1343,7 +1329,7 @@ The AI-powered Autonomous Energy Management System (AEMS) continuously monitors 
     description: `로봇 손의 원격 조작 및 학습을 위한 고정밀 핸드 트래킹 글러브입니다.
 작년 CES 2025에서 혁신상을 수상한 Motiglove 1의 기술을 기반으로, 새로운 센서를 추가해 트래킹 정확도와 안정성을 한층 더 향상시켰습니다.
 Motiglove 2는 로보틱스, 휴머노이드, 텔레오퍼레이션 등 다양한 분야에서 인간의 손 움직임을 정밀하게 트래킹하고 학습할 수 있도록 지원합니다.`,
-    logo: `참가업체 로고 파일/EP_png/주식회사 퀘스터.png`,
+    logo: `참가업체 로고 파일/EP_png/퀘스터 로고.png`,
     website: ``,
     descriptionEn: `A high-precision hand-tracking glove designed for robotic teleoperation and learning.
 Based on the award-winning technology of Motiglove 1, which received the CES 2025 Innovation Award, the new Motiglove 2 integrates additional sensors to further enhance tracking accuracy and robustness.
@@ -1375,7 +1361,7 @@ It enables precise tracking and learning of human hand motions across robotics, 
     product: `새솔테크 S2X™ VRU 클라이언트`,
     productEn: `SAESOL Tech S2X™ VRU Client`,
     description: `‘S2X™ VRU Client’는 보행자 등 사고에 취약한 도로 이용자(VRU)를 위한 네트워크 기반 하이브리드 V2X 보안 플랫폼입니다. 차량, 스마트폰, 웨어러블 등 다양한 임베디드 기기에 탑재 가능하며, 익명 인증서를 안전하게 발급·관리하여 개인정보와 생명을 동시에 보호합니다. 업계 최고 수준의 서명·검증 속도로 실시간 보안성과 통신 효율을 모두 확보한 차세대 V2X 솔루션입니다.`,
-    logo: `참가업체 로고 파일/EP_png/새솔테크 주식회사.png`,
+    logo: `참가업체 로고 파일/EP_png/새솔테크 로고.png`,
     website: ``,
     descriptionEn: `S2X™ VRU Client is a network-based hybrid V2X security platform designed to protect vulnerable road users(VRU) such as pedestrians. It can be embedded into various mobility devices—including vehicles, smartphones, and wearables—and securely issues and manages pseudonym certificates to safeguard both personal data and human life. With industry-leading signing and verification speeds, it delivers real-time security and communication efficiency, making it a next-generation V2X.`,
     video: `EP-mp4/새솔테크 주식회사.mp4`
@@ -1609,7 +1595,7 @@ It covers the Wired & Wireless coverage for the seamless & fluent IP Extension i
  2) 스마트 에너지 관리 앱– 실시간 배터리 상태 및 진단 기능 제공
  3) 친환경 설계– 재활용 소재 적용으로 ESG 목표 달성 기여`,
     website: `http://www.anypower.co.kr`,
-    logo: `참가업체 로고 파일/GP_png/50523-11.png`,
+    logo: `참가업체 로고 파일/GP_png/오빌 로고.png`,
     descriptionEn: `AnyPower – The Next-Generation Industrial & Outdoor Power Bank
 Product Overview
  AnyPower is a premium multi-purpose power solutionthat redefines the way professionals, outdoor   enthusiasts, and emergency responders access portable energy. Unlike conventional power banks, AnyPower is 40% lighter, highly compatible with power tools,     
@@ -1786,7 +1772,7 @@ Structured databases, visual data, and live sensor streams—N-Intellifex harnes
     product: `레이판 드론`,
     productEn: `Raypann Drone`,
     description: `레이판 드론은 기반 재난인지 Edge-AI 시스템으로 EO/IR·음향 센서 융합, 초고속 경량화 AI 추론, 클라우드 연동 관제를 통해 재난·산업안전 현장의 실시간 위험 탐지 및 예측을 지원함.`,
-    logo: `참가업체 로고 파일/GP_png/스피랩.png`,
+    logo: `참가업체 로고 파일/GP_png/스피랩 로고.png`,
     website: ``,
     descriptionEn: `The Raypann Drone is an edge-AI system for disaster recognition that supports real-time hazard detection and prediction at disaster and industrial safety sites through EO/IR and acoustic sensor fusion, ultra-high-speed lightweight AI inference, and cloud-linked control.`,
     video: ``
@@ -1857,7 +1843,7 @@ The FOEx Suite analyzes facility data to evaluate historical performance and ass
 * 특징 - 화재현장 부저알림음, 고휘도 LED 
    : 현장의 소음을 마이크로 수음하여, 현장의 소음 데시벨 및 주파수를  회피한 부저음 을 방사하고. 
      고휘도의 밝은 LED 를 송출하여.장애인.노령층 등의 안전확보 시스템 제공.`,
-    logo: `참가업체 로고 파일/GP_png/(주)이에스피.png`,
+    logo: `참가업체 로고 파일/GP_png/이에스피 로고.png`,
     website: ``,
     descriptionEn: `This system detects dangerous situations by using data from temperature sensors, gas sensors, and existing building fire management systems to send alerts on hazardous areas and fire conditions to a user's mobile phone.
 The installed devices use this data to designate dangerous and safe zones that are mapped as blocks in the fire area. This allows evacuees to actively receive guidance to a safe escape route through high-illumination LED and a buzzer sound that avoids frequency of surrounding noise at the fire scene.
@@ -2149,7 +2135,7 @@ With its recent IECEx international explosion-proof certification, Harvenergy™
     productEn: `영    문 Unicorn Wind Turbine`,
     description: `자사의 풍력 블레이드는 4방향 대칭 나선형 일체형 구조와 EPP 소재를 적용해 회전 저항을 줄이고 에너지 효율을 극대화 하였습니다. 풍속 0.5m/s 이하에서도 작동을 시작하며 회전시 소음을 40dB 이하로 감소시켜 저풍속 뿐만 아니라 높은 풍속 환경에서도 뛰어난 성능을 제공합니다. 발전기를 블레이드 하부 내측에 배치하는 설계로 외기로부터의 보호를 통한 내구성을 강화하여 다양한 사이트에 적용 가능 하도록 설계 하였습니다.`,
     website: `https://www.neosol-nrg.com/`,
-    logo: `참가업체 로고 파일/GP_png/50523-39.png`,
+    logo: `참가업체 로고 파일/GP_png/네오솔.png`,
     descriptionEn: `Our wind turbine blades incorporate a four-directional symmetrical helical integrated structure and EPP material, reducing rotational resistance and maximizing energy efficiency. They start operating in wind speeds as low as 0.5 m/s and minimize noise to under 40dB during rotation, ensuring excellent performance in both low and high wind-speed environments. The generator is positioned inside the lower part of the blade to enhance durability through external air protection, making it suitable for various installation sites.`,
     video: ``
   },
@@ -2366,7 +2352,7 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     product: `영상감시장치(AI VMS)`,
     productEn: `CCTV VIDEO SURVEILLANCE SYSTEM(AI VM0S)`,
     description: `기존 VMS(Video Management System)에 AI기능을 추가된 AI VMS`,
-    logo: `참가업체 로고 파일/GP_png/(주)다누시스.png`,
+    logo: `참가업체 로고 파일/GP_png/다누시스.png`,
     website: ``,
     descriptionEn: `AI VMS with AI added to existing VMS`,
     video: ``
@@ -2415,7 +2401,7 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     productEn: `FLEXIBOT`,
     description: `RMF(Robotics Foundation Model)과 AI Agent 기술을 결합한 차세대 모바일 매니퓰레이터입니다. 제조 현장에서 공정 간 이동·작업·정밀제어를 스스로 수행하며, 초개인화 시대의 다품종 소량생산(HMLV) 환경에서 유연성·정밀성·자율성을 동시에 구현하는 지능형 로봇 오퍼레이션 시스템을 제공합니다.`,
     website: `https://dmillions.com/`,
-    logo: `참가업체 로고 파일/GP_png/디밀리언 로고.png`,
+    logo: `참가업체 로고 파일/GP_png/디밀리언.png`,
     descriptionEn: `It is a next-generation mobile manipulator that combines RMF (Robotics Foundation Model) with AI Agent technology. In manufacturing sites, it autonomously performs inter-process transportation, operations, and precision control, providing an intelligent robotic operation system that simultaneously achieves flexibility, precision, and autonomy in the era of hyper-personalized high-mix, low-volume (HMLV) production.`,
     video: ``
   },
@@ -2423,18 +2409,17 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     id: 'GP055',
     hall: 'global',
     boothNumber: '50523-56',
-    name: `(주)모빌리티에너지`,
-    nameEn: `MOBILITYENERGY.CO.,LTD`,
-    category: `Sustainability & Energy`,
-    product: `이동형에너지저장장치(ESS)`,
-    productEn: `Mobile energy storage devices (ESS)`,
-    description: `■ESS(Energy Storage System )는생산된전력을 저장했다가 필요할때공급하는 시스템으로 전력저장장치,전력변환장치, 제반 운영 시스템
-■전력부족에 대한 대안: 에너지 산업필수요소는, ESS`,
-    website: `http://www.evoasis.co.kr`,
-    logo: `참가업체 로고 파일/EP_png/모빌리티에너시 로고.png`,
-    descriptionEn: `Energy Storage System (ESS) stores generated power and supplies it when needed. It consists of a power storage device, a power conversion device, and various operating systems.
-
- Alternative to Power Shortages: ESS, an Essential Element of the Energy Industry`,
+    name: `주식회사 사이언홀딩스`,
+    nameEn: `CYAN HOLDINGS`,
+    category: `Smart Cities/Smart Home`,
+    product: `태양광 IoT 기반 2차 사고 예방 유도 장치`,
+    productEn: `Solar IOT secondary accident prevention delineator`,
+    description: `주행 중인 차량의 속도를 감지하여 제한속도 대비 위험 상황일 경우, 경고 표지 표시를 통해 운전자에게 즉각적으로 알리는 장치입니다.
+또한 차량의 제동거리를 계산해 정지 가능 거리 이전에 전방 위험 상황을 사전에 안내함으로써, 사고 및 2차 사고를 예방합니다.`,
+    website: ``,
+    logo: ``,
+    descriptionEn: `A device that detects the speed of a vehicle in progress and alerts the driver by displaying a danger sign if it is below the speed limit.
+It also calculates the braking distance and notifies the driver of the danger ahead before the stopping distance to prevent accidents.`,
     video: ``
   },
   {
@@ -2462,7 +2447,7 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     product: `플루오캣`,
     productEn: `Fluo-Cat`,
     description: `Fluo-Cat은 반도체 및 태양광 제조 공정에서 많이 배출되는 고온난화지수(GWP)가 높은 불소계 온실가스(F-gases) — CF₄, NF₃, SF₆, N₂O — 를 분해하기 위해 설계된 차세대 촉매입니다. 650–750 °C의 온도에서 작동하며, NOₓ 부산물을 생성하지 않으면서 98% 이상의 분해 및 제거 효율(DRE)을 달성합니다. 기존의 플라즈마 시스템과 달리, Fluo-Cat은 에너지 소비를 최대 70%까지 줄여 지속 가능하고 비용 효율적인 대안을 제공합니다. 내구성이 뛰어난 구조로 설계되어, 혹독한 산업 환경에서도 6개월 이상 안정적인 성능을 유지합니다. 국소 배기(point-of-use) 시스템과 중앙 집약식 처리 시스템 모두에 적용 가능하여, 첨단 전자, 반도체 칩, 디스플레이 제조업체들이 엄격한 탄소 배출 규제를 준수하면서도 운영 비용을 절감할 수 있도록 지원합니다. 소비자 전자 산업이 친환경 생산으로 나아가는 흐름 속에서, Fluo-Cat은 차세대 제조 생태계 전반에 걸친 환경 친화적 혁신을 가능하게 하는 핵심 솔루션입니다.`,
-    logo: `참가업체 로고 파일/GP_png/(주)퀀텀캣.png`,
+    logo: `참가업체 로고 파일/GP_png/퀀텀캣 로고.png`,
     website: ``,
     descriptionEn: `Fluo-Cat is a next-generation catalyst designed to decompose high-GWP fluorinated greenhouse gases (F-gases) such as CF₄, NF₃, SF₆, and N₂O, widely emitted during semiconductor and photovoltaic manufacturing. Operating at 650–750 °C, it achieves over 98% destruction and removal efficiency (DRE) without generating NOₓ byproducts. Unlike conventional plasma systems, Fluo-Cat reduces energy consumption by up to 70%, offering a sustainable and cost-effective alternative. Its durable structure ensures stable performance for over six months under demanding industrial conditions. Compatible with both point-of-use and centralized abatement systems, Fluo-Cat helps manufacturers of advanced electronics, chips, and display technologies meet stringent carbon emission regulations while lowering operational costs. As the consumer electronics industry moves toward greener production, Fluo-Cat plays a vital role in enabling environmentally responsible innovation across next-generation manufacturing ecosystems.`,
     video: ``

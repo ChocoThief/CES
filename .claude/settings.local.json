@@ -16,7 +16,9 @@
       "mcp__shadcnVue__get_item_examples_from_registries",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "WebFetch(domain:freefrontend.com)"
+      "WebFetch(domain:freefrontend.com)",
+      "Bash(git restore:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

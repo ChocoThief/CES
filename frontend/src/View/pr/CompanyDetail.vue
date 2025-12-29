@@ -20,6 +20,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Company Info Section -->
         <section class="content-section">
             <!-- 상단 그리드: 로고 + 기본 정보 -->
@@ -106,6 +109,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { getCompanyById } from '@/data/companyData';
 import defaultLogo from '@/assets/company-logo-default.png';
+import BackButton from '@/components/BackButton.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -199,7 +203,6 @@ const goBack = () => {
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {

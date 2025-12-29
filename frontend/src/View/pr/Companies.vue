@@ -20,6 +20,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Booth Layout Link -->
         <div class="booth-layout-link-container">
             <router-link to="/pr/booth-layout" class="booth-layout-link">
@@ -31,9 +34,13 @@
         <section class="content-section">
             <!-- Eureka Park Section -->
             <div class="company-section">
-                <div class="section-header">
-                    <h2 class="section-title">Eureka Park (1F)</h2>
-                </div>
+                <button
+                    @click="goToEurekaPark"
+                    class="show-more-btn section-title-btn"
+                >
+                    ▶ Eureka Park 참가기업 더보기<br />
+                    View Eureka Park Exhibitors
+                </button>
                 <div class="companies-grid">
                     <div
                         v-for="company in eurekaPreview"
@@ -49,20 +56,17 @@
                         </div>
                     </div>
                 </div>
-                <button
-                    @click="goToEurekaPark"
-                    class="show-more-btn"
-                >
-                    ▶ Eureka Park 참가기업 더보기<br />
-                    View Eureka Park Exhibitors
-                </button>
             </div>
 
             <!-- Global Pavilion Section -->
             <div class="company-section">
-                <div class="section-header">
-                    <h2 class="section-title">Global Pavilion (2F)</h2>
-                </div>
+                <button
+                    @click="goToGlobalPavilion"
+                    class="show-more-btn section-title-btn"
+                >
+                    ▶ Global Pavilion 참가기업 더보기<br />
+                    View Global Pavilion Exhibitors
+                </button>
                 <div class="companies-grid">
                     <div
                         v-for="company in globalPreview"
@@ -78,13 +82,6 @@
                         </div>
                     </div>
                 </div>
-                <button
-                    @click="goToGlobalPavilion"
-                    class="show-more-btn"
-                >
-                    ▶ Global Pavilion 참가기업 더보기<br />
-                    View Global Pavilion Exhibitors
-                </button>
             </div>
         </section>
     </div>
@@ -94,6 +91,7 @@
 import { useRouter } from 'vue-router';
 import { eurekaCompanies, globalCompanies } from '@/data/companyData';
 import defaultLogo from '@/assets/company-logo-default.png';
+import BackButton from '@/components/BackButton.vue';
 
 // 동적 로고 import
 const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
@@ -156,7 +154,6 @@ const goToCompanyDetail = (companyId) => {
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {
@@ -349,5 +346,13 @@ const goToCompanyDetail = (companyId) => {
 .show-more-btn:hover {
     background-color: #1a242f;
     border-color: #1a242f;
+}
+
+/* Section Title Button (버튼이 제목 자리에 위치) */
+.section-title-btn {
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 50px;
+    font-size: 18px;
 }
 </style>

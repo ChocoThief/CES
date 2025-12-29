@@ -20,6 +20,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Content Section -->
         <section class="content-section">
             <h2 class="section-title" :class="{ 'fade-out': selectedOption }">부스 선택 (Booth Selection)</h2>
@@ -52,6 +55,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import BackButton from '@/components/BackButton.vue';
 
 const router = useRouter();
 const selectedOption = ref(null);
@@ -85,7 +89,6 @@ const selectOption = (option) => {
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {

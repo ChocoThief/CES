@@ -25,6 +25,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Companies Preview -->
         <section class="section-preview companies-section">
             <h2 class="section-title">Exhibitors</h2>
@@ -88,6 +91,7 @@
 import { useRouter } from 'vue-router';
 import { allCompanies } from '@/data/companyData';
 import defaultLogo from '@/assets/company-logo-default.png';
+import BackButton from '@/components/BackButton.vue';
 
 // 동적 로고 import
 const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
@@ -137,7 +141,6 @@ const goToCompanyDetail = (companyId) => {
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {

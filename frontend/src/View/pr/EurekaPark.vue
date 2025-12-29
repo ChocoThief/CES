@@ -21,6 +21,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Search Section -->
         <section class="search-section">
             <div class="search-wrapper">
@@ -67,6 +70,7 @@ import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { eurekaCompanies } from '@/data/companyData';
 import defaultLogo from '@/assets/company-logo-default.png';
+import BackButton from '@/components/BackButton.vue';
 
 // 동적 로고 import
 const logoModules = import.meta.glob('@/assets/참가업체 로고 파일/**/*.png', { eager: true });
@@ -134,7 +138,6 @@ const goToCompanyDetail = (companyId) => {
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {

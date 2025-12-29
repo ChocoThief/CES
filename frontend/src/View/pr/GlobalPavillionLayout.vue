@@ -20,6 +20,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Layout Content Section -->
         <section class="content-section">
             <div class="layout-container">
@@ -62,6 +65,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { globalCompaniesSorted } from '@/data/companyData';
+import BackButton from '@/components/BackButton.vue';
 
 const router = useRouter();
 
@@ -85,7 +89,6 @@ const goToCompanyDetail = (companyId) => {
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {

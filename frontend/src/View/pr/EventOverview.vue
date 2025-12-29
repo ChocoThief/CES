@@ -20,6 +20,9 @@
             </div>
         </section>
 
+        <!-- Back Button -->
+        <BackButton />
+
         <!-- Content Section -->
         <section class="content-section">
             <div class="overview-description">
@@ -94,6 +97,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import BackButton from '@/components/BackButton.vue';
 
 const router = useRouter();
 </script>
@@ -113,7 +117,6 @@ const router = useRouter();
     padding: 0;
     text-align: center;
     position: relative;
-    margin-bottom: 80px;
 }
 
 .header-top {

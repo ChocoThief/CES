@@ -10,9 +10,10 @@ import BoothLayout from '@/View/pr/BoothLayout.vue'
 import EurekaParkLayout from '@/View/pr/EurekaParkLayout.vue'
 import GlobalPavillionLayout from '@/View/pr/GlobalPavillionLayout.vue'
 import CompanyDetail from '@/View/pr/CompanyDetail.vue'
-import Vip from '@/View/vip/Vip.vue'
-import PitchingSchedule from '@/View/vip/PitchingSchedule.vue'
-import DocentBooking from '@/View/vip/DocentBooking.vue'
+// VIP 페이지 접근 차단 - 재활성화 필요시 주석 해제
+// import Vip from '@/View/vip/Vip.vue'
+// import PitchingSchedule from '@/View/vip/PitchingSchedule.vue'
+// import DocentBooking from '@/View/vip/DocentBooking.vue'
 
 // PR 라우트
 const prRoutes = [
@@ -60,21 +61,21 @@ const prRoutes = [
   },
 ]
 
-// VIP 라우트
-const vipRoutes = [
-  {
-    path: '/vip',
-    component: Vip,
-  },
-  {
-    path: '/vip/pitching-schedule',
-    component: PitchingSchedule,
-  },
-  {
-    path: '/vip/docent-booking',
-    component: DocentBooking,
-  },
-]
+// VIP 라우트 - 접근 차단됨
+// const vipRoutes = [
+//   {
+//     path: '/vip',
+//     component: Vip,
+//   },
+//   {
+//     path: '/vip/pitching-schedule',
+//     component: PitchingSchedule,
+//   },
+//   {
+//     path: '/vip/docent-booking',
+//     component: DocentBooking,
+//   },
+// ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -88,7 +89,7 @@ const router = createRouter({
       component: Index,
     },
     ...prRoutes,
-    ...vipRoutes,
+    // ...vipRoutes, // VIP 라우트 비활성화
   ],
 })
 

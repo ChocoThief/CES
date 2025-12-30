@@ -2417,7 +2417,7 @@ RCWM is an IoT-based quality management system that enables real-time measuremen
     description: `주행 중인 차량의 속도를 감지하여 제한속도 대비 위험 상황일 경우, 경고 표지 표시를 통해 운전자에게 즉각적으로 알리는 장치입니다.
 또한 차량의 제동거리를 계산해 정지 가능 거리 이전에 전방 위험 상황을 사전에 안내함으로써, 사고 및 2차 사고를 예방합니다.`,
     website: ``,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/CYANHOLDINGS.png`,
     descriptionEn: `A device that detects the speed of a vehicle in progress and alerts the driver by displaying a danger sign if it is below the speed limit.
 It also calculates the braking distance and notifies the driver of the danger ahead before the stopping distance to prevent accidents.`,
     video: ``

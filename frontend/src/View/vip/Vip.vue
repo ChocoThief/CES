@@ -22,6 +22,11 @@
                 </div>
             </div>
 
+            <!-- Back Button -->
+            <div class="back-button-wrapper">
+                <BackButton />
+            </div>
+
             <div class="content-wrapper">
                 <!-- Docent Tour Section -->
                 <div class="program-section">
@@ -104,6 +109,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import BackButton from '@/components/BackButton.vue';
 
 const router = useRouter();
 
@@ -177,10 +183,15 @@ const goToPitchingSchedule = () => {
     letter-spacing: 0.5px;
 }
 
+/* Back Button Wrapper */
+.back-button-wrapper {
+    text-align: left;
+}
+
 /* Content Wrapper */
 
 .content-wrapper {
-    padding: 100px 0;
+    padding: 0 0 100px 0;
 }
 
 /* Program Section */

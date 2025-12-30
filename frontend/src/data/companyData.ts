@@ -894,7 +894,7 @@ A confirmatory clinical trial is presently in progress, with regulatory approval
     product: `BEE-PC1 (단백질 결정성장 실험 모듈)`,
     productEn: `BEE-PC1`,
     description: `BEE-PC1은 미세중력 환경에서 고해상도 단백질 결정을 성장시키기 위한 실험 및 연구용 자동화 장치입니다. 우주 환경의 결정 성장 특성을 활용하여, 지상에서 구현이 어려운 구조 분석 및 신약 후보물질 선별을 가능하게 합니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/스페이스린텍.png`,
     website: ``,
     descriptionEn: `BEE-PC1 is an automated research module designed for high-resolution protein crystallization in microgravity. By leveraging the unique advantages of the space environment, it enables structure analysis and drug candidate screening that are difficult to achieve on Earth.`,
     video: ``
@@ -1035,7 +1035,7 @@ Silicon-proven and ready to scale, EyeChip shows how in-sensor computing can mak
     product: `하텔리전스`,
     productEn: `Heartelligence`,
     description: `AI 심박분석으로 반려견의 감정과 건강을 전해주는, 보호자와 반려견을 이어주는 스마트 웨어러블`,
-    logo: ``,
+    logo: `참가업체 로고 파일/EP_png/가아온 주식회사.png`,
     website: ``,
     descriptionEn: `An AI Powered heart rate analysis wearable that delivers your dog's emotions and health, connecting pets and owners closer together.`,
     video: ``
@@ -1877,7 +1877,7 @@ Features: Buzzer Alarm and High-Illumination LED at Fire Scene
     product: `능동형 EMI 필터`,
     productEn: `ACTIVE EMI FILTER`,
     description: `자동차 산업용 능동형 EMI 필터 IC로, 신뢰성 있는 전자파 노이즈 억제를 제공하며 기존의 부피 큰 수동 필터를 대체하여 크기, 무게, 비용을 줄이고 차량의 전체 효율을 향상시킴."`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/이엠코어텍.png`,
     website: ``,
     descriptionEn: `An Active EMI Filter IC for automotive applications that ensures reliable electromagnetic noise suppression while replacing bulky passive filters, reducing size, weight, and cost, and enhancing overall vehicle efficiency.`,
     video: ``
@@ -1916,7 +1916,7 @@ One-meter, three-meter iris recognition solution is a technology that is not ava
 가족들은 이상 징후 발생 시 즉시 알림을 받아 안심할 수 있고, 시니어들은 집에서도 24시간 독립적으로 건강을 관리할 수 있습니다. 요양 시설에서 진행한 파일럿 결과, 간병인의 일일 활력징후 확인 시간이 최대 80% 단축되어 효율성과 관리 품질이 동시에 향상되었습니다.
 
 웹 브라우저만 있으면 바로 사용할 수 있으며, 큰 버튼, 음성 안내, 원터치 실행 등 고령자 친화적 UI를 제공합니다. SK그룹, 소프트뱅크 로보틱스에서 PoC 를 진행, 몬트리올 대학교와 공동 연구 중에 있으며,  200명의 시니어 대상 시험에서 손 떨림이나 저조도 환경에서도 90% 이상 안정적으로 스캔이 이뤄졌습니다. 현재는 FDA 510(k) 인증 절차를 진행 중이며, 임상 수준의 정확도를 목표로 하고 있습니다.`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/엑시스트.png`,
     website: ``,
     descriptionEn: `Baxe AI converts standard smartphones into non-invasive health monitoring tools for seniors and their families. Using a 5-second camera scan, it assesses heart rate, blood pressure, oxygen saturation, and stress levels without wearables or medical visits. The AI provides personalized conversational guidance based on vital signs, emotional cues, and behavioral data.
 
@@ -2322,7 +2322,7 @@ By integrating an active compliance mechanism with a six-axis force/torque senso
     product: `로봇 자동화 시스템`,
     productEn: `robot automation system`,
     description: `로봇 자동화 시스템`,
-    logo: ``,
+    logo: `참가업체 로고 파일/GP_png/아라.png`,
     website: ``,
     descriptionEn: `robot automation system`,
     video: ``

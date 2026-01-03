@@ -35,3 +35,6 @@ coverage
 # Vitest
 __screenshots__/
 EP-mp4/
+
+# PDF downloads (large files, deploy to server only)
+public/downloads/*.pdf

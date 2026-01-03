@@ -20,8 +20,19 @@
             </div>
         </section>
 
-        <!-- Back Button -->
-        <BackButton />
+        <!-- Back Button and PDF Download -->
+        <div class="action-buttons-wrapper">
+            <BackButton />
+            <div class="pdf-download-container">
+                <a
+                    href="/downloads/exhibitor-details.pdf"
+                    download="Exhibitor_Details.pdf"
+                    class="pdf-download-link"
+                >
+                    Download Exhibitor Details (PDF)
+                </a>
+            </div>
+        </div>
 
         <!-- Content Section -->
         <section class="content-section">
@@ -133,6 +144,38 @@ const selectOption = (option) => {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.5px;
+}
+
+/* Action Buttons Wrapper */
+.action-buttons-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* PDF Download Link */
+.pdf-download-container {
+    padding: 20px 0 60px 0;
+}
+
+.pdf-download-link {
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2563eb;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pdf-download-link:hover {
+    color: white;
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* Content Section */

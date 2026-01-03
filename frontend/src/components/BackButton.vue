@@ -19,7 +19,6 @@ const goBack = () => {
 <style scoped>
 .back-button-container {
     max-width: 980px;
-    margin: 0 auto;
     padding: 20px 0 60px 0;
 }
 
